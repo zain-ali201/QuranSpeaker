@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1800ED9E25DAAF4D00F0A989 /* quran-simple.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1800ED9D25DAAF4B00F0A989 /* quran-simple.xml */; };
+		1815DC1625E1AC4000DBF6DA /* BLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815DC1525E1AC4000DBF6DA /* BLEViewController.swift */; };
+		182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD3FE25CC2DD500D59FF2 /* Chapter.swift */; };
+		182FD40325CC2E2200D59FF2 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD40225CC2E2200D59FF2 /* Verse.swift */; };
+		185332A525DD44C20045A745 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185332A425DD44C20045A745 /* CountryViewController.swift */; };
 		185EC69C25C2B813008661AE /* KSF_P008.otf in Resources */ = {isa = PBXBuildFile; fileRef = 185EC69225C2B813008661AE /* KSF_P008.otf */; };
 		185EC69D25C2B813008661AE /* KSF_P009.otf in Resources */ = {isa = PBXBuildFile; fileRef = 185EC69325C2B813008661AE /* KSF_P009.otf */; };
 		185EC69E25C2B813008661AE /* KSF_P001.otf in Resources */ = {isa = PBXBuildFile; fileRef = 185EC69425C2B813008661AE /* KSF_P001.otf */; };
@@ -28,9 +33,18 @@
 		18B8543325B6B63C00667E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B8543225B6B63C00667E67 /* Assets.xcassets */; };
 		18B8543625B6B63C00667E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B8543425B6B63C00667E67 /* LaunchScreen.storyboard */; };
 		18B8544525B6BD3100667E67 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8544425B6BD3100667E67 /* HomeViewController.swift */; };
+		18BEF4FA25D6840D00F4136C /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF4F925D6840D00F4136C /* TableCell.swift */; };
+		18D0CDDF25D7FDA400C8DC4C /* AKPrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0CDDE25D7FDA400C8DC4C /* AKPrayerTime.swift */; };
+		E43FD638CA83F57D9E401AFB /* Pods_QuranSpeaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D30B88568D98734D20F1EA5 /* Pods_QuranSpeaker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1800ED9D25DAAF4B00F0A989 /* quran-simple.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "quran-simple.xml"; sourceTree = "<group>"; };
+		1815DC1525E1AC4000DBF6DA /* BLEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEViewController.swift; sourceTree = "<group>"; };
+		1820FF4825DE782000A57EEC /* QuranSpeaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranSpeaker-Bridging-Header.h"; sourceTree = "<group>"; };
+		182FD3FE25CC2DD500D59FF2 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		182FD40225CC2E2200D59FF2 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
+		185332A425DD44C20045A745 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		185EC69225C2B813008661AE /* KSF_P008.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P008.otf; sourceTree = "<group>"; };
 		185EC69325C2B813008661AE /* KSF_P009.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P009.otf; sourceTree = "<group>"; };
 		185EC69425C2B813008661AE /* KSF_P001.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P001.otf; sourceTree = "<group>"; };
@@ -41,11 +55,11 @@
 		185EC69925C2B813008661AE /* KSF_P004.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P004.otf; sourceTree = "<group>"; };
 		185EC69A25C2B813008661AE /* KSF_P010.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P010.otf; sourceTree = "<group>"; };
 		185EC69B25C2B813008661AE /* KSF_P005.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P005.otf; sourceTree = "<group>"; };
-		185EC6A725C2B8B0008661AE /* ksfquran.inf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ksfquran.inf; sourceTree = "<group>"; };
 		186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaylightViewController.swift; sourceTree = "<group>"; };
 		186DA40025C7FEE000D4F154 /* JuristicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuristicViewController.swift; sourceTree = "<group>"; };
 		186DA40125C7FEE000D4F154 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		1879A86225C3E2D100FC0219 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		189D0D9025E519CC00764BCC /* ksfquran.inf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ksfquran.inf; sourceTree = "<group>"; };
 		18B4BE1925C183DC008AC27B /* LightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
 		18B4BE1A25C183DD008AC27B /* PrayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
 		18B8542625B6B62900667E67 /* QuranSpeaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranSpeaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +69,11 @@
 		18B8543525B6B63C00667E67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18B8543725B6B63C00667E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B8544425B6BD3100667E67 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18BEF4F925D6840D00F4136C /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		18D0CDDE25D7FDA400C8DC4C /* AKPrayerTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPrayerTime.swift; sourceTree = "<group>"; };
+		1A0E007FCAC0685CF36B24BD /* Pods-QuranSpeaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranSpeaker.debug.xcconfig"; path = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker.debug.xcconfig"; sourceTree = "<group>"; };
+		2D30B88568D98734D20F1EA5 /* Pods_QuranSpeaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranSpeaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2B54E3A2AC68A2777E91FF /* Pods-QuranSpeaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranSpeaker.release.xcconfig"; path = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +81,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43FD638CA83F57D9E401AFB /* Pods_QuranSpeaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182FD3F725CC2A8200D59FF2 /* QuranResources */ = {
+			isa = PBXGroup;
+			children = (
+				1800ED9D25DAAF4B00F0A989 /* quran-simple.xml */,
+			);
+			path = QuranResources;
+			sourceTree = "<group>";
+		};
+		182FD40125CC2DDA00D59FF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18D0CDDE25D7FDA400C8DC4C /* AKPrayerTime.swift */,
+				18BEF4F925D6840D00F4136C /* TableCell.swift */,
+				182FD3FE25CC2DD500D59FF2 /* Chapter.swift */,
+				182FD40225CC2E2200D59FF2 /* Verse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		185EC69125C2B813008661AE /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +129,8 @@
 			children = (
 				18B8542825B6B62900667E67 /* QuranSpeaker */,
 				18B8542725B6B62900667E67 /* Products */,
+				24EF50EDD69CDCA67A2663D7 /* Pods */,
+				C5B1C991A89A895D27217769 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,13 +145,16 @@
 		18B8542825B6B62900667E67 /* QuranSpeaker */ = {
 			isa = PBXGroup;
 			children = (
+				189D0D9025E519CC00764BCC /* ksfquran.inf */,
 				18B8543225B6B63C00667E67 /* Assets.xcassets */,
-				185EC6A725C2B8B0008661AE /* ksfquran.inf */,
 				185EC69125C2B813008661AE /* fonts */,
 				18B8544125B6B69500667E67 /* AppDelegate */,
 				18B8544025B6B68200667E67 /* Storyboards */,
+				182FD40125CC2DDA00D59FF2 /* Models */,
 				18B8543F25B6B66E00667E67 /* ViewControllers */,
+				182FD3F725CC2A8200D59FF2 /* QuranResources */,
 				18B8543725B6B63C00667E67 /* Info.plist */,
+				1820FF4825DE782000A57EEC /* QuranSpeaker-Bridging-Header.h */,
 			);
 			path = QuranSpeaker;
 			sourceTree = "<group>";
@@ -118,10 +162,12 @@
 		18B8543F25B6B66E00667E67 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1815DC1525E1AC4000DBF6DA /* BLEViewController.swift */,
 				18B8544425B6BD3100667E67 /* HomeViewController.swift */,
 				18B4BE1925C183DC008AC27B /* LightViewController.swift */,
 				18B4BE1A25C183DD008AC27B /* PrayerViewController.swift */,
 				1879A86225C3E2D100FC0219 /* SetViewController.swift */,
+				185332A425DD44C20045A745 /* CountryViewController.swift */,
 				186DA40125C7FEE000D4F154 /* CityViewController.swift */,
 				186DA40025C7FEE000D4F154 /* JuristicViewController.swift */,
 				186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */,
@@ -146,6 +192,23 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		24EF50EDD69CDCA67A2663D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A0E007FCAC0685CF36B24BD /* Pods-QuranSpeaker.debug.xcconfig */,
+				DD2B54E3A2AC68A2777E91FF /* Pods-QuranSpeaker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C5B1C991A89A895D27217769 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D30B88568D98734D20F1EA5 /* Pods_QuranSpeaker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18B8543A25B6B63C00667E67 /* Build configuration list for PBXNativeTarget "QuranSpeaker" */;
 			buildPhases = (
+				CD4CB29D0DD560047A1B9F22 /* [CP] Check Pods Manifest.lock */,
 				18B8542225B6B62900667E67 /* Sources */,
 				18B8542325B6B62900667E67 /* Frameworks */,
 				18B8542425B6B62900667E67 /* Resources */,
+				648D75BA23135E564F7BE360 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B8543625B6B63C00667E67 /* LaunchScreen.storyboard in Resources */,
+				1800ED9E25DAAF4D00F0A989 /* quran-simple.xml in Resources */,
 				185EC6A025C2B813008661AE /* KSF_P003.otf in Resources */,
 				185EC6A225C2B813008661AE /* KSF_P006.otf in Resources */,
 				185EC6A425C2B813008661AE /* KSF_P010.otf in Resources */,
@@ -221,19 +287,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		648D75BA23135E564F7BE360 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD4CB29D0DD560047A1B9F22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuranSpeaker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18B8542225B6B62900667E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				18B8542A25B6B62900667E67 /* AppDelegate.swift in Sources */,
+				182FD40325CC2E2200D59FF2 /* Verse.swift in Sources */,
 				1879A86325C3E2D200FC0219 /* SetViewController.swift in Sources */,
 				186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */,
+				1815DC1625E1AC4000DBF6DA /* BLEViewController.swift in Sources */,
+				182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */,
 				186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */,
 				186DA40225C7FEE000D4F154 /* DaylightViewController.swift in Sources */,
+				18D0CDDF25D7FDA400C8DC4C /* AKPrayerTime.swift in Sources */,
+				18BEF4FA25D6840D00F4136C /* TableCell.swift in Sources */,
 				18B4BE1B25C183DD008AC27B /* LightViewController.swift in Sources */,
 				18B8544525B6BD3100667E67 /* HomeViewController.swift in Sources */,
 				18B4BE1C25C183DD008AC27B /* PrayerViewController.swift in Sources */,
+				185332A525DD44C20045A745 /* CountryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,11 +491,13 @@
 		};
 		18B8543B25B6B63C00667E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A0E007FCAC0685CF36B24BD /* Pods-QuranSpeaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Q2ZS4CBGES;
 				INFOPLIST_FILE = QuranSpeaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -399,11 +515,13 @@
 		};
 		18B8543C25B6B63C00667E67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD2B54E3A2AC68A2777E91FF /* Pods-QuranSpeaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Q2ZS4CBGES;
 				INFOPLIST_FILE = QuranSpeaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

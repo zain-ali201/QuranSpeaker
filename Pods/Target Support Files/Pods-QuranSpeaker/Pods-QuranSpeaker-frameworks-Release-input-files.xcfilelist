@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Bluejay/Bluejay.framework
+${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework
+${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework

@@ -1,0 +1,6 @@
+framework module Pods_QuranSpeaker {
+  umbrella header "Pods-QuranSpeaker-umbrella.h"
+
+  export *
+  module * { export * }
+}

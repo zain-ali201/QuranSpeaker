@@ -25,7 +25,8 @@ class SetViewController: UIViewController
     {
         if button.tag == 1001
         {
-            
+            let countryVC = self.storyboard?.instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
+            self.navigationController?.pushViewController(countryVC, animated: false)
         }
         else if button.tag == 1002
         {
@@ -48,7 +49,8 @@ class SetViewController: UIViewController
     {
         if button.tag == 1001
         {
-            self.navigationController?.popToRootViewController(animated: false)
+            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeVC, animated: false)
         }
         else if button.tag == 1002
         {

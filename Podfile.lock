@@ -1,0 +1,28 @@
+PODS:
+  - Bluejay (0.8.5):
+    - XCGLogger (~> 7.0.0)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - XCGLogger (7.0.1):
+    - XCGLogger/Core (= 7.0.1)
+  - XCGLogger/Core (7.0.1):
+    - ObjcExceptionBridging
+
+DEPENDENCIES:
+  - Bluejay
+
+SPEC REPOS:
+  trunk:
+    - Bluejay
+    - ObjcExceptionBridging
+    - XCGLogger
+
+SPEC CHECKSUMS:
+  Bluejay: 1c109fe79f62acf9c8fea8d43159df3d0db6617c
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  XCGLogger: 1943831ef907df55108b0b18657953f868de973b
+
+PODFILE CHECKSUM: 7bbbd6890008df39f4e6d7acef2447e3e2af2e89
+
+COCOAPODS: 1.9.3

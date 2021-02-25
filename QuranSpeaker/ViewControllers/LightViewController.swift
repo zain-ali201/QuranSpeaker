@@ -23,7 +23,8 @@ class LightViewController: UIViewController
     {
         if button.tag == 1001
         {
-            self.navigationController?.popToRootViewController(animated: false)
+            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeVC, animated: false)
         }
         else if button.tag == 1003
         {

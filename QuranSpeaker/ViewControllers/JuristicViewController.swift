@@ -28,6 +28,7 @@ class JuristicViewController: UIViewController
     
     @IBAction func clickBtnAction(_ button: UIButton)
     {
+        defaults.set(button.tag, forKey: "juristic")
         self.navigationController?.popViewController(animated: false)
     }
     
