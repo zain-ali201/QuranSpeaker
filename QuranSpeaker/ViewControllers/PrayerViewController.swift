@@ -26,6 +26,10 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var lblMaghrib: UILabel!
     @IBOutlet weak var lblIsha: UILabel!
     
+    @IBOutlet weak var leading: NSLayoutConstraint!
+    
+    var menuFlag = false
+    
     var lat = 0.0
     var lng = 0.0
     
@@ -62,6 +66,62 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
         return .lightContent
     }
     
+    @IBAction func sidemenuBtnAction(_ sender: Any)
+    {
+        if menuFlag
+        {
+            leading.constant = 200
+            menuFlag = false
+        }
+        else
+        {
+            leading.constant = 0
+            menuFlag = true
+        }
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func clickBtnAction(_ button: UIButton)
+    {
+        if button.tag == 1001
+        {
+            if (CLLocationManager.locationServicesEnabled())
+            {
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.requestAlwaysAuthorization()
+                locationManager.startUpdatingLocation()
+            }
+            else
+            {
+                leading.constant = -200
+                menuFlag = false
+                
+                UIView.animate(withDuration: 0.3) { [weak self] in
+                  self?.view.layoutIfNeeded()
+                }
+            }
+        }
+        else
+        {
+            let setVC = self.storyboard?.instantiateViewController(withIdentifier: "SetViewController") as! SetViewController
+            self.navigationController?.pushViewController(setVC, animated: true)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        leading.constant = -200
+        menuFlag = false
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLoc = locations.last
         {
@@ -93,6 +153,13 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
                 lblCity.text = placemark.currentCity
                 lblCountry.text = placemark.currentCountry
                 lblAddress.text = placemark.compactAddress
+                
+                leading.constant = -200
+                menuFlag = false
+                
+                UIView.animate(withDuration: 0.3) { [weak self] in
+                  self?.view.layoutIfNeeded()
+                }
                 
                 locationManager.stopUpdatingLocation()
             }
@@ -139,11 +206,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
         {
             let lightVC = self.storyboard?.instantiateViewController(withIdentifier: "LightViewController") as! LightViewController
             self.navigationController?.pushViewController(lightVC, animated: false)
-        }
-        else if button.tag == 1004
-        {
-            let setVC = self.storyboard?.instantiateViewController(withIdentifier: "SetViewController") as! SetViewController
-            self.navigationController?.pushViewController(setVC, animated: false)
         }
     }
 }

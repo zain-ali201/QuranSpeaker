@@ -6,11 +6,37 @@
 //
 
 import UIKit
+import CollapsibleTableSectionViewController
 
-class SetViewController: UIViewController
+class SetViewController: CollapsibleTableSectionViewController, CollapsibleTableSectionDelegate
 {
+    @IBOutlet weak var tblView:UITableView!
+    
+    var sections: [Section] = [
+        Section(name: "Juristic Method", items: [
+            Item(name: "Shafii, Hanbali, Maliki", detail: ""),
+            Item(name: "Hanafi", detail: "")
+        ]),
+        Section(name: "DayLight Saving", items: [
+            Item(name: "OFF", detail: ""),
+            Item(name: "ON", detail: "")
+        ]),
+        Section(name: "Calculation Method", items: [
+            Item(name: "Jafari", detail: ""),
+            Item(name: "Karachi", detail: ""),
+            Item(name: "ISNA", detail: ""),
+            Item(name: "MWL", detail: ""),
+            Item(name: "Makkah", detail: ""),
+            Item(name: "Egypt", detail: ""),
+            Item(name: "Custom", detail: ""),
+            Item(name: "Tehran", detail: "")
+            
+        ])]
+    
     override func viewDidLoad() {
         
+        self._tableView = tblView
+        self.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -19,6 +45,11 @@ class SetViewController: UIViewController
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    @IBAction func backBtnAction(_ button: UIButton)
+    {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func clickBtnAction(_ button: UIButton)
@@ -62,5 +93,49 @@ class SetViewController: UIViewController
             let prayerVC = self.storyboard?.instantiateViewController(withIdentifier: "PrayerViewController") as! PrayerViewController
             self.navigationController?.pushViewController(prayerVC, animated: false)
         }
+    }
+    
+    
+    func numberOfSections(_ tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    func collapsibleTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sections[section].items.count
+    }
+    
+    func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell") as UITableViewCell? ?? UITableViewCell(style: .subtitle, reuseIdentifier: "BasicCell")
+        
+        let item: Item = sections[indexPath.section].items[indexPath.row]
+        
+        cell.textLabel?.text = item.name
+        cell.detailTextLabel?.text = item.detail
+        
+        return cell
+    }
+    
+    func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].name
+    }
+}
+
+public struct Item {
+    public var name: String
+    public var detail: String
+    
+    public init(name: String, detail: String) {
+        self.name = name
+        self.detail = detail
+    }
+}
+
+public struct Section {
+    public var name: String
+    public var items: [Item]
+    
+    public init(name: String, items: [Item]) {
+        self.name = name
+        self.items = items
     }
 }

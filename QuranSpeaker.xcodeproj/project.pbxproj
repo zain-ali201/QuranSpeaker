@@ -26,6 +26,7 @@
 		186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40025C7FEE000D4F154 /* JuristicViewController.swift */; };
 		186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40125C7FEE000D4F154 /* CityViewController.swift */; };
 		1879A86325C3E2D200FC0219 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879A86225C3E2D100FC0219 /* SetViewController.swift */; };
+		18AD5DC625EFCC8F006D27FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD5DC525EFCC8F006D27FD /* Toast.swift */; };
 		18B4BE1B25C183DD008AC27B /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4BE1925C183DC008AC27B /* LightViewController.swift */; };
 		18B4BE1C25C183DD008AC27B /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4BE1A25C183DD008AC27B /* PrayerViewController.swift */; };
 		18B8542A25B6B62900667E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8542925B6B62900667E67 /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 		186DA40125C7FEE000D4F154 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		1879A86225C3E2D100FC0219 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		189D0D9025E519CC00764BCC /* ksfquran.inf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ksfquran.inf; sourceTree = "<group>"; };
+		18AD5DC525EFCC8F006D27FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = "Pods/Toast-Swift/Toast/Toast.swift"; sourceTree = SOURCE_ROOT; };
 		18B4BE1925C183DC008AC27B /* LightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
 		18B4BE1A25C183DD008AC27B /* PrayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
 		18B8542625B6B62900667E67 /* QuranSpeaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranSpeaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 		182FD3F725CC2A8200D59FF2 /* QuranResources */ = {
 			isa = PBXGroup;
 			children = (
+				18AD5DC525EFCC8F006D27FD /* Toast.swift */,
 				1800ED9D25DAAF4B00F0A989 /* quran-simple.xml */,
 			);
 			path = QuranResources;
@@ -341,6 +344,7 @@
 				1815DC1625E1AC4000DBF6DA /* BLEViewController.swift in Sources */,
 				182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */,
 				186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */,
+				18AD5DC625EFCC8F006D27FD /* Toast.swift in Sources */,
 				186DA40225C7FEE000D4F154 /* DaylightViewController.swift in Sources */,
 				18D0CDDF25D7FDA400C8DC4C /* AKPrayerTime.swift in Sources */,
 				18BEF4FA25D6840D00F4136C /* TableCell.swift in Sources */,
@@ -497,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q2ZS4CBGES;
 				INFOPLIST_FILE = QuranSpeaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -521,7 +525,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q2ZS4CBGES;
 				INFOPLIST_FILE = QuranSpeaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

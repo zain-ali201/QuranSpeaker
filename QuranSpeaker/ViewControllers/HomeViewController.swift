@@ -9,6 +9,7 @@ import UIKit
 import CoreBluetooth
 
 var defaults = UserDefaults.standard
+var currentVolume = 10
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate
 {
@@ -16,6 +17,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var chaptersTblView: UITableView!
     @IBOutlet weak var lblVerse: UILabel!
     @IBOutlet weak var verseTblView: UITableView!
+    
+    @IBOutlet weak var volView: UIView!
+    @IBOutlet weak var sliderView: UIView!
+    @IBOutlet weak var volSlider: UISlider!
+    @IBOutlet weak var lblVolCount: UILabel!
     
     @IBOutlet weak var leading: NSLayoutConstraint!
     @IBOutlet weak var txtView: UITextView!
@@ -28,6 +34,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var indexArray:[String] = []
     
     var quranFlag = false
+    var volFlag = false
     var chapterNo = 0
     var verseCount = 0
     
@@ -40,7 +47,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var isMyPeripheralConected = false
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        sliderView.layer.cornerRadius = 10.0
+        sliderView.layer.masksToBounds = true
+        volSlider.value = Float(currentVolume)
         
         manager = CBCentralManager(delegate: self, queue: nil)
         
@@ -52,11 +63,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         quranView.layer.shadowOffset = CGSize(width: 2, height: 2)
         
         if let path = Bundle.main.url(forResource: "quran-simple", withExtension: "xml") {
-                if let parser = XMLParser(contentsOf: path) {
-                    parser.delegate = self
-                    parser.parse()
-                }
+            if let parser = XMLParser(contentsOf: path) {
+                parser.delegate = self
+                parser.parse()
             }
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -76,8 +87,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     sura = string.value
                 }
             }
-                            
-                          
         }
         else if elementName == "aya"
         {
@@ -135,17 +144,154 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             leading.constant = 3
             quranFlag = true
         }
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func volumeBtnAction(_ sender: Any)
     {
+        if volFlag
+        {
+            volView.alpha = 0
+            volFlag = false
+        }
+        else
+        {
+            volView.alpha = 1
+            volFlag = true
+        }
         
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider)
+    {
+        let currentValue = Int(sender.value)
+            
+        lblVolCount.text = "\(currentValue)"
+        
+        var key = ""
+        
+        if currentValue < currentVolume
+        {
+            key = "10"
+        }
+        else
+        {
+            key = "6"
+        }
+        
+        if isMyPeripheralConected
+        {
+            let dataToSend: Data = key.data(using: String.Encoding.utf8)!
+            
+            myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withoutResponse)
+            print("value written")
+        }
+        else
+        {
+            self.view.makeToast("Bluetooth device disconnected")
+        }
+        
+        currentVolume = currentValue
+    }
+    
+    @IBAction func clickBtnAction(_ button: UIButton)
+    {
+        var key = ""
+        
+        if button.tag == 1
+        {
+            key = "8"
+        }
+        else if button.tag == 2
+        {
+            key = "5"
+        }
+        else if button.tag == 3
+        {
+            key = ""
+        }
+        else if button.tag == 4
+        {
+            key = "2"
+        }
+        else if button.tag == 5
+        {
+            key = ""
+        }
+        else if button.tag == 6
+        {
+            key = "13"
+        }
+        else if button.tag == 7
+        {
+            key = ""
+        }
+        else if button.tag == 8
+        {
+            key = ""
+        }
+        else if button.tag == 9
+        {
+            key = "14"
+        }
+        else if button.tag == 10
+        {
+            key = "15"
+        }
+        else if button.tag == 11
+        {
+            key = "16"
+        }
+        else if button.tag == 12
+        {
+            key = "4"
+        }
+        else if button.tag == 13
+        {
+            key = ""
+        }
+        else if button.tag == 14
+        {
+            key = "17"
+        }
+        else if button.tag == 15
+        {
+            key = ""
+        }
+        else if button.tag == 16
+        {
+            key = "1"
+        }
+        
+        if isMyPeripheralConected
+        {
+            let dataToSend: Data = key.data(using: String.Encoding.utf8)!
+            
+            myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withoutResponse)
+            print("value written: \(key)")
+        }
+        else
+        {
+            self.view.makeToast("Bluetooth device disconnected")
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         leading.constant = -160
         quranFlag = false
+        volView.alpha = 0
+        volFlag = false
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func menuBtnAction(_ button: UIButton)
@@ -159,11 +305,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             let prayerVC = self.storyboard?.instantiateViewController(withIdentifier: "PrayerViewController") as! PrayerViewController
             self.navigationController?.pushViewController(prayerVC, animated: false)
-        }
-        else if button.tag == 1004
-        {
-            let setVC = self.storyboard?.instantiateViewController(withIdentifier: "SetViewController") as! SetViewController
-            self.navigationController?.pushViewController(setVC, animated: false)
         }
     }
     
@@ -228,6 +369,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             txtView.text = asciiToString(start: ayatObj.start, end: ayatObj.end)
             leading.constant = -160
             quranFlag = false
+            
+            if isMyPeripheralConected
+            {
+                let dataToSend = NSMutableData()
+                
+                dataToSend.append("S".data(using: String.Encoding.utf8)!)
+                dataToSend.append("2".data(using: String.Encoding.utf8)!)
+                dataToSend.append("3".data(using: String.Encoding.utf8)!)
+                
+//                let dataToSend: Data = "".data(using: String.Encoding.utf8)!
+                
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withoutResponse)
+                print("value written")
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
         }
     }
     
@@ -242,7 +401,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             resultStr.append(Character(UnicodeScalar(code)!))
             code -= 1
         }
-        
+        print(resultStr)
         return resultStr
     }
     
@@ -264,6 +423,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
         
+        self.view.makeToast(msg)
         print("STATE: " + msg)
         
     }
@@ -284,10 +444,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         
-        print("BLE device connected")
         isMyPeripheralConected = true
         peripheral.delegate = self
         peripheral.discoverServices(nil)
+        self.view.makeToast("Bluetooth device connected")
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
@@ -316,7 +476,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if(cc.uuid.uuidString == "AE01") {
                     myCharacteristic = cc
 //                    peripheral.readValue(for: cc)
-                    writeValue()
+//                    writeValue()
                 }
             }
         }
@@ -328,25 +488,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if (characteristic.uuid.uuidString == "AE01") {
             
             let readValue = characteristic.value
-            
             let value = (readValue! as NSData).bytes.bindMemory(to: Int.self, capacity: readValue!.count).pointee //used to read an Int value
-            
             print ("Value: \(value)")
         }
     }
     
-    func writeValue() {
-        
-        if isMyPeripheralConected
-        {
-            let dataToSend: Data = "Hello World!".data(using: String.Encoding.utf8)!
-            
-            myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withoutResponse)
-            print("value written")
-        }
-        else
-        {
-            print("Not connected")
-        }
-    }
+//    func writeValue() {
+//
+//        if isMyPeripheralConected
+//        {
+//            let dataToSend: Data = "Hello World!".data(using: String.Encoding.utf8)!
+//
+//            myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withoutResponse)
+//            print("value written")
+//        }
+//        else
+//        {
+//            print("Not connected")
+//        }
+//    }
 }

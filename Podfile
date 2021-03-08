@@ -6,6 +6,7 @@ target 'QuranSpeaker' do
   use_frameworks!
 
   # Pods for QuranSpeaker
-  pod 'Bluejay'
+  pod 'Toast-Swift'
+  pod 'CollapsibleTableSectionViewController'
 
 end
