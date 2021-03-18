@@ -10,9 +10,7 @@ import CoreLocation
 
 class PrayerViewController: UIViewController, CLLocationManagerDelegate
 {
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblCountry: UILabel!
@@ -29,15 +27,14 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var leading: NSLayoutConstraint!
     
     var menuFlag = false
-    
     var lat = 0.0
     var lng = 0.0
     
     var locationManager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
     
-    override func viewDidLoad() {
-        
+    override func viewDidLoad()
+    {
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
         lblTime.text = formatter.string(from: Date())
@@ -70,7 +67,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
     {
         if menuFlag
         {
-            leading.constant = 200
+            leading.constant = -200
             menuFlag = false
         }
         else
