@@ -41,17 +41,14 @@ class BLEViewController: UIViewController, CBCentralManagerDelegate, CBPeriphera
                 msg = "Not Supported"
             default:
                 msg = "😔"
-            
         }
         
         print("STATE: " + msg)
-        
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
         print("Name: \(peripheral.name)") //print the names of all peripherals connected.
-        
         //you are going to use the name here down here ⇩
         
         if peripheral.name == "NAME_OF_PERIPHERAL" { //if is it my peripheral, then connect

@@ -78,13 +78,25 @@
                                             <constraint firstAttribute="trailing" secondItem="1T5-So-ct1" secondAttribute="trailing" constant="5" id="tAN-iQ-85N"/>
                                         </constraints>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="% $ # &quot; !" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IM2-qy-NwI">
-                                        <rect key="frame" x="8" y="65" width="359" height="316.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" name="KSF001Regular" family="KSF001" pointSize="50"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-ZB-T04">
+                                        <rect key="frame" x="8" y="65" width="359" height="317"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="2" editable="NO" text=" %  #  $  &quot;  !" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IM2-qy-NwI">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="317"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" name="KSF001Regular" family="KSF001" pointSize="50"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="IM2-qy-NwI" firstAttribute="top" secondItem="HqN-ZB-T04" secondAttribute="top" id="13Y-CC-TeP"/>
+                                            <constraint firstAttribute="trailing" secondItem="IM2-qy-NwI" secondAttribute="trailing" id="8Ae-JU-Hs8"/>
+                                            <constraint firstAttribute="bottom" secondItem="IM2-qy-NwI" secondAttribute="bottom" id="Ge5-fc-Nft"/>
+                                            <constraint firstItem="IM2-qy-NwI" firstAttribute="leading" secondItem="HqN-ZB-T04" secondAttribute="leading" id="zmN-Gs-oXD"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0q-xD-ByA">
                                         <rect key="frame" x="0.0" y="382" width="375" height="214.5"/>
                                         <subviews>
@@ -602,10 +614,12 @@
                                 <constraints>
                                     <constraint firstItem="i9I-TN-DIo" firstAttribute="top" secondItem="Gee-oW-ery" secondAttribute="top" constant="3" id="6N7-HH-4xu"/>
                                     <constraint firstItem="y0q-xD-ByA" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" id="B7q-Ig-FEB"/>
+                                    <constraint firstItem="HqN-ZB-T04" firstAttribute="top" secondItem="5X0-Be-PTg" secondAttribute="bottom" id="BpW-Au-9qy"/>
                                     <constraint firstItem="Rvu-Zb-bcO" firstAttribute="top" secondItem="Gee-oW-ery" secondAttribute="top" id="Es1-hw-gcJ"/>
-                                    <constraint firstItem="IM2-qy-NwI" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" constant="8" id="F9B-9o-cH4"/>
                                     <constraint firstAttribute="trailing" secondItem="y0q-xD-ByA" secondAttribute="trailing" id="FGX-mp-acw"/>
                                     <constraint firstAttribute="bottom" secondItem="i9I-TN-DIo" secondAttribute="bottom" constant="3" id="HPv-lp-6Ma"/>
+                                    <constraint firstAttribute="trailing" secondItem="HqN-ZB-T04" secondAttribute="trailing" constant="8" id="IyL-bJ-Kv5"/>
+                                    <constraint firstItem="y0q-xD-ByA" firstAttribute="top" secondItem="HqN-ZB-T04" secondAttribute="bottom" id="L2M-4p-ajA"/>
                                     <constraint firstItem="5X0-Be-PTg" firstAttribute="top" secondItem="Gee-oW-ery" secondAttribute="top" id="L34-uv-2Zq"/>
                                     <constraint firstItem="bZn-ZK-J2a" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" id="Nub-Fh-i6P"/>
                                     <constraint firstItem="bZn-ZK-J2a" firstAttribute="top" secondItem="y0q-xD-ByA" secondAttribute="bottom" id="O5X-La-r6I"/>
@@ -613,15 +627,13 @@
                                     <constraint firstAttribute="trailing" secondItem="A3V-IK-AWj" secondAttribute="trailing" id="XCA-Uc-S2o"/>
                                     <constraint firstItem="i9I-TN-DIo" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" constant="-160" id="Xtc-Lc-5ae"/>
                                     <constraint firstItem="A3V-IK-AWj" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" id="b5s-aD-s6V"/>
+                                    <constraint firstItem="HqN-ZB-T04" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" constant="8" id="cp8-Ry-Yqf"/>
                                     <constraint firstAttribute="trailing" secondItem="bZn-ZK-J2a" secondAttribute="trailing" id="dcV-L1-dVw"/>
                                     <constraint firstItem="5X0-Be-PTg" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" id="eNM-P0-bo9"/>
                                     <constraint firstAttribute="trailing" secondItem="Rvu-Zb-bcO" secondAttribute="trailing" id="ihG-Qg-q0q"/>
                                     <constraint firstAttribute="trailing" secondItem="5X0-Be-PTg" secondAttribute="trailing" id="jPx-FO-Xou"/>
-                                    <constraint firstAttribute="trailing" secondItem="IM2-qy-NwI" secondAttribute="trailing" constant="8" id="llx-6f-Tq0"/>
                                     <constraint firstAttribute="bottom" secondItem="bZn-ZK-J2a" secondAttribute="bottom" id="m0E-eU-wcZ"/>
                                     <constraint firstItem="Rvu-Zb-bcO" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" id="mdn-7J-MpF"/>
-                                    <constraint firstItem="IM2-qy-NwI" firstAttribute="top" secondItem="5X0-Be-PTg" secondAttribute="bottom" id="nNu-aH-3Hn"/>
-                                    <constraint firstItem="y0q-xD-ByA" firstAttribute="top" secondItem="IM2-qy-NwI" secondAttribute="bottom" constant="0.5" id="qpO-Fe-Lb2"/>
                                     <constraint firstAttribute="bottom" secondItem="Rvu-Zb-bcO" secondAttribute="bottom" id="waG-Ts-KgV"/>
                                 </constraints>
                             </view>
@@ -642,6 +654,7 @@
                         <outlet property="leading" destination="Xtc-Lc-5ae" id="ByH-be-tj9"/>
                         <outlet property="quranView" destination="i9I-TN-DIo" id="VOu-ZJ-btA"/>
                         <outlet property="sliderView" destination="SOt-4I-m6B" id="v1B-We-Blh"/>
+                        <outlet property="txtMainView" destination="HqN-ZB-T04" id="h6O-Vz-Sdc"/>
                         <outlet property="txtView" destination="IM2-qy-NwI" id="Af5-Km-zWz"/>
                         <outlet property="verseTblView" destination="LQO-te-Tp4" id="JHJ-Tc-3WZ"/>
                         <outlet property="volSlider" destination="AKN-0c-XQ7" id="eDT-n3-dwf"/>

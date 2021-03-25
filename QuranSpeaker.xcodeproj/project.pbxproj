@@ -7,16 +7,619 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1800ED9E25DAAF4D00F0A989 /* quran.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1800ED9D25DAAF4B00F0A989 /* quran.xml */; };
 		1815DC1625E1AC4000DBF6DA /* BLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815DC1525E1AC4000DBF6DA /* BLEViewController.swift */; };
+		181B2D4D2608E02C00EB3F50 /* KSF_P001.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181B2D4C2608E00C00EB3F50 /* KSF_P001.ttf */; };
+		181B2D4F2608E03A00EB3F50 /* KSF_P002.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181B2D4B2608E00C00EB3F50 /* KSF_P002.ttf */; };
+		181B2D502608E03A00EB3F50 /* KSF_P003.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72D26039325004D1078 /* KSF_P003.ttf */; };
+		181B2D512608E03A00EB3F50 /* KSF_P004.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C926039316004D1078 /* KSF_P004.ttf */; };
+		181B2D522608E03A00EB3F50 /* KSF_P005.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64C26039303004D1078 /* KSF_P005.ttf */; };
+		181B2D532608E03A00EB3F50 /* KSF_P006.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C52603933F004D1078 /* KSF_P006.ttf */; };
+		181B2D542608E03A00EB3F50 /* KSF_P007.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82D26039351004D1078 /* KSF_P007.ttf */; };
+		181B2D552608E03A00EB3F50 /* KSF_P008.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66826039309004D1078 /* KSF_P008.ttf */; };
+		181B2D572608E03A00EB3F50 /* KSF_P010.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80326039349004D1078 /* KSF_P010.ttf */; };
+		181B2D582608E03A00EB3F50 /* KSF_P011.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7012603931F004D1078 /* KSF_P011.ttf */; };
+		181B2D592608E03A00EB3F50 /* KSF_P012.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8262603934F004D1078 /* KSF_P012.ttf */; };
+		181B2D5A2608E03A00EB3F50 /* KSF_P013.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88026039364004D1078 /* KSF_P013.ttf */; };
+		181B2D5B2608E03A00EB3F50 /* KSF_P014.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7022603931F004D1078 /* KSF_P014.ttf */; };
+		181B2D5C2608E03A00EB3F50 /* KSF_P015.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71926039322004D1078 /* KSF_P015.ttf */; };
+		181B2D5D2608E03A00EB3F50 /* KSF_P016.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C626039316004D1078 /* KSF_P016.ttf */; };
+		181B2D5E2608E03A00EB3F50 /* KSF_P017.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7AA26039339004D1078 /* KSF_P017.ttf */; };
+		181B2D5F2608E03A00EB3F50 /* KSF_P018.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84926039357004D1078 /* KSF_P018.ttf */; };
+		181B2D602608E03A00EB3F50 /* KSF_P019.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7FF26039348004D1078 /* KSF_P019.ttf */; };
+		181B2D612608E03A00EB3F50 /* KSF_P020.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73326039325004D1078 /* KSF_P020.ttf */; };
+		181B2D622608E03A00EB3F50 /* KSF_P021.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F12603931D004D1078 /* KSF_P021.ttf */; };
+		181B2D632608E03A00EB3F50 /* KSF_P022.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8242603934F004D1078 /* KSF_P022.ttf */; };
+		181B2D642608E03A00EB3F50 /* KSF_P023.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6AD26039313004D1078 /* KSF_P023.ttf */; };
+		181B2D652608E03A00EB3F50 /* KSF_P024.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74926039329004D1078 /* KSF_P024.ttf */; };
+		181B2D662608E03A00EB3F50 /* KSF_P025.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F52603931D004D1078 /* KSF_P025.ttf */; };
+		181B2D672608E03A00EB3F50 /* KSF_P026.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88926039365004D1078 /* KSF_P026.ttf */; };
+		181B2D682608E03A00EB3F50 /* KSF_P027.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C76A2603932E004D1078 /* KSF_P027.ttf */; };
+		181B2D692608E03A00EB3F50 /* KSF_P028.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73126039325004D1078 /* KSF_P028.ttf */; };
+		181B2D6A2608E03B00EB3F50 /* KSF_P029.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7712603932F004D1078 /* KSF_P029.ttf */; };
+		181B2D6B2608E03B00EB3F50 /* KSF_P030.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7FD26039348004D1078 /* KSF_P030.ttf */; };
+		181B2D6C2608E03B00EB3F50 /* KSF_P031.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73026039325004D1078 /* KSF_P031.ttf */; };
+		181B2D6D2608E03B00EB3F50 /* KSF_P032.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7502603932A004D1078 /* KSF_P032.ttf */; };
+		181B2D6E2608E03B00EB3F50 /* KSF_P033.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84726039357004D1078 /* KSF_P033.ttf */; };
+		181B2D6F2608E03B00EB3F50 /* KSF_P034.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83926039353004D1078 /* KSF_P034.ttf */; };
+		181B2D702608E03B00EB3F50 /* KSF_P035.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64726039303004D1078 /* KSF_P035.ttf */; };
+		181B2D712608E03B00EB3F50 /* KSF_P036.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6AB26039312004D1078 /* KSF_P036.ttf */; };
+		181B2D722608E03B00EB3F50 /* KSF_P037.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6982603930F004D1078 /* KSF_P037.ttf */; };
+		181B2D732608E03B00EB3F50 /* KSF_P038.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73426039326004D1078 /* KSF_P038.ttf */; };
+		181B2D742608E03B00EB3F50 /* KSF_P039.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F526039347004D1078 /* KSF_P039.ttf */; };
+		181B2D752608E03B00EB3F50 /* KSF_P040.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87126039360004D1078 /* KSF_P040.ttf */; };
+		181B2D762608E03B00EB3F50 /* KSF_P041.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6EF2603931C004D1078 /* KSF_P041.ttf */; };
+		181B2D772608E03B00EB3F50 /* KSF_P042.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C69C26039310004D1078 /* KSF_P042.ttf */; };
+		181B2D782608E03B00EB3F50 /* KSF_P043.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64B26039303004D1078 /* KSF_P043.ttf */; };
+		181B2D792608E03B00EB3F50 /* KSF_P044.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8222603934F004D1078 /* KSF_P044.ttf */; };
+		181B2D7A2608E03B00EB3F50 /* KSF_P045.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72926039324004D1078 /* KSF_P045.ttf */; };
+		181B2D7B2608E03B00EB3F50 /* KSF_P046.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72026039323004D1078 /* KSF_P046.ttf */; };
+		181B2D7C2608E03B00EB3F50 /* KSF_P047.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85426039359004D1078 /* KSF_P047.ttf */; };
+		181B2D7D2608E03B00EB3F50 /* KSF_P048.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A326039311004D1078 /* KSF_P048.ttf */; };
+		181B2D7E2608E03B00EB3F50 /* KSF_P049.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6DD2603931A004D1078 /* KSF_P049.ttf */; };
+		181B2D7F2608E03B00EB3F50 /* KSF_P050.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C81A2603934E004D1078 /* KSF_P050.ttf */; };
+		181B2D802608E03B00EB3F50 /* KSF_P051.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83F26039355004D1078 /* KSF_P051.ttf */; };
+		181B2D812608E03B00EB3F50 /* KSF_P052.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80A2603934A004D1078 /* KSF_P052.ttf */; };
+		181B2D822608E03B00EB3F50 /* KSF_P053.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C68E2603930E004D1078 /* KSF_P053.ttf */; };
+		181B2D832608E03B00EB3F50 /* KSF_P054.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88426039364004D1078 /* KSF_P054.ttf */; };
+		181B2D842608E03B00EB3F50 /* KSF_P055.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F326039346004D1078 /* KSF_P055.ttf */; };
+		181B2D852608E03B00EB3F50 /* KSF_P056.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80C2603934B004D1078 /* KSF_P056.ttf */; };
+		181B2D862608E03B00EB3F50 /* KSF_P057.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89C26039369004D1078 /* KSF_P057.ttf */; };
+		181B2D872608E03B00EB3F50 /* KSF_P058.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6832603930C004D1078 /* KSF_P058.ttf */; };
+		181B2D882608E03B00EB3F50 /* KSF_P059.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8612603935B004D1078 /* KSF_P059.ttf */; };
+		181B2D892608E03B00EB3F50 /* KSF_P060.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83826039353004D1078 /* KSF_P060.ttf */; };
+		181B2D8A2608E03B00EB3F50 /* KSF_P061.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B526039314004D1078 /* KSF_P061.ttf */; };
+		181B2D8B2608E03B00EB3F50 /* KSF_P062.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D626039319004D1078 /* KSF_P062.ttf */; };
+		181B2D8C2608E03B00EB3F50 /* KSF_P063.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84226039355004D1078 /* KSF_P063.ttf */; };
+		181B2D8D2608E03B00EB3F50 /* KSF_P064.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88B26039365004D1078 /* KSF_P064.ttf */; };
+		181B2D8E2608E03B00EB3F50 /* KSF_P065.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77826039330004D1078 /* KSF_P065.ttf */; };
+		181B2D8F2608E03B00EB3F50 /* KSF_P066.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65726039306004D1078 /* KSF_P066.ttf */; };
+		181B2D902608E03B00EB3F50 /* KSF_P067.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79926039336004D1078 /* KSF_P067.ttf */; };
+		181B2D912608E03B00EB3F50 /* KSF_P068.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66426039308004D1078 /* KSF_P068.ttf */; };
+		181B2D922608E03B00EB3F50 /* KSF_P069.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E62603931B004D1078 /* KSF_P069.ttf */; };
+		181B2D932608E03B00EB3F50 /* KSF_P070.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C226039315004D1078 /* KSF_P070.ttf */; };
+		181B2D942608E03B00EB3F50 /* KSF_P071.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66D26039309004D1078 /* KSF_P071.ttf */; };
+		181B2D952608E03B00EB3F50 /* KSF_P072.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78A26039333004D1078 /* KSF_P072.ttf */; };
+		181B2D962608E03B00EB3F50 /* KSF_P073.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8132603934C004D1078 /* KSF_P073.ttf */; };
+		181B2D972608E03B00EB3F50 /* KSF_P074.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8202603934F004D1078 /* KSF_P074.ttf */; };
+		181B2D982608E03B00EB3F50 /* KSF_P075.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6FA2603931E004D1078 /* KSF_P075.ttf */; };
+		181B2D992608E03B00EB3F50 /* KSF_P076.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6742603930A004D1078 /* KSF_P076.ttf */; };
+		181B2D9A2608E03B00EB3F50 /* KSF_P077.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65926039306004D1078 /* KSF_P077.ttf */; };
+		181B2D9B2608E03B00EB3F50 /* KSF_P078.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85026039358004D1078 /* KSF_P078.ttf */; };
+		181B2D9C2608E03B00EB3F50 /* KSF_P079.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E02603931A004D1078 /* KSF_P079.ttf */; };
+		181B2D9D2608E03B00EB3F50 /* KSF_P080.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C67F2603930C004D1078 /* KSF_P080.ttf */; };
+		181B2D9E2608E03B00EB3F50 /* KSF_P081.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6822603930C004D1078 /* KSF_P081.ttf */; };
+		181B2D9F2608E03B00EB3F50 /* KSF_P082.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77526039330004D1078 /* KSF_P082.ttf */; };
+		181B2DA02608E03B00EB3F50 /* KSF_P083.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78726039332004D1078 /* KSF_P083.ttf */; };
+		181B2DA12608E03B00EB3F50 /* KSF_P084.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78126039331004D1078 /* KSF_P084.ttf */; };
+		181B2DA22608E03B00EB3F50 /* KSF_P085.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88226039364004D1078 /* KSF_P085.ttf */; };
+		181B2DA32608E03B00EB3F50 /* KSF_P086.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70826039320004D1078 /* KSF_P086.ttf */; };
+		181B2DA42608E03B00EB3F50 /* KSF_P087.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85326039359004D1078 /* KSF_P087.ttf */; };
+		181B2DA52608E03B00EB3F50 /* KSF_P088.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C12603933E004D1078 /* KSF_P088.ttf */; };
+		181B2DA62608E03B00EB3F50 /* KSF_P089.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6CD26039317004D1078 /* KSF_P089.ttf */; };
+		181B2DA72608E03B00EB3F50 /* KSF_P090.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C76F2603932F004D1078 /* KSF_P090.ttf */; };
+		181B2DA82608E03B00EB3F50 /* KSF_P091.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87C26039363004D1078 /* KSF_P091.ttf */; };
+		181B2DA92608E03B00EB3F50 /* KSF_P092.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89226039367004D1078 /* KSF_P092.ttf */; };
+		181B2DAA2608E03B00EB3F50 /* KSF_P093.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C02603933E004D1078 /* KSF_P093.ttf */; };
+		181B2DAB2608E03B00EB3F50 /* KSF_P094.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D926039319004D1078 /* KSF_P094.ttf */; };
+		181B2DAC2608E03B00EB3F50 /* KSF_P095.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6AC26039313004D1078 /* KSF_P095.ttf */; };
+		181B2DAD2608E03B00EB3F50 /* KSF_P096.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C76C2603932E004D1078 /* KSF_P096.ttf */; };
+		181B2DAE2608E03B00EB3F50 /* KSF_P097.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C86E2603935F004D1078 /* KSF_P097.ttf */; };
+		181B2DAF2608E03B00EB3F50 /* KSF_P098.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65A26039306004D1078 /* KSF_P098.ttf */; };
+		181B2DB02608E03B00EB3F50 /* KSF_P099.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D026039317004D1078 /* KSF_P099.ttf */; };
+		181B2DB12608E03B00EB3F50 /* KSF_P100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89A26039368004D1078 /* KSF_P100.ttf */; };
+		181B2DB22608E03B00EB3F50 /* KSF_P101.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74E2603932A004D1078 /* KSF_P101.ttf */; };
+		181B2DB32608E03B00EB3F50 /* KSF_P102.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F32603931D004D1078 /* KSF_P102.ttf */; };
+		181B2DB42608E03B00EB3F50 /* KSF_P103.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8252603934F004D1078 /* KSF_P103.ttf */; };
+		181B2DB52608E03B00EB3F50 /* KSF_P104.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64E26039304004D1078 /* KSF_P104.ttf */; };
+		181B2DB62608E03B00EB3F50 /* KSF_P105.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84026039355004D1078 /* KSF_P105.ttf */; };
+		181B2DB72608E03B00EB3F50 /* KSF_P106.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88326039364004D1078 /* KSF_P106.ttf */; };
+		181B2DB82608E03B00EB3F50 /* KSF_P107.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7002603931F004D1078 /* KSF_P107.ttf */; };
+		181B2DB92608E03B00EB3F50 /* KSF_P108.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83226039352004D1078 /* KSF_P108.ttf */; };
+		181B2DBA2608E03B00EB3F50 /* KSF_P109.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8232603934F004D1078 /* KSF_P109.ttf */; };
+		181B2DBB2608E03B00EB3F50 /* KSF_P110.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D726039319004D1078 /* KSF_P110.ttf */; };
+		181B2DBC2608E03B00EB3F50 /* KSF_P111.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7032603931F004D1078 /* KSF_P111.ttf */; };
+		181B2DBD2608E03B00EB3F50 /* KSF_P112.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79F26039337004D1078 /* KSF_P112.ttf */; };
+		181B2DBE2608E03B00EB3F50 /* KSF_P113.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F22603931D004D1078 /* KSF_P113.ttf */; };
+		181B2DBF2608E03B00EB3F50 /* KSF_P114.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B926039314004D1078 /* KSF_P114.ttf */; };
+		181B2DC02608E03B00EB3F50 /* KSF_P115.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87D26039363004D1078 /* KSF_P115.ttf */; };
+		181B2DC12608E03B00EB3F50 /* KSF_P116.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8192603934D004D1078 /* KSF_P116.ttf */; };
+		181B2DC22608E03B00EB3F50 /* KSF_P117.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66726039308004D1078 /* KSF_P117.ttf */; };
+		181B2DC32608E03B00EB3F50 /* KSF_P118.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79426039335004D1078 /* KSF_P118.ttf */; };
+		181B2DC42608E03B00EB3F50 /* KSF_P119.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C76B2603932E004D1078 /* KSF_P119.ttf */; };
+		181B2DC52608E03B00EB3F50 /* KSF_P120.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78426039332004D1078 /* KSF_P120.ttf */; };
+		181B2DC62608E03B00EB3F50 /* KSF_P121.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A526039338004D1078 /* KSF_P121.ttf */; };
+		181B2DC72608E03B00EB3F50 /* KSF_P122.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A026039337004D1078 /* KSF_P122.ttf */; };
+		181B2DC82608E03B00EB3F50 /* KSF_P123.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C75E2603932C004D1078 /* KSF_P123.ttf */; };
+		181B2DC92608E03B00EB3F50 /* KSF_P124.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6702603930A004D1078 /* KSF_P124.ttf */; };
+		181B2DCA2608E03B00EB3F50 /* KSF_P125.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B026039313004D1078 /* KSF_P125.ttf */; };
+		181B2DCB2608E03B00EB3F50 /* KSF_P126.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6842603930D004D1078 /* KSF_P126.ttf */; };
+		181B2DCC2608E03B00EB3F50 /* KSF_P127.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89626039368004D1078 /* KSF_P127.ttf */; };
+		181B2DCD2608E03B00EB3F50 /* KSF_P128.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74C26039329004D1078 /* KSF_P128.ttf */; };
+		181B2DCE2608E03B00EB3F50 /* KSF_P129.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7522603932A004D1078 /* KSF_P129.ttf */; };
+		181B2DCF2608E03B00EB3F50 /* KSF_P130.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71F26039323004D1078 /* KSF_P130.ttf */; };
+		181B2DD02608E03B00EB3F50 /* KSF_P131.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78926039333004D1078 /* KSF_P131.ttf */; };
+		181B2DD12608E03B00EB3F50 /* KSF_P132.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79026039334004D1078 /* KSF_P132.ttf */; };
+		181B2DD22608E03B00EB3F50 /* KSF_P133.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D526039341004D1078 /* KSF_P133.ttf */; };
+		181B2DD32608E03B00EB3F50 /* KSF_P134.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C86D2603935E004D1078 /* KSF_P134.ttf */; };
+		181B2DD42608E03B00EB3F50 /* KSF_P135.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6AA26039312004D1078 /* KSF_P135.ttf */; };
+		181B2DD52608E03B00EB3F50 /* KSF_P136.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80F2603934B004D1078 /* KSF_P136.ttf */; };
+		181B2DD62608E03B00EB3F50 /* KSF_P137.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C026039315004D1078 /* KSF_P137.ttf */; };
+		181B2DD72608E03B00EB3F50 /* KSF_P138.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82726039350004D1078 /* KSF_P138.ttf */; };
+		181B2DD82608E03B00EB3F50 /* KSF_P139.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7682603932D004D1078 /* KSF_P139.ttf */; };
+		181B2DD92608E03B00EB3F50 /* KSF_P140.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E82603931B004D1078 /* KSF_P140.ttf */; };
+		181B2DDA2608E03B00EB3F50 /* KSF_P141.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7672603932D004D1078 /* KSF_P141.ttf */; };
+		181B2DDB2608E03B00EB3F50 /* KSF_P142.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6EC2603931C004D1078 /* KSF_P142.ttf */; };
+		181B2DDC2608E03B00EB3F50 /* KSF_P143.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E826039344004D1078 /* KSF_P143.ttf */; };
+		181B2DDD2608E03B00EB3F50 /* KSF_P144.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64926039303004D1078 /* KSF_P144.ttf */; };
+		181B2DDE2608E03B00EB3F50 /* KSF_P145.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7EC26039345004D1078 /* KSF_P145.ttf */; };
+		181B2DDF2608E03B00EB3F50 /* KSF_P146.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C69D26039310004D1078 /* KSF_P146.ttf */; };
+		181B2DE02608E03B00EB3F50 /* KSF_P147.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64F26039304004D1078 /* KSF_P147.ttf */; };
+		181B2DE12608E03B00EB3F50 /* KSF_P148.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E026039343004D1078 /* KSF_P148.ttf */; };
+		181B2DE22608E03B00EB3F50 /* KSF_P149.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84D26039358004D1078 /* KSF_P149.ttf */; };
+		181B2DE32608E03B00EB3F50 /* KSF_P150.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80026039349004D1078 /* KSF_P150.ttf */; };
+		181B2DE42608E03B00EB3F50 /* KSF_P151.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D526039318004D1078 /* KSF_P151.ttf */; };
+		181B2DE52608E03B00EB3F50 /* KSF_P152.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88526039365004D1078 /* KSF_P152.ttf */; };
+		181B2DE62608E03B00EB3F50 /* KSF_P153.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89726039368004D1078 /* KSF_P153.ttf */; };
+		181B2DE72608E03B00EB3F50 /* KSF_P154.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6CC26039317004D1078 /* KSF_P154.ttf */; };
+		181B2DE82608E03B00EB3F50 /* KSF_P155.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70B26039320004D1078 /* KSF_P155.ttf */; };
+		181B2DE92608E03B00EB3F50 /* KSF_P156.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74D2603932A004D1078 /* KSF_P156.ttf */; };
+		181B2DEA2608E03B00EB3F50 /* KSF_P157.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71C26039322004D1078 /* KSF_P157.ttf */; };
+		181B2DEB2608E03B00EB3F50 /* KSF_P158.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6942603930F004D1078 /* KSF_P158.ttf */; };
+		181B2DEC2608E03B00EB3F50 /* KSF_P159.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6872603930D004D1078 /* KSF_P159.ttf */; };
+		181B2DED2608E03B00EB3F50 /* KSF_P160.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C82603933F004D1078 /* KSF_P160.ttf */; };
+		181B2DEE2608E03B00EB3F50 /* KSF_P161.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8602603935B004D1078 /* KSF_P161.ttf */; };
+		181B2DEF2608E03B00EB3F50 /* KSF_P162.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88826039365004D1078 /* KSF_P162.ttf */; };
+		181B2DF02608E03B00EB3F50 /* KSF_P163.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6AF26039313004D1078 /* KSF_P163.ttf */; };
+		181B2DF12608E03B00EB3F50 /* KSF_P164.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8592603935A004D1078 /* KSF_P164.ttf */; };
+		181B2DF22608E03B00EB3F50 /* KSF_P165.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82C26039350004D1078 /* KSF_P165.ttf */; };
+		181B2DF32608E03B00EB3F50 /* KSF_P166.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79526039335004D1078 /* KSF_P166.ttf */; };
+		181B2DF42608E03B00EB3F50 /* KSF_P167.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E226039343004D1078 /* KSF_P167.ttf */; };
+		181B2DF52608E03B00EB3F50 /* KSF_P168.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71D26039323004D1078 /* KSF_P168.ttf */; };
+		181B2DF62608E03B00EB3F50 /* KSF_P169.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7EE26039346004D1078 /* KSF_P169.ttf */; };
+		181B2DF72608E03B00EB3F50 /* KSF_P170.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E72603931B004D1078 /* KSF_P170.ttf */; };
+		181B2DF82608E03B00EB3F50 /* KSF_P171.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D726039342004D1078 /* KSF_P171.ttf */; };
+		181B2DF92608E03B00EB3F50 /* KSF_P172.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73A26039326004D1078 /* KSF_P172.ttf */; };
+		181B2DFA2608E03B00EB3F50 /* KSF_P173.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71526039321004D1078 /* KSF_P173.ttf */; };
+		181B2DFB2608E03B00EB3F50 /* KSF_P174.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84A26039357004D1078 /* KSF_P174.ttf */; };
+		181B2DFC2608E03B00EB3F50 /* KSF_P175.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8092603934A004D1078 /* KSF_P175.ttf */; };
+		181B2DFD2608E03B00EB3F50 /* KSF_P176.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8682603935D004D1078 /* KSF_P176.ttf */; };
+		181B2DFE2608E03B00EB3F50 /* KSF_P177.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6BE26039315004D1078 /* KSF_P177.ttf */; };
+		181B2DFF2608E03B00EB3F50 /* KSF_P178.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F42603931D004D1078 /* KSF_P178.ttf */; };
+		181B2E002608E03B00EB3F50 /* KSF_P179.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C86F2603935F004D1078 /* KSF_P179.ttf */; };
+		181B2E012608E03B00EB3F50 /* KSF_P180.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78E26039334004D1078 /* KSF_P180.ttf */; };
+		181B2E022608E03B00EB3F50 /* KSF_P181.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89E26039369004D1078 /* KSF_P181.ttf */; };
+		181B2E032608E03B00EB3F50 /* KSF_P182.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74A26039329004D1078 /* KSF_P182.ttf */; };
+		181B2E042608E03B00EB3F50 /* KSF_P183.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F626039347004D1078 /* KSF_P183.ttf */; };
+		181B2E052608E03B00EB3F50 /* KSF_P184.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F62603931D004D1078 /* KSF_P184.ttf */; };
+		181B2E062608E03B00EB3F50 /* KSF_P185.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82926039350004D1078 /* KSF_P185.ttf */; };
+		181B2E072608E03B00EB3F50 /* KSF_P186.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84526039356004D1078 /* KSF_P186.ttf */; };
+		181B2E082608E03B00EB3F50 /* KSF_P187.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6FC2603931E004D1078 /* KSF_P187.ttf */; };
+		181B2E092608E03B00EB3F50 /* KSF_P188.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79626039335004D1078 /* KSF_P188.ttf */; };
+		181B2E0A2608E03B00EB3F50 /* KSF_P189.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6DC26039319004D1078 /* KSF_P189.ttf */; };
+		181B2E0B2608E03B00EB3F50 /* KSF_P190.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D626039342004D1078 /* KSF_P190.ttf */; };
+		181B2E0C2608E03B00EB3F50 /* KSF_P191.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72126039323004D1078 /* KSF_P191.ttf */; };
+		181B2E0D2608E03B00EB3F50 /* KSF_P192.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71226039321004D1078 /* KSF_P192.ttf */; };
+		181B2E0E2608E03B00EB3F50 /* KSF_P193.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7662603932D004D1078 /* KSF_P193.ttf */; };
+		181B2E0F2608E03B00EB3F50 /* KSF_P194.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E926039345004D1078 /* KSF_P194.ttf */; };
+		181B2E102608E03B00EB3F50 /* KSF_P195.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8142603934C004D1078 /* KSF_P195.ttf */; };
+		181B2E112608E03B00EB3F50 /* KSF_P196.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7BF2603933E004D1078 /* KSF_P196.ttf */; };
+		181B2E122608E03B00EB3F50 /* KSF_P197.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7042603931F004D1078 /* KSF_P197.ttf */; };
+		181B2E132608E03B00EB3F50 /* KSF_P198.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A926039339004D1078 /* KSF_P198.ttf */; };
+		181B2E142608E03B00EB3F50 /* KSF_P199.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74026039327004D1078 /* KSF_P199.ttf */; };
+		181B2E152608E03B00EB3F50 /* KSF_P200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78526039332004D1078 /* KSF_P200.ttf */; };
+		181B2E162608E03B00EB3F50 /* KSF_P201.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80B2603934A004D1078 /* KSF_P201.ttf */; };
+		181B2E172608E03B00EB3F50 /* KSF_P202.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C81D2603934E004D1078 /* KSF_P202.ttf */; };
+		181B2E182608E03B00EB3F50 /* KSF_P203.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77F26039331004D1078 /* KSF_P203.ttf */; };
+		181B2E192608E03B00EB3F50 /* KSF_P204.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6CE26039317004D1078 /* KSF_P204.ttf */; };
+		181B2E1A2608E03B00EB3F50 /* KSF_P205.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B226039313004D1078 /* KSF_P205.ttf */; };
+		181B2E1B2608E03B00EB3F50 /* KSF_P206.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66C26039309004D1078 /* KSF_P206.ttf */; };
+		181B2E1C2608E03B00EB3F50 /* KSF_P207.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82E26039351004D1078 /* KSF_P207.ttf */; };
+		181B2E1D2608E03B00EB3F50 /* KSF_P208.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66B26039309004D1078 /* KSF_P208.ttf */; };
+		181B2E1E2608E03B00EB3F50 /* KSF_P209.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7052603931F004D1078 /* KSF_P209.ttf */; };
+		181B2E1F2608E03B00EB3F50 /* KSF_P210.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A226039338004D1078 /* KSF_P210.ttf */; };
+		181B2E202608E03B00EB3F50 /* KSF_P211.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7552603932B004D1078 /* KSF_P211.ttf */; };
+		181B2E212608E03B00EB3F50 /* KSF_P212.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6972603930F004D1078 /* KSF_P212.ttf */; };
+		181B2E222608E03B00EB3F50 /* KSF_P213.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8152603934D004D1078 /* KSF_P213.ttf */; };
+		181B2E232608E03B00EB3F50 /* KSF_P214.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7FA26039348004D1078 /* KSF_P214.ttf */; };
+		181B2E242608E03B00EB3F50 /* KSF_P215.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66926039309004D1078 /* KSF_P215.ttf */; };
+		181B2E252608E03B00EB3F50 /* KSF_P216.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82A26039350004D1078 /* KSF_P216.ttf */; };
+		181B2E262608E03B00EB3F50 /* KSF_P217.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65B26039306004D1078 /* KSF_P217.ttf */; };
+		181B2E272608E03B00EB3F50 /* KSF_P218.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84126039355004D1078 /* KSF_P218.ttf */; };
+		181B2E282608E03B00EB3F50 /* KSF_P219.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7BE2603933D004D1078 /* KSF_P219.ttf */; };
+		181B2E292608E03B00EB3F50 /* KSF_P220.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80526039349004D1078 /* KSF_P220.ttf */; };
+		181B2E2A2608E03B00EB3F50 /* KSF_P221.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7DB26039342004D1078 /* KSF_P221.ttf */; };
+		181B2E2B2608E03B00EB3F50 /* KSF_P222.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E126039343004D1078 /* KSF_P222.ttf */; };
+		181B2E2C2608E03B00EB3F50 /* KSF_P223.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66126039307004D1078 /* KSF_P223.ttf */; };
+		181B2E2D2608E03B00EB3F50 /* KSF_P224.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B426039314004D1078 /* KSF_P224.ttf */; };
+		181B2E2E2608E03B00EB3F50 /* KSF_P225.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6952603930F004D1078 /* KSF_P225.ttf */; };
+		181B2E2F2608E03B00EB3F50 /* KSF_P226.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85E2603935B004D1078 /* KSF_P226.ttf */; };
+		181B2E302608E03B00EB3F50 /* KSF_P227.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B126039313004D1078 /* KSF_P227.ttf */; };
+		181B2E312608E03B00EB3F50 /* KSF_P228.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66A26039309004D1078 /* KSF_P228.ttf */; };
+		181B2E322608E03B00EB3F50 /* KSF_P229.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77C26039331004D1078 /* KSF_P229.ttf */; };
+		181B2E332608E03B00EB3F50 /* KSF_P230.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7622603932C004D1078 /* KSF_P230.ttf */; };
+		181B2E342608E03B00EB3F50 /* KSF_P231.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74F2603932A004D1078 /* KSF_P231.ttf */; };
+		181B2E352608E03B00EB3F50 /* KSF_P232.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88F26039366004D1078 /* KSF_P232.ttf */; };
+		181B2E362608E03B00EB3F50 /* KSF_P233.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8572603935A004D1078 /* KSF_P233.ttf */; };
+		181B2E372608E03B00EB3F50 /* KSF_P234.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7FB26039348004D1078 /* KSF_P234.ttf */; };
+		181B2E382608E03B00EB3F50 /* KSF_P235.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C68A2603930D004D1078 /* KSF_P235.ttf */; };
+		181B2E392608E03B00EB3F50 /* KSF_P236.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66E26039309004D1078 /* KSF_P236.ttf */; };
+		181B2E3A2608E03B00EB3F50 /* KSF_P237.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71426039321004D1078 /* KSF_P237.ttf */; };
+		181B2E3B2608E03B00EB3F50 /* KSF_P238.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83D26039354004D1078 /* KSF_P238.ttf */; };
+		181B2E3C2608E03B00EB3F50 /* KSF_P239.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8642603935C004D1078 /* KSF_P239.ttf */; };
+		181B2E3D2608E03B00EB3F50 /* KSF_P240.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87E26039363004D1078 /* KSF_P240.ttf */; };
+		181B2E3E2608E03B00EB3F50 /* KSF_P241.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6DF2603931A004D1078 /* KSF_P241.ttf */; };
+		181B2E3F2608E03B00EB3F50 /* KSF_P242.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B326039313004D1078 /* KSF_P242.ttf */; };
+		181B2E402608E03B00EB3F50 /* KSF_P243.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77626039330004D1078 /* KSF_P243.ttf */; };
+		181B2E412608E03B00EB3F50 /* KSF_P244.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78626039332004D1078 /* KSF_P244.ttf */; };
+		181B2E422608E03B00EB3F50 /* KSF_P245.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71E26039323004D1078 /* KSF_P245.ttf */; };
+		181B2E432608E03B00EB3F50 /* KSF_P246.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6992603930F004D1078 /* KSF_P246.ttf */; };
+		181B2E442608E03B00EB3F50 /* KSF_P247.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79C26039336004D1078 /* KSF_P247.ttf */; };
+		181B2E452608E03B00EB3F50 /* KSF_P248.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C22603933E004D1078 /* KSF_P248.ttf */; };
+		181B2E462608E03B00EB3F50 /* KSF_P249.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8692603935D004D1078 /* KSF_P249.ttf */; };
+		181B2E472608E03B00EB3F50 /* KSF_P250.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6922603930F004D1078 /* KSF_P250.ttf */; };
+		181B2E482608E03B00EB3F50 /* KSF_P251.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6EB2603931C004D1078 /* KSF_P251.ttf */; };
+		181B2E492608E03B00EB3F50 /* KSF_P252.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B02603933B004D1078 /* KSF_P252.ttf */; };
+		181B2E4A2608E03B00EB3F50 /* KSF_P253.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73526039326004D1078 /* KSF_P253.ttf */; };
+		181B2E4B2608E03B00EB3F50 /* KSF_P254.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6772603930B004D1078 /* KSF_P254.ttf */; };
+		181B2E4C2608E03B00EB3F50 /* KSF_P255.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6DE2603931A004D1078 /* KSF_P255.ttf */; };
+		181B2E4D2608E03B00EB3F50 /* KSF_P256.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A526039312004D1078 /* KSF_P256.ttf */; };
+		181B2E4E2608E03B00EB3F50 /* KSF_P257.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66026039307004D1078 /* KSF_P257.ttf */; };
+		181B2E4F2608E03B00EB3F50 /* KSF_P258.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E32603931B004D1078 /* KSF_P258.ttf */; };
+		181B2E502608E03B00EB3F50 /* KSF_P259.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6FD2603931E004D1078 /* KSF_P259.ttf */; };
+		181B2E512608E03B00EB3F50 /* KSF_P260.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87326039360004D1078 /* KSF_P260.ttf */; };
+		181B2E522608E03B00EB3F50 /* KSF_P261.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87B26039362004D1078 /* KSF_P261.ttf */; };
+		181B2E532608E03B00EB3F50 /* KSF_P262.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88C26039366004D1078 /* KSF_P262.ttf */; };
+		181B2E542608E03B00EB3F50 /* KSF_P263.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C67D2603930C004D1078 /* KSF_P263.ttf */; };
+		181B2E552608E03B00EB3F50 /* KSF_P264.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84826039357004D1078 /* KSF_P264.ttf */; };
+		181B2E562608E03B00EB3F50 /* KSF_P265.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79826039336004D1078 /* KSF_P265.ttf */; };
+		181B2E572608E03B00EB3F50 /* KSF_P266.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73C26039327004D1078 /* KSF_P266.ttf */; };
+		181B2E582608E03B00EB3F50 /* KSF_P267.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83026039352004D1078 /* KSF_P267.ttf */; };
+		181B2E592608E03B00EB3F50 /* KSF_P268.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E526039344004D1078 /* KSF_P268.ttf */; };
+		181B2E5A2608E03B00EB3F50 /* KSF_P269.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83A26039354004D1078 /* KSF_P269.ttf */; };
+		181B2E5B2608E03C00EB3F50 /* KSF_P270.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8112603934C004D1078 /* KSF_P270.ttf */; };
+		181B2E5C2608E03C00EB3F50 /* KSF_P271.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6FB2603931E004D1078 /* KSF_P271.ttf */; };
+		181B2E5D2608E03C00EB3F50 /* KSF_P272.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C326039315004D1078 /* KSF_P272.ttf */; };
+		181B2E5E2608E03C00EB3F50 /* KSF_P273.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6AE26039313004D1078 /* KSF_P273.ttf */; };
+		181B2E5F2608E03C00EB3F50 /* KSF_P274.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7702603932F004D1078 /* KSF_P274.ttf */; };
+		181B2E602608E03C00EB3F50 /* KSF_P275.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6962603930F004D1078 /* KSF_P275.ttf */; };
+		181B2E612608E03C00EB3F50 /* KSF_P276.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7AF2603933A004D1078 /* KSF_P276.ttf */; };
+		181B2E622608E03C00EB3F50 /* KSF_P277.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79D26039336004D1078 /* KSF_P277.ttf */; };
+		181B2E632608E03C00EB3F50 /* KSF_P278.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7CF26039340004D1078 /* KSF_P278.ttf */; };
+		181B2E642608E03C00EB3F50 /* KSF_P279.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72B26039324004D1078 /* KSF_P279.ttf */; };
+		181B2E652608E03C00EB3F50 /* KSF_P280.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89426039367004D1078 /* KSF_P280.ttf */; };
+		181B2E662608E03C00EB3F50 /* KSF_P281.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C76D2603932E004D1078 /* KSF_P281.ttf */; };
+		181B2E672608E03C00EB3F50 /* KSF_P282.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8062603934A004D1078 /* KSF_P282.ttf */; };
+		181B2E682608E03C00EB3F50 /* KSF_P283.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8082603934A004D1078 /* KSF_P283.ttf */; };
+		181B2E692608E03C00EB3F50 /* KSF_P284.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7AD26039339004D1078 /* KSF_P284.ttf */; };
+		181B2E6A2608E03C00EB3F50 /* KSF_P285.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6BA26039314004D1078 /* KSF_P285.ttf */; };
+		181B2E6B2608E03C00EB3F50 /* KSF_P286.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6EA2603931B004D1078 /* KSF_P286.ttf */; };
+		181B2E6C2608E03C00EB3F50 /* KSF_P287.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74126039327004D1078 /* KSF_P287.ttf */; };
+		181B2E6D2608E03C00EB3F50 /* KSF_P288.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89D26039369004D1078 /* KSF_P288.ttf */; };
+		181B2E6E2608E03C00EB3F50 /* KSF_P289.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8122603934C004D1078 /* KSF_P289.ttf */; };
+		181B2E6F2608E03C00EB3F50 /* KSF_P290.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83126039352004D1078 /* KSF_P290.ttf */; };
+		181B2E702608E03C00EB3F50 /* KSF_P291.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78D26039333004D1078 /* KSF_P291.ttf */; };
+		181B2E712608E03C00EB3F50 /* KSF_P292.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85126039359004D1078 /* KSF_P292.ttf */; };
+		181B2E722608E03C00EB3F50 /* KSF_P293.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77D26039331004D1078 /* KSF_P293.ttf */; };
+		181B2E732608E03C00EB3F50 /* KSF_P294.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6862603930D004D1078 /* KSF_P294.ttf */; };
+		181B2E742608E03C00EB3F50 /* KSF_P295.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8072603934A004D1078 /* KSF_P295.ttf */; };
+		181B2E752608E03C00EB3F50 /* KSF_P296.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72E26039325004D1078 /* KSF_P296.ttf */; };
+		181B2E762608E03C00EB3F50 /* KSF_P297.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77B26039331004D1078 /* KSF_P297.ttf */; };
+		181B2E772608E03C00EB3F50 /* KSF_P298.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71826039322004D1078 /* KSF_P298.ttf */; };
+		181B2E782608E03C00EB3F50 /* KSF_P299.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D926039342004D1078 /* KSF_P299.ttf */; };
+		181B2E792608E03C00EB3F50 /* KSF_P300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87F26039363004D1078 /* KSF_P300.ttf */; };
+		181B2E7A2608E03C00EB3F50 /* KSF_P301.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73B26039327004D1078 /* KSF_P301.ttf */; };
+		181B2E7B2608E03C00EB3F50 /* KSF_P302.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82F26039351004D1078 /* KSF_P302.ttf */; };
+		181B2E7C2608E03C00EB3F50 /* KSF_P303.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7652603932D004D1078 /* KSF_P303.ttf */; };
+		181B2E7D2608E03C00EB3F50 /* KSF_P304.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74526039328004D1078 /* KSF_P304.ttf */; };
+		181B2E7E2608E03C00EB3F50 /* KSF_P305.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7AE2603933A004D1078 /* KSF_P305.ttf */; };
+		181B2E7F2608E03C00EB3F50 /* KSF_P306.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83B26039354004D1078 /* KSF_P306.ttf */; };
+		181B2E802608E03C00EB3F50 /* KSF_P307.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72626039324004D1078 /* KSF_P307.ttf */; };
+		181B2E812608E03C00EB3F50 /* KSF_P308.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65F26039307004D1078 /* KSF_P308.ttf */; };
+		181B2E822608E03C00EB3F50 /* KSF_P309.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64626039303004D1078 /* KSF_P309.ttf */; };
+		181B2E832608E03C00EB3F50 /* KSF_P310.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C42603933E004D1078 /* KSF_P310.ttf */; };
+		181B2E842608E03C00EB3F50 /* KSF_P311.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F126039346004D1078 /* KSF_P311.ttf */; };
+		181B2E852608E03C00EB3F50 /* KSF_P312.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7FE26039348004D1078 /* KSF_P312.ttf */; };
+		181B2E862608E03C00EB3F50 /* KSF_P313.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7692603932D004D1078 /* KSF_P313.ttf */; };
+		181B2E872608E03C00EB3F50 /* KSF_P314.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87A26039362004D1078 /* KSF_P314.ttf */; };
+		181B2E882608E03C00EB3F50 /* KSF_P315.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78C26039333004D1078 /* KSF_P315.ttf */; };
+		181B2E892608E03C00EB3F50 /* KSF_P316.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70F26039321004D1078 /* KSF_P316.ttf */; };
+		181B2E8A2608E03C00EB3F50 /* KSF_P317.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C32603933E004D1078 /* KSF_P317.ttf */; };
+		181B2E8B2608E03C00EB3F50 /* KSF_P318.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6ED2603931C004D1078 /* KSF_P318.ttf */; };
+		181B2E8C2608E03C00EB3F50 /* KSF_P319.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E326039344004D1078 /* KSF_P319.ttf */; };
+		181B2E8D2608E03C00EB3F50 /* KSF_P320.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C69A2603930F004D1078 /* KSF_P320.ttf */; };
+		181B2E8E2608E03C00EB3F50 /* KSF_P321.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72F26039325004D1078 /* KSF_P321.ttf */; };
+		181B2E8F2608E03C00EB3F50 /* KSF_P322.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6BC26039315004D1078 /* KSF_P322.ttf */; };
+		181B2E902608E03C00EB3F50 /* KSF_P323.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6762603930B004D1078 /* KSF_P323.ttf */; };
+		181B2E912608E03C00EB3F50 /* KSF_P324.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D026039340004D1078 /* KSF_P324.ttf */; };
+		181B2E922608E03C00EB3F50 /* KSF_P325.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D326039318004D1078 /* KSF_P325.ttf */; };
+		181B2E932608E03C00EB3F50 /* KSF_P326.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A826039339004D1078 /* KSF_P326.ttf */; };
+		181B2E942608E03C00EB3F50 /* KSF_P327.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64A26039303004D1078 /* KSF_P327.ttf */; };
+		181B2E952608E03C00EB3F50 /* KSF_P328.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84426039356004D1078 /* KSF_P328.ttf */; };
+		181B2E962608E03C00EB3F50 /* KSF_P329.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65026039304004D1078 /* KSF_P329.ttf */; };
+		181B2E972608E03C00EB3F50 /* KSF_P330.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C68C2603930E004D1078 /* KSF_P330.ttf */; };
+		181B2E982608E03C00EB3F50 /* KSF_P331.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7CC26039340004D1078 /* KSF_P331.ttf */; };
+		181B2E992608E03C00EB3F50 /* KSF_P332.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C81C2603934E004D1078 /* KSF_P332.ttf */; };
+		181B2E9A2608E03C00EB3F50 /* KSF_P333.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7722603932F004D1078 /* KSF_P333.ttf */; };
+		181B2E9B2608E03C00EB3F50 /* KSF_P334.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8182603934D004D1078 /* KSF_P334.ttf */; };
+		181B2E9C2608E03C00EB3F50 /* KSF_P335.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F026039346004D1078 /* KSF_P335.ttf */; };
+		181B2E9D2608E03C00EB3F50 /* KSF_P336.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8652603935C004D1078 /* KSF_P336.ttf */; };
+		181B2E9E2608E03C00EB3F50 /* KSF_P337.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85526039359004D1078 /* KSF_P337.ttf */; };
+		181B2E9F2608E03C00EB3F50 /* KSF_P338.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6EE2603931C004D1078 /* KSF_P338.ttf */; };
+		181B2EA02608E03C00EB3F50 /* KSF_P339.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71326039321004D1078 /* KSF_P339.ttf */; };
+		181B2EA12608E03C00EB3F50 /* KSF_P340.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C72603933F004D1078 /* KSF_P340.ttf */; };
+		181B2EA22608E03C00EB3F50 /* KSF_P341.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82B26039350004D1078 /* KSF_P341.ttf */; };
+		181B2EA32608E03C00EB3F50 /* KSF_P342.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D326039341004D1078 /* KSF_P342.ttf */; };
+		181B2EA42608E03C00EB3F50 /* KSF_P343.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83726039353004D1078 /* KSF_P343.ttf */; };
+		181B2EA52608E03C00EB3F50 /* KSF_P344.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6902603930E004D1078 /* KSF_P344.ttf */; };
+		181B2EA62608E03C00EB3F50 /* KSF_P345.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6712603930A004D1078 /* KSF_P345.ttf */; };
+		181B2EA72608E03C00EB3F50 /* KSF_P346.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6912603930E004D1078 /* KSF_P346.ttf */; };
+		181B2EA82608E03C00EB3F50 /* KSF_P347.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79326039335004D1078 /* KSF_P347.ttf */; };
+		181B2EA92608E03C00EB3F50 /* KSF_P348.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F426039347004D1078 /* KSF_P348.ttf */; };
+		181B2EAA2608E03C00EB3F50 /* KSF_P349.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77926039330004D1078 /* KSF_P349.ttf */; };
+		181B2EAB2608E03C00EB3F50 /* KSF_P350.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79226039335004D1078 /* KSF_P350.ttf */; };
+		181B2EAC2608E03C00EB3F50 /* KSF_P351.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72C26039325004D1078 /* KSF_P351.ttf */; };
+		181B2EAD2608E03C00EB3F50 /* KSF_P352.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6852603930D004D1078 /* KSF_P352.ttf */; };
+		181B2EAE2608E03C00EB3F50 /* KSF_P353.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C826039316004D1078 /* KSF_P353.ttf */; };
+		181B2EAF2608E03C00EB3F50 /* KSF_P354.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F926039347004D1078 /* KSF_P354.ttf */; };
+		181B2EB02608E03C00EB3F50 /* KSF_P355.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72526039324004D1078 /* KSF_P355.ttf */; };
+		181B2EB12608E03C00EB3F50 /* KSF_P356.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65826039306004D1078 /* KSF_P356.ttf */; };
+		181B2EB22608E03C00EB3F50 /* KSF_P357.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C67E2603930C004D1078 /* KSF_P357.ttf */; };
+		181B2EB32608E03C00EB3F50 /* KSF_P358.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7CA2603933F004D1078 /* KSF_P358.ttf */; };
+		181B2EB42608E03C00EB3F50 /* KSF_P359.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7612603932C004D1078 /* KSF_P359.ttf */; };
+		181B2EB52608E03C00EB3F50 /* KSF_P360.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A226039311004D1078 /* KSF_P360.ttf */; };
+		181B2EB62608E03C00EB3F50 /* KSF_P361.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7642603932D004D1078 /* KSF_P361.ttf */; };
+		181B2EB72608E03C00EB3F50 /* KSF_P362.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E92603931B004D1078 /* KSF_P362.ttf */; };
+		181B2EB82608E03C00EB3F50 /* KSF_P363.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D426039318004D1078 /* KSF_P363.ttf */; };
+		181B2EB92608E03C00EB3F50 /* KSF_P364.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7CB26039340004D1078 /* KSF_P364.ttf */; };
+		181B2EBA2608E03C00EB3F50 /* KSF_P365.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66226039308004D1078 /* KSF_P365.ttf */; };
+		181B2EBB2608E03C00EB3F50 /* KSF_P366.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C67C2603930B004D1078 /* KSF_P366.ttf */; };
+		181B2EBC2608E03C00EB3F50 /* KSF_P367.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8702603935F004D1078 /* KSF_P367.ttf */; };
+		181B2EBD2608E03C00EB3F50 /* KSF_P368.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E42603931B004D1078 /* KSF_P368.ttf */; };
+		181B2EBE2608E03C00EB3F50 /* KSF_P369.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74726039328004D1078 /* KSF_P369.ttf */; };
+		181B2EBF2608E03C00EB3F50 /* KSF_P370.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C69F26039310004D1078 /* KSF_P370.ttf */; };
+		181B2EC02608E03C00EB3F50 /* KSF_P371.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70626039320004D1078 /* KSF_P371.ttf */; };
+		181B2EC12608E03C00EB3F50 /* KSF_P372.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73826039326004D1078 /* KSF_P372.ttf */; };
+		181B2EC22608E03C00EB3F50 /* KSF_P373.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F02603931C004D1078 /* KSF_P373.ttf */; };
+		181B2EC32608E03C00EB3F50 /* KSF_P374.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6892603930D004D1078 /* KSF_P374.ttf */; };
+		181B2EC42608E03C00EB3F50 /* KSF_P375.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74B26039329004D1078 /* KSF_P375.ttf */; };
+		181B2EC52608E03C00EB3F50 /* KSF_P376.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A826039312004D1078 /* KSF_P376.ttf */; };
+		181B2EC62608E03C00EB3F50 /* KSF_P377.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C86C2603935E004D1078 /* KSF_P377.ttf */; };
+		181B2EC72608E03C00EB3F50 /* KSF_P378.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72426039323004D1078 /* KSF_P378.ttf */; };
+		181B2EC82608E03C00EB3F50 /* KSF_P379.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77A26039330004D1078 /* KSF_P379.ttf */; };
+		181B2EC92608E03C00EB3F50 /* KSF_P380.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65326039305004D1078 /* KSF_P380.ttf */; };
+		181B2ECA2608E03C00EB3F50 /* KSF_P381.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B62603933C004D1078 /* KSF_P381.ttf */; };
+		181B2ECB2608E03C00EB3F50 /* KSF_P382.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64D26039304004D1078 /* KSF_P382.ttf */; };
+		181B2ECC2608E03C00EB3F50 /* KSF_P383.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C76E2603932E004D1078 /* KSF_P383.ttf */; };
+		181B2ECD2608E03C00EB3F50 /* KSF_P384.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6752603930A004D1078 /* KSF_P384.ttf */; };
+		181B2ECE2608E03C00EB3F50 /* KSF_P385.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89326039367004D1078 /* KSF_P385.ttf */; };
+		181B2ECF2608E03C00EB3F50 /* KSF_P386.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65426039305004D1078 /* KSF_P386.ttf */; };
+		181B2ED02608E03C00EB3F50 /* KSF_P387.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B12603933B004D1078 /* KSF_P387.ttf */; };
+		181B2ED12608E03C00EB3F50 /* KSF_P388.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66526039308004D1078 /* KSF_P388.ttf */; };
+		181B2ED22608E03C00EB3F50 /* KSF_P389.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78B26039333004D1078 /* KSF_P389.ttf */; };
+		181B2ED32608E03C00EB3F50 /* KSF_P390.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65C26039307004D1078 /* KSF_P390.ttf */; };
+		181B2ED42608E03C00EB3F50 /* KSF_P391.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74626039328004D1078 /* KSF_P391.ttf */; };
+		181B2ED52608E03C00EB3F50 /* KSF_P392.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71626039322004D1078 /* KSF_P392.ttf */; };
+		181B2ED62608E03C00EB3F50 /* KSF_P393.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C81B2603934E004D1078 /* KSF_P393.ttf */; };
+		181B2ED72608E03C00EB3F50 /* KSF_P394.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8172603934D004D1078 /* KSF_P394.ttf */; };
+		181B2ED82608E03C00EB3F50 /* KSF_P395.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88D26039366004D1078 /* KSF_P395.ttf */; };
+		181B2ED92608E03C00EB3F50 /* KSF_P396.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8622603935C004D1078 /* KSF_P396.ttf */; };
+		181B2EDA2608E03C00EB3F50 /* KSF_P397.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85F2603935B004D1078 /* KSF_P397.ttf */; };
+		181B2EDB2608E03C00EB3F50 /* KSF_P398.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73626039326004D1078 /* KSF_P398.ttf */; };
+		181B2EDC2608E03C00EB3F50 /* KSF_P399.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89026039366004D1078 /* KSF_P399.ttf */; };
+		181B2EDD2608E03C00EB3F50 /* KSF_P400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79B26039336004D1078 /* KSF_P400.ttf */; };
+		181B2EDE2608E03C00EB3F50 /* KSF_P401.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88626039365004D1078 /* KSF_P401.ttf */; };
+		181B2EDF2608E03C00EB3F50 /* KSF_P402.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A326039338004D1078 /* KSF_P402.ttf */; };
+		181B2EE02608E03C00EB3F50 /* KSF_P403.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70C26039320004D1078 /* KSF_P403.ttf */; };
+		181B2EE12608E03C00EB3F50 /* KSF_P404.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79A26039336004D1078 /* KSF_P404.ttf */; };
+		181B2EE22608E03C00EB3F50 /* KSF_P405.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87926039362004D1078 /* KSF_P405.ttf */; };
+		181B2EE32608E03C00EB3F50 /* KSF_P406.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6CA26039317004D1078 /* KSF_P406.ttf */; };
+		181B2EE42608E03C00EB3F50 /* KSF_P407.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85C2603935A004D1078 /* KSF_P407.ttf */; };
+		181B2EE52608E03C00EB3F50 /* KSF_P408.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87726039361004D1078 /* KSF_P408.ttf */; };
+		181B2EE62608E03C00EB3F50 /* KSF_P409.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72226039323004D1078 /* KSF_P409.ttf */; };
+		181B2EE72608E03C00EB3F50 /* KSF_P410.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6732603930A004D1078 /* KSF_P410.ttf */; };
+		181B2EE82608E03C00EB3F50 /* KSF_P411.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7EA26039345004D1078 /* KSF_P411.ttf */; };
+		181B2EE92608E03C00EB3F50 /* KSF_P412.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65526039305004D1078 /* KSF_P412.ttf */; };
+		181B2EEA2608E03C00EB3F50 /* KSF_P413.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F726039347004D1078 /* KSF_P413.ttf */; };
+		181B2EEB2608E03C00EB3F50 /* KSF_P414.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7DD26039343004D1078 /* KSF_P414.ttf */; };
+		181B2EEC2608E03C00EB3F50 /* KSF_P415.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72826039324004D1078 /* KSF_P415.ttf */; };
+		181B2EED2608E03C00EB3F50 /* KSF_P416.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7602603932C004D1078 /* KSF_P416.ttf */; };
+		181B2EEE2608E03C00EB3F50 /* KSF_P417.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71126039321004D1078 /* KSF_P417.ttf */; };
+		181B2EEF2608E03C00EB3F50 /* KSF_P418.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7632603932D004D1078 /* KSF_P418.ttf */; };
+		181B2EF02608E03C00EB3F50 /* KSF_P419.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73D26039327004D1078 /* KSF_P419.ttf */; };
+		181B2EF12608E03C00EB3F50 /* KSF_P420.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B626039314004D1078 /* KSF_P420.ttf */; };
+		181B2EF22608E03C00EB3F50 /* KSF_P421.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79726039335004D1078 /* KSF_P421.ttf */; };
+		181B2EF32608E03C00EB3F50 /* KSF_P422.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89826039368004D1078 /* KSF_P422.ttf */; };
+		181B2EF42608E03C00EB3F50 /* KSF_P423.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E626039344004D1078 /* KSF_P423.ttf */; };
+		181B2EF52608E03C00EB3F50 /* KSF_P424.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73226039325004D1078 /* KSF_P424.ttf */; };
+		181B2EF62608E03C00EB3F50 /* KSF_P425.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7742603932F004D1078 /* KSF_P425.ttf */; };
+		181B2EF72608E03C00EB3F50 /* KSF_P426.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78326039332004D1078 /* KSF_P426.ttf */; };
+		181B2EF82608E03C00EB3F50 /* KSF_P427.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C75B2603932B004D1078 /* KSF_P427.ttf */; };
+		181B2EF92608E03C00EB3F50 /* KSF_P428.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7BB2603933D004D1078 /* KSF_P428.ttf */; };
+		181B2EFA2608E03C00EB3F50 /* KSF_P429.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C426039316004D1078 /* KSF_P429.ttf */; };
+		181B2EFB2608E03C00EB3F50 /* KSF_P430.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73726039326004D1078 /* KSF_P430.ttf */; };
+		181B2EFC2608E03C00EB3F50 /* KSF_P431.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85226039359004D1078 /* KSF_P431.ttf */; };
+		181B2EFD2608E03C00EB3F50 /* KSF_P432.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C62603933F004D1078 /* KSF_P432.ttf */; };
+		181B2EFE2608E03C00EB3F50 /* KSF_P433.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B52603933C004D1078 /* KSF_P433.ttf */; };
+		181B2EFF2608E03C00EB3F50 /* KSF_P434.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64826039303004D1078 /* KSF_P434.ttf */; };
+		181B2F002608E03C00EB3F50 /* KSF_P435.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B72603933C004D1078 /* KSF_P435.ttf */; };
+		181B2F012608E03C00EB3F50 /* KSF_P436.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87426039361004D1078 /* KSF_P436.ttf */; };
+		181B2F022608E03C00EB3F50 /* KSF_P437.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E52603931B004D1078 /* KSF_P437.ttf */; };
+		181B2F032608E03C00EB3F50 /* KSF_P438.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7EB26039345004D1078 /* KSF_P438.ttf */; };
+		181B2F042608E03C00EB3F50 /* KSF_P439.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C81F2603934E004D1078 /* KSF_P439.ttf */; };
+		181B2F052608E03C00EB3F50 /* KSF_P440.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C126039315004D1078 /* KSF_P440.ttf */; };
+		181B2F062608E03C00EB3F50 /* KSF_P441.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D226039341004D1078 /* KSF_P441.ttf */; };
+		181B2F072608E03C00EB3F50 /* KSF_P442.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7592603932B004D1078 /* KSF_P442.ttf */; };
+		181B2F082608E03C00EB3F50 /* KSF_P443.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65D26039307004D1078 /* KSF_P443.ttf */; };
+		181B2F092608E03C00EB3F50 /* KSF_P444.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F226039346004D1078 /* KSF_P444.ttf */; };
+		181B2F0A2608E03C00EB3F50 /* KSF_P445.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C68F2603930E004D1078 /* KSF_P445.ttf */; };
+		181B2F0B2608E03C00EB3F50 /* KSF_P446.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83E26039354004D1078 /* KSF_P446.ttf */; };
+		181B2F0C2608E03C00EB3F50 /* KSF_P447.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7732603932F004D1078 /* KSF_P447.ttf */; };
+		181B2F0D2608E03C00EB3F50 /* KSF_P448.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7ED26039345004D1078 /* KSF_P448.ttf */; };
+		181B2F0E2608E03C00EB3F50 /* KSF_P449.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84626039356004D1078 /* KSF_P449.ttf */; };
+		181B2F0F2608E03C00EB3F50 /* KSF_P450.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8162603934D004D1078 /* KSF_P450.ttf */; };
+		181B2F102608E03C00EB3F50 /* KSF_P451.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8102603934B004D1078 /* KSF_P451.ttf */; };
+		181B2F112608E03C00EB3F50 /* KSF_P452.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C86B2603935E004D1078 /* KSF_P452.ttf */; };
+		181B2F122608E03C00EB3F50 /* KSF_P453.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7CE26039340004D1078 /* KSF_P453.ttf */; };
+		181B2F132608E03C00EB3F50 /* KSF_P454.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6812603930C004D1078 /* KSF_P454.ttf */; };
+		181B2F142608E03C00EB3F50 /* KSF_P455.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7AB26039339004D1078 /* KSF_P455.ttf */; };
+		181B2F152608E03C00EB3F50 /* KSF_P456.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7512603932A004D1078 /* KSF_P456.ttf */; };
+		181B2F162608E03C00EB3F50 /* KSF_P457.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B726039314004D1078 /* KSF_P457.ttf */; };
+		181B2F172608E03C00EB3F50 /* KSF_P458.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83626039353004D1078 /* KSF_P458.ttf */; };
+		181B2F182608E03C00EB3F50 /* KSF_P459.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6782603930B004D1078 /* KSF_P459.ttf */; };
+		181B2F192608E03C00EB3F50 /* KSF_P460.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B92603933D004D1078 /* KSF_P460.ttf */; };
+		181B2F1A2608E03C00EB3F50 /* KSF_P461.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80D2603934B004D1078 /* KSF_P461.ttf */; };
+		181B2F1B2608E03C00EB3F50 /* KSF_P462.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C526039316004D1078 /* KSF_P462.ttf */; };
+		181B2F1C2608E03C00EB3F50 /* KSF_P463.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72326039323004D1078 /* KSF_P463.ttf */; };
+		181B2F1D2608E03C00EB3F50 /* KSF_P464.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6BB26039315004D1078 /* KSF_P464.ttf */; };
+		181B2F1E2608E03C00EB3F50 /* KSF_P465.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74826039328004D1078 /* KSF_P465.ttf */; };
+		181B2F1F2608E03C00EB3F50 /* KSF_P466.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6882603930D004D1078 /* KSF_P466.ttf */; };
+		181B2F202608E03C00EB3F50 /* KSF_P467.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66626039308004D1078 /* KSF_P467.ttf */; };
+		181B2F212608E03C00EB3F50 /* KSF_P468.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7572603932B004D1078 /* KSF_P468.ttf */; };
+		181B2F222608E03C00EB3F50 /* KSF_P469.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80126039349004D1078 /* KSF_P469.ttf */; };
+		181B2F232608E03C00EB3F50 /* KSF_P470.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71726039322004D1078 /* KSF_P470.ttf */; };
+		181B2F242608E03C00EB3F50 /* KSF_P471.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A126039338004D1078 /* KSF_P471.ttf */; };
+		181B2F252608E03C00EB3F50 /* KSF_P472.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8212603934F004D1078 /* KSF_P472.ttf */; };
+		181B2F262608E03C00EB3F50 /* KSF_P473.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84B26039358004D1078 /* KSF_P473.ttf */; };
+		181B2F272608E03C00EB3F50 /* KSF_P474.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78026039331004D1078 /* KSF_P474.ttf */; };
+		181B2F282608E03C00EB3F50 /* KSF_P475.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85D2603935B004D1078 /* KSF_P475.ttf */; };
+		181B2F292608E03C00EB3F50 /* KSF_P476.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77726039330004D1078 /* KSF_P476.ttf */; };
+		181B2F2A2608E03C00EB3F50 /* KSF_P477.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F82603931D004D1078 /* KSF_P477.ttf */; };
+		181B2F2B2608E03C00EB3F50 /* KSF_P478.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85626039359004D1078 /* KSF_P478.ttf */; };
+		181B2F2C2608E03C00EB3F50 /* KSF_P479.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A426039312004D1078 /* KSF_P479.ttf */; };
+		181B2F2D2608E03C00EB3F50 /* KSF_P480.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C82826039350004D1078 /* KSF_P480.ttf */; };
+		181B2F2E2608E03C00EB3F50 /* KSF_P481.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6B826039314004D1078 /* KSF_P481.ttf */; };
+		181B2F2F2608E03C00EB3F50 /* KSF_P482.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7E726039344004D1078 /* KSF_P482.ttf */; };
+		181B2F302608E03C00EB3F50 /* KSF_P483.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89F2603936A004D1078 /* KSF_P483.ttf */; };
+		181B2F312608E03C00EB3F50 /* KSF_P484.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70A26039320004D1078 /* KSF_P484.ttf */; };
+		181B2F322608E03C00EB3F50 /* KSF_P485.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D126039318004D1078 /* KSF_P485.ttf */; };
+		181B2F332608E03C00EB3F50 /* KSF_P486.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C75C2603932B004D1078 /* KSF_P486.ttf */; };
+		181B2F342608E03C00EB3F50 /* KSF_P487.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70726039320004D1078 /* KSF_P487.ttf */; };
+		181B2F352608E03C00EB3F50 /* KSF_P488.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7BC2603933D004D1078 /* KSF_P488.ttf */; };
+		181B2F362608E03C00EB3F50 /* KSF_P489.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84E26039358004D1078 /* KSF_P489.ttf */; };
+		181B2F372608E03C00EB3F50 /* KSF_P490.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6792603930B004D1078 /* KSF_P490.ttf */; };
+		181B2F382608E03C00EB3F50 /* KSF_P491.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7FC26039348004D1078 /* KSF_P491.ttf */; };
+		181B2F392608E03C00EB3F50 /* KSF_P492.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7AC26039339004D1078 /* KSF_P492.ttf */; };
+		181B2F3A2608E03C00EB3F50 /* KSF_P493.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C68D2603930E004D1078 /* KSF_P493.ttf */; };
+		181B2F3B2608E03C00EB3F50 /* KSF_P494.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7F826039347004D1078 /* KSF_P494.ttf */; };
+		181B2F3C2608E03C00EB3F50 /* KSF_P495.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70D26039320004D1078 /* KSF_P495.ttf */; };
+		181B2F3D2608E03C00EB3F50 /* KSF_P496.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E12603931A004D1078 /* KSF_P496.ttf */; };
+		181B2F3E2608E03C00EB3F50 /* KSF_P497.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B22603933B004D1078 /* KSF_P497.ttf */; };
+		181B2F3F2608E03C00EB3F50 /* KSF_P498.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B32603933C004D1078 /* KSF_P498.ttf */; };
+		181B2F402608E03C00EB3F50 /* KSF_P499.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8582603935A004D1078 /* KSF_P499.ttf */; };
+		181B2F412608E03C00EB3F50 /* KSF_P500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B42603933C004D1078 /* KSF_P500.ttf */; };
+		181B2F422608E03C00EB3F50 /* KSF_P501.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84C26039358004D1078 /* KSF_P501.ttf */; };
+		181B2F432608E03C00EB3F50 /* KSF_P502.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84326039355004D1078 /* KSF_P502.ttf */; };
+		181B2F442608E03C00EB3F50 /* KSF_P503.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7B82603933D004D1078 /* KSF_P503.ttf */; };
+		181B2F452608E03C00EB3F50 /* KSF_P504.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7DA26039342004D1078 /* KSF_P504.ttf */; };
+		181B2F462608E03C00EB3F50 /* KSF_P505.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C67A2603930B004D1078 /* KSF_P505.ttf */; };
+		181B2F472608E03C00EB3F50 /* KSF_P506.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7582603932B004D1078 /* KSF_P506.ttf */; };
+		181B2F482608E03C00EB3F50 /* KSF_P507.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6E22603931A004D1078 /* KSF_P507.ttf */; };
+		181B2F492608E03C00EB3F50 /* KSF_P508.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70E26039321004D1078 /* KSF_P508.ttf */; };
+		181B2F4A2608E03C00EB3F50 /* KSF_P509.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6FE2603931E004D1078 /* KSF_P509.ttf */; };
+		181B2F4B2608E03C00EB3F50 /* KSF_P510.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70926039320004D1078 /* KSF_P510.ttf */; };
+		181B2F4C2608E03C00EB3F50 /* KSF_P511.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A026039311004D1078 /* KSF_P511.ttf */; };
+		181B2F4D2608E03C00EB3F50 /* KSF_P512.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65126039305004D1078 /* KSF_P512.ttf */; };
+		181B2F4E2608E03C00EB3F50 /* KSF_P513.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80426039349004D1078 /* KSF_P513.ttf */; };
+		181B2F4F2608E03C00EB3F50 /* KSF_P514.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7C92603933F004D1078 /* KSF_P514.ttf */; };
+		181B2F502608E03C00EB3F50 /* KSF_P515.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C68B2603930D004D1078 /* KSF_P515.ttf */; };
+		181B2F512608E03C00EB3F50 /* KSF_P516.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C69E26039310004D1078 /* KSF_P516.ttf */; };
+		181B2F522608E03C00EB3F50 /* KSF_P517.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88A26039365004D1078 /* KSF_P517.ttf */; };
+		181B2F532608E03C00EB3F50 /* KSF_P518.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6DB26039319004D1078 /* KSF_P518.ttf */; };
+		181B2F542608E03C00EB3F50 /* KSF_P519.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7DC26039342004D1078 /* KSF_P519.ttf */; };
+		181B2F552608E03C00EB3F50 /* KSF_P520.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72726039324004D1078 /* KSF_P520.ttf */; };
+		181B2F562608E03C00EB3F50 /* KSF_P521.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A626039338004D1078 /* KSF_P521.ttf */; };
+		181B2F572608E03C00EB3F50 /* KSF_P522.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8A02603936A004D1078 /* KSF_P522.ttf */; };
+		181B2F582608E03C00EB3F50 /* KSF_P523.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7EF26039346004D1078 /* KSF_P523.ttf */; };
+		181B2F592608E03C00EB3F50 /* KSF_P524.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83326039352004D1078 /* KSF_P524.ttf */; };
+		181B2F5A2608E03C00EB3F50 /* KSF_P525.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7BD2603933D004D1078 /* KSF_P525.ttf */; };
+		181B2F5B2608E03C00EB3F50 /* KSF_P526.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6802603930C004D1078 /* KSF_P526.ttf */; };
+		181B2F5C2608E03C00EB3F50 /* KSF_P527.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8A12603936A004D1078 /* KSF_P527.ttf */; };
+		181B2F5D2608E03C00EB3F50 /* KSF_P528.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A726039339004D1078 /* KSF_P528.ttf */; };
+		181B2F5E2608E03C00EB3F50 /* KSF_P529.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8632603935C004D1078 /* KSF_P529.ttf */; };
+		181B2F5F2608E03D00EB3F50 /* KSF_P530.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85B2603935A004D1078 /* KSF_P530.ttf */; };
+		181B2F602608E03D00EB3F50 /* KSF_P531.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73F26039327004D1078 /* KSF_P531.ttf */; };
+		181B2F612608E03D00EB3F50 /* KSF_P532.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7BA2603933D004D1078 /* KSF_P532.ttf */; };
+		181B2F622608E03D00EB3F50 /* KSF_P533.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C67B2603930B004D1078 /* KSF_P533.ttf */; };
+		181B2F632608E03D00EB3F50 /* KSF_P534.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66326039308004D1078 /* KSF_P534.ttf */; };
+		181B2F642608E03D00EB3F50 /* KSF_P535.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65226039305004D1078 /* KSF_P535.ttf */; };
+		181B2F652608E03D00EB3F50 /* KSF_P536.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D826039342004D1078 /* KSF_P536.ttf */; };
+		181B2F662608E03D00EB3F50 /* KSF_P537.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78226039332004D1078 /* KSF_P537.ttf */; };
+		181B2F672608E03D00EB3F50 /* KSF_P538.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C77E26039331004D1078 /* KSF_P538.ttf */; };
+		181B2F682608E03D00EB3F50 /* KSF_P539.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6932603930F004D1078 /* KSF_P539.ttf */; };
+		181B2F692608E03D00EB3F50 /* KSF_P540.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C81E2603934E004D1078 /* KSF_P540.ttf */; };
+		181B2F6A2608E03D00EB3F50 /* KSF_P541.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7D426039341004D1078 /* KSF_P541.ttf */; };
+		181B2F6B2608E03D00EB3F50 /* KSF_P542.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8662603935C004D1078 /* KSF_P542.ttf */; };
+		181B2F6C2608E03D00EB3F50 /* KSF_P543.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89526039367004D1078 /* KSF_P543.ttf */; };
+		181B2F6D2608E03D00EB3F50 /* KSF_P544.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F92603931E004D1078 /* KSF_P544.ttf */; };
+		181B2F6E2608E03D00EB3F50 /* KSF_P545.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C84F26039358004D1078 /* KSF_P545.ttf */; };
+		181B2F6F2608E03D00EB3F50 /* KSF_P546.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88726039365004D1078 /* KSF_P546.ttf */; };
+		181B2F702608E03D00EB3F50 /* KSF_P547.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65626039306004D1078 /* KSF_P547.ttf */; };
+		181B2F712608E03D00EB3F50 /* KSF_P548.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74226039328004D1078 /* KSF_P548.ttf */; };
+		181B2F722608E03D00EB3F50 /* KSF_P549.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78826039333004D1078 /* KSF_P549.ttf */; };
+		181B2F732608E03D00EB3F50 /* KSF_P550.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71B26039322004D1078 /* KSF_P550.ttf */; };
+		181B2F742608E03D00EB3F50 /* KSF_P551.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A126039311004D1078 /* KSF_P551.ttf */; };
+		181B2F752608E03D00EB3F50 /* KSF_P552.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83426039352004D1078 /* KSF_P552.ttf */; };
+		181B2F762608E03D00EB3F50 /* KSF_P553.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74326039328004D1078 /* KSF_P553.ttf */; };
+		181B2F772608E03D00EB3F50 /* KSF_P554.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87226039360004D1078 /* KSF_P554.ttf */; };
+		181B2F782608E03D00EB3F50 /* KSF_P555.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A626039312004D1078 /* KSF_P555.ttf */; };
+		181B2F792608E03D00EB3F50 /* KSF_P556.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71026039321004D1078 /* KSF_P556.ttf */; };
+		181B2F7A2608E03D00EB3F50 /* KSF_P557.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80226039349004D1078 /* KSF_P557.ttf */; };
+		181B2F7B2608E03D00EB3F50 /* KSF_P558.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87826039361004D1078 /* KSF_P558.ttf */; };
+		181B2F7C2608E03D00EB3F50 /* KSF_P559.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6BD26039315004D1078 /* KSF_P559.ttf */; };
+		181B2F7D2608E03D00EB3F50 /* KSF_P560.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D826039319004D1078 /* KSF_P560.ttf */; };
+		181B2F7E2608E03D00EB3F50 /* KSF_P561.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73926039326004D1078 /* KSF_P561.ttf */; };
+		181B2F7F2608E03D00EB3F50 /* KSF_P562.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6BF26039315004D1078 /* KSF_P562.ttf */; };
+		181B2F802608E03D00EB3F50 /* KSF_P563.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88126039364004D1078 /* KSF_P563.ttf */; };
+		181B2F812608E03D00EB3F50 /* KSF_P564.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79E26039337004D1078 /* KSF_P564.ttf */; };
+		181B2F822608E03D00EB3F50 /* KSF_P565.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6D226039318004D1078 /* KSF_P565.ttf */; };
+		181B2F832608E03D00EB3F50 /* KSF_P566.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6DA26039319004D1078 /* KSF_P566.ttf */; };
+		181B2F842608E03D00EB3F50 /* KSF_P567.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87526039361004D1078 /* KSF_P567.ttf */; };
+		181B2F852608E03D00EB3F50 /* KSF_P568.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7562603932B004D1078 /* KSF_P568.ttf */; };
+		181B2F862608E03D00EB3F50 /* KSF_P569.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C88E26039366004D1078 /* KSF_P569.ttf */; };
+		181B2F872608E03D00EB3F50 /* KSF_P570.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6FF2603931F004D1078 /* KSF_P570.ttf */; };
+		181B2F882608E03D00EB3F50 /* KSF_P571.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83C26039354004D1078 /* KSF_P571.ttf */; };
+		181B2F892608E03D00EB3F50 /* KSF_P572.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7532603932A004D1078 /* KSF_P572.ttf */; };
+		181B2F8A2608E03D00EB3F50 /* KSF_P573.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C86A2603935D004D1078 /* KSF_P573.ttf */; };
+		181B2F8B2608E03D00EB3F50 /* KSF_P574.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C66F2603930A004D1078 /* KSF_P574.ttf */; };
+		181B2F8C2608E03D00EB3F50 /* KSF_P575.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C78F26039334004D1078 /* KSF_P575.ttf */; };
+		181B2F8D2608E03D00EB3F50 /* KSF_P576.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6F72603931D004D1078 /* KSF_P576.ttf */; };
+		181B2F8E2608E03D00EB3F50 /* KSF_P577.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6CF26039317004D1078 /* KSF_P577.ttf */; };
+		181B2F8F2608E03D00EB3F50 /* KSF_P578.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C69B26039310004D1078 /* KSF_P578.ttf */; };
+		181B2F902608E03D00EB3F50 /* KSF_P579.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C65E26039307004D1078 /* KSF_P579.ttf */; };
+		181B2F912608E03D00EB3F50 /* KSF_P580.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C85A2603935A004D1078 /* KSF_P580.ttf */; };
+		181B2F922608E03D00EB3F50 /* KSF_P581.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7DF26039343004D1078 /* KSF_P581.ttf */; };
+		181B2F932608E03D00EB3F50 /* KSF_P582.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C75F2603932C004D1078 /* KSF_P582.ttf */; };
+		181B2F942608E03D00EB3F50 /* KSF_P583.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C75D2603932C004D1078 /* KSF_P583.ttf */; };
+		181B2F952608E03D00EB3F50 /* KSF_P584.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6C726039316004D1078 /* KSF_P584.ttf */; };
+		181B2F962608E03D00EB3F50 /* KSF_P585.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6A726039312004D1078 /* KSF_P585.ttf */; };
+		181B2F972608E03D00EB3F50 /* KSF_P586.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6CB26039317004D1078 /* KSF_P586.ttf */; };
+		181B2F982608E03D00EB3F50 /* KSF_P587.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C8672603935C004D1078 /* KSF_P587.ttf */; };
+		181B2F992608E03D00EB3F50 /* KSF_P588.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7CD26039340004D1078 /* KSF_P588.ttf */; };
+		181B2F9A2608E03D00EB3F50 /* KSF_P589.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89126039367004D1078 /* KSF_P589.ttf */; };
+		181B2F9B2608E03D00EB3F50 /* KSF_P590.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7A426039338004D1078 /* KSF_P590.ttf */; };
+		181B2F9C2608E03D00EB3F50 /* KSF_P591.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7542603932B004D1078 /* KSF_P591.ttf */; };
+		181B2F9D2608E03D00EB3F50 /* KSF_P592.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C87626039361004D1078 /* KSF_P592.ttf */; };
+		181B2F9E2608E03D00EB3F50 /* KSF_P593.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C75A2603932B004D1078 /* KSF_P593.ttf */; };
+		181B2F9F2608E03D00EB3F50 /* KSF_P594.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89926039368004D1078 /* KSF_P594.ttf */; };
+		181B2FA02608E03D00EB3F50 /* KSF_P595.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C7DE26039343004D1078 /* KSF_P595.ttf */; };
+		181B2FA12608E03D00EB3F50 /* KSF_P596.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C6722603930A004D1078 /* KSF_P596.ttf */; };
+		181B2FA22608E03D00EB3F50 /* KSF_P597.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C71A26039322004D1078 /* KSF_P597.ttf */; };
+		181B2FA32608E03D00EB3F50 /* KSF_P598.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C89B26039369004D1078 /* KSF_P598.ttf */; };
+		181B2FA42608E03D00EB3F50 /* KSF_P599.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C73E26039327004D1078 /* KSF_P599.ttf */; };
+		181B2FA52608E03D00EB3F50 /* KSF_P600.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C79126039335004D1078 /* KSF_P600.ttf */; };
+		181B2FA62608E03D00EB3F50 /* KSF_P601.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C74426039328004D1078 /* KSF_P601.ttf */; };
+		181B2FA72608E03D00EB3F50 /* KSF_P602.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C72A26039324004D1078 /* KSF_P602.ttf */; };
+		181B2FA82608E03D00EB3F50 /* KSF_P603.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C80E2603934B004D1078 /* KSF_P603.ttf */; };
+		181B2FA92608E03D00EB3F50 /* KSF_P604.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83526039352004D1078 /* KSF_P604.ttf */; };
 		182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD3FE25CC2DD500D59FF2 /* Chapter.swift */; };
 		182FD40325CC2E2200D59FF2 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD40225CC2E2200D59FF2 /* Verse.swift */; };
+		18506F48260B3609003C2BBC /* ReverseTextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18506F47260B3609003C2BBC /* ReverseTextVC.m */; };
 		185332A525DD44C20045A745 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185332A425DD44C20045A745 /* CountryViewController.swift */; };
 		186DA40225C7FEE000D4F154 /* DaylightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */; };
 		186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40025C7FEE000D4F154 /* JuristicViewController.swift */; };
 		186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40125C7FEE000D4F154 /* CityViewController.swift */; };
 		1879A86325C3E2D200FC0219 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879A86225C3E2D100FC0219 /* SetViewController.swift */; };
-		18A9C64126038F7E004D1078 /* quran2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64026038F7E004D1078 /* quran2.xml */; };
+		18A9C64126038F7E004D1078 /* quran.xml in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64026038F7E004D1078 /* quran.xml */; };
 		18AD5DC625EFCC8F006D27FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD5DC525EFCC8F006D27FD /* Toast.swift */; };
 		18B4BE1B25C183DD008AC27B /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4BE1925C183DC008AC27B /* LightViewController.swift */; };
 		18B4BE1C25C183DD008AC27B /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4BE1A25C183DD008AC27B /* PrayerViewController.swift */; };
@@ -31,17 +634,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1800ED9D25DAAF4B00F0A989 /* quran.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = quran.xml; sourceTree = "<group>"; };
 		1815DC1525E1AC4000DBF6DA /* BLEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEViewController.swift; sourceTree = "<group>"; };
+		181B2D4B2608E00C00EB3F50 /* KSF_P002.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P002.ttf; sourceTree = "<group>"; };
+		181B2D4C2608E00C00EB3F50 /* KSF_P001.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P001.ttf; sourceTree = "<group>"; };
 		1820FF4825DE782000A57EEC /* QuranSpeaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranSpeaker-Bridging-Header.h"; sourceTree = "<group>"; };
 		182FD3FE25CC2DD500D59FF2 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		182FD40225CC2E2200D59FF2 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
+		18506F45260B3609003C2BBC /* QuranSpeaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranSpeaker-Bridging-Header.h"; sourceTree = "<group>"; };
+		18506F46260B3609003C2BBC /* ReverseTextVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReverseTextVC.h; sourceTree = "<group>"; };
+		18506F47260B3609003C2BBC /* ReverseTextVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReverseTextVC.m; sourceTree = "<group>"; };
 		185332A425DD44C20045A745 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaylightViewController.swift; sourceTree = "<group>"; };
 		186DA40025C7FEE000D4F154 /* JuristicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuristicViewController.swift; sourceTree = "<group>"; };
 		186DA40125C7FEE000D4F154 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		1879A86225C3E2D100FC0219 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
-		18A9C64026038F7E004D1078 /* quran2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = quran2.xml; sourceTree = "<group>"; };
+		18A9C64026038F7E004D1078 /* quran.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = quran.xml; sourceTree = "<group>"; };
 		18A9C64626039303004D1078 /* KSF_P309.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P309.ttf; sourceTree = "<group>"; };
 		18A9C64726039303004D1078 /* KSF_P035.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P035.ttf; sourceTree = "<group>"; };
 		18A9C64826039303004D1078 /* KSF_P434.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P434.ttf; sourceTree = "<group>"; };
@@ -141,7 +748,6 @@
 		18A9C6A626039312004D1078 /* KSF_P555.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P555.ttf; sourceTree = "<group>"; };
 		18A9C6A726039312004D1078 /* KSF_P585.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P585.ttf; sourceTree = "<group>"; };
 		18A9C6A826039312004D1078 /* KSF_P376.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P376.ttf; sourceTree = "<group>"; };
-		18A9C6A926039312004D1078 /* KSF_P002.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P002.ttf; sourceTree = "<group>"; };
 		18A9C6AA26039312004D1078 /* KSF_P135.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P135.ttf; sourceTree = "<group>"; };
 		18A9C6AB26039312004D1078 /* KSF_P036.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P036.ttf; sourceTree = "<group>"; };
 		18A9C6AC26039313004D1078 /* KSF_P095.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P095.ttf; sourceTree = "<group>"; };
@@ -456,7 +1062,6 @@
 		18A9C7E126039343004D1078 /* KSF_P222.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P222.ttf; sourceTree = "<group>"; };
 		18A9C7E226039343004D1078 /* KSF_P167.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P167.ttf; sourceTree = "<group>"; };
 		18A9C7E326039344004D1078 /* KSF_P319.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P319.ttf; sourceTree = "<group>"; };
-		18A9C7E426039344004D1078 /* KSF_P001.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P001.ttf; sourceTree = "<group>"; };
 		18A9C7E526039344004D1078 /* KSF_P268.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P268.ttf; sourceTree = "<group>"; };
 		18A9C7E626039344004D1078 /* KSF_P423.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P423.ttf; sourceTree = "<group>"; };
 		18A9C7E726039344004D1078 /* KSF_P482.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P482.ttf; sourceTree = "<group>"; };
@@ -679,8 +1284,7 @@
 			isa = PBXGroup;
 			children = (
 				18AD5DC525EFCC8F006D27FD /* Toast.swift */,
-				1800ED9D25DAAF4B00F0A989 /* quran.xml */,
-				18A9C64026038F7E004D1078 /* quran2.xml */,
+				18A9C64026038F7E004D1078 /* quran.xml */,
 			);
 			path = QuranResources;
 			sourceTree = "<group>";
@@ -699,8 +1303,8 @@
 		185EC69125C2B813008661AE /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				18A9C7E426039344004D1078 /* KSF_P001.ttf */,
-				18A9C6A926039312004D1078 /* KSF_P002.ttf */,
+				181B2D4C2608E00C00EB3F50 /* KSF_P001.ttf */,
+				181B2D4B2608E00C00EB3F50 /* KSF_P002.ttf */,
 				18A9C72D26039325004D1078 /* KSF_P003.ttf */,
 				18A9C6C926039316004D1078 /* KSF_P004.ttf */,
 				18A9C64C26039303004D1078 /* KSF_P005.ttf */,
@@ -1353,6 +1957,9 @@
 				186DA40125C7FEE000D4F154 /* CityViewController.swift */,
 				186DA40025C7FEE000D4F154 /* JuristicViewController.swift */,
 				186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */,
+				18506F46260B3609003C2BBC /* ReverseTextVC.h */,
+				18506F47260B3609003C2BBC /* ReverseTextVC.m */,
+				18506F45260B3609003C2BBC /* QuranSpeaker-Bridging-Header.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1424,6 +2031,7 @@
 				TargetAttributes = {
 					18B8542525B6B62900667E67 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -1450,9 +2058,612 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181B2D4F2608E03A00EB3F50 /* KSF_P002.ttf in Resources */,
+				181B2D502608E03A00EB3F50 /* KSF_P003.ttf in Resources */,
+				181B2D512608E03A00EB3F50 /* KSF_P004.ttf in Resources */,
+				181B2D522608E03A00EB3F50 /* KSF_P005.ttf in Resources */,
+				181B2D532608E03A00EB3F50 /* KSF_P006.ttf in Resources */,
+				181B2D542608E03A00EB3F50 /* KSF_P007.ttf in Resources */,
+				181B2D552608E03A00EB3F50 /* KSF_P008.ttf in Resources */,
+				181B2D562608E03A00EB3F50 /* KSF_P009.ttf in Resources */,
+				181B2D572608E03A00EB3F50 /* KSF_P010.ttf in Resources */,
+				181B2D582608E03A00EB3F50 /* KSF_P011.ttf in Resources */,
+				181B2D592608E03A00EB3F50 /* KSF_P012.ttf in Resources */,
+				181B2D5A2608E03A00EB3F50 /* KSF_P013.ttf in Resources */,
+				181B2D5B2608E03A00EB3F50 /* KSF_P014.ttf in Resources */,
+				181B2D5C2608E03A00EB3F50 /* KSF_P015.ttf in Resources */,
+				181B2D5D2608E03A00EB3F50 /* KSF_P016.ttf in Resources */,
+				181B2D5E2608E03A00EB3F50 /* KSF_P017.ttf in Resources */,
+				181B2D5F2608E03A00EB3F50 /* KSF_P018.ttf in Resources */,
+				181B2D602608E03A00EB3F50 /* KSF_P019.ttf in Resources */,
+				181B2D612608E03A00EB3F50 /* KSF_P020.ttf in Resources */,
+				181B2D622608E03A00EB3F50 /* KSF_P021.ttf in Resources */,
+				181B2D632608E03A00EB3F50 /* KSF_P022.ttf in Resources */,
+				181B2D642608E03A00EB3F50 /* KSF_P023.ttf in Resources */,
+				181B2D652608E03A00EB3F50 /* KSF_P024.ttf in Resources */,
+				181B2D662608E03A00EB3F50 /* KSF_P025.ttf in Resources */,
+				181B2D672608E03A00EB3F50 /* KSF_P026.ttf in Resources */,
+				181B2D682608E03A00EB3F50 /* KSF_P027.ttf in Resources */,
+				181B2D692608E03A00EB3F50 /* KSF_P028.ttf in Resources */,
+				181B2D6A2608E03B00EB3F50 /* KSF_P029.ttf in Resources */,
+				181B2D6B2608E03B00EB3F50 /* KSF_P030.ttf in Resources */,
+				181B2D6C2608E03B00EB3F50 /* KSF_P031.ttf in Resources */,
+				181B2D6D2608E03B00EB3F50 /* KSF_P032.ttf in Resources */,
+				181B2D6E2608E03B00EB3F50 /* KSF_P033.ttf in Resources */,
+				181B2D6F2608E03B00EB3F50 /* KSF_P034.ttf in Resources */,
+				181B2D702608E03B00EB3F50 /* KSF_P035.ttf in Resources */,
+				181B2D712608E03B00EB3F50 /* KSF_P036.ttf in Resources */,
+				181B2D722608E03B00EB3F50 /* KSF_P037.ttf in Resources */,
+				181B2D732608E03B00EB3F50 /* KSF_P038.ttf in Resources */,
+				181B2D742608E03B00EB3F50 /* KSF_P039.ttf in Resources */,
+				181B2D752608E03B00EB3F50 /* KSF_P040.ttf in Resources */,
+				181B2D762608E03B00EB3F50 /* KSF_P041.ttf in Resources */,
+				181B2D772608E03B00EB3F50 /* KSF_P042.ttf in Resources */,
+				181B2D782608E03B00EB3F50 /* KSF_P043.ttf in Resources */,
+				181B2D792608E03B00EB3F50 /* KSF_P044.ttf in Resources */,
+				181B2D7A2608E03B00EB3F50 /* KSF_P045.ttf in Resources */,
+				181B2D7B2608E03B00EB3F50 /* KSF_P046.ttf in Resources */,
+				181B2D7C2608E03B00EB3F50 /* KSF_P047.ttf in Resources */,
+				181B2D7D2608E03B00EB3F50 /* KSF_P048.ttf in Resources */,
+				181B2D7E2608E03B00EB3F50 /* KSF_P049.ttf in Resources */,
+				181B2D7F2608E03B00EB3F50 /* KSF_P050.ttf in Resources */,
+				181B2D802608E03B00EB3F50 /* KSF_P051.ttf in Resources */,
+				181B2D812608E03B00EB3F50 /* KSF_P052.ttf in Resources */,
+				181B2D822608E03B00EB3F50 /* KSF_P053.ttf in Resources */,
+				181B2D832608E03B00EB3F50 /* KSF_P054.ttf in Resources */,
+				181B2D842608E03B00EB3F50 /* KSF_P055.ttf in Resources */,
+				181B2D852608E03B00EB3F50 /* KSF_P056.ttf in Resources */,
+				181B2D862608E03B00EB3F50 /* KSF_P057.ttf in Resources */,
+				181B2D872608E03B00EB3F50 /* KSF_P058.ttf in Resources */,
+				181B2D882608E03B00EB3F50 /* KSF_P059.ttf in Resources */,
+				181B2D892608E03B00EB3F50 /* KSF_P060.ttf in Resources */,
+				181B2D8A2608E03B00EB3F50 /* KSF_P061.ttf in Resources */,
+				181B2D8B2608E03B00EB3F50 /* KSF_P062.ttf in Resources */,
+				181B2D8C2608E03B00EB3F50 /* KSF_P063.ttf in Resources */,
+				181B2D8D2608E03B00EB3F50 /* KSF_P064.ttf in Resources */,
+				181B2D8E2608E03B00EB3F50 /* KSF_P065.ttf in Resources */,
+				181B2D8F2608E03B00EB3F50 /* KSF_P066.ttf in Resources */,
+				181B2D902608E03B00EB3F50 /* KSF_P067.ttf in Resources */,
+				181B2D912608E03B00EB3F50 /* KSF_P068.ttf in Resources */,
+				181B2D922608E03B00EB3F50 /* KSF_P069.ttf in Resources */,
+				181B2D932608E03B00EB3F50 /* KSF_P070.ttf in Resources */,
+				181B2D942608E03B00EB3F50 /* KSF_P071.ttf in Resources */,
+				181B2D952608E03B00EB3F50 /* KSF_P072.ttf in Resources */,
+				181B2D962608E03B00EB3F50 /* KSF_P073.ttf in Resources */,
+				181B2D972608E03B00EB3F50 /* KSF_P074.ttf in Resources */,
+				181B2D982608E03B00EB3F50 /* KSF_P075.ttf in Resources */,
+				181B2D992608E03B00EB3F50 /* KSF_P076.ttf in Resources */,
+				181B2D9A2608E03B00EB3F50 /* KSF_P077.ttf in Resources */,
+				181B2D9B2608E03B00EB3F50 /* KSF_P078.ttf in Resources */,
+				181B2D9C2608E03B00EB3F50 /* KSF_P079.ttf in Resources */,
+				181B2D9D2608E03B00EB3F50 /* KSF_P080.ttf in Resources */,
+				181B2D9E2608E03B00EB3F50 /* KSF_P081.ttf in Resources */,
+				181B2D9F2608E03B00EB3F50 /* KSF_P082.ttf in Resources */,
+				181B2DA02608E03B00EB3F50 /* KSF_P083.ttf in Resources */,
+				181B2DA12608E03B00EB3F50 /* KSF_P084.ttf in Resources */,
+				181B2DA22608E03B00EB3F50 /* KSF_P085.ttf in Resources */,
+				181B2DA32608E03B00EB3F50 /* KSF_P086.ttf in Resources */,
+				181B2DA42608E03B00EB3F50 /* KSF_P087.ttf in Resources */,
+				181B2DA52608E03B00EB3F50 /* KSF_P088.ttf in Resources */,
+				181B2DA62608E03B00EB3F50 /* KSF_P089.ttf in Resources */,
+				181B2DA72608E03B00EB3F50 /* KSF_P090.ttf in Resources */,
+				181B2DA82608E03B00EB3F50 /* KSF_P091.ttf in Resources */,
+				181B2DA92608E03B00EB3F50 /* KSF_P092.ttf in Resources */,
+				181B2DAA2608E03B00EB3F50 /* KSF_P093.ttf in Resources */,
+				181B2DAB2608E03B00EB3F50 /* KSF_P094.ttf in Resources */,
+				181B2DAC2608E03B00EB3F50 /* KSF_P095.ttf in Resources */,
+				181B2DAD2608E03B00EB3F50 /* KSF_P096.ttf in Resources */,
+				181B2DAE2608E03B00EB3F50 /* KSF_P097.ttf in Resources */,
+				181B2DAF2608E03B00EB3F50 /* KSF_P098.ttf in Resources */,
+				181B2DB02608E03B00EB3F50 /* KSF_P099.ttf in Resources */,
+				181B2DB12608E03B00EB3F50 /* KSF_P100.ttf in Resources */,
+				181B2DB22608E03B00EB3F50 /* KSF_P101.ttf in Resources */,
+				181B2DB32608E03B00EB3F50 /* KSF_P102.ttf in Resources */,
+				181B2DB42608E03B00EB3F50 /* KSF_P103.ttf in Resources */,
+				181B2DB52608E03B00EB3F50 /* KSF_P104.ttf in Resources */,
+				181B2DB62608E03B00EB3F50 /* KSF_P105.ttf in Resources */,
+				181B2DB72608E03B00EB3F50 /* KSF_P106.ttf in Resources */,
+				181B2DB82608E03B00EB3F50 /* KSF_P107.ttf in Resources */,
+				181B2DB92608E03B00EB3F50 /* KSF_P108.ttf in Resources */,
+				181B2DBA2608E03B00EB3F50 /* KSF_P109.ttf in Resources */,
+				181B2DBB2608E03B00EB3F50 /* KSF_P110.ttf in Resources */,
+				181B2DBC2608E03B00EB3F50 /* KSF_P111.ttf in Resources */,
+				181B2DBD2608E03B00EB3F50 /* KSF_P112.ttf in Resources */,
+				181B2DBE2608E03B00EB3F50 /* KSF_P113.ttf in Resources */,
+				181B2DBF2608E03B00EB3F50 /* KSF_P114.ttf in Resources */,
+				181B2DC02608E03B00EB3F50 /* KSF_P115.ttf in Resources */,
+				181B2DC12608E03B00EB3F50 /* KSF_P116.ttf in Resources */,
+				181B2DC22608E03B00EB3F50 /* KSF_P117.ttf in Resources */,
+				181B2DC32608E03B00EB3F50 /* KSF_P118.ttf in Resources */,
+				181B2DC42608E03B00EB3F50 /* KSF_P119.ttf in Resources */,
+				181B2DC52608E03B00EB3F50 /* KSF_P120.ttf in Resources */,
+				181B2DC62608E03B00EB3F50 /* KSF_P121.ttf in Resources */,
+				181B2DC72608E03B00EB3F50 /* KSF_P122.ttf in Resources */,
+				181B2DC82608E03B00EB3F50 /* KSF_P123.ttf in Resources */,
+				181B2DC92608E03B00EB3F50 /* KSF_P124.ttf in Resources */,
+				181B2DCA2608E03B00EB3F50 /* KSF_P125.ttf in Resources */,
+				181B2DCB2608E03B00EB3F50 /* KSF_P126.ttf in Resources */,
+				181B2DCC2608E03B00EB3F50 /* KSF_P127.ttf in Resources */,
+				181B2DCD2608E03B00EB3F50 /* KSF_P128.ttf in Resources */,
+				181B2DCE2608E03B00EB3F50 /* KSF_P129.ttf in Resources */,
+				181B2DCF2608E03B00EB3F50 /* KSF_P130.ttf in Resources */,
+				181B2DD02608E03B00EB3F50 /* KSF_P131.ttf in Resources */,
+				181B2DD12608E03B00EB3F50 /* KSF_P132.ttf in Resources */,
+				181B2DD22608E03B00EB3F50 /* KSF_P133.ttf in Resources */,
+				181B2DD32608E03B00EB3F50 /* KSF_P134.ttf in Resources */,
+				181B2DD42608E03B00EB3F50 /* KSF_P135.ttf in Resources */,
+				181B2DD52608E03B00EB3F50 /* KSF_P136.ttf in Resources */,
+				181B2DD62608E03B00EB3F50 /* KSF_P137.ttf in Resources */,
+				181B2DD72608E03B00EB3F50 /* KSF_P138.ttf in Resources */,
+				181B2DD82608E03B00EB3F50 /* KSF_P139.ttf in Resources */,
+				181B2DD92608E03B00EB3F50 /* KSF_P140.ttf in Resources */,
+				181B2DDA2608E03B00EB3F50 /* KSF_P141.ttf in Resources */,
+				181B2DDB2608E03B00EB3F50 /* KSF_P142.ttf in Resources */,
+				181B2DDC2608E03B00EB3F50 /* KSF_P143.ttf in Resources */,
+				181B2DDD2608E03B00EB3F50 /* KSF_P144.ttf in Resources */,
+				181B2DDE2608E03B00EB3F50 /* KSF_P145.ttf in Resources */,
+				181B2DDF2608E03B00EB3F50 /* KSF_P146.ttf in Resources */,
+				181B2DE02608E03B00EB3F50 /* KSF_P147.ttf in Resources */,
+				181B2DE12608E03B00EB3F50 /* KSF_P148.ttf in Resources */,
+				181B2DE22608E03B00EB3F50 /* KSF_P149.ttf in Resources */,
+				181B2DE32608E03B00EB3F50 /* KSF_P150.ttf in Resources */,
+				181B2DE42608E03B00EB3F50 /* KSF_P151.ttf in Resources */,
+				181B2DE52608E03B00EB3F50 /* KSF_P152.ttf in Resources */,
+				181B2DE62608E03B00EB3F50 /* KSF_P153.ttf in Resources */,
+				181B2DE72608E03B00EB3F50 /* KSF_P154.ttf in Resources */,
+				181B2DE82608E03B00EB3F50 /* KSF_P155.ttf in Resources */,
+				181B2DE92608E03B00EB3F50 /* KSF_P156.ttf in Resources */,
+				181B2DEA2608E03B00EB3F50 /* KSF_P157.ttf in Resources */,
+				181B2DEB2608E03B00EB3F50 /* KSF_P158.ttf in Resources */,
+				181B2DEC2608E03B00EB3F50 /* KSF_P159.ttf in Resources */,
+				181B2DED2608E03B00EB3F50 /* KSF_P160.ttf in Resources */,
+				181B2DEE2608E03B00EB3F50 /* KSF_P161.ttf in Resources */,
+				181B2DEF2608E03B00EB3F50 /* KSF_P162.ttf in Resources */,
+				181B2DF02608E03B00EB3F50 /* KSF_P163.ttf in Resources */,
+				181B2DF12608E03B00EB3F50 /* KSF_P164.ttf in Resources */,
+				181B2DF22608E03B00EB3F50 /* KSF_P165.ttf in Resources */,
+				181B2DF32608E03B00EB3F50 /* KSF_P166.ttf in Resources */,
+				181B2DF42608E03B00EB3F50 /* KSF_P167.ttf in Resources */,
+				181B2DF52608E03B00EB3F50 /* KSF_P168.ttf in Resources */,
+				181B2DF62608E03B00EB3F50 /* KSF_P169.ttf in Resources */,
+				181B2DF72608E03B00EB3F50 /* KSF_P170.ttf in Resources */,
+				181B2DF82608E03B00EB3F50 /* KSF_P171.ttf in Resources */,
+				181B2DF92608E03B00EB3F50 /* KSF_P172.ttf in Resources */,
+				181B2DFA2608E03B00EB3F50 /* KSF_P173.ttf in Resources */,
+				181B2DFB2608E03B00EB3F50 /* KSF_P174.ttf in Resources */,
+				181B2DFC2608E03B00EB3F50 /* KSF_P175.ttf in Resources */,
+				181B2DFD2608E03B00EB3F50 /* KSF_P176.ttf in Resources */,
+				181B2DFE2608E03B00EB3F50 /* KSF_P177.ttf in Resources */,
+				181B2DFF2608E03B00EB3F50 /* KSF_P178.ttf in Resources */,
+				181B2E002608E03B00EB3F50 /* KSF_P179.ttf in Resources */,
+				181B2E012608E03B00EB3F50 /* KSF_P180.ttf in Resources */,
+				181B2E022608E03B00EB3F50 /* KSF_P181.ttf in Resources */,
+				181B2E032608E03B00EB3F50 /* KSF_P182.ttf in Resources */,
+				181B2E042608E03B00EB3F50 /* KSF_P183.ttf in Resources */,
+				181B2E052608E03B00EB3F50 /* KSF_P184.ttf in Resources */,
+				181B2E062608E03B00EB3F50 /* KSF_P185.ttf in Resources */,
+				181B2E072608E03B00EB3F50 /* KSF_P186.ttf in Resources */,
+				181B2E082608E03B00EB3F50 /* KSF_P187.ttf in Resources */,
+				181B2E092608E03B00EB3F50 /* KSF_P188.ttf in Resources */,
+				181B2E0A2608E03B00EB3F50 /* KSF_P189.ttf in Resources */,
+				181B2E0B2608E03B00EB3F50 /* KSF_P190.ttf in Resources */,
+				181B2E0C2608E03B00EB3F50 /* KSF_P191.ttf in Resources */,
+				181B2E0D2608E03B00EB3F50 /* KSF_P192.ttf in Resources */,
+				181B2E0E2608E03B00EB3F50 /* KSF_P193.ttf in Resources */,
+				181B2E0F2608E03B00EB3F50 /* KSF_P194.ttf in Resources */,
+				181B2E102608E03B00EB3F50 /* KSF_P195.ttf in Resources */,
+				181B2E112608E03B00EB3F50 /* KSF_P196.ttf in Resources */,
+				181B2E122608E03B00EB3F50 /* KSF_P197.ttf in Resources */,
+				181B2E132608E03B00EB3F50 /* KSF_P198.ttf in Resources */,
+				181B2E142608E03B00EB3F50 /* KSF_P199.ttf in Resources */,
+				181B2E152608E03B00EB3F50 /* KSF_P200.ttf in Resources */,
+				181B2E162608E03B00EB3F50 /* KSF_P201.ttf in Resources */,
+				181B2E172608E03B00EB3F50 /* KSF_P202.ttf in Resources */,
+				181B2E182608E03B00EB3F50 /* KSF_P203.ttf in Resources */,
+				181B2E192608E03B00EB3F50 /* KSF_P204.ttf in Resources */,
+				181B2E1A2608E03B00EB3F50 /* KSF_P205.ttf in Resources */,
+				181B2E1B2608E03B00EB3F50 /* KSF_P206.ttf in Resources */,
+				181B2E1C2608E03B00EB3F50 /* KSF_P207.ttf in Resources */,
+				181B2E1D2608E03B00EB3F50 /* KSF_P208.ttf in Resources */,
+				181B2E1E2608E03B00EB3F50 /* KSF_P209.ttf in Resources */,
+				181B2E1F2608E03B00EB3F50 /* KSF_P210.ttf in Resources */,
+				181B2E202608E03B00EB3F50 /* KSF_P211.ttf in Resources */,
+				181B2E212608E03B00EB3F50 /* KSF_P212.ttf in Resources */,
+				181B2E222608E03B00EB3F50 /* KSF_P213.ttf in Resources */,
+				181B2E232608E03B00EB3F50 /* KSF_P214.ttf in Resources */,
+				181B2E242608E03B00EB3F50 /* KSF_P215.ttf in Resources */,
+				181B2E252608E03B00EB3F50 /* KSF_P216.ttf in Resources */,
+				181B2E262608E03B00EB3F50 /* KSF_P217.ttf in Resources */,
+				181B2E272608E03B00EB3F50 /* KSF_P218.ttf in Resources */,
+				181B2E282608E03B00EB3F50 /* KSF_P219.ttf in Resources */,
+				181B2E292608E03B00EB3F50 /* KSF_P220.ttf in Resources */,
+				181B2E2A2608E03B00EB3F50 /* KSF_P221.ttf in Resources */,
+				181B2E2B2608E03B00EB3F50 /* KSF_P222.ttf in Resources */,
+				181B2E2C2608E03B00EB3F50 /* KSF_P223.ttf in Resources */,
+				181B2E2D2608E03B00EB3F50 /* KSF_P224.ttf in Resources */,
+				181B2E2E2608E03B00EB3F50 /* KSF_P225.ttf in Resources */,
+				181B2E2F2608E03B00EB3F50 /* KSF_P226.ttf in Resources */,
+				181B2E302608E03B00EB3F50 /* KSF_P227.ttf in Resources */,
+				181B2E312608E03B00EB3F50 /* KSF_P228.ttf in Resources */,
+				181B2E322608E03B00EB3F50 /* KSF_P229.ttf in Resources */,
+				181B2E332608E03B00EB3F50 /* KSF_P230.ttf in Resources */,
+				181B2E342608E03B00EB3F50 /* KSF_P231.ttf in Resources */,
+				181B2E352608E03B00EB3F50 /* KSF_P232.ttf in Resources */,
+				181B2E362608E03B00EB3F50 /* KSF_P233.ttf in Resources */,
+				181B2E372608E03B00EB3F50 /* KSF_P234.ttf in Resources */,
+				181B2E382608E03B00EB3F50 /* KSF_P235.ttf in Resources */,
+				181B2E392608E03B00EB3F50 /* KSF_P236.ttf in Resources */,
+				181B2E3A2608E03B00EB3F50 /* KSF_P237.ttf in Resources */,
+				181B2E3B2608E03B00EB3F50 /* KSF_P238.ttf in Resources */,
+				181B2E3C2608E03B00EB3F50 /* KSF_P239.ttf in Resources */,
+				181B2E3D2608E03B00EB3F50 /* KSF_P240.ttf in Resources */,
+				181B2E3E2608E03B00EB3F50 /* KSF_P241.ttf in Resources */,
+				181B2E3F2608E03B00EB3F50 /* KSF_P242.ttf in Resources */,
+				181B2E402608E03B00EB3F50 /* KSF_P243.ttf in Resources */,
+				181B2E412608E03B00EB3F50 /* KSF_P244.ttf in Resources */,
+				181B2E422608E03B00EB3F50 /* KSF_P245.ttf in Resources */,
+				181B2E432608E03B00EB3F50 /* KSF_P246.ttf in Resources */,
+				181B2E442608E03B00EB3F50 /* KSF_P247.ttf in Resources */,
+				181B2E452608E03B00EB3F50 /* KSF_P248.ttf in Resources */,
+				181B2E462608E03B00EB3F50 /* KSF_P249.ttf in Resources */,
+				181B2E472608E03B00EB3F50 /* KSF_P250.ttf in Resources */,
+				181B2E482608E03B00EB3F50 /* KSF_P251.ttf in Resources */,
+				181B2E492608E03B00EB3F50 /* KSF_P252.ttf in Resources */,
+				181B2E4A2608E03B00EB3F50 /* KSF_P253.ttf in Resources */,
+				181B2E4B2608E03B00EB3F50 /* KSF_P254.ttf in Resources */,
+				181B2E4C2608E03B00EB3F50 /* KSF_P255.ttf in Resources */,
+				181B2E4D2608E03B00EB3F50 /* KSF_P256.ttf in Resources */,
+				181B2E4E2608E03B00EB3F50 /* KSF_P257.ttf in Resources */,
+				181B2E4F2608E03B00EB3F50 /* KSF_P258.ttf in Resources */,
+				181B2E502608E03B00EB3F50 /* KSF_P259.ttf in Resources */,
+				181B2E512608E03B00EB3F50 /* KSF_P260.ttf in Resources */,
+				181B2E522608E03B00EB3F50 /* KSF_P261.ttf in Resources */,
+				181B2E532608E03B00EB3F50 /* KSF_P262.ttf in Resources */,
+				181B2E542608E03B00EB3F50 /* KSF_P263.ttf in Resources */,
+				181B2E552608E03B00EB3F50 /* KSF_P264.ttf in Resources */,
+				181B2E562608E03B00EB3F50 /* KSF_P265.ttf in Resources */,
+				181B2E572608E03B00EB3F50 /* KSF_P266.ttf in Resources */,
+				181B2E582608E03B00EB3F50 /* KSF_P267.ttf in Resources */,
+				181B2E592608E03B00EB3F50 /* KSF_P268.ttf in Resources */,
+				181B2E5A2608E03B00EB3F50 /* KSF_P269.ttf in Resources */,
+				181B2E5B2608E03C00EB3F50 /* KSF_P270.ttf in Resources */,
+				181B2E5C2608E03C00EB3F50 /* KSF_P271.ttf in Resources */,
+				181B2E5D2608E03C00EB3F50 /* KSF_P272.ttf in Resources */,
+				181B2E5E2608E03C00EB3F50 /* KSF_P273.ttf in Resources */,
+				181B2E5F2608E03C00EB3F50 /* KSF_P274.ttf in Resources */,
+				181B2E602608E03C00EB3F50 /* KSF_P275.ttf in Resources */,
+				181B2E612608E03C00EB3F50 /* KSF_P276.ttf in Resources */,
+				181B2E622608E03C00EB3F50 /* KSF_P277.ttf in Resources */,
+				181B2E632608E03C00EB3F50 /* KSF_P278.ttf in Resources */,
+				181B2E642608E03C00EB3F50 /* KSF_P279.ttf in Resources */,
+				181B2E652608E03C00EB3F50 /* KSF_P280.ttf in Resources */,
+				181B2E662608E03C00EB3F50 /* KSF_P281.ttf in Resources */,
+				181B2E672608E03C00EB3F50 /* KSF_P282.ttf in Resources */,
+				181B2E682608E03C00EB3F50 /* KSF_P283.ttf in Resources */,
+				181B2E692608E03C00EB3F50 /* KSF_P284.ttf in Resources */,
+				181B2E6A2608E03C00EB3F50 /* KSF_P285.ttf in Resources */,
+				181B2E6B2608E03C00EB3F50 /* KSF_P286.ttf in Resources */,
+				181B2E6C2608E03C00EB3F50 /* KSF_P287.ttf in Resources */,
+				181B2E6D2608E03C00EB3F50 /* KSF_P288.ttf in Resources */,
+				181B2E6E2608E03C00EB3F50 /* KSF_P289.ttf in Resources */,
+				181B2E6F2608E03C00EB3F50 /* KSF_P290.ttf in Resources */,
+				181B2E702608E03C00EB3F50 /* KSF_P291.ttf in Resources */,
+				181B2E712608E03C00EB3F50 /* KSF_P292.ttf in Resources */,
+				181B2E722608E03C00EB3F50 /* KSF_P293.ttf in Resources */,
+				181B2E732608E03C00EB3F50 /* KSF_P294.ttf in Resources */,
+				181B2E742608E03C00EB3F50 /* KSF_P295.ttf in Resources */,
+				181B2E752608E03C00EB3F50 /* KSF_P296.ttf in Resources */,
+				181B2E762608E03C00EB3F50 /* KSF_P297.ttf in Resources */,
+				181B2E772608E03C00EB3F50 /* KSF_P298.ttf in Resources */,
+				181B2E782608E03C00EB3F50 /* KSF_P299.ttf in Resources */,
+				181B2E792608E03C00EB3F50 /* KSF_P300.ttf in Resources */,
+				181B2E7A2608E03C00EB3F50 /* KSF_P301.ttf in Resources */,
+				181B2E7B2608E03C00EB3F50 /* KSF_P302.ttf in Resources */,
+				181B2E7C2608E03C00EB3F50 /* KSF_P303.ttf in Resources */,
+				181B2E7D2608E03C00EB3F50 /* KSF_P304.ttf in Resources */,
+				181B2E7E2608E03C00EB3F50 /* KSF_P305.ttf in Resources */,
+				181B2E7F2608E03C00EB3F50 /* KSF_P306.ttf in Resources */,
+				181B2E802608E03C00EB3F50 /* KSF_P307.ttf in Resources */,
+				181B2E812608E03C00EB3F50 /* KSF_P308.ttf in Resources */,
+				181B2E822608E03C00EB3F50 /* KSF_P309.ttf in Resources */,
+				181B2E832608E03C00EB3F50 /* KSF_P310.ttf in Resources */,
+				181B2E842608E03C00EB3F50 /* KSF_P311.ttf in Resources */,
+				181B2E852608E03C00EB3F50 /* KSF_P312.ttf in Resources */,
+				181B2E862608E03C00EB3F50 /* KSF_P313.ttf in Resources */,
+				181B2E872608E03C00EB3F50 /* KSF_P314.ttf in Resources */,
+				181B2E882608E03C00EB3F50 /* KSF_P315.ttf in Resources */,
+				181B2E892608E03C00EB3F50 /* KSF_P316.ttf in Resources */,
+				181B2E8A2608E03C00EB3F50 /* KSF_P317.ttf in Resources */,
+				181B2E8B2608E03C00EB3F50 /* KSF_P318.ttf in Resources */,
+				181B2E8C2608E03C00EB3F50 /* KSF_P319.ttf in Resources */,
+				181B2E8D2608E03C00EB3F50 /* KSF_P320.ttf in Resources */,
+				181B2E8E2608E03C00EB3F50 /* KSF_P321.ttf in Resources */,
+				181B2E8F2608E03C00EB3F50 /* KSF_P322.ttf in Resources */,
+				181B2E902608E03C00EB3F50 /* KSF_P323.ttf in Resources */,
+				181B2E912608E03C00EB3F50 /* KSF_P324.ttf in Resources */,
+				181B2E922608E03C00EB3F50 /* KSF_P325.ttf in Resources */,
+				181B2E932608E03C00EB3F50 /* KSF_P326.ttf in Resources */,
+				181B2E942608E03C00EB3F50 /* KSF_P327.ttf in Resources */,
+				181B2E952608E03C00EB3F50 /* KSF_P328.ttf in Resources */,
+				181B2E962608E03C00EB3F50 /* KSF_P329.ttf in Resources */,
+				181B2E972608E03C00EB3F50 /* KSF_P330.ttf in Resources */,
+				181B2E982608E03C00EB3F50 /* KSF_P331.ttf in Resources */,
+				181B2E992608E03C00EB3F50 /* KSF_P332.ttf in Resources */,
+				181B2E9A2608E03C00EB3F50 /* KSF_P333.ttf in Resources */,
+				181B2E9B2608E03C00EB3F50 /* KSF_P334.ttf in Resources */,
+				181B2E9C2608E03C00EB3F50 /* KSF_P335.ttf in Resources */,
+				181B2E9D2608E03C00EB3F50 /* KSF_P336.ttf in Resources */,
+				181B2E9E2608E03C00EB3F50 /* KSF_P337.ttf in Resources */,
+				181B2E9F2608E03C00EB3F50 /* KSF_P338.ttf in Resources */,
+				181B2EA02608E03C00EB3F50 /* KSF_P339.ttf in Resources */,
+				181B2EA12608E03C00EB3F50 /* KSF_P340.ttf in Resources */,
+				181B2EA22608E03C00EB3F50 /* KSF_P341.ttf in Resources */,
+				181B2EA32608E03C00EB3F50 /* KSF_P342.ttf in Resources */,
+				181B2EA42608E03C00EB3F50 /* KSF_P343.ttf in Resources */,
+				181B2EA52608E03C00EB3F50 /* KSF_P344.ttf in Resources */,
+				181B2EA62608E03C00EB3F50 /* KSF_P345.ttf in Resources */,
+				181B2EA72608E03C00EB3F50 /* KSF_P346.ttf in Resources */,
+				181B2EA82608E03C00EB3F50 /* KSF_P347.ttf in Resources */,
+				181B2EA92608E03C00EB3F50 /* KSF_P348.ttf in Resources */,
+				181B2EAA2608E03C00EB3F50 /* KSF_P349.ttf in Resources */,
+				181B2EAB2608E03C00EB3F50 /* KSF_P350.ttf in Resources */,
+				181B2EAC2608E03C00EB3F50 /* KSF_P351.ttf in Resources */,
+				181B2EAD2608E03C00EB3F50 /* KSF_P352.ttf in Resources */,
+				181B2EAE2608E03C00EB3F50 /* KSF_P353.ttf in Resources */,
+				181B2EAF2608E03C00EB3F50 /* KSF_P354.ttf in Resources */,
+				181B2EB02608E03C00EB3F50 /* KSF_P355.ttf in Resources */,
+				181B2EB12608E03C00EB3F50 /* KSF_P356.ttf in Resources */,
+				181B2EB22608E03C00EB3F50 /* KSF_P357.ttf in Resources */,
+				181B2EB32608E03C00EB3F50 /* KSF_P358.ttf in Resources */,
+				181B2EB42608E03C00EB3F50 /* KSF_P359.ttf in Resources */,
+				181B2EB52608E03C00EB3F50 /* KSF_P360.ttf in Resources */,
+				181B2EB62608E03C00EB3F50 /* KSF_P361.ttf in Resources */,
+				181B2EB72608E03C00EB3F50 /* KSF_P362.ttf in Resources */,
+				181B2EB82608E03C00EB3F50 /* KSF_P363.ttf in Resources */,
+				181B2EB92608E03C00EB3F50 /* KSF_P364.ttf in Resources */,
+				181B2EBA2608E03C00EB3F50 /* KSF_P365.ttf in Resources */,
+				181B2EBB2608E03C00EB3F50 /* KSF_P366.ttf in Resources */,
+				181B2EBC2608E03C00EB3F50 /* KSF_P367.ttf in Resources */,
+				181B2EBD2608E03C00EB3F50 /* KSF_P368.ttf in Resources */,
+				181B2EBE2608E03C00EB3F50 /* KSF_P369.ttf in Resources */,
+				181B2EBF2608E03C00EB3F50 /* KSF_P370.ttf in Resources */,
+				181B2EC02608E03C00EB3F50 /* KSF_P371.ttf in Resources */,
+				181B2EC12608E03C00EB3F50 /* KSF_P372.ttf in Resources */,
+				181B2EC22608E03C00EB3F50 /* KSF_P373.ttf in Resources */,
+				181B2EC32608E03C00EB3F50 /* KSF_P374.ttf in Resources */,
+				181B2EC42608E03C00EB3F50 /* KSF_P375.ttf in Resources */,
+				181B2EC52608E03C00EB3F50 /* KSF_P376.ttf in Resources */,
+				181B2EC62608E03C00EB3F50 /* KSF_P377.ttf in Resources */,
+				181B2EC72608E03C00EB3F50 /* KSF_P378.ttf in Resources */,
+				181B2EC82608E03C00EB3F50 /* KSF_P379.ttf in Resources */,
+				181B2EC92608E03C00EB3F50 /* KSF_P380.ttf in Resources */,
+				181B2ECA2608E03C00EB3F50 /* KSF_P381.ttf in Resources */,
+				181B2ECB2608E03C00EB3F50 /* KSF_P382.ttf in Resources */,
+				181B2ECC2608E03C00EB3F50 /* KSF_P383.ttf in Resources */,
+				181B2ECD2608E03C00EB3F50 /* KSF_P384.ttf in Resources */,
+				181B2ECE2608E03C00EB3F50 /* KSF_P385.ttf in Resources */,
+				181B2ECF2608E03C00EB3F50 /* KSF_P386.ttf in Resources */,
+				181B2ED02608E03C00EB3F50 /* KSF_P387.ttf in Resources */,
+				181B2ED12608E03C00EB3F50 /* KSF_P388.ttf in Resources */,
+				181B2ED22608E03C00EB3F50 /* KSF_P389.ttf in Resources */,
+				181B2ED32608E03C00EB3F50 /* KSF_P390.ttf in Resources */,
+				181B2ED42608E03C00EB3F50 /* KSF_P391.ttf in Resources */,
+				181B2ED52608E03C00EB3F50 /* KSF_P392.ttf in Resources */,
+				181B2ED62608E03C00EB3F50 /* KSF_P393.ttf in Resources */,
+				181B2ED72608E03C00EB3F50 /* KSF_P394.ttf in Resources */,
+				181B2ED82608E03C00EB3F50 /* KSF_P395.ttf in Resources */,
+				181B2ED92608E03C00EB3F50 /* KSF_P396.ttf in Resources */,
+				181B2EDA2608E03C00EB3F50 /* KSF_P397.ttf in Resources */,
+				181B2EDB2608E03C00EB3F50 /* KSF_P398.ttf in Resources */,
+				181B2EDC2608E03C00EB3F50 /* KSF_P399.ttf in Resources */,
+				181B2EDD2608E03C00EB3F50 /* KSF_P400.ttf in Resources */,
+				181B2EDE2608E03C00EB3F50 /* KSF_P401.ttf in Resources */,
+				181B2EDF2608E03C00EB3F50 /* KSF_P402.ttf in Resources */,
+				181B2EE02608E03C00EB3F50 /* KSF_P403.ttf in Resources */,
+				181B2EE12608E03C00EB3F50 /* KSF_P404.ttf in Resources */,
+				181B2EE22608E03C00EB3F50 /* KSF_P405.ttf in Resources */,
+				181B2EE32608E03C00EB3F50 /* KSF_P406.ttf in Resources */,
+				181B2EE42608E03C00EB3F50 /* KSF_P407.ttf in Resources */,
+				181B2EE52608E03C00EB3F50 /* KSF_P408.ttf in Resources */,
+				181B2EE62608E03C00EB3F50 /* KSF_P409.ttf in Resources */,
+				181B2EE72608E03C00EB3F50 /* KSF_P410.ttf in Resources */,
+				181B2EE82608E03C00EB3F50 /* KSF_P411.ttf in Resources */,
+				181B2EE92608E03C00EB3F50 /* KSF_P412.ttf in Resources */,
+				181B2EEA2608E03C00EB3F50 /* KSF_P413.ttf in Resources */,
+				181B2EEB2608E03C00EB3F50 /* KSF_P414.ttf in Resources */,
+				181B2EEC2608E03C00EB3F50 /* KSF_P415.ttf in Resources */,
+				181B2EED2608E03C00EB3F50 /* KSF_P416.ttf in Resources */,
+				181B2EEE2608E03C00EB3F50 /* KSF_P417.ttf in Resources */,
+				181B2EEF2608E03C00EB3F50 /* KSF_P418.ttf in Resources */,
+				181B2EF02608E03C00EB3F50 /* KSF_P419.ttf in Resources */,
+				181B2EF12608E03C00EB3F50 /* KSF_P420.ttf in Resources */,
+				181B2EF22608E03C00EB3F50 /* KSF_P421.ttf in Resources */,
+				181B2EF32608E03C00EB3F50 /* KSF_P422.ttf in Resources */,
+				181B2EF42608E03C00EB3F50 /* KSF_P423.ttf in Resources */,
+				181B2EF52608E03C00EB3F50 /* KSF_P424.ttf in Resources */,
+				181B2EF62608E03C00EB3F50 /* KSF_P425.ttf in Resources */,
+				181B2EF72608E03C00EB3F50 /* KSF_P426.ttf in Resources */,
+				181B2EF82608E03C00EB3F50 /* KSF_P427.ttf in Resources */,
+				181B2EF92608E03C00EB3F50 /* KSF_P428.ttf in Resources */,
+				181B2EFA2608E03C00EB3F50 /* KSF_P429.ttf in Resources */,
+				181B2EFB2608E03C00EB3F50 /* KSF_P430.ttf in Resources */,
+				181B2EFC2608E03C00EB3F50 /* KSF_P431.ttf in Resources */,
+				181B2EFD2608E03C00EB3F50 /* KSF_P432.ttf in Resources */,
+				181B2EFE2608E03C00EB3F50 /* KSF_P433.ttf in Resources */,
+				181B2EFF2608E03C00EB3F50 /* KSF_P434.ttf in Resources */,
+				181B2F002608E03C00EB3F50 /* KSF_P435.ttf in Resources */,
+				181B2F012608E03C00EB3F50 /* KSF_P436.ttf in Resources */,
+				181B2F022608E03C00EB3F50 /* KSF_P437.ttf in Resources */,
+				181B2F032608E03C00EB3F50 /* KSF_P438.ttf in Resources */,
+				181B2F042608E03C00EB3F50 /* KSF_P439.ttf in Resources */,
+				181B2F052608E03C00EB3F50 /* KSF_P440.ttf in Resources */,
+				181B2F062608E03C00EB3F50 /* KSF_P441.ttf in Resources */,
+				181B2F072608E03C00EB3F50 /* KSF_P442.ttf in Resources */,
+				181B2F082608E03C00EB3F50 /* KSF_P443.ttf in Resources */,
+				181B2F092608E03C00EB3F50 /* KSF_P444.ttf in Resources */,
+				181B2F0A2608E03C00EB3F50 /* KSF_P445.ttf in Resources */,
+				181B2F0B2608E03C00EB3F50 /* KSF_P446.ttf in Resources */,
+				181B2F0C2608E03C00EB3F50 /* KSF_P447.ttf in Resources */,
+				181B2F0D2608E03C00EB3F50 /* KSF_P448.ttf in Resources */,
+				181B2F0E2608E03C00EB3F50 /* KSF_P449.ttf in Resources */,
+				181B2F0F2608E03C00EB3F50 /* KSF_P450.ttf in Resources */,
+				181B2F102608E03C00EB3F50 /* KSF_P451.ttf in Resources */,
+				181B2F112608E03C00EB3F50 /* KSF_P452.ttf in Resources */,
+				181B2F122608E03C00EB3F50 /* KSF_P453.ttf in Resources */,
+				181B2F132608E03C00EB3F50 /* KSF_P454.ttf in Resources */,
+				181B2F142608E03C00EB3F50 /* KSF_P455.ttf in Resources */,
+				181B2F152608E03C00EB3F50 /* KSF_P456.ttf in Resources */,
+				181B2F162608E03C00EB3F50 /* KSF_P457.ttf in Resources */,
+				181B2F172608E03C00EB3F50 /* KSF_P458.ttf in Resources */,
+				181B2F182608E03C00EB3F50 /* KSF_P459.ttf in Resources */,
+				181B2F192608E03C00EB3F50 /* KSF_P460.ttf in Resources */,
+				181B2F1A2608E03C00EB3F50 /* KSF_P461.ttf in Resources */,
+				181B2F1B2608E03C00EB3F50 /* KSF_P462.ttf in Resources */,
+				181B2F1C2608E03C00EB3F50 /* KSF_P463.ttf in Resources */,
+				181B2F1D2608E03C00EB3F50 /* KSF_P464.ttf in Resources */,
+				181B2F1E2608E03C00EB3F50 /* KSF_P465.ttf in Resources */,
+				181B2F1F2608E03C00EB3F50 /* KSF_P466.ttf in Resources */,
+				181B2F202608E03C00EB3F50 /* KSF_P467.ttf in Resources */,
+				181B2F212608E03C00EB3F50 /* KSF_P468.ttf in Resources */,
+				181B2F222608E03C00EB3F50 /* KSF_P469.ttf in Resources */,
+				181B2F232608E03C00EB3F50 /* KSF_P470.ttf in Resources */,
+				181B2F242608E03C00EB3F50 /* KSF_P471.ttf in Resources */,
+				181B2F252608E03C00EB3F50 /* KSF_P472.ttf in Resources */,
+				181B2F262608E03C00EB3F50 /* KSF_P473.ttf in Resources */,
+				181B2F272608E03C00EB3F50 /* KSF_P474.ttf in Resources */,
+				181B2F282608E03C00EB3F50 /* KSF_P475.ttf in Resources */,
+				181B2F292608E03C00EB3F50 /* KSF_P476.ttf in Resources */,
+				181B2F2A2608E03C00EB3F50 /* KSF_P477.ttf in Resources */,
+				181B2F2B2608E03C00EB3F50 /* KSF_P478.ttf in Resources */,
+				181B2F2C2608E03C00EB3F50 /* KSF_P479.ttf in Resources */,
+				181B2F2D2608E03C00EB3F50 /* KSF_P480.ttf in Resources */,
+				181B2F2E2608E03C00EB3F50 /* KSF_P481.ttf in Resources */,
+				181B2F2F2608E03C00EB3F50 /* KSF_P482.ttf in Resources */,
+				181B2F302608E03C00EB3F50 /* KSF_P483.ttf in Resources */,
+				181B2F312608E03C00EB3F50 /* KSF_P484.ttf in Resources */,
+				181B2F322608E03C00EB3F50 /* KSF_P485.ttf in Resources */,
+				181B2F332608E03C00EB3F50 /* KSF_P486.ttf in Resources */,
+				181B2F342608E03C00EB3F50 /* KSF_P487.ttf in Resources */,
+				181B2F352608E03C00EB3F50 /* KSF_P488.ttf in Resources */,
+				181B2F362608E03C00EB3F50 /* KSF_P489.ttf in Resources */,
+				181B2F372608E03C00EB3F50 /* KSF_P490.ttf in Resources */,
+				181B2F382608E03C00EB3F50 /* KSF_P491.ttf in Resources */,
+				181B2F392608E03C00EB3F50 /* KSF_P492.ttf in Resources */,
+				181B2F3A2608E03C00EB3F50 /* KSF_P493.ttf in Resources */,
+				181B2F3B2608E03C00EB3F50 /* KSF_P494.ttf in Resources */,
+				181B2F3C2608E03C00EB3F50 /* KSF_P495.ttf in Resources */,
+				181B2F3D2608E03C00EB3F50 /* KSF_P496.ttf in Resources */,
+				181B2F3E2608E03C00EB3F50 /* KSF_P497.ttf in Resources */,
+				181B2F3F2608E03C00EB3F50 /* KSF_P498.ttf in Resources */,
+				181B2F402608E03C00EB3F50 /* KSF_P499.ttf in Resources */,
+				181B2F412608E03C00EB3F50 /* KSF_P500.ttf in Resources */,
+				181B2F422608E03C00EB3F50 /* KSF_P501.ttf in Resources */,
+				181B2F432608E03C00EB3F50 /* KSF_P502.ttf in Resources */,
+				181B2F442608E03C00EB3F50 /* KSF_P503.ttf in Resources */,
+				181B2F452608E03C00EB3F50 /* KSF_P504.ttf in Resources */,
+				181B2F462608E03C00EB3F50 /* KSF_P505.ttf in Resources */,
+				181B2F472608E03C00EB3F50 /* KSF_P506.ttf in Resources */,
+				181B2F482608E03C00EB3F50 /* KSF_P507.ttf in Resources */,
+				181B2F492608E03C00EB3F50 /* KSF_P508.ttf in Resources */,
+				181B2F4A2608E03C00EB3F50 /* KSF_P509.ttf in Resources */,
+				181B2F4B2608E03C00EB3F50 /* KSF_P510.ttf in Resources */,
+				181B2F4C2608E03C00EB3F50 /* KSF_P511.ttf in Resources */,
+				181B2F4D2608E03C00EB3F50 /* KSF_P512.ttf in Resources */,
+				181B2F4E2608E03C00EB3F50 /* KSF_P513.ttf in Resources */,
+				181B2F4F2608E03C00EB3F50 /* KSF_P514.ttf in Resources */,
+				181B2F502608E03C00EB3F50 /* KSF_P515.ttf in Resources */,
+				181B2F512608E03C00EB3F50 /* KSF_P516.ttf in Resources */,
+				181B2F522608E03C00EB3F50 /* KSF_P517.ttf in Resources */,
+				181B2F532608E03C00EB3F50 /* KSF_P518.ttf in Resources */,
+				181B2F542608E03C00EB3F50 /* KSF_P519.ttf in Resources */,
+				181B2F552608E03C00EB3F50 /* KSF_P520.ttf in Resources */,
+				181B2F562608E03C00EB3F50 /* KSF_P521.ttf in Resources */,
+				181B2F572608E03C00EB3F50 /* KSF_P522.ttf in Resources */,
+				181B2F582608E03C00EB3F50 /* KSF_P523.ttf in Resources */,
+				181B2F592608E03C00EB3F50 /* KSF_P524.ttf in Resources */,
+				181B2F5A2608E03C00EB3F50 /* KSF_P525.ttf in Resources */,
+				181B2F5B2608E03C00EB3F50 /* KSF_P526.ttf in Resources */,
+				181B2F5C2608E03C00EB3F50 /* KSF_P527.ttf in Resources */,
+				181B2F5D2608E03C00EB3F50 /* KSF_P528.ttf in Resources */,
+				181B2F5E2608E03C00EB3F50 /* KSF_P529.ttf in Resources */,
+				181B2F5F2608E03D00EB3F50 /* KSF_P530.ttf in Resources */,
+				181B2F602608E03D00EB3F50 /* KSF_P531.ttf in Resources */,
+				181B2F612608E03D00EB3F50 /* KSF_P532.ttf in Resources */,
+				181B2F622608E03D00EB3F50 /* KSF_P533.ttf in Resources */,
+				181B2F632608E03D00EB3F50 /* KSF_P534.ttf in Resources */,
+				181B2F642608E03D00EB3F50 /* KSF_P535.ttf in Resources */,
+				181B2F652608E03D00EB3F50 /* KSF_P536.ttf in Resources */,
+				181B2F662608E03D00EB3F50 /* KSF_P537.ttf in Resources */,
+				181B2F672608E03D00EB3F50 /* KSF_P538.ttf in Resources */,
+				181B2F682608E03D00EB3F50 /* KSF_P539.ttf in Resources */,
+				181B2F692608E03D00EB3F50 /* KSF_P540.ttf in Resources */,
+				181B2F6A2608E03D00EB3F50 /* KSF_P541.ttf in Resources */,
+				181B2F6B2608E03D00EB3F50 /* KSF_P542.ttf in Resources */,
+				181B2F6C2608E03D00EB3F50 /* KSF_P543.ttf in Resources */,
+				181B2F6D2608E03D00EB3F50 /* KSF_P544.ttf in Resources */,
+				181B2F6E2608E03D00EB3F50 /* KSF_P545.ttf in Resources */,
+				181B2F6F2608E03D00EB3F50 /* KSF_P546.ttf in Resources */,
+				181B2F702608E03D00EB3F50 /* KSF_P547.ttf in Resources */,
+				181B2F712608E03D00EB3F50 /* KSF_P548.ttf in Resources */,
+				181B2F722608E03D00EB3F50 /* KSF_P549.ttf in Resources */,
+				181B2F732608E03D00EB3F50 /* KSF_P550.ttf in Resources */,
+				181B2F742608E03D00EB3F50 /* KSF_P551.ttf in Resources */,
+				181B2F752608E03D00EB3F50 /* KSF_P552.ttf in Resources */,
+				181B2F762608E03D00EB3F50 /* KSF_P553.ttf in Resources */,
+				181B2F772608E03D00EB3F50 /* KSF_P554.ttf in Resources */,
+				181B2F782608E03D00EB3F50 /* KSF_P555.ttf in Resources */,
+				181B2F792608E03D00EB3F50 /* KSF_P556.ttf in Resources */,
+				181B2F7A2608E03D00EB3F50 /* KSF_P557.ttf in Resources */,
+				181B2F7B2608E03D00EB3F50 /* KSF_P558.ttf in Resources */,
+				181B2F7C2608E03D00EB3F50 /* KSF_P559.ttf in Resources */,
+				181B2F7D2608E03D00EB3F50 /* KSF_P560.ttf in Resources */,
+				181B2F7E2608E03D00EB3F50 /* KSF_P561.ttf in Resources */,
+				181B2F7F2608E03D00EB3F50 /* KSF_P562.ttf in Resources */,
+				181B2F802608E03D00EB3F50 /* KSF_P563.ttf in Resources */,
+				181B2F812608E03D00EB3F50 /* KSF_P564.ttf in Resources */,
+				181B2F822608E03D00EB3F50 /* KSF_P565.ttf in Resources */,
+				181B2F832608E03D00EB3F50 /* KSF_P566.ttf in Resources */,
+				181B2F842608E03D00EB3F50 /* KSF_P567.ttf in Resources */,
+				181B2F852608E03D00EB3F50 /* KSF_P568.ttf in Resources */,
+				181B2F862608E03D00EB3F50 /* KSF_P569.ttf in Resources */,
+				181B2F872608E03D00EB3F50 /* KSF_P570.ttf in Resources */,
+				181B2F882608E03D00EB3F50 /* KSF_P571.ttf in Resources */,
+				181B2F892608E03D00EB3F50 /* KSF_P572.ttf in Resources */,
+				181B2F8A2608E03D00EB3F50 /* KSF_P573.ttf in Resources */,
+				181B2F8B2608E03D00EB3F50 /* KSF_P574.ttf in Resources */,
+				181B2F8C2608E03D00EB3F50 /* KSF_P575.ttf in Resources */,
+				181B2F8D2608E03D00EB3F50 /* KSF_P576.ttf in Resources */,
+				181B2F8E2608E03D00EB3F50 /* KSF_P577.ttf in Resources */,
+				181B2F8F2608E03D00EB3F50 /* KSF_P578.ttf in Resources */,
+				181B2F902608E03D00EB3F50 /* KSF_P579.ttf in Resources */,
+				181B2F912608E03D00EB3F50 /* KSF_P580.ttf in Resources */,
+				181B2F922608E03D00EB3F50 /* KSF_P581.ttf in Resources */,
+				181B2F932608E03D00EB3F50 /* KSF_P582.ttf in Resources */,
+				181B2F942608E03D00EB3F50 /* KSF_P583.ttf in Resources */,
+				181B2F952608E03D00EB3F50 /* KSF_P584.ttf in Resources */,
+				181B2F962608E03D00EB3F50 /* KSF_P585.ttf in Resources */,
+				181B2F972608E03D00EB3F50 /* KSF_P586.ttf in Resources */,
+				181B2F982608E03D00EB3F50 /* KSF_P587.ttf in Resources */,
+				181B2F992608E03D00EB3F50 /* KSF_P588.ttf in Resources */,
+				181B2F9A2608E03D00EB3F50 /* KSF_P589.ttf in Resources */,
+				181B2F9B2608E03D00EB3F50 /* KSF_P590.ttf in Resources */,
+				181B2F9C2608E03D00EB3F50 /* KSF_P591.ttf in Resources */,
+				181B2F9D2608E03D00EB3F50 /* KSF_P592.ttf in Resources */,
+				181B2F9E2608E03D00EB3F50 /* KSF_P593.ttf in Resources */,
+				181B2F9F2608E03D00EB3F50 /* KSF_P594.ttf in Resources */,
+				181B2FA02608E03D00EB3F50 /* KSF_P595.ttf in Resources */,
+				181B2FA12608E03D00EB3F50 /* KSF_P596.ttf in Resources */,
+				181B2FA22608E03D00EB3F50 /* KSF_P597.ttf in Resources */,
+				181B2FA32608E03D00EB3F50 /* KSF_P598.ttf in Resources */,
+				181B2FA42608E03D00EB3F50 /* KSF_P599.ttf in Resources */,
+				181B2FA52608E03D00EB3F50 /* KSF_P600.ttf in Resources */,
+				181B2FA62608E03D00EB3F50 /* KSF_P601.ttf in Resources */,
+				181B2FA72608E03D00EB3F50 /* KSF_P602.ttf in Resources */,
+				181B2FA82608E03D00EB3F50 /* KSF_P603.ttf in Resources */,
+				181B2FA92608E03D00EB3F50 /* KSF_P604.ttf in Resources */,
 				18B8543625B6B63C00667E67 /* LaunchScreen.storyboard in Resources */,
-				1800ED9E25DAAF4D00F0A989 /* quran.xml in Resources */,
-				18A9C64126038F7E004D1078 /* quran2.xml in Resources */,
+				18A9C64126038F7E004D1078 /* quran.xml in Resources */,
+				181B2D4D2608E02C00EB3F50 /* KSF_P001.ttf in Resources */,
 				18B8543325B6B63C00667E67 /* Assets.xcassets in Resources */,
 				18B8543125B6B62900667E67 /* Main.storyboard in Resources */,
 			);
@@ -1511,6 +2722,7 @@
 				182FD40325CC2E2200D59FF2 /* Verse.swift in Sources */,
 				1879A86325C3E2D200FC0219 /* SetViewController.swift in Sources */,
 				186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */,
+				18506F48260B3609003C2BBC /* ReverseTextVC.m in Sources */,
 				1815DC1625E1AC4000DBF6DA /* BLEViewController.swift in Sources */,
 				182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */,
 				186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */,
@@ -1669,6 +2881,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
@@ -1682,6 +2895,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprintsols.quranapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Dev v1";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1693,6 +2908,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
@@ -1706,6 +2922,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprintsols.quranapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Dist v1";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

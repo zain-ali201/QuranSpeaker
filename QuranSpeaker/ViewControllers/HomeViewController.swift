@@ -24,6 +24,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var lblVolCount: UILabel!
     
     @IBOutlet weak var leading: NSLayoutConstraint!
+    
+    @IBOutlet weak var txtMainView: UIView!
     @IBOutlet weak var txtView: UITextView!
     
     var sura = String()
@@ -36,6 +38,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var quranFlag = false
     var volFlag = false
     var chapterNo = 1
+    var verseNo = 1
     var verseCount = 0
     var test = false
     
@@ -54,6 +57,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         manager = CBCentralManager(delegate: self, queue: nil)
         
+//        txtMainView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+//        txtView.textAlignment = .left
+//        txtView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+//        txtView.leadingAnchor.constraint(equalTo: txtMainView.leadingAnchor).isActive = true
+//        txtView.trailingAnchor.constraint(equalTo: txtMainView.trailingAnchor).isActive = true
+        
         quranView.layer.borderWidth = 1
         quranView.layer.borderColor = UIColor.darkGray.cgColor
         quranView.layer.shadowColor = UIColor.black.cgColor
@@ -67,10 +76,133 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 parser.parse()
             }
         }
+        
+        let swipeGestureRecognizerRight = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeGestureRecognizerRight.direction = .right
+        
+        let swipeGestureRecognizerLeft = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeGestureRecognizerLeft.direction = .left
+        
+        self.view.addGestureRecognizer(swipeGestureRecognizerRight)
+        self.view.addGestureRecognizer(swipeGestureRecognizerLeft)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
+
+        var flag = false
+        
+        if sender.direction == .left
+        {
+            if chapterNo > 1
+            {
+                if verseNo == 1
+                {
+                    chapterNo -= 1
+                    let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
+                    verseNo = ayatsArray.count
+                }
+                else
+                {
+                    verseNo -= 1
+                }
+                flag = true
+            }
+            else
+            {
+                if verseNo > 1
+                {
+                    verseNo -= 1
+                    flag = true
+                }
+            }
+        }
+        else
+        {
+            if chapterNo <= 114
+            {
+                let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
+                
+                if ayatsArray.count == verseNo
+                {
+                    chapterNo += 1
+                    verseNo = 1
+                }
+                else
+                {
+                    verseNo += 1
+                }
+                flag = true
+            }
+        }
+        
+        if chapterNo > 114
+        {
+            return
+        }
+        else if flag
+        {
+            let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
+            let ayatObj = ayatsArray[verseNo - 1]
+            
+            var prefix = "KSF"
+            
+            if ayatObj.page < 3
+            {
+                prefix.append("00")
+            }
+            else if ayatObj.page < 10
+            {
+                prefix.append("P00")
+            }
+            else if ayatObj.page < 100
+            {
+                prefix.append("P0")
+            }
+            else
+            {
+                prefix.append("P")
+            }
+            
+            print(String(format:"%@%d", prefix, ayatObj.page))
+            txtView.font = UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size:50)
+            txtView.text = asciiToString(start: ayatObj.start, end: ayatObj.end)
+            
+//            txtView.text = ReverseTextVC.setTextViewText(txtView.text, textViewFont: txtView.font, textViewBounds: txtView.bounds)
+//            print(txtView.text)
+            
+            if isMyPeripheralConected
+            {
+                let dataToSend = NSMutableData()
+                 
+                var division = verseNo / 255
+                var remainder = verseNo % 255
+                
+                print("Surat: \(chapterNo)")
+                print("Ayat: \(verseNo)")
+                print("Division: \(division)")
+                print("Remainder: \(remainder)")
+                
+                let surat = Data(bytes: &chapterNo, count: MemoryLayout.size(ofValue: chapterNo))
+                let div = Data(bytes: &division, count: MemoryLayout.size(ofValue: division))
+                let rem = Data(bytes: &remainder, count: MemoryLayout.size(ofValue: remainder))
+                
+                dataToSend.append("S".data(using: String.Encoding.ascii)!)
+                dataToSend.append(surat)
+                dataToSend.append(rem)
+                dataToSend.append(div)
+                
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                print("value written")
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
+        }
     }
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
@@ -194,8 +326,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             self.view.makeToast("Bluetooth device disconnected")
         }
-        
-        
     }
     
     @IBAction func clickBtnAction(_ button: UIButton)
@@ -259,7 +389,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 4
         {
-            key = "2"
+            manager = CBCentralManager(delegate: self, queue: nil)
         }
         else if button.tag == 5
         {
@@ -391,12 +521,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else
         {
+            verseNo = indexPath.row + 1
             let ayatObj = ayaTitle[indexPath.row]
             
-            var prefix = "KSF_"
+            var prefix = "KSF"
             
-            
-            if ayatObj.page < 10
+            if ayatObj.page < 3
+            {
+                prefix.append("00")
+            }
+            else if ayatObj.page < 10
             {
                 prefix.append("P00")
             }
@@ -404,10 +538,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 prefix.append("P0")
             }
+            else
+            {
+                prefix.append("P")
+            }
             
-            print(String(format:"%@%d", prefix, ayatObj.page))
-            txtView.font = UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size:50)
+            let fontName = String(format:"%@%d", prefix, ayatObj.page)
+            
+            print(fontName)
+            txtView.font = UIFont(name: fontName, size:50)
             txtView.text = asciiToString(start: ayatObj.start, end: ayatObj.end)
+
             leading.constant = -160
             quranFlag = false
             
@@ -446,13 +587,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func asciiToString(start: Int, end: Int) -> String
     {
         var resultStr = ""
-        var code = end
+        var code = start
         
         for _ in start...end
         {
             resultStr.append(Character(UnicodeScalar(code)!))
             resultStr.append("  ")
-            code -= 1
+            code += 1
         }
         print(resultStr)
         return resultStr
