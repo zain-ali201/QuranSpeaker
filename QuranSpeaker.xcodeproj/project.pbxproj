@@ -614,7 +614,6 @@
 		181B2FA92608E03D00EB3F50 /* KSF_P604.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C83526039352004D1078 /* KSF_P604.ttf */; };
 		182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD3FE25CC2DD500D59FF2 /* Chapter.swift */; };
 		182FD40325CC2E2200D59FF2 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD40225CC2E2200D59FF2 /* Verse.swift */; };
-		18506F48260B3609003C2BBC /* ReverseTextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18506F47260B3609003C2BBC /* ReverseTextVC.m */; };
 		185332A525DD44C20045A745 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185332A425DD44C20045A745 /* CountryViewController.swift */; };
 		186DA40225C7FEE000D4F154 /* DaylightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */; };
 		186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40025C7FEE000D4F154 /* JuristicViewController.swift */; };
@@ -629,7 +628,25 @@
 		18B8543325B6B63C00667E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B8543225B6B63C00667E67 /* Assets.xcassets */; };
 		18B8543625B6B63C00667E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B8543425B6B63C00667E67 /* LaunchScreen.storyboard */; };
 		18B8544525B6BD3100667E67 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8544425B6BD3100667E67 /* HomeViewController.swift */; };
-		18BEF4FA25D6840D00F4136C /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF4F925D6840D00F4136C /* TableCell.swift */; };
+		18CF047B261096C500C4BA7D /* UIImage+WebPDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF047A261096C500C4BA7D /* UIImage+WebPDecoder.swift */; };
+		18CF047E261096FA00C4BA7D /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CF047D261096FA00C4BA7D /* WebP.framework */; };
+		18CF04922610977B00C4BA7D /* reader2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04812610977B00C4BA7D /* reader2.webp */; };
+		18CF04932610977B00C4BA7D /* reader16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04822610977B00C4BA7D /* reader16.webp */; };
+		18CF04942610977B00C4BA7D /* reader15.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04832610977B00C4BA7D /* reader15.webp */; };
+		18CF04952610977B00C4BA7D /* reader3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04842610977B00C4BA7D /* reader3.webp */; };
+		18CF04962610977B00C4BA7D /* reader8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04852610977B00C4BA7D /* reader8.webp */; };
+		18CF04972610977B00C4BA7D /* reader10.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04862610977B00C4BA7D /* reader10.webp */; };
+		18CF04982610977B00C4BA7D /* reader4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04872610977B00C4BA7D /* reader4.webp */; };
+		18CF04992610977B00C4BA7D /* reader5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04882610977B00C4BA7D /* reader5.webp */; };
+		18CF049A2610977B00C4BA7D /* reader9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04892610977B00C4BA7D /* reader9.webp */; };
+		18CF049B2610977B00C4BA7D /* reader12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF048A2610977B00C4BA7D /* reader12.webp */; };
+		18CF049C2610977B00C4BA7D /* reader6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF048B2610977B00C4BA7D /* reader6.webp */; };
+		18CF049D2610977B00C4BA7D /* reader7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF048C2610977B00C4BA7D /* reader7.webp */; };
+		18CF049E2610977B00C4BA7D /* reader11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF048D2610977B00C4BA7D /* reader11.webp */; };
+		18CF049F2610977B00C4BA7D /* reader14.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF048E2610977B00C4BA7D /* reader14.webp */; };
+		18CF04A02610977B00C4BA7D /* reader13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF048F2610977B00C4BA7D /* reader13.webp */; };
+		18CF04A12610977B00C4BA7D /* reader17.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04902610977B00C4BA7D /* reader17.webp */; };
+		18CF04A22610977B00C4BA7D /* reader1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18CF04912610977B00C4BA7D /* reader1.webp */; };
 		18D0CDDF25D7FDA400C8DC4C /* AKPrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0CDDE25D7FDA400C8DC4C /* AKPrayerTime.swift */; };
 		E43FD638CA83F57D9E401AFB /* Pods_QuranSpeaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D30B88568D98734D20F1EA5 /* Pods_QuranSpeaker.framework */; };
 /* End PBXBuildFile section */
@@ -638,12 +655,9 @@
 		1815DC1525E1AC4000DBF6DA /* BLEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEViewController.swift; sourceTree = "<group>"; };
 		181B2D4B2608E00C00EB3F50 /* KSF_P002.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P002.ttf; sourceTree = "<group>"; };
 		181B2D4C2608E00C00EB3F50 /* KSF_P001.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P001.ttf; sourceTree = "<group>"; };
-		1820FF4825DE782000A57EEC /* QuranSpeaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranSpeaker-Bridging-Header.h"; sourceTree = "<group>"; };
 		182FD3FE25CC2DD500D59FF2 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		182FD40225CC2E2200D59FF2 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		18506F45260B3609003C2BBC /* QuranSpeaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranSpeaker-Bridging-Header.h"; sourceTree = "<group>"; };
-		18506F46260B3609003C2BBC /* ReverseTextVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReverseTextVC.h; sourceTree = "<group>"; };
-		18506F47260B3609003C2BBC /* ReverseTextVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReverseTextVC.m; sourceTree = "<group>"; };
 		185332A425DD44C20045A745 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaylightViewController.swift; sourceTree = "<group>"; };
 		186DA40025C7FEE000D4F154 /* JuristicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuristicViewController.swift; sourceTree = "<group>"; };
@@ -1262,7 +1276,25 @@
 		18B8543525B6B63C00667E67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18B8543725B6B63C00667E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B8544425B6BD3100667E67 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		18BEF4F925D6840D00F4136C /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		18CF047A261096C500C4BA7D /* UIImage+WebPDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+WebPDecoder.swift"; sourceTree = "<group>"; };
+		18CF047D261096FA00C4BA7D /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
+		18CF04812610977B00C4BA7D /* reader2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader2.webp; sourceTree = "<group>"; };
+		18CF04822610977B00C4BA7D /* reader16.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader16.webp; sourceTree = "<group>"; };
+		18CF04832610977B00C4BA7D /* reader15.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader15.webp; sourceTree = "<group>"; };
+		18CF04842610977B00C4BA7D /* reader3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader3.webp; sourceTree = "<group>"; };
+		18CF04852610977B00C4BA7D /* reader8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader8.webp; sourceTree = "<group>"; };
+		18CF04862610977B00C4BA7D /* reader10.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader10.webp; sourceTree = "<group>"; };
+		18CF04872610977B00C4BA7D /* reader4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader4.webp; sourceTree = "<group>"; };
+		18CF04882610977B00C4BA7D /* reader5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader5.webp; sourceTree = "<group>"; };
+		18CF04892610977B00C4BA7D /* reader9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader9.webp; sourceTree = "<group>"; };
+		18CF048A2610977B00C4BA7D /* reader12.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader12.webp; sourceTree = "<group>"; };
+		18CF048B2610977B00C4BA7D /* reader6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader6.webp; sourceTree = "<group>"; };
+		18CF048C2610977B00C4BA7D /* reader7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader7.webp; sourceTree = "<group>"; };
+		18CF048D2610977B00C4BA7D /* reader11.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader11.webp; sourceTree = "<group>"; };
+		18CF048E2610977B00C4BA7D /* reader14.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader14.webp; sourceTree = "<group>"; };
+		18CF048F2610977B00C4BA7D /* reader13.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader13.webp; sourceTree = "<group>"; };
+		18CF04902610977B00C4BA7D /* reader17.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader17.webp; sourceTree = "<group>"; };
+		18CF04912610977B00C4BA7D /* reader1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader1.webp; sourceTree = "<group>"; };
 		18D0CDDE25D7FDA400C8DC4C /* AKPrayerTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPrayerTime.swift; sourceTree = "<group>"; };
 		1A0E007FCAC0685CF36B24BD /* Pods-QuranSpeaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranSpeaker.debug.xcconfig"; path = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker.debug.xcconfig"; sourceTree = "<group>"; };
 		2D30B88568D98734D20F1EA5 /* Pods_QuranSpeaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranSpeaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1274,6 +1306,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CF047E261096FA00C4BA7D /* WebP.framework in Frameworks */,
 				E43FD638CA83F57D9E401AFB /* Pods_QuranSpeaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1284,6 +1317,7 @@
 		182FD3F725CC2A8200D59FF2 /* QuranResources */ = {
 			isa = PBXGroup;
 			children = (
+				18CF047D261096FA00C4BA7D /* WebP.framework */,
 				18AD5DC525EFCC8F006D27FD /* Toast.swift */,
 				18A9C64026038F7E004D1078 /* quran.xml */,
 			);
@@ -1294,9 +1328,9 @@
 			isa = PBXGroup;
 			children = (
 				18D0CDDE25D7FDA400C8DC4C /* AKPrayerTime.swift */,
-				18BEF4F925D6840D00F4136C /* TableCell.swift */,
 				182FD3FE25CC2DD500D59FF2 /* Chapter.swift */,
 				182FD40225CC2E2200D59FF2 /* Verse.swift */,
+				18CF047A261096C500C4BA7D /* UIImage+WebPDecoder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1934,6 +1968,7 @@
 			isa = PBXGroup;
 			children = (
 				18B8543225B6B63C00667E67 /* Assets.xcassets */,
+				18CF04802610977B00C4BA7D /* qari */,
 				185EC69125C2B813008661AE /* fonts */,
 				18B8544125B6B69500667E67 /* AppDelegate */,
 				18B8544025B6B68200667E67 /* Storyboards */,
@@ -1941,7 +1976,6 @@
 				18B8543F25B6B66E00667E67 /* ViewControllers */,
 				182FD3F725CC2A8200D59FF2 /* QuranResources */,
 				18B8543725B6B63C00667E67 /* Info.plist */,
-				1820FF4825DE782000A57EEC /* QuranSpeaker-Bridging-Header.h */,
 			);
 			path = QuranSpeaker;
 			sourceTree = "<group>";
@@ -1958,8 +1992,6 @@
 				186DA40125C7FEE000D4F154 /* CityViewController.swift */,
 				186DA40025C7FEE000D4F154 /* JuristicViewController.swift */,
 				186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */,
-				18506F46260B3609003C2BBC /* ReverseTextVC.h */,
-				18506F47260B3609003C2BBC /* ReverseTextVC.m */,
 				18506F45260B3609003C2BBC /* QuranSpeaker-Bridging-Header.h */,
 			);
 			path = ViewControllers;
@@ -1980,6 +2012,30 @@
 				18B8542925B6B62900667E67 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		18CF04802610977B00C4BA7D /* qari */ = {
+			isa = PBXGroup;
+			children = (
+				18CF04912610977B00C4BA7D /* reader1.webp */,
+				18CF04812610977B00C4BA7D /* reader2.webp */,
+				18CF04842610977B00C4BA7D /* reader3.webp */,
+				18CF04872610977B00C4BA7D /* reader4.webp */,
+				18CF04882610977B00C4BA7D /* reader5.webp */,
+				18CF048B2610977B00C4BA7D /* reader6.webp */,
+				18CF048C2610977B00C4BA7D /* reader7.webp */,
+				18CF04852610977B00C4BA7D /* reader8.webp */,
+				18CF04892610977B00C4BA7D /* reader9.webp */,
+				18CF04862610977B00C4BA7D /* reader10.webp */,
+				18CF048D2610977B00C4BA7D /* reader11.webp */,
+				18CF048A2610977B00C4BA7D /* reader12.webp */,
+				18CF048F2610977B00C4BA7D /* reader13.webp */,
+				18CF048E2610977B00C4BA7D /* reader14.webp */,
+				18CF04832610977B00C4BA7D /* reader15.webp */,
+				18CF04822610977B00C4BA7D /* reader16.webp */,
+				18CF04902610977B00C4BA7D /* reader17.webp */,
+			);
+			path = qari;
 			sourceTree = "<group>";
 		};
 		24EF50EDD69CDCA67A2663D7 /* Pods */ = {
@@ -2107,11 +2163,13 @@
 				181B2D7C2608E03B00EB3F50 /* KSF_P047.ttf in Resources */,
 				181B2D7D2608E03B00EB3F50 /* KSF_P048.ttf in Resources */,
 				181B2D7E2608E03B00EB3F50 /* KSF_P049.ttf in Resources */,
+				18CF04992610977B00C4BA7D /* reader5.webp in Resources */,
 				181B2D7F2608E03B00EB3F50 /* KSF_P050.ttf in Resources */,
 				181B2D802608E03B00EB3F50 /* KSF_P051.ttf in Resources */,
 				181B2D812608E03B00EB3F50 /* KSF_P052.ttf in Resources */,
 				181B2D822608E03B00EB3F50 /* KSF_P053.ttf in Resources */,
 				181B2D832608E03B00EB3F50 /* KSF_P054.ttf in Resources */,
+				18CF049C2610977B00C4BA7D /* reader6.webp in Resources */,
 				181B2D842608E03B00EB3F50 /* KSF_P055.ttf in Resources */,
 				181B2D852608E03B00EB3F50 /* KSF_P056.ttf in Resources */,
 				181B2D862608E03B00EB3F50 /* KSF_P057.ttf in Resources */,
@@ -2135,10 +2193,12 @@
 				181B2D982608E03B00EB3F50 /* KSF_P075.ttf in Resources */,
 				181B2D992608E03B00EB3F50 /* KSF_P076.ttf in Resources */,
 				181B2D9A2608E03B00EB3F50 /* KSF_P077.ttf in Resources */,
+				18CF04982610977B00C4BA7D /* reader4.webp in Resources */,
 				181B2D9B2608E03B00EB3F50 /* KSF_P078.ttf in Resources */,
 				181B2D9C2608E03B00EB3F50 /* KSF_P079.ttf in Resources */,
 				181B2D9D2608E03B00EB3F50 /* KSF_P080.ttf in Resources */,
 				181B2D9E2608E03B00EB3F50 /* KSF_P081.ttf in Resources */,
+				18CF04932610977B00C4BA7D /* reader16.webp in Resources */,
 				181B2D9F2608E03B00EB3F50 /* KSF_P082.ttf in Resources */,
 				181B2DA02608E03B00EB3F50 /* KSF_P083.ttf in Resources */,
 				181B2DA12608E03B00EB3F50 /* KSF_P084.ttf in Resources */,
@@ -2220,6 +2280,7 @@
 				181B2DED2608E03B00EB3F50 /* KSF_P160.ttf in Resources */,
 				181B2DEE2608E03B00EB3F50 /* KSF_P161.ttf in Resources */,
 				181B2DEF2608E03B00EB3F50 /* KSF_P162.ttf in Resources */,
+				18CF04942610977B00C4BA7D /* reader15.webp in Resources */,
 				181B2DF02608E03B00EB3F50 /* KSF_P163.ttf in Resources */,
 				181B2DF12608E03B00EB3F50 /* KSF_P164.ttf in Resources */,
 				181B2DF22608E03B00EB3F50 /* KSF_P165.ttf in Resources */,
@@ -2235,6 +2296,7 @@
 				181B2DFC2608E03B00EB3F50 /* KSF_P175.ttf in Resources */,
 				181B2DFD2608E03B00EB3F50 /* KSF_P176.ttf in Resources */,
 				181B2DFE2608E03B00EB3F50 /* KSF_P177.ttf in Resources */,
+				18CF04962610977B00C4BA7D /* reader8.webp in Resources */,
 				181B2DFF2608E03B00EB3F50 /* KSF_P178.ttf in Resources */,
 				181B2E002608E03B00EB3F50 /* KSF_P179.ttf in Resources */,
 				181B2E012608E03B00EB3F50 /* KSF_P180.ttf in Resources */,
@@ -2398,6 +2460,7 @@
 				181B2E9F2608E03C00EB3F50 /* KSF_P338.ttf in Resources */,
 				181B2EA02608E03C00EB3F50 /* KSF_P339.ttf in Resources */,
 				181B2EA12608E03C00EB3F50 /* KSF_P340.ttf in Resources */,
+				18CF049E2610977B00C4BA7D /* reader11.webp in Resources */,
 				181B2EA22608E03C00EB3F50 /* KSF_P341.ttf in Resources */,
 				181B2EA32608E03C00EB3F50 /* KSF_P342.ttf in Resources */,
 				181B2EA42608E03C00EB3F50 /* KSF_P343.ttf in Resources */,
@@ -2410,6 +2473,7 @@
 				181B2EAB2608E03C00EB3F50 /* KSF_P350.ttf in Resources */,
 				181B2EAC2608E03C00EB3F50 /* KSF_P351.ttf in Resources */,
 				181B2EAD2608E03C00EB3F50 /* KSF_P352.ttf in Resources */,
+				18CF049F2610977B00C4BA7D /* reader14.webp in Resources */,
 				181B2EAE2608E03C00EB3F50 /* KSF_P353.ttf in Resources */,
 				181B2EAF2608E03C00EB3F50 /* KSF_P354.ttf in Resources */,
 				181B2EB02608E03C00EB3F50 /* KSF_P355.ttf in Resources */,
@@ -2459,6 +2523,7 @@
 				181B2EDC2608E03C00EB3F50 /* KSF_P399.ttf in Resources */,
 				181B2EDD2608E03C00EB3F50 /* KSF_P400.ttf in Resources */,
 				181B2EDE2608E03C00EB3F50 /* KSF_P401.ttf in Resources */,
+				18CF049D2610977B00C4BA7D /* reader7.webp in Resources */,
 				181B2EDF2608E03C00EB3F50 /* KSF_P402.ttf in Resources */,
 				181B2EE02608E03C00EB3F50 /* KSF_P403.ttf in Resources */,
 				181B2EE12608E03C00EB3F50 /* KSF_P404.ttf in Resources */,
@@ -2489,8 +2554,10 @@
 				181B2EFA2608E03C00EB3F50 /* KSF_P429.ttf in Resources */,
 				181B2EFB2608E03C00EB3F50 /* KSF_P430.ttf in Resources */,
 				181B2EFC2608E03C00EB3F50 /* KSF_P431.ttf in Resources */,
+				18CF04922610977B00C4BA7D /* reader2.webp in Resources */,
 				181B2EFD2608E03C00EB3F50 /* KSF_P432.ttf in Resources */,
 				181B2EFE2608E03C00EB3F50 /* KSF_P433.ttf in Resources */,
+				18CF049B2610977B00C4BA7D /* reader12.webp in Resources */,
 				181B2EFF2608E03C00EB3F50 /* KSF_P434.ttf in Resources */,
 				181B2F002608E03C00EB3F50 /* KSF_P435.ttf in Resources */,
 				181B2F012608E03C00EB3F50 /* KSF_P436.ttf in Resources */,
@@ -2505,6 +2572,7 @@
 				181B2F0A2608E03C00EB3F50 /* KSF_P445.ttf in Resources */,
 				181B2F0B2608E03C00EB3F50 /* KSF_P446.ttf in Resources */,
 				181B2F0C2608E03C00EB3F50 /* KSF_P447.ttf in Resources */,
+				18CF04972610977B00C4BA7D /* reader10.webp in Resources */,
 				181B2F0D2608E03C00EB3F50 /* KSF_P448.ttf in Resources */,
 				181B2F0E2608E03C00EB3F50 /* KSF_P449.ttf in Resources */,
 				181B2F0F2608E03C00EB3F50 /* KSF_P450.ttf in Resources */,
@@ -2521,6 +2589,7 @@
 				181B2F1A2608E03C00EB3F50 /* KSF_P461.ttf in Resources */,
 				181B2F1B2608E03C00EB3F50 /* KSF_P462.ttf in Resources */,
 				181B2F1C2608E03C00EB3F50 /* KSF_P463.ttf in Resources */,
+				18CF049A2610977B00C4BA7D /* reader9.webp in Resources */,
 				181B2F1D2608E03C00EB3F50 /* KSF_P464.ttf in Resources */,
 				181B2F1E2608E03C00EB3F50 /* KSF_P465.ttf in Resources */,
 				181B2F1F2608E03C00EB3F50 /* KSF_P466.ttf in Resources */,
@@ -2592,6 +2661,7 @@
 				181B2F612608E03D00EB3F50 /* KSF_P532.ttf in Resources */,
 				181B2F622608E03D00EB3F50 /* KSF_P533.ttf in Resources */,
 				181B2F632608E03D00EB3F50 /* KSF_P534.ttf in Resources */,
+				18CF04A22610977B00C4BA7D /* reader1.webp in Resources */,
 				181B2F642608E03D00EB3F50 /* KSF_P535.ttf in Resources */,
 				181B2F652608E03D00EB3F50 /* KSF_P536.ttf in Resources */,
 				181B2F662608E03D00EB3F50 /* KSF_P537.ttf in Resources */,
@@ -2614,6 +2684,7 @@
 				181B2F772608E03D00EB3F50 /* KSF_P554.ttf in Resources */,
 				181B2F782608E03D00EB3F50 /* KSF_P555.ttf in Resources */,
 				181B2F792608E03D00EB3F50 /* KSF_P556.ttf in Resources */,
+				18CF04A02610977B00C4BA7D /* reader13.webp in Resources */,
 				181B2F7A2608E03D00EB3F50 /* KSF_P557.ttf in Resources */,
 				181B2F7B2608E03D00EB3F50 /* KSF_P558.ttf in Resources */,
 				181B2F7C2608E03D00EB3F50 /* KSF_P559.ttf in Resources */,
@@ -2654,6 +2725,7 @@
 				181B2F9F2608E03D00EB3F50 /* KSF_P594.ttf in Resources */,
 				181B2FA02608E03D00EB3F50 /* KSF_P595.ttf in Resources */,
 				181B2FA12608E03D00EB3F50 /* KSF_P596.ttf in Resources */,
+				18CF04952610977B00C4BA7D /* reader3.webp in Resources */,
 				181B2FA22608E03D00EB3F50 /* KSF_P597.ttf in Resources */,
 				181B2FA32608E03D00EB3F50 /* KSF_P598.ttf in Resources */,
 				181B2FA42608E03D00EB3F50 /* KSF_P599.ttf in Resources */,
@@ -2665,6 +2737,7 @@
 				18B8543625B6B63C00667E67 /* LaunchScreen.storyboard in Resources */,
 				18A9C64126038F7E004D1078 /* quran.xml in Resources */,
 				181B2D4D2608E02C00EB3F50 /* KSF_P001.ttf in Resources */,
+				18CF04A12610977B00C4BA7D /* reader17.webp in Resources */,
 				18B8543325B6B63C00667E67 /* Assets.xcassets in Resources */,
 				18B8543125B6B62900667E67 /* Main.storyboard in Resources */,
 			);
@@ -2721,16 +2794,15 @@
 			files = (
 				18B8542A25B6B62900667E67 /* AppDelegate.swift in Sources */,
 				182FD40325CC2E2200D59FF2 /* Verse.swift in Sources */,
+				18CF047B261096C500C4BA7D /* UIImage+WebPDecoder.swift in Sources */,
 				1879A86325C3E2D200FC0219 /* SetViewController.swift in Sources */,
 				186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */,
-				18506F48260B3609003C2BBC /* ReverseTextVC.m in Sources */,
 				1815DC1625E1AC4000DBF6DA /* BLEViewController.swift in Sources */,
 				182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */,
 				186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */,
 				18AD5DC625EFCC8F006D27FD /* Toast.swift in Sources */,
 				186DA40225C7FEE000D4F154 /* DaylightViewController.swift in Sources */,
 				18D0CDDF25D7FDA400C8DC4C /* AKPrayerTime.swift in Sources */,
-				18BEF4FA25D6840D00F4136C /* TableCell.swift in Sources */,
 				18B4BE1B25C183DD008AC27B /* LightViewController.swift in Sources */,
 				18B8544525B6BD3100667E67 /* HomeViewController.swift in Sources */,
 				18B4BE1C25C183DD008AC27B /* PrayerViewController.swift in Sources */,
@@ -2887,6 +2959,10 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q2ZS4CBGES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuranSpeaker/QuranResources",
+				);
 				INFOPLIST_FILE = QuranSpeaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2914,6 +2990,10 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q2ZS4CBGES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuranSpeaker/QuranResources",
+				);
 				INFOPLIST_FILE = QuranSpeaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

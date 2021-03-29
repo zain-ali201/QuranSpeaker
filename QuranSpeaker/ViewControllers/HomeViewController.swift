@@ -11,22 +11,25 @@ import CoreBluetooth
 var defaults = UserDefaults.standard
 var currentVolume = 10
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource
 {
     @IBOutlet weak var quranView: UIView!
     @IBOutlet weak var chaptersTblView: UITableView!
     @IBOutlet weak var lblVerse: UILabel!
     @IBOutlet weak var verseTblView: UITableView!
+    @IBOutlet weak var imgView: UIImageView!
     
     @IBOutlet weak var volView: UIView!
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var volSlider: UISlider!
     @IBOutlet weak var lblVolCount: UILabel!
     
-    @IBOutlet weak var leading: NSLayoutConstraint!
+    @IBOutlet weak var qarisView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var txtMainView: UIView!
-    @IBOutlet weak var txtView: UITextView!
+    
+    @IBOutlet weak var leading: NSLayoutConstraint!
     
     var sura = String()
     var suraTitle: [AyatObj] = []
@@ -34,6 +37,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var suraDict = [String: [AyatObj]]()
     var aya = String()
     var indexArray:[String] = []
+    
+    var qarisArray:[UIImage] = []
     
     var quranFlag = false
     var volFlag = false
@@ -57,18 +62,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         manager = CBCentralManager(delegate: self, queue: nil)
         
-//        txtMainView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-//        txtView.textAlignment = .left
-//        txtView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-//        txtView.leadingAnchor.constraint(equalTo: txtMainView.leadingAnchor).isActive = true
-//        txtView.trailingAnchor.constraint(equalTo: txtMainView.trailingAnchor).isActive = true
-        
         quranView.layer.borderWidth = 1
         quranView.layer.borderColor = UIColor.darkGray.cgColor
         quranView.layer.shadowColor = UIColor.black.cgColor
         quranView.layer.shadowOpacity = 0.8
         quranView.layer.shadowRadius = 2
         quranView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        loadQaris()
         
         if let path = Bundle.main.url(forResource: "quran", withExtension: "xml") {
             if let parser = XMLParser(contentsOf: path) {
@@ -89,6 +90,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func loadQaris()
+    {
+        for i in 1...17
+        {
+            //Simple usage example with NSData
+            let filePath = Bundle.main.path(forResource: String(format: "reader%d", i), ofType: "webp")!
+            var fileData:NSData? = nil
+            do {
+                fileData = try NSData(contentsOfFile: filePath, options: NSData.ReadingOptions.uncached)
+            }
+            catch {
+                print("Error loading WebP file")
+            }
+//            let image:UIImage = UIImage(webpWithData: fileData!)
+//            qarisArray.append(image)
+        }
+        
+        collectionView.reloadData()
     }
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
@@ -167,12 +188,45 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 prefix.append("P")
             }
             
-            print(String(format:"%@%d", prefix, ayatObj.page))
-            txtView.font = UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size:50)
-            txtView.text = asciiToString(start: ayatObj.start, end: ayatObj.end)
+            for view in txtMainView.subviews
+            {
+                view.removeFromSuperview()
+            }
             
-//            txtView.text = ReverseTextVC.setTextViewText(txtView.text, textViewFont: txtView.font, textViewBounds: txtView.bounds)
-//            print(txtView.text)
+            var resultStr = ""
+            let screensWidth = UIScreen.main.bounds.width
+            var xAxis:CGFloat =  screensWidth - 80
+            var yAxis:CGFloat = 10.0
+            
+            for i in ayatObj.start...ayatObj.end
+            {
+                resultStr = String(Character(UnicodeScalar(i)!))
+                
+                let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+                let img = renderer.image { ctx in
+                    let paragraphStyle = NSMutableParagraphStyle()
+                    paragraphStyle.alignment = .center
+
+                    let attrs = [NSAttributedString.Key.font: UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+
+                    let string = resultStr
+                    string.draw(with: CGRect(x: 0, y: 0, width: 70, height: 70), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
+                    print(string)
+                }
+                
+                let imgView = UIImageView(frame: CGRect(x: xAxis, y: yAxis, width: img.size.width, height: img.size.height))
+                imgView.image = img
+                txtMainView.addSubview(imgView)
+                print(img.size.width)
+                xAxis -= 75
+                
+                if xAxis <= 60
+                {
+                    xAxis = 300.0
+                    yAxis += 70.0
+                }
+            }
+            
             
             if isMyPeripheralConected
             {
@@ -338,54 +392,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 2
         {
-            key = "5"
-            
-            let dataToSend = NSMutableData()
-            
-            let ayat = 1
-            let division = ayat / 255
-            let remainder = ayat % 255
-            
-            print(chapterNo)
-            print(division)
-            print(remainder)
-            
-            dataToSend.append("S".data(using: String.Encoding.ascii)!)
-            dataToSend.append(String(format: "%d", 3).data(using: String.Encoding.utf8)!)
-            dataToSend.append(String(format: "%d", division).data(using: String.Encoding.utf8)!)
-            dataToSend.append(String(format: "%d", remainder).data(using: String.Encoding.utf8)!)
-            
-            myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            print("value written")
-            
-            return
         
         }
         else if button.tag == 3
         {
-            key = ""
-            
-            let dataToSend = NSMutableData()
-            
-            let ayat = 1
-            let division = ayat / 255
-            let remainder = ayat % 255
-            
-            print(chapterNo)
-            print(division)
-            print(remainder)
-            
-            dataToSend.append("S".data(using: String.Encoding.ascii)!)
-            dataToSend.append(String(format: "%d", 4).data(using: String.Encoding.utf8)!)
-            dataToSend.append(String(format: "%d", division).data(using: String.Encoding.utf8)!)
-            dataToSend.append(String(format: "%d", remainder).data(using: String.Encoding.utf8)!)
-            
-            print(dataToSend)
-            
-            myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            print("value written")
-            
-            return
+           
         }
         else if button.tag == 4
         {
@@ -425,7 +436,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 13
         {
-            key = ""
+            qarisView.alpha = 1
         }
         else if button.tag == 14
         {
@@ -458,6 +469,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         quranFlag = false
         volView.alpha = 0
         volFlag = false
+        qarisView.alpha = 0
         
         UIView.animate(withDuration: 0.3) { [weak self] in
           self?.view.layoutIfNeeded()
@@ -475,6 +487,37 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             let prayerVC = self.storyboard?.instantiateViewController(withIdentifier: "PrayerViewController") as! PrayerViewController
             self.navigationController?.pushViewController(prayerVC, animated: false)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return qarisArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell:CollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
+        cell.imgView.image = qarisArray[indexPath.row]
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if isMyPeripheralConected
+        {
+            let dataToSend = NSMutableData()
+            
+            let qari = indexPath.row + 1
+            
+            dataToSend.append("Q".data(using: String.Encoding.ascii)!)
+            
+            myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            print("value written")
+        }
+        else
+        {
+            self.view.makeToast("Bluetooth device disconnected")
         }
     }
     
@@ -546,8 +589,45 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let fontName = String(format:"%@%d", prefix, ayatObj.page)
             
             print(fontName)
-            txtView.font = UIFont(name: fontName, size:50)
-            txtView.text = asciiToString(start: ayatObj.start, end: ayatObj.end)
+            
+            for view in txtMainView.subviews
+            {
+                view.removeFromSuperview()
+            }
+            
+            var resultStr = ""
+            let screensWidth = UIScreen.main.bounds.width
+            var xAxis:CGFloat =  screensWidth - 80
+            var yAxis:CGFloat = 10.0
+            
+            for i in ayatObj.start...ayatObj.end
+            {
+                resultStr = String(Character(UnicodeScalar(i)!))
+                
+                let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+                let img = renderer.image { ctx in
+                    let paragraphStyle = NSMutableParagraphStyle()
+                    paragraphStyle.alignment = .center
+
+                    let attrs = [NSAttributedString.Key.font: UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+
+                    let string = resultStr
+                    string.draw(with: CGRect(x: 0, y: 0, width: 70, height: 70), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
+                    print(string)
+                }
+                
+                let imgView = UIImageView(frame: CGRect(x: xAxis, y: yAxis, width: img.size.width, height: img.size.height))
+                imgView.image = img
+                txtMainView.addSubview(imgView)
+                print(img.size.width)
+                xAxis -= 75
+                
+                if xAxis <= 60
+                {
+                    xAxis = 300.0
+                    yAxis += 70.0
+                }
+            }
 
             leading.constant = -160
             quranFlag = false
@@ -687,4 +767,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             print ("Value: \(value)")
         }
     }
+}
+
+
+class TableCell: UITableViewCell
+{
+    @IBOutlet weak var lblName:UILabel!
+    @IBOutlet weak var imgView:UIImageView!
+}
+
+class CollectionCell: UICollectionViewCell
+{
+    @IBOutlet weak var imgView:UIImageView!
 }
