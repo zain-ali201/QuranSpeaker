@@ -13,11 +13,11 @@ var currentVolume = 10
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource
 {
+    @IBOutlet weak var lblMain: UILabel!
     @IBOutlet weak var quranView: UIView!
     @IBOutlet weak var chaptersTblView: UITableView!
     @IBOutlet weak var lblVerse: UILabel!
     @IBOutlet weak var verseTblView: UITableView!
-    @IBOutlet weak var imgView: UIImageView!
     
     @IBOutlet weak var volView: UIView!
     @IBOutlet weak var sliderView: UIView!
@@ -38,7 +38,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var aya = String()
     var indexArray:[String] = []
     
-    var qarisArray:[UIImage] = []
+    var qarisArray:[HomeObject] = []
+    var booksArray:[HomeObject] = []
     
     var quranFlag = false
     var volFlag = false
@@ -53,6 +54,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var myCharacteristic : CBCharacteristic!
     var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
     var isMyPeripheralConected = false
+    
+    var tag = 0
     
     override func viewDidLoad()
     {
@@ -69,8 +72,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         quranView.layer.shadowRadius = 2
         quranView.layer.shadowOffset = CGSize(width: 2, height: 2)
         
-        loadQaris()
-        
         if let path = Bundle.main.url(forResource: "quran", withExtension: "xml") {
             if let parser = XMLParser(contentsOf: path) {
                 parser.delegate = self
@@ -84,8 +85,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let swipeGestureRecognizerLeft = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
         swipeGestureRecognizerLeft.direction = .left
         
-        self.view.addGestureRecognizer(swipeGestureRecognizerRight)
-        self.view.addGestureRecognizer(swipeGestureRecognizerLeft)
+        txtMainView.addGestureRecognizer(swipeGestureRecognizerRight)
+        txtMainView.addGestureRecognizer(swipeGestureRecognizerLeft)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -94,9 +95,43 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func loadQaris()
     {
-        for i in 1...17
+        let qariNames:[String] = [
+            "Abdul Rahman Al Sudais",
+            "Abdul Basit           ",
+            "Maher Almuaiqly       ",
+            "Ahmed Bin Ali Ajmi",
+            "Saad Al-Ghamidi       ",
+            "Muhammad Siddiq al-Minshawi",
+            "Mishary Rashid Alafasy",
+            "Mahmoud Khalil Al Hussary",
+            "Abdur Rahman al Hudhaifi",
+            "Muhammad Ayub       ",
+            "Abdullah Basfar     ",
+            "Abu Bakr Al Shatri  ",
+            "Hani Ar Rifai       ",
+            "Muhammad Jebril     ",
+            "Ibrahim Al Akhdar",
+            "Saleh Albudair",
+            "Qari Barakatullah Saleem"]
+//            "Abdurrashid Sufi",
+//            "Abdulmohsen Al Qasim",
+//            "Abdur Rahman Bukhatir",
+//            "MUHAMMAD Al Tablawy",
+//            "Wahid Zafar Qasmi",
+//            "Sadaqat Ali",
+//            "Minshawi with Children",
+//            "Mahmoud Khalil Hussary with Chiled",
+//            "Abdul Basit Mujawid",
+//            "Abdullah Awwad Aljuhany",
+//            "Ayman Swad",
+//            "Yasir Quresi",
+//            "Raad Alkurd",
+//            "Default"]
+        
+        for i in 1...qariNames.count
         {
             //Simple usage example with NSData
+            print(i)
             let filePath = Bundle.main.path(forResource: String(format: "reader%d", i), ofType: "webp")!
             var fileData:NSData? = nil
             do {
@@ -105,11 +140,50 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             catch {
                 print("Error loading WebP file")
             }
-//            let image:UIImage = UIImage(webpWithData: fileData!)
-//            qarisArray.append(image)
+            
+            let homeObj = HomeObject()
+            let image:UIImage = UIImage(webpWithData: fileData!)
+            homeObj.name = qariNames[i]
+            homeObj.img = image
+            qarisArray.append(homeObj)
         }
         
         collectionView.reloadData()
+        qarisView.alpha = 1
+    }
+    
+    func loadBooks()
+    {
+        let bookNames:[String] = [
+                "Tarixi Muhammadiy",
+                "Asma ul Husna",
+                "Ruqya Sharya",
+                "Qaida Nooranya",
+                "Sahih Bukhari",
+                "Sahih Muslim",
+                "Hisnul Muslim",
+                "40 Ahdith"]
+        
+        for i in 1...bookNames.count
+        {
+            //Simple usage example with NSData
+            let filePath = Bundle.main.path(forResource: String(format: "Book%d", i), ofType: "webp")!
+            var fileData:NSData? = nil
+            do {
+                fileData = try NSData(contentsOfFile: filePath, options: NSData.ReadingOptions.uncached)
+            }
+            catch {
+                print("Error loading WebP file")
+            }
+            let homeObj = HomeObject()
+            let image:UIImage = UIImage(webpWithData: fileData!)
+            homeObj.name = bookNames[i-1]
+            homeObj.img = image
+            booksArray.append(homeObj)
+        }
+        print("Count: \(booksArray.count)")
+        collectionView.reloadData()
+        qarisView.alpha = 1
     }
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
@@ -186,6 +260,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             else
             {
                 prefix.append("P")
+            }
+            
+            if lblMain != nil
+            {
+                lblMain.alpha = 0
             }
             
             for view in txtMainView.subviews
@@ -385,10 +464,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func clickBtnAction(_ button: UIButton)
     {
         var key = ""
+        var flag = false
         
         if button.tag == 1
         {
             key = "8"
+            flag = true
         }
         else if button.tag == 2
         {
@@ -409,10 +490,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         else if button.tag == 6
         {
             key = "13"
+            flag = true
         }
         else if button.tag == 7
         {
-            key = ""
+            loadBooks()
         }
         else if button.tag == 8
         {
@@ -421,26 +503,32 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         else if button.tag == 9
         {
             key = "14"
+            flag = true
         }
         else if button.tag == 10
         {
             key = "15"
+            flag = true
         }
         else if button.tag == 11
         {
             key = "16"
+            flag = true
         }
         else if button.tag == 12
         {
             key = "4"
+            flag = true
         }
         else if button.tag == 13
         {
-            qarisView.alpha = 1
+            tag = 1001
+            loadQaris()
         }
         else if button.tag == 14
         {
             key = "17"
+            flag = true
         }
         else if button.tag == 15
         {
@@ -449,17 +537,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         else if button.tag == 16
         {
             key = "1"
+            flag = true
         }
         
-        if isMyPeripheralConected
+        if flag
         {
-            let dataToSend: Data = key.data(using: String.Encoding.utf8)!
-            myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            print("value written: \(key)")
-        }
-        else
-        {
-            self.view.makeToast("Bluetooth device disconnected")
+            if isMyPeripheralConected
+            {
+                let dataToSend: Data = key.data(using: String.Encoding.utf8)!
+                myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                print("value written: \(key)")
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
         }
     }
     
@@ -491,15 +583,45 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return qarisArray.count
+        if tag == 1001
+        {
+            return qarisArray.count
+        }
+        else
+        {
+            print("--------------")
+            return booksArray.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell:CollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
-        cell.imgView.image = qarisArray[indexPath.row]
+        
+        if tag == 1001
+        {
+            cell.lblName.text = qarisArray[indexPath.row].name
+            cell.imgView.image = qarisArray[indexPath.row].img
+        }
+        else
+        {
+            cell.lblName.text = booksArray[indexPath.row].name
+            cell.imgView.image = booksArray[indexPath.row].img
+        }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath)
+    {
+        if tag == 1001
+        {
+            
+        }
+        else
+        {
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -584,6 +706,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             else
             {
                 prefix.append("P")
+            }
+            
+            if lblMain != nil
+            {
+                lblMain.alpha = 0
             }
             
             let fontName = String(format:"%@%d", prefix, ayatObj.page)
@@ -778,5 +905,12 @@ class TableCell: UITableViewCell
 
 class CollectionCell: UICollectionViewCell
 {
+    @IBOutlet weak var lblName:UILabel!
     @IBOutlet weak var imgView:UIImageView!
+}
+
+class HomeObject: NSObject
+{
+    var name: String!
+    var img:UIImage!
 }
