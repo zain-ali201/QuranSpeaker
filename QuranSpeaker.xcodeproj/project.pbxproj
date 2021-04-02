@@ -668,7 +668,7 @@
 		1837E00F26121C4B00FCF9EC /* Reader16.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader16.webp; sourceTree = "<group>"; };
 		1837E01026121C4B00FCF9EC /* Reader13.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader13.webp; sourceTree = "<group>"; };
 		1837E01126121C4B00FCF9EC /* Reader4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader4.webp; sourceTree = "<group>"; };
-		1837E01226121C4B00FCF9EC /* reader1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader1.webp; sourceTree = "<group>"; };
+		1837E01226121C4B00FCF9EC /* Reader1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader1.webp; sourceTree = "<group>"; };
 		1837E01326121C4B00FCF9EC /* Reader3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader3.webp; sourceTree = "<group>"; };
 		1837E01426121C4B00FCF9EC /* Reader17.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader17.webp; sourceTree = "<group>"; };
 		1837E01526121C4B00FCF9EC /* Reader10.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader10.webp; sourceTree = "<group>"; };
@@ -679,6 +679,7 @@
 		186DA40025C7FEE000D4F154 /* JuristicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuristicViewController.swift; sourceTree = "<group>"; };
 		186DA40125C7FEE000D4F154 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		1879A86225C3E2D100FC0219 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		18A2B9A926146B3400895D74 /* reader1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = reader1.webp; sourceTree = "<group>"; };
 		18A9C64026038F7E004D1078 /* quran.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = quran.xml; sourceTree = "<group>"; };
 		18A9C64626039303004D1078 /* KSF_P309.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P309.ttf; sourceTree = "<group>"; };
 		18A9C64726039303004D1078 /* KSF_P035.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P035.ttf; sourceTree = "<group>"; };
@@ -1981,6 +1982,7 @@
 		18B8542825B6B62900667E67 /* QuranSpeaker */ = {
 			isa = PBXGroup;
 			children = (
+				18A2B9A926146B3400895D74 /* reader1.webp */,
 				18B8543225B6B63C00667E67 /* Assets.xcassets */,
 				1837DF94261205E800FCF9EC /* books */,
 				18CF04802610977B00C4BA7D /* qari */,
@@ -2032,7 +2034,7 @@
 		18CF04802610977B00C4BA7D /* qari */ = {
 			isa = PBXGroup;
 			children = (
-				1837E01226121C4B00FCF9EC /* reader1.webp */,
+				1837E01226121C4B00FCF9EC /* Reader1.webp */,
 				1837E00626121C4A00FCF9EC /* Reader2.webp */,
 				1837E01326121C4B00FCF9EC /* Reader3.webp */,
 				1837E01126121C4B00FCF9EC /* Reader4.webp */,
@@ -2963,7 +2965,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q2ZS4CBGES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2977,7 +2979,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprintsols.quranapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Dev v1";
+				PROVISIONING_PROFILE_SPECIFIER = "SprintDevProfile v2";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -2994,7 +2996,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q2ZS4CBGES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3008,7 +3010,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprintsols.quranapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Dist v1";
+				PROVISIONING_PROFILE_SPECIFIER = "SprintDistProfile v2";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

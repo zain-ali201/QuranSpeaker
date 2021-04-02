@@ -11,9 +11,10 @@ import CoreBluetooth
 var defaults = UserDefaults.standard
 var currentVolume = 10
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate
 {
     @IBOutlet weak var lblMain: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var quranView: UIView!
     @IBOutlet weak var chaptersTblView: UITableView!
     @IBOutlet weak var lblVerse: UILabel!
@@ -186,6 +187,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         qarisView.alpha = 1
     }
     
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return txtMainView
+    }
+    
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
 
         var flag = false
@@ -274,38 +279,45 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             var resultStr = ""
             let screensWidth = UIScreen.main.bounds.width
-            var xAxis:CGFloat =  screensWidth - 80
+            var xAxis:CGFloat =  txtMainView.frame.width
             var yAxis:CGFloat = 10.0
+            
+            print(screensWidth)
+            print(txtMainView.frame.width)
             
             for i in ayatObj.start...ayatObj.end
             {
                 resultStr = String(Character(UnicodeScalar(i)!))
-                
-                let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-                let img = renderer.image { ctx in
-                    let paragraphStyle = NSMutableParagraphStyle()
-                    paragraphStyle.alignment = .center
+                var width:CGFloat = 0.0
+//                var height:CGFloat = 0.0
 
-                    let attrs = [NSAttributedString.Key.font: UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
-
-                    let string = resultStr
-                    string.draw(with: CGRect(x: 0, y: 0, width: 70, height: 70), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
-                    print(string)
-                }
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.alignment = .center
+                let font = UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!
                 
-                let imgView = UIImageView(frame: CGRect(x: xAxis, y: yAxis, width: img.size.width, height: img.size.height))
-                imgView.image = img
-                txtMainView.addSubview(imgView)
-                print(img.size.width)
-                xAxis -= 75
+                let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+
+                let string = resultStr
+                let size:CGSize = string.sizeOfString(usingFont: attrs)
+                width = size.width
+//                height = size.height
+//                print(xAxis)
+                
+                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                lbl.font = font
+                lbl.text = string
+                txtMainView.addSubview(lbl)
+//                print(lbl.frame.width)
+                xAxis -= width + 5
                 
                 if xAxis <= 60
                 {
-                    xAxis = 300.0
+                    xAxis = txtMainView.frame.width
                     yAxis += 70.0
                 }
             }
             
+            scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
             
             if isMyPeripheralConected
             {
@@ -494,7 +506,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 7
         {
-            loadBooks()
+//            loadBooks()
         }
         else if button.tag == 8
         {
@@ -522,8 +534,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 13
         {
-            tag = 1001
-            loadQaris()
+//            tag = 1001
+//            loadQaris()
         }
         else if button.tag == 14
         {
@@ -724,37 +736,45 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             var resultStr = ""
             let screensWidth = UIScreen.main.bounds.width
-            var xAxis:CGFloat =  screensWidth - 80
+            var xAxis:CGFloat =  txtMainView.frame.width
             var yAxis:CGFloat = 10.0
+            
+            print(screensWidth)
+            print(txtMainView.frame.width)
             
             for i in ayatObj.start...ayatObj.end
             {
                 resultStr = String(Character(UnicodeScalar(i)!))
-                
-                let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-                let img = renderer.image { ctx in
-                    let paragraphStyle = NSMutableParagraphStyle()
-                    paragraphStyle.alignment = .center
+                var width:CGFloat = 0.0
+//                var height:CGFloat = 0.0
 
-                    let attrs = [NSAttributedString.Key.font: UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
-
-                    let string = resultStr
-                    string.draw(with: CGRect(x: 0, y: 0, width: 70, height: 70), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
-                    print(string)
-                }
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.alignment = .center
+                let font = UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!
                 
-                let imgView = UIImageView(frame: CGRect(x: xAxis, y: yAxis, width: img.size.width, height: img.size.height))
-                imgView.image = img
-                txtMainView.addSubview(imgView)
-                print(img.size.width)
-                xAxis -= 75
+                let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+
+                let string = resultStr
+                let size:CGSize = string.sizeOfString(usingFont: attrs)
+                width = size.width
+//                height = size.height
+//                print(xAxis)
+                
+                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                lbl.font = font
+                lbl.text = string
+                txtMainView.addSubview(lbl)
+//                print(lbl.frame.width)
+                xAxis -= width + 5
                 
                 if xAxis <= 60
                 {
-                    xAxis = 300.0
+                    xAxis = txtMainView.frame.width
                     yAxis += 70.0
                 }
             }
+            
+            scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
 
             leading.constant = -160
             quranFlag = false
@@ -913,4 +933,11 @@ class HomeObject: NSObject
 {
     var name: String!
     var img:UIImage!
+}
+
+extension String {
+    func sizeOfString(usingFont fontAttributes: [NSAttributedString.Key:Any]) -> CGSize {
+        let size = self.size(withAttributes: fontAttributes)
+        return size
+    }
 }
