@@ -41,6 +41,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var qarisArray:[HomeObject] = []
     var booksArray:[HomeObject] = []
+    var transArray:[HomeObject] = []
     
     var quranFlag = false
     var volFlag = false
@@ -63,6 +64,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         sliderView.layer.cornerRadius = 10.0
         sliderView.layer.masksToBounds = true
         volSlider.value = Float(currentVolume)
+        
+        transArray = [HomeObject(name: "English", img: UIImage(named: "England")!, key: ""), HomeObject(name: "Urdu", img: UIImage(named: "Pakistan")!, key: ""), HomeObject(name: "French", img: UIImage(named: "France")!, key: ""), HomeObject(name: "Turkish", img: UIImage(named: "Turki")!, key: ""), HomeObject(name: "Farsi", img: UIImage(named: "Iran")!, key: ""), HomeObject(name: "Other", img: UIImage(named: "Iran")!, key: "")]
         
         manager = CBCentralManager(delegate: self, queue: nil)
         
@@ -97,56 +100,131 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadQaris()
     {
         let qariNames:[String] = [
-            "Abdul Rahman Al Sudais",
-            "Abdul Basit           ",
-            "Maher Almuaiqly       ",
-            "Ahmed Bin Ali Ajmi",
-            "Saad Al-Ghamidi       ",
-            "Muhammad Siddiq al-Minshawi",
-            "Mishary Rashid Alafasy",
-            "Mahmoud Khalil Al Hussary",
-            "Abdur Rahman al Hudhaifi",
-            "Muhammad Ayub       ",
-            "Abdullah Basfar     ",
-            "Abu Bakr Al Shatri  ",
-            "Hani Ar Rifai       ",
-            "Muhammad Jebril     ",
-            "Ibrahim Al Akhdar",
-            "Saleh Albudair",
-            "Qari Barakatullah Saleem"]
-//            "Abdurrashid Sufi",
-//            "Abdulmohsen Al Qasim",
-//            "Abdur Rahman Bukhatir",
-//            "MUHAMMAD Al Tablawy",
-//            "Wahid Zafar Qasmi",
-//            "Sadaqat Ali",
-//            "Minshawi with Children",
-//            "Mahmoud Khalil Hussary with Chiled",
-//            "Abdul Basit Mujawid",
-//            "Abdullah Awwad Aljuhany",
-//            "Ayman Swad",
-//            "Yasir Quresi",
-//            "Raad Alkurd",
-//            "Default"]
+                        "Abdul Rahman Al Sudais",
+                        "Abdul Basit",
+                        "Maher Almuaiqly",
+                        "Ahmed Bin Ali Ajmi",
+                        "Saad Al-Ghamidi",
+                        "Muhammad Siddiq al-Minshawi",
+                        "Mishary Rashid Alafasy",
+                        "Mahmoud Khalil Al Hussary",
+                        "Abdur Rahman al Hudhaifi",
+                        "Muhammad Ayub",
+                        "Abdullah Basfar",
+                        "Abu Bakr Al Shatri",
+                        "Hani Ar Rifai",
+                        "Muhammad Jebril",
+                        "Ibrahim Al Akhdar",
+                        "Other",
+                        "Saleh Albudair",
+                        "Other",
+                        "Qari Barakatullah Saleem",
+                        "Abdurrashid Sufi",
+                        "Other",
+                        "Other",
+                        "Other",
+                        "Other",
+                        "WBW",
+                        "Abdulmohsen Al Qasim",
+                        "Abdur Rahman Bukhatir",
+                        "MUHAMMAD Al Tablawy",
+                        "Ibrahim Al Akhdar",
+                        "Wahid Zafar Qasmi",
+                        "Sadaqat Ali",
+                        "Other",
+                        "Other",
+                        "Other",
+                        "Other",
+                        "Minshawi with Children",
+                        "Mahmoud Khalil Hussary with Chiled",
+                        "Abdul Basit Mujawid",
+                        "Saleh Albudair",
+                        "Abdullah Awwad Aljuhany",
+                        "Ayman Swad",
+                        "Other",
+                        "Yasir Quresi",
+                        "Ibraheem Jamal",
+                        "Ahmed Deban",
+                        "Raad Alkurd",
+                        "Alsultani riwayah Hasham ibne amir",
+                        "Alsultani riwayah Hasham ibne amir",
+                        "Yaqoob al hazarmi",
+                        "Qalon An Nafey"
+        ]
         
-        for i in 1...qariNames.count
+        let qariImages:[String] = [
+                    "01Sudais",
+                    "02abdulbasit",
+                    "03Muaqly",
+                    "04ajmi",
+                    "05Ghamdi",
+                    "06minshawi",
+                    "07Alfasey",
+                    "08alhusary",
+                    "09hudaify",
+                    "10Ayub",
+                    "11basfer",
+                    "12abubakershatery",
+                    "13arrifai",
+                    "14jibreel",
+                    "15ibraheemakhder",
+                    "defaultReader",
+                    "17SalehBudair",
+                    "defaultReader",
+                    "19qarisaleem",
+                    "20rasheedsofi",
+                    "defaultReader",
+                    "defaultReader",
+                    "defaultReader",
+                    "defaultReader",
+                    "defaultReader",
+                    "26Muhsin",
+                    "27bukhater",
+                    "28Tablawy",
+                    "29ibraheem",
+                    "30waheedzafer",
+                    "31sadaqatali",
+                    "defaultReader",
+                    "defaultReader",
+                    "defaultReader",
+                    "defaultReader",
+                    "36minshawiwithchiled",
+                    "37AlhusarywithChild",
+                    "38AbdulBasit(Mujawed)",
+                    "defaultReader",
+                    "40Aljuhany",
+                    "41AymanSwad",
+                    "defaultReader",
+                    "43YasirQuresi",
+                    "defaultReader",
+                    "defaultReader",
+                    "46RaadAlkurd",
+                    "defaultReader",
+                    "defaultReader",
+                    "defaultReader",
+                    "defaultReader",
+                    "defaultReader",
+            ]
+        
+        for i in 0..<qariNames.count
         {
             //Simple usage example with NSData
-            print(i)
-            let filePath = Bundle.main.path(forResource: String(format: "reader%d", i), ofType: "webp")!
-            var fileData:NSData? = nil
-            do {
-                fileData = try NSData(contentsOfFile: filePath, options: NSData.ReadingOptions.uncached)
+            let filePath = Bundle.main.path(forResource: qariImages[i], ofType: "webp")
+
+            if filePath != nil && filePath != ""
+            {
+                var fileData:NSData? = nil
+                do {
+                    fileData = try NSData(contentsOfFile: filePath!, options: NSData.ReadingOptions.uncached)
+                }
+                catch {
+                    print("Error loading WebP file")
+                }
+                
+                let image:UIImage = UIImage(webpWithData: fileData!)
+                let homeObj = HomeObject(name: qariNames[i], img: image, key: "")
+                qarisArray.append(homeObj)
             }
-            catch {
-                print("Error loading WebP file")
-            }
-            
-            let homeObj = HomeObject()
-            let image:UIImage = UIImage(webpWithData: fileData!)
-            homeObj.name = qariNames[i]
-            homeObj.img = image
-            qarisArray.append(homeObj)
         }
         
         collectionView.reloadData()
@@ -165,6 +243,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 "Hisnul Muslim",
                 "40 Ahdith"]
         
+        let bookKeys:[Int] = [5,27,10,6,7,8,9,26,27]
+        
         for i in 1...bookNames.count
         {
             //Simple usage example with NSData
@@ -176,10 +256,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             catch {
                 print("Error loading WebP file")
             }
-            let homeObj = HomeObject()
+            
             let image:UIImage = UIImage(webpWithData: fileData!)
-            homeObj.name = bookNames[i-1]
-            homeObj.img = image
+            let homeObj = HomeObject(name: bookNames[i-1], img: image, key: "\(bookKeys[i-1])")
             booksArray.append(homeObj)
         }
         print("Count: \(booksArray.count)")
@@ -278,18 +357,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             var resultStr = ""
-            let screensWidth = UIScreen.main.bounds.width
             var xAxis:CGFloat =  txtMainView.frame.width
             var yAxis:CGFloat = 10.0
-            
-            print(screensWidth)
-            print(txtMainView.frame.width)
             
             for i in ayatObj.start...ayatObj.end
             {
                 resultStr = String(Character(UnicodeScalar(i)!))
                 var width:CGFloat = 0.0
-//                var height:CGFloat = 0.0
 
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
@@ -300,20 +374,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let string = resultStr
                 let size:CGSize = string.sizeOfString(usingFont: attrs)
                 width = size.width
-//                height = size.height
-//                print(xAxis)
                 
-                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
-                lbl.font = font
-                lbl.text = string
-                txtMainView.addSubview(lbl)
-//                print(lbl.frame.width)
-                xAxis -= width + 5
-                
-                if xAxis <= 60
+                if width > 10 && string != "·"
                 {
-                    xAxis = txtMainView.frame.width
-                    yAxis += 70.0
+                    if (xAxis - width) < 0
+                    {
+                        xAxis = txtMainView.frame.width
+                        yAxis += 70.0
+                    }
+                    
+                    let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                    lbl.font = font
+                    lbl.text = string
+                    txtMainView.addSubview(lbl)
+                    xAxis -= width + 5
                 }
             }
             
@@ -449,22 +523,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let currentValue = Int(sender.value)
             
         lblVolCount.text = "\(currentValue)"
-        
-        var key = ""
-        
-        if currentValue < currentVolume
-        {
-            key = "10"
-        }
-        else
-        {
-            key = "6"
-        }
-        
+        let sliderValue = lblVolCount.text
+        print(sliderValue!)
         if isMyPeripheralConected
         {
-            let dataToSend: Data = key.data(using: String.Encoding.utf8)!
-            myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            let dataToSend = NSMutableData()
+            dataToSend.append("3".data(using: String.Encoding.ascii)!)
+            dataToSend.append(sliderValue!.data(using: String.Encoding.ascii)!)
+            myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
             print("value written")
         }
         else
@@ -485,11 +551,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 2
         {
-        
+            key = "22"
         }
         else if button.tag == 3
         {
-           
+            key = "5"
         }
         else if button.tag == 4
         {
@@ -497,7 +563,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 5
         {
-            key = ""
+            key = "19"
         }
         else if button.tag == 6
         {
@@ -506,11 +572,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 7
         {
-//            loadBooks()
+            tag = 1002
+            loadBooks()
         }
         else if button.tag == 8
         {
-            key = ""
+            tag = 1003
+            collectionView.reloadData()
+            qarisView.alpha = 1
         }
         else if button.tag == 9
         {
@@ -534,8 +603,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 13
         {
-//            tag = 1001
-//            loadQaris()
+            tag = 1001
+            loadQaris()
         }
         else if button.tag == 14
         {
@@ -544,7 +613,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 15
         {
-            key = ""
+            key = "4"
         }
         else if button.tag == 16
         {
@@ -599,11 +668,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             return qarisArray.count
         }
-        else
+        else if tag == 1002
         {
-            print("--------------")
             return booksArray.count
         }
+        else if tag == 1003
+        {
+            return transArray.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -615,10 +688,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.lblName.text = qarisArray[indexPath.row].name
             cell.imgView.image = qarisArray[indexPath.row].img
         }
-        else
+        else if tag == 1002
         {
             cell.lblName.text = booksArray[indexPath.row].name
             cell.imgView.image = booksArray[indexPath.row].img
+        }
+        else if tag == 1003
+        {
+            cell.lblName.text = transArray[indexPath.row].name
+            cell.imgView.image = transArray[indexPath.row].img
         }
         
         return cell
@@ -630,7 +708,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             
         }
-        else
+        else if tag == 1002
+        {
+            
+        }
+        else if tag == 1003
         {
             
         }
@@ -642,12 +724,36 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             let dataToSend = NSMutableData()
             
-            let qari = indexPath.row + 1
-            
-            dataToSend.append("Q".data(using: String.Encoding.ascii)!)
+            if tag == 1001
+            {
+                var value = 3
+                var qari = indexPath.row + 1
+                print(qari)
+                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
+                dataToSend.append(Data(bytes: &qari, count: MemoryLayout.size(ofValue: qari)))
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+            else if tag == 1002
+            {
+                var value = 1
+                var key = Int(booksArray[ indexPath.row + 1].key ?? "0")
+                print(key!)
+                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
+                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+            else if tag == 1003
+            {
+                var value = 4
+                var trans = indexPath.row + 1
+                print(trans)
+                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
+                dataToSend.append(Data(bytes: &trans, count: MemoryLayout.size(ofValue: trans)))
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
             
             myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            print("value written")
+            qarisView.alpha = 0
         }
         else
         {
@@ -735,18 +841,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             var resultStr = ""
-            let screensWidth = UIScreen.main.bounds.width
             var xAxis:CGFloat =  txtMainView.frame.width
             var yAxis:CGFloat = 10.0
-            
-            print(screensWidth)
-            print(txtMainView.frame.width)
             
             for i in ayatObj.start...ayatObj.end
             {
                 resultStr = String(Character(UnicodeScalar(i)!))
                 var width:CGFloat = 0.0
-//                var height:CGFloat = 0.0
 
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
@@ -757,21 +858,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let string = resultStr
                 let size:CGSize = string.sizeOfString(usingFont: attrs)
                 width = size.width
-//                height = size.height
-//                print(xAxis)
+                
+                if (xAxis - width) <= 5
+                {
+                    xAxis = txtMainView.frame.width
+                    yAxis += 70.0
+                }
                 
                 let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
                 lbl.font = font
                 lbl.text = string
                 txtMainView.addSubview(lbl)
-//                print(lbl.frame.width)
                 xAxis -= width + 5
-                
-                if xAxis <= 60
-                {
-                    xAxis = txtMainView.frame.width
-                    yAxis += 70.0
-                }
             }
             
             scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
@@ -905,8 +1003,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        
-        print ("22222222")
+
         if (characteristic.uuid == quranUUID) {
             
             let readValue = characteristic.value
@@ -933,6 +1030,14 @@ class HomeObject: NSObject
 {
     var name: String!
     var img:UIImage!
+    var key: String!
+    
+    init (name: String, img: UIImage, key: String)
+    {
+        self.name = name
+        self.img = img
+        self.key = key
+    }
 }
 
 extension String {
