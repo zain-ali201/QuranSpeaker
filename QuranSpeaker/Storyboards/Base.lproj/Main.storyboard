@@ -57,8 +57,8 @@
                                                     <action selector="quranBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bcd-el-v9h"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quran Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5v-ht-gyM">
-                                                <rect key="frame" x="122" y="20.5" width="131" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سورة الفاتحة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5v-ht-gyM">
+                                                <rect key="frame" x="139.5" y="20.5" width="96" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -777,6 +777,7 @@
                         <outlet property="chaptersTblView" destination="xIe-OK-s5W" id="H8g-Ph-K6c"/>
                         <outlet property="collectionView" destination="zEm-F2-dr0" id="UHG-wp-IUb"/>
                         <outlet property="lblMain" destination="mO4-fs-vn6" id="Y87-ME-Yrf"/>
+                        <outlet property="lblTitle" destination="n5v-ht-gyM" id="d8k-uH-CYx"/>
                         <outlet property="lblVerse" destination="exI-SS-lmt" id="CnZ-gR-7qF"/>
                         <outlet property="lblVolCount" destination="UOd-R0-6d6" id="PA7-Qz-adu"/>
                         <outlet property="leading" destination="Xtc-Lc-5ae" id="ByH-be-tj9"/>

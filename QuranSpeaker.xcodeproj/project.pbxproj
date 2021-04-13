@@ -626,37 +626,6 @@
 		186DA40225C7FEE000D4F154 /* DaylightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */; };
 		186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40025C7FEE000D4F154 /* JuristicViewController.swift */; };
 		186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40125C7FEE000D4F154 /* CityViewController.swift */; };
-		186F3A37261B4D890007D835 /* Reader24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A18261B4D870007D835 /* Reader24.webp */; };
-		186F3A38261B4D890007D835 /* Reader7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A19261B4D870007D835 /* Reader7.webp */; };
-		186F3A39261B4D890007D835 /* Reader23.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A1A261B4D870007D835 /* Reader23.webp */; };
-		186F3A3A261B4D890007D835 /* Reader6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A1B261B4D870007D835 /* Reader6.webp */; };
-		186F3A3B261B4D890007D835 /* Reader1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A1C261B4D870007D835 /* Reader1.webp */; };
-		186F3A3C261B4D890007D835 /* Reader13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A1D261B4D870007D835 /* Reader13.webp */; };
-		186F3A3D261B4D890007D835 /* Reader27.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A1E261B4D870007D835 /* Reader27.webp */; };
-		186F3A3E261B4D890007D835 /* Reader10.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A1F261B4D870007D835 /* Reader10.webp */; };
-		186F3A3F261B4D890007D835 /* Reader19.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A20261B4D870007D835 /* Reader19.webp */; };
-		186F3A40261B4D890007D835 /* Reader28.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A21261B4D880007D835 /* Reader28.webp */; };
-		186F3A41261B4D890007D835 /* Reader15.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A22261B4D880007D835 /* Reader15.webp */; };
-		186F3A42261B4D890007D835 /* Reader12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A23261B4D880007D835 /* Reader12.webp */; };
-		186F3A43261B4D890007D835 /* Reader5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A24261B4D880007D835 /* Reader5.webp */; };
-		186F3A44261B4D890007D835 /* Reader17.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A25261B4D880007D835 /* Reader17.webp */; };
-		186F3A45261B4D890007D835 /* Reader2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A26261B4D880007D835 /* Reader2.webp */; };
-		186F3A46261B4D890007D835 /* Reader20.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A27261B4D880007D835 /* Reader20.webp */; };
-		186F3A47261B4D890007D835 /* Reader29.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A28261B4D880007D835 /* Reader29.webp */; };
-		186F3A48261B4D890007D835 /* Reader4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A29261B4D880007D835 /* Reader4.webp */; };
-		186F3A49261B4D890007D835 /* Reader22.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A2A261B4D880007D835 /* Reader22.webp */; };
-		186F3A4A261B4D890007D835 /* Reader14.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A2B261B4D880007D835 /* Reader14.webp */; };
-		186F3A4B261B4D890007D835 /* Reader16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A2C261B4D880007D835 /* Reader16.webp */; };
-		186F3A4C261B4D890007D835 /* Reader9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A2D261B4D880007D835 /* Reader9.webp */; };
-		186F3A4D261B4D890007D835 /* Reader18.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A2E261B4D880007D835 /* Reader18.webp */; };
-		186F3A4E261B4D890007D835 /* Reader30.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A2F261B4D880007D835 /* Reader30.webp */; };
-		186F3A4F261B4D890007D835 /* Reader25.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A30261B4D890007D835 /* Reader25.webp */; };
-		186F3A50261B4D890007D835 /* Reader3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A31261B4D890007D835 /* Reader3.webp */; };
-		186F3A51261B4D890007D835 /* Reader11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A32261B4D890007D835 /* Reader11.webp */; };
-		186F3A52261B4D890007D835 /* Reader8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A33261B4D890007D835 /* Reader8.webp */; };
-		186F3A53261B4D890007D835 /* Reader21.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A34261B4D890007D835 /* Reader21.webp */; };
-		186F3A54261B4D890007D835 /* Reader26.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A35261B4D890007D835 /* Reader26.webp */; };
-		186F3A55261B4D890007D835 /* Reader31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 186F3A36261B4D890007D835 /* Reader31.webp */; };
 		1878F088261C597500B8153D /* 37AlhusarywithChild.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F049261C597100B8153D /* 37AlhusarywithChild.webp */; };
 		1878F089261C597500B8153D /* 41AymanSwad.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F04A261C597100B8153D /* 41AymanSwad.webp */; };
 		1878F08B261C597500B8153D /* 36minshawiwithchiled.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F04C261C597100B8153D /* 36minshawiwithchiled.webp */; };
@@ -724,37 +693,6 @@
 		186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaylightViewController.swift; sourceTree = "<group>"; };
 		186DA40025C7FEE000D4F154 /* JuristicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuristicViewController.swift; sourceTree = "<group>"; };
 		186DA40125C7FEE000D4F154 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
-		186F3A18261B4D870007D835 /* Reader24.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader24.webp; sourceTree = "<group>"; };
-		186F3A19261B4D870007D835 /* Reader7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader7.webp; sourceTree = "<group>"; };
-		186F3A1A261B4D870007D835 /* Reader23.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader23.webp; sourceTree = "<group>"; };
-		186F3A1B261B4D870007D835 /* Reader6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader6.webp; sourceTree = "<group>"; };
-		186F3A1C261B4D870007D835 /* Reader1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader1.webp; sourceTree = "<group>"; };
-		186F3A1D261B4D870007D835 /* Reader13.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader13.webp; sourceTree = "<group>"; };
-		186F3A1E261B4D870007D835 /* Reader27.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader27.webp; sourceTree = "<group>"; };
-		186F3A1F261B4D870007D835 /* Reader10.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader10.webp; sourceTree = "<group>"; };
-		186F3A20261B4D870007D835 /* Reader19.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader19.webp; sourceTree = "<group>"; };
-		186F3A21261B4D880007D835 /* Reader28.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader28.webp; sourceTree = "<group>"; };
-		186F3A22261B4D880007D835 /* Reader15.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader15.webp; sourceTree = "<group>"; };
-		186F3A23261B4D880007D835 /* Reader12.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader12.webp; sourceTree = "<group>"; };
-		186F3A24261B4D880007D835 /* Reader5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader5.webp; sourceTree = "<group>"; };
-		186F3A25261B4D880007D835 /* Reader17.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader17.webp; sourceTree = "<group>"; };
-		186F3A26261B4D880007D835 /* Reader2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader2.webp; sourceTree = "<group>"; };
-		186F3A27261B4D880007D835 /* Reader20.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader20.webp; sourceTree = "<group>"; };
-		186F3A28261B4D880007D835 /* Reader29.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader29.webp; sourceTree = "<group>"; };
-		186F3A29261B4D880007D835 /* Reader4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader4.webp; sourceTree = "<group>"; };
-		186F3A2A261B4D880007D835 /* Reader22.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader22.webp; sourceTree = "<group>"; };
-		186F3A2B261B4D880007D835 /* Reader14.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader14.webp; sourceTree = "<group>"; };
-		186F3A2C261B4D880007D835 /* Reader16.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader16.webp; sourceTree = "<group>"; };
-		186F3A2D261B4D880007D835 /* Reader9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader9.webp; sourceTree = "<group>"; };
-		186F3A2E261B4D880007D835 /* Reader18.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader18.webp; sourceTree = "<group>"; };
-		186F3A2F261B4D880007D835 /* Reader30.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader30.webp; sourceTree = "<group>"; };
-		186F3A30261B4D890007D835 /* Reader25.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader25.webp; sourceTree = "<group>"; };
-		186F3A31261B4D890007D835 /* Reader3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader3.webp; sourceTree = "<group>"; };
-		186F3A32261B4D890007D835 /* Reader11.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader11.webp; sourceTree = "<group>"; };
-		186F3A33261B4D890007D835 /* Reader8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader8.webp; sourceTree = "<group>"; };
-		186F3A34261B4D890007D835 /* Reader21.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader21.webp; sourceTree = "<group>"; };
-		186F3A35261B4D890007D835 /* Reader26.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader26.webp; sourceTree = "<group>"; };
-		186F3A36261B4D890007D835 /* Reader31.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reader31.webp; sourceTree = "<group>"; };
 		1878F049261C597100B8153D /* 37AlhusarywithChild.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 37AlhusarywithChild.webp; sourceTree = "<group>"; };
 		1878F04A261C597100B8153D /* 41AymanSwad.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 41AymanSwad.webp; sourceTree = "<group>"; };
 		1878F04C261C597100B8153D /* 36minshawiwithchiled.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 36minshawiwithchiled.webp; sourceTree = "<group>"; };
@@ -2069,44 +2007,6 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		186F3A0E261B4B9F0007D835 /* Readers */ = {
-			isa = PBXGroup;
-			children = (
-				186F3A1C261B4D870007D835 /* Reader1.webp */,
-				186F3A26261B4D880007D835 /* Reader2.webp */,
-				186F3A31261B4D890007D835 /* Reader3.webp */,
-				186F3A29261B4D880007D835 /* Reader4.webp */,
-				186F3A24261B4D880007D835 /* Reader5.webp */,
-				186F3A1B261B4D870007D835 /* Reader6.webp */,
-				186F3A19261B4D870007D835 /* Reader7.webp */,
-				186F3A33261B4D890007D835 /* Reader8.webp */,
-				186F3A2D261B4D880007D835 /* Reader9.webp */,
-				186F3A1F261B4D870007D835 /* Reader10.webp */,
-				186F3A32261B4D890007D835 /* Reader11.webp */,
-				186F3A23261B4D880007D835 /* Reader12.webp */,
-				186F3A1D261B4D870007D835 /* Reader13.webp */,
-				186F3A2B261B4D880007D835 /* Reader14.webp */,
-				186F3A22261B4D880007D835 /* Reader15.webp */,
-				186F3A2C261B4D880007D835 /* Reader16.webp */,
-				186F3A25261B4D880007D835 /* Reader17.webp */,
-				186F3A2E261B4D880007D835 /* Reader18.webp */,
-				186F3A20261B4D870007D835 /* Reader19.webp */,
-				186F3A27261B4D880007D835 /* Reader20.webp */,
-				186F3A34261B4D890007D835 /* Reader21.webp */,
-				186F3A2A261B4D880007D835 /* Reader22.webp */,
-				186F3A1A261B4D870007D835 /* Reader23.webp */,
-				186F3A18261B4D870007D835 /* Reader24.webp */,
-				186F3A30261B4D890007D835 /* Reader25.webp */,
-				186F3A35261B4D890007D835 /* Reader26.webp */,
-				186F3A1E261B4D870007D835 /* Reader27.webp */,
-				186F3A21261B4D880007D835 /* Reader28.webp */,
-				186F3A28261B4D880007D835 /* Reader29.webp */,
-				186F3A2F261B4D880007D835 /* Reader30.webp */,
-				186F3A36261B4D890007D835 /* Reader31.webp */,
-			);
-			path = Readers;
-			sourceTree = "<group>";
-		};
 		1878F047261C58D300B8153D /* Reader */ = {
 			isa = PBXGroup;
 			children = (
@@ -2167,9 +2067,8 @@
 		18B8542825B6B62900667E67 /* QuranSpeaker */ = {
 			isa = PBXGroup;
 			children = (
-				1878F047261C58D300B8153D /* Reader */,
-				186F3A0E261B4B9F0007D835 /* Readers */,
 				18B8543225B6B63C00667E67 /* Assets.xcassets */,
+				1878F047261C58D300B8153D /* Reader */,
 				1837DF94261205E800FCF9EC /* books */,
 				185EC69125C2B813008661AE /* fonts */,
 				18B8544125B6B69500667E67 /* AppDelegate */,
@@ -2295,7 +2194,6 @@
 			files = (
 				181B2D4F2608E03A00EB3F50 /* KSF_P002.ttf in Resources */,
 				1878F098261C597500B8153D /* 43YasirQuresi.webp in Resources */,
-				186F3A3A261B4D890007D835 /* Reader6.webp in Resources */,
 				1878F0BB261C597500B8153D /* 28Tablawy.webp in Resources */,
 				181B2D502608E03A00EB3F50 /* KSF_P003.ttf in Resources */,
 				181B2D512608E03A00EB3F50 /* KSF_P004.ttf in Resources */,
@@ -2305,7 +2203,6 @@
 				181B2D542608E03A00EB3F50 /* KSF_P007.ttf in Resources */,
 				181B2D552608E03A00EB3F50 /* KSF_P008.ttf in Resources */,
 				181B2D562608E03A00EB3F50 /* KSF_P009.ttf in Resources */,
-				186F3A45261B4D890007D835 /* Reader2.webp in Resources */,
 				181B2D572608E03A00EB3F50 /* KSF_P010.ttf in Resources */,
 				181B2D582608E03A00EB3F50 /* KSF_P011.ttf in Resources */,
 				181B2D592608E03A00EB3F50 /* KSF_P012.ttf in Resources */,
@@ -2324,7 +2221,6 @@
 				181B2D662608E03A00EB3F50 /* KSF_P025.ttf in Resources */,
 				181B2D672608E03A00EB3F50 /* KSF_P026.ttf in Resources */,
 				181B2D682608E03A00EB3F50 /* KSF_P027.ttf in Resources */,
-				186F3A50261B4D890007D835 /* Reader3.webp in Resources */,
 				181B2D692608E03A00EB3F50 /* KSF_P028.ttf in Resources */,
 				181B2D6A2608E03B00EB3F50 /* KSF_P029.ttf in Resources */,
 				181B2D6B2608E03B00EB3F50 /* KSF_P030.ttf in Resources */,
@@ -2345,7 +2241,6 @@
 				181B2D7A2608E03B00EB3F50 /* KSF_P045.ttf in Resources */,
 				181B2D7B2608E03B00EB3F50 /* KSF_P046.ttf in Resources */,
 				181B2D7C2608E03B00EB3F50 /* KSF_P047.ttf in Resources */,
-				186F3A4B261B4D890007D835 /* Reader16.webp in Resources */,
 				181B2D7D2608E03B00EB3F50 /* KSF_P048.ttf in Resources */,
 				181B2D7E2608E03B00EB3F50 /* KSF_P049.ttf in Resources */,
 				181B2D7F2608E03B00EB3F50 /* KSF_P050.ttf in Resources */,
@@ -2370,7 +2265,6 @@
 				181B2D912608E03B00EB3F50 /* KSF_P068.ttf in Resources */,
 				181B2D922608E03B00EB3F50 /* KSF_P069.ttf in Resources */,
 				181B2D932608E03B00EB3F50 /* KSF_P070.ttf in Resources */,
-				186F3A3B261B4D890007D835 /* Reader1.webp in Resources */,
 				181B2D942608E03B00EB3F50 /* KSF_P071.ttf in Resources */,
 				181B2D952608E03B00EB3F50 /* KSF_P072.ttf in Resources */,
 				181B2D962608E03B00EB3F50 /* KSF_P073.ttf in Resources */,
@@ -2384,7 +2278,6 @@
 				181B2D9D2608E03B00EB3F50 /* KSF_P080.ttf in Resources */,
 				181B2D9E2608E03B00EB3F50 /* KSF_P081.ttf in Resources */,
 				181B2D9F2608E03B00EB3F50 /* KSF_P082.ttf in Resources */,
-				186F3A4A261B4D890007D835 /* Reader14.webp in Resources */,
 				181B2DA02608E03B00EB3F50 /* KSF_P083.ttf in Resources */,
 				181B2DA12608E03B00EB3F50 /* KSF_P084.ttf in Resources */,
 				181B2DA22608E03B00EB3F50 /* KSF_P085.ttf in Resources */,
@@ -2401,7 +2294,6 @@
 				181B2DAD2608E03B00EB3F50 /* KSF_P096.ttf in Resources */,
 				181B2DAE2608E03B00EB3F50 /* KSF_P097.ttf in Resources */,
 				181B2DAF2608E03B00EB3F50 /* KSF_P098.ttf in Resources */,
-				186F3A41261B4D890007D835 /* Reader15.webp in Resources */,
 				181B2DB02608E03B00EB3F50 /* KSF_P099.ttf in Resources */,
 				181B2DB12608E03B00EB3F50 /* KSF_P100.ttf in Resources */,
 				181B2DB22608E03B00EB3F50 /* KSF_P101.ttf in Resources */,
@@ -2428,7 +2320,6 @@
 				181B2DC62608E03B00EB3F50 /* KSF_P121.ttf in Resources */,
 				181B2DC72608E03B00EB3F50 /* KSF_P122.ttf in Resources */,
 				181B2DC82608E03B00EB3F50 /* KSF_P123.ttf in Resources */,
-				186F3A48261B4D890007D835 /* Reader4.webp in Resources */,
 				181B2DC92608E03B00EB3F50 /* KSF_P124.ttf in Resources */,
 				181B2DCA2608E03B00EB3F50 /* KSF_P125.ttf in Resources */,
 				181B2DCB2608E03B00EB3F50 /* KSF_P126.ttf in Resources */,
@@ -2464,7 +2355,6 @@
 				181B2DE72608E03B00EB3F50 /* KSF_P154.ttf in Resources */,
 				1878F0B0261C597500B8153D /* 07Alfasey.webp in Resources */,
 				181B2DE82608E03B00EB3F50 /* KSF_P155.ttf in Resources */,
-				186F3A4F261B4D890007D835 /* Reader25.webp in Resources */,
 				181B2DE92608E03B00EB3F50 /* KSF_P156.ttf in Resources */,
 				181B2DEA2608E03B00EB3F50 /* KSF_P157.ttf in Resources */,
 				181B2DEB2608E03B00EB3F50 /* KSF_P158.ttf in Resources */,
@@ -2499,7 +2389,6 @@
 				181B2E062608E03B00EB3F50 /* KSF_P185.ttf in Resources */,
 				181B2E072608E03B00EB3F50 /* KSF_P186.ttf in Resources */,
 				181B2E082608E03B00EB3F50 /* KSF_P187.ttf in Resources */,
-				186F3A4C261B4D890007D835 /* Reader9.webp in Resources */,
 				181B2E092608E03B00EB3F50 /* KSF_P188.ttf in Resources */,
 				181B2E0A2608E03B00EB3F50 /* KSF_P189.ttf in Resources */,
 				181B2E0B2608E03B00EB3F50 /* KSF_P190.ttf in Resources */,
@@ -2516,7 +2405,6 @@
 				181B2E162608E03B00EB3F50 /* KSF_P201.ttf in Resources */,
 				181B2E172608E03B00EB3F50 /* KSF_P202.ttf in Resources */,
 				181B2E182608E03B00EB3F50 /* KSF_P203.ttf in Resources */,
-				186F3A3E261B4D890007D835 /* Reader10.webp in Resources */,
 				181B2E192608E03B00EB3F50 /* KSF_P204.ttf in Resources */,
 				181B2E1A2608E03B00EB3F50 /* KSF_P205.ttf in Resources */,
 				181B2E1B2608E03B00EB3F50 /* KSF_P206.ttf in Resources */,
@@ -2531,7 +2419,6 @@
 				181B2E232608E03B00EB3F50 /* KSF_P214.ttf in Resources */,
 				181B2E242608E03B00EB3F50 /* KSF_P215.ttf in Resources */,
 				181B2E252608E03B00EB3F50 /* KSF_P216.ttf in Resources */,
-				186F3A4D261B4D890007D835 /* Reader18.webp in Resources */,
 				181B2E262608E03B00EB3F50 /* KSF_P217.ttf in Resources */,
 				181B2E272608E03B00EB3F50 /* KSF_P218.ttf in Resources */,
 				181B2E282608E03B00EB3F50 /* KSF_P219.ttf in Resources */,
@@ -2557,7 +2444,6 @@
 				181B2E3C2608E03B00EB3F50 /* KSF_P239.ttf in Resources */,
 				181B2E3D2608E03B00EB3F50 /* KSF_P240.ttf in Resources */,
 				181B2E3E2608E03B00EB3F50 /* KSF_P241.ttf in Resources */,
-				186F3A49261B4D890007D835 /* Reader22.webp in Resources */,
 				181B2E3F2608E03B00EB3F50 /* KSF_P242.ttf in Resources */,
 				181B2E402608E03B00EB3F50 /* KSF_P243.ttf in Resources */,
 				181B2E412608E03B00EB3F50 /* KSF_P244.ttf in Resources */,
@@ -2603,7 +2489,6 @@
 				181B2E632608E03C00EB3F50 /* KSF_P278.ttf in Resources */,
 				181B2E642608E03C00EB3F50 /* KSF_P279.ttf in Resources */,
 				181B2E652608E03C00EB3F50 /* KSF_P280.ttf in Resources */,
-				186F3A47261B4D890007D835 /* Reader29.webp in Resources */,
 				181B2E662608E03C00EB3F50 /* KSF_P281.ttf in Resources */,
 				181B2E672608E03C00EB3F50 /* KSF_P282.ttf in Resources */,
 				181B2E682608E03C00EB3F50 /* KSF_P283.ttf in Resources */,
@@ -2615,7 +2500,6 @@
 				181B2E6E2608E03C00EB3F50 /* KSF_P289.ttf in Resources */,
 				181B2E6F2608E03C00EB3F50 /* KSF_P290.ttf in Resources */,
 				1878F099261C597500B8153D /* 08alhusary.webp in Resources */,
-				186F3A44261B4D890007D835 /* Reader17.webp in Resources */,
 				181B2E702608E03C00EB3F50 /* KSF_P291.ttf in Resources */,
 				181B2E712608E03C00EB3F50 /* KSF_P292.ttf in Resources */,
 				181B2E722608E03C00EB3F50 /* KSF_P293.ttf in Resources */,
@@ -2623,7 +2507,6 @@
 				181B2E742608E03C00EB3F50 /* KSF_P295.ttf in Resources */,
 				181B2E752608E03C00EB3F50 /* KSF_P296.ttf in Resources */,
 				181B2E762608E03C00EB3F50 /* KSF_P297.ttf in Resources */,
-				186F3A37261B4D890007D835 /* Reader24.webp in Resources */,
 				181B2E772608E03C00EB3F50 /* KSF_P298.ttf in Resources */,
 				181B2E782608E03C00EB3F50 /* KSF_P299.ttf in Resources */,
 				181B2E792608E03C00EB3F50 /* KSF_P300.ttf in Resources */,
@@ -2631,7 +2514,6 @@
 				181B2E7B2608E03C00EB3F50 /* KSF_P302.ttf in Resources */,
 				181B2E7C2608E03C00EB3F50 /* KSF_P303.ttf in Resources */,
 				1837DFA2261205E800FCF9EC /* Book5.webp in Resources */,
-				186F3A51261B4D890007D835 /* Reader11.webp in Resources */,
 				181B2E7D2608E03C00EB3F50 /* KSF_P304.ttf in Resources */,
 				181B2E7E2608E03C00EB3F50 /* KSF_P305.ttf in Resources */,
 				181B2E7F2608E03C00EB3F50 /* KSF_P306.ttf in Resources */,
@@ -2659,7 +2541,6 @@
 				181B2E942608E03C00EB3F50 /* KSF_P327.ttf in Resources */,
 				181B2E952608E03C00EB3F50 /* KSF_P328.ttf in Resources */,
 				181B2E962608E03C00EB3F50 /* KSF_P329.ttf in Resources */,
-				186F3A3F261B4D890007D835 /* Reader19.webp in Resources */,
 				181B2E972608E03C00EB3F50 /* KSF_P330.ttf in Resources */,
 				181B2E982608E03C00EB3F50 /* KSF_P331.ttf in Resources */,
 				181B2E992608E03C00EB3F50 /* KSF_P332.ttf in Resources */,
@@ -2675,7 +2556,6 @@
 				181B2EA32608E03C00EB3F50 /* KSF_P342.ttf in Resources */,
 				181B2EA42608E03C00EB3F50 /* KSF_P343.ttf in Resources */,
 				181B2EA52608E03C00EB3F50 /* KSF_P344.ttf in Resources */,
-				186F3A3C261B4D890007D835 /* Reader13.webp in Resources */,
 				1878F088261C597500B8153D /* 37AlhusarywithChild.webp in Resources */,
 				181B2EA62608E03C00EB3F50 /* KSF_P345.ttf in Resources */,
 				181B2EA72608E03C00EB3F50 /* KSF_P346.ttf in Resources */,
@@ -2705,12 +2585,10 @@
 				181B2EBF2608E03C00EB3F50 /* KSF_P370.ttf in Resources */,
 				181B2EC02608E03C00EB3F50 /* KSF_P371.ttf in Resources */,
 				1878F09F261C597500B8153D /* 05Ghamdi.webp in Resources */,
-				186F3A52261B4D890007D835 /* Reader8.webp in Resources */,
 				181B2EC12608E03C00EB3F50 /* KSF_P372.ttf in Resources */,
 				181B2EC22608E03C00EB3F50 /* KSF_P373.ttf in Resources */,
 				181B2EC32608E03C00EB3F50 /* KSF_P374.ttf in Resources */,
 				181B2EC42608E03C00EB3F50 /* KSF_P375.ttf in Resources */,
-				186F3A40261B4D890007D835 /* Reader28.webp in Resources */,
 				181B2EC52608E03C00EB3F50 /* KSF_P376.ttf in Resources */,
 				181B2EC62608E03C00EB3F50 /* KSF_P377.ttf in Resources */,
 				181B2EC72608E03C00EB3F50 /* KSF_P378.ttf in Resources */,
@@ -2723,12 +2601,10 @@
 				181B2ECB2608E03C00EB3F50 /* KSF_P382.ttf in Resources */,
 				181B2ECC2608E03C00EB3F50 /* KSF_P383.ttf in Resources */,
 				181B2ECD2608E03C00EB3F50 /* KSF_P384.ttf in Resources */,
-				186F3A3D261B4D890007D835 /* Reader27.webp in Resources */,
 				181B2ECE2608E03C00EB3F50 /* KSF_P385.ttf in Resources */,
 				181B2ECF2608E03C00EB3F50 /* KSF_P386.ttf in Resources */,
 				181B2ED02608E03C00EB3F50 /* KSF_P387.ttf in Resources */,
 				181B2ED12608E03C00EB3F50 /* KSF_P388.ttf in Resources */,
-				186F3A38261B4D890007D835 /* Reader7.webp in Resources */,
 				181B2ED22608E03C00EB3F50 /* KSF_P389.ttf in Resources */,
 				181B2ED32608E03C00EB3F50 /* KSF_P390.ttf in Resources */,
 				181B2ED42608E03C00EB3F50 /* KSF_P391.ttf in Resources */,
@@ -2846,7 +2722,6 @@
 				181B2F3D2608E03C00EB3F50 /* KSF_P496.ttf in Resources */,
 				181B2F3E2608E03C00EB3F50 /* KSF_P497.ttf in Resources */,
 				181B2F3F2608E03C00EB3F50 /* KSF_P498.ttf in Resources */,
-				186F3A54261B4D890007D835 /* Reader26.webp in Resources */,
 				181B2F402608E03C00EB3F50 /* KSF_P499.ttf in Resources */,
 				181B2F412608E03C00EB3F50 /* KSF_P500.ttf in Resources */,
 				181B2F422608E03C00EB3F50 /* KSF_P501.ttf in Resources */,
@@ -2857,7 +2732,6 @@
 				181B2F472608E03C00EB3F50 /* KSF_P506.ttf in Resources */,
 				181B2F482608E03C00EB3F50 /* KSF_P507.ttf in Resources */,
 				181B2F492608E03C00EB3F50 /* KSF_P508.ttf in Resources */,
-				186F3A46261B4D890007D835 /* Reader20.webp in Resources */,
 				181B2F4A2608E03C00EB3F50 /* KSF_P509.ttf in Resources */,
 				181B2F4B2608E03C00EB3F50 /* KSF_P510.ttf in Resources */,
 				181B2F4C2608E03C00EB3F50 /* KSF_P511.ttf in Resources */,
@@ -2867,7 +2741,6 @@
 				181B2F502608E03C00EB3F50 /* KSF_P515.ttf in Resources */,
 				181B2F512608E03C00EB3F50 /* KSF_P516.ttf in Resources */,
 				181B2F522608E03C00EB3F50 /* KSF_P517.ttf in Resources */,
-				186F3A4E261B4D890007D835 /* Reader30.webp in Resources */,
 				181B2F532608E03C00EB3F50 /* KSF_P518.ttf in Resources */,
 				181B2F542608E03C00EB3F50 /* KSF_P519.ttf in Resources */,
 				181B2F552608E03C00EB3F50 /* KSF_P520.ttf in Resources */,
@@ -2898,14 +2771,12 @@
 				181B2F6C2608E03D00EB3F50 /* KSF_P543.ttf in Resources */,
 				181B2F6D2608E03D00EB3F50 /* KSF_P544.ttf in Resources */,
 				181B2F6E2608E03D00EB3F50 /* KSF_P545.ttf in Resources */,
-				186F3A55261B4D890007D835 /* Reader31.webp in Resources */,
 				181B2F6F2608E03D00EB3F50 /* KSF_P546.ttf in Resources */,
 				181B2F702608E03D00EB3F50 /* KSF_P547.ttf in Resources */,
 				181B2F712608E03D00EB3F50 /* KSF_P548.ttf in Resources */,
 				181B2F722608E03D00EB3F50 /* KSF_P549.ttf in Resources */,
 				181B2F732608E03D00EB3F50 /* KSF_P550.ttf in Resources */,
 				181B2F742608E03D00EB3F50 /* KSF_P551.ttf in Resources */,
-				186F3A43261B4D890007D835 /* Reader5.webp in Resources */,
 				1878F0AA261C597500B8153D /* 01Sudais.webp in Resources */,
 				181B2F752608E03D00EB3F50 /* KSF_P552.ttf in Resources */,
 				181B2F762608E03D00EB3F50 /* KSF_P553.ttf in Resources */,
@@ -2921,7 +2792,6 @@
 				181B2F802608E03D00EB3F50 /* KSF_P563.ttf in Resources */,
 				181B2F812608E03D00EB3F50 /* KSF_P564.ttf in Resources */,
 				181B2F822608E03D00EB3F50 /* KSF_P565.ttf in Resources */,
-				186F3A39261B4D890007D835 /* Reader23.webp in Resources */,
 				181B2F832608E03D00EB3F50 /* KSF_P566.ttf in Resources */,
 				181B2F842608E03D00EB3F50 /* KSF_P567.ttf in Resources */,
 				181B2F852608E03D00EB3F50 /* KSF_P568.ttf in Resources */,
@@ -2935,9 +2805,7 @@
 				181B2F8C2608E03D00EB3F50 /* KSF_P575.ttf in Resources */,
 				181B2F8D2608E03D00EB3F50 /* KSF_P576.ttf in Resources */,
 				181B2F8E2608E03D00EB3F50 /* KSF_P577.ttf in Resources */,
-				186F3A42261B4D890007D835 /* Reader12.webp in Resources */,
 				181B2F8F2608E03D00EB3F50 /* KSF_P578.ttf in Resources */,
-				186F3A53261B4D890007D835 /* Reader21.webp in Resources */,
 				181B2F902608E03D00EB3F50 /* KSF_P579.ttf in Resources */,
 				181B2F912608E03D00EB3F50 /* KSF_P580.ttf in Resources */,
 				181B2F922608E03D00EB3F50 /* KSF_P581.ttf in Resources */,

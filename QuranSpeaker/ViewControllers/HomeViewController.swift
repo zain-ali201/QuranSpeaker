@@ -13,6 +13,7 @@ var currentVolume = 10
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate
 {
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblMain: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var quranView: UIView!
@@ -247,7 +248,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         for i in 1...bookNames.count
         {
-            //Simple usage example with NSData
             let filePath = Bundle.main.path(forResource: String(format: "Book%d", i), ofType: "webp")!
             var fileData:NSData? = nil
             do {
@@ -261,7 +261,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let homeObj = HomeObject(name: bookNames[i-1], img: image, key: "\(bookKeys[i-1])")
             booksArray.append(homeObj)
         }
-        print("Count: \(booksArray.count)")
+        
         collectionView.reloadData()
         qarisView.alpha = 1
     }
@@ -318,12 +318,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
+        
+        
         if chapterNo > 114
         {
             return
         }
         else if flag
         {
+            lblTitle.text = String(format: "سورة %@",indexArray[chapterNo - 1])
+            
             let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
             let ayatObj = ayatsArray[verseNo - 1]
             
@@ -363,11 +367,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             for i in ayatObj.start...ayatObj.end
             {
                 resultStr = String(Character(UnicodeScalar(i)!))
+                print(resultStr)
                 var width:CGFloat = 0.0
 
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                let font = UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!
+                
+                let fontName = String(format:"%@%d", prefix, ayatObj.page)
+                
+                print(fontName)
+                let font = UIFont(name: fontName, size: 50)!
                 
                 let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
 
@@ -409,6 +418,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let div = Data(bytes: &division, count: MemoryLayout.size(ofValue: division))
                 let rem = Data(bytes: &remainder, count: MemoryLayout.size(ofValue: remainder))
                 
+                
                 dataToSend.append("S".data(using: String.Encoding.ascii)!)
                 dataToSend.append(surat)
                 dataToSend.append(rem)
@@ -441,8 +451,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         else if elementName == "aya"
         {
             aya = String()
-//            print(attributeDict)
-            
             let ayatObj = AyatObj()
             
             for string in attributeDict
@@ -523,13 +531,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let currentValue = Int(sender.value)
             
         lblVolCount.text = "\(currentValue)"
-        let sliderValue = lblVolCount.text
+        var sliderValue = Int(lblVolCount.text ?? "0")
         print(sliderValue!)
         if isMyPeripheralConected
         {
             let dataToSend = NSMutableData()
             dataToSend.append("3".data(using: String.Encoding.ascii)!)
-            dataToSend.append(sliderValue!.data(using: String.Encoding.ascii)!)
+            dataToSend.append(Data(bytes: &sliderValue, count: MemoryLayout.size(ofValue: sliderValue)))
             myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
             print("value written")
         }
@@ -541,21 +549,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func clickBtnAction(_ button: UIButton)
     {
-        var key = ""
+        var key = 0
         var flag = false
         
         if button.tag == 1
         {
-            key = "8"
+            key = 18
             flag = true
         }
         else if button.tag == 2
         {
-            key = "22"
+            key = 22
+            flag = true
         }
         else if button.tag == 3
         {
-            key = "5"
+            key = 5
+            flag = true
         }
         else if button.tag == 4
         {
@@ -563,11 +573,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 5
         {
-            key = "19"
+            key = 19
+            flag = true
         }
         else if button.tag == 6
         {
-            key = "13"
+            key = 13
             flag = true
         }
         else if button.tag == 7
@@ -583,22 +594,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 9
         {
-            key = "14"
+            key = 14
             flag = true
         }
         else if button.tag == 10
         {
-            key = "15"
+            key = 15
             flag = true
         }
         else if button.tag == 11
         {
-            key = "16"
+            key = 16
             flag = true
         }
         else if button.tag == 12
         {
-            key = "4"
+            key = 23
             flag = true
         }
         else if button.tag == 13
@@ -608,16 +619,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 14
         {
-            key = "17"
+            key = 17
             flag = true
         }
         else if button.tag == 15
         {
-            key = "4"
+            key = 4
+            flag = true
         }
         else if button.tag == 16
         {
-            key = "1"
+            key = 1
             flag = true
         }
         
@@ -625,8 +637,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             if isMyPeripheralConected
             {
-                let dataToSend: Data = key.data(using: String.Encoding.utf8)!
-                myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                let dataToSend = NSMutableData()
+                dataToSend.append("1".data(using: String.Encoding.ascii)!)
+                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
                 print("value written: \(key)")
             }
             else
@@ -702,22 +716,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath)
-    {
-        if tag == 1001
-        {
-            
-        }
-        else if tag == 1002
-        {
-            
-        }
-        else if tag == 1003
-        {
-            
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if isMyPeripheralConected
@@ -728,6 +726,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 var value = 3
                 var qari = indexPath.row + 1
+//                var qari = 2
                 print(qari)
                 dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
                 dataToSend.append(Data(bytes: &qari, count: MemoryLayout.size(ofValue: qari)))
@@ -736,8 +735,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             else if tag == 1002
             {
                 var value = 1
-                var key = Int(booksArray[ indexPath.row + 1].key ?? "0")
-                print(key!)
+                var key = Int(booksArray[indexPath.row].key ?? "0")
+//                var key = 27
+                print(key)
                 dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
                 dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
@@ -746,6 +746,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 var value = 4
                 var trans = indexPath.row + 1
+//                var trans = 2
                 print(trans)
                 dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
                 dataToSend.append(Data(bytes: &trans, count: MemoryLayout.size(ofValue: trans)))
@@ -859,17 +860,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let size:CGSize = string.sizeOfString(usingFont: attrs)
                 width = size.width
                 
-                if (xAxis - width) <= 5
+                if width > 10 && string != "·"
                 {
-                    xAxis = txtMainView.frame.width
-                    yAxis += 70.0
+                    if (xAxis - width) < 0
+                    {
+                        xAxis = txtMainView.frame.width
+                        yAxis += 70.0
+                    }
+                    
+                    let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                    lbl.font = font
+                    lbl.text = string
+                    txtMainView.addSubview(lbl)
+                    xAxis -= width + 5
                 }
-                
-                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
-                lbl.font = font
-                lbl.text = string
-                txtMainView.addSubview(lbl)
-                xAxis -= width + 5
             }
             
             scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
