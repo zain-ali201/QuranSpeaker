@@ -9,7 +9,7 @@ import UIKit
 import CoreBluetooth
 
 var defaults = UserDefaults.standard
-var currentVolume = 10
+var currentVolume = 20
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate
 {
@@ -66,7 +66,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         sliderView.layer.masksToBounds = true
         volSlider.value = Float(currentVolume)
         
-        transArray = [HomeObject(name: "English", img: UIImage(named: "England")!, key: ""), HomeObject(name: "Urdu", img: UIImage(named: "Pakistan")!, key: ""), HomeObject(name: "French", img: UIImage(named: "France")!, key: ""), HomeObject(name: "Turkish", img: UIImage(named: "Turki")!, key: ""), HomeObject(name: "Farsi", img: UIImage(named: "Iran")!, key: ""), HomeObject(name: "Other", img: UIImage(named: "Iran")!, key: "")]
+        transArray = [HomeObject(name: "Urdu", img: UIImage(named: "Pakistan")!, key: ""), HomeObject(name: "English", img: UIImage(named: "England")!, key: "") , HomeObject(name: "French", img: UIImage(named: "France")!, key: ""), HomeObject(name: "Turkish", img: UIImage(named: "Turki")!, key: "")]
         
         manager = CBCentralManager(delegate: self, queue: nil)
         
@@ -150,7 +150,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         "Alsultani riwayah Hasham ibne amir",
                         "Alsultani riwayah Hasham ibne amir",
                         "Yaqoob al hazarmi",
-                        "Qalon An Nafey"
         ]
         
         let qariImages:[String] = [
@@ -200,7 +199,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     "defaultReader",
                     "defaultReader",
                     "46RaadAlkurd",
-                    "defaultReader",
                     "defaultReader",
                     "defaultReader",
                     "defaultReader",
@@ -318,8 +316,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
-        
-        
         if chapterNo > 114
         {
             return
@@ -404,28 +400,36 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if isMyPeripheralConected
             {
-                let dataToSend = NSMutableData()
-                 
-                var division = verseNo / 255
-                var remainder = verseNo % 255
-                
-                print("Surat: \(chapterNo)")
-                print("Ayat: \(verseNo)")
-                print("Division: \(division)")
-                print("Remainder: \(remainder)")
-                
-                let surat = Data(bytes: &chapterNo, count: MemoryLayout.size(ofValue: chapterNo))
-                let div = Data(bytes: &division, count: MemoryLayout.size(ofValue: division))
-                let rem = Data(bytes: &remainder, count: MemoryLayout.size(ofValue: remainder))
-                
-                
-                dataToSend.append("S".data(using: String.Encoding.ascii)!)
-                dataToSend.append(surat)
-                dataToSend.append(rem)
-                dataToSend.append(div)
-                
+                let division = verseNo / 255
+                let remainder = verseNo % 255
+
+                let surat = UInt8(chapterNo)
+                let div = UInt8(division)
+                let rem = UInt8(remainder)
+
+                let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                print("value written")
+
+                
+//                let dataToSend = NSMutableData()
+//                var division = verseNo / 255
+//                var remainder = verseNo % 255
+//
+//                print("Surat: \(chapterNo)")
+//                print("Ayat: \(verseNo)")
+//                print("Division: \(division)")
+//                print("Remainder: \(remainder)")
+//
+//                let surat = Data(bytes: &chapterNo, count: MemoryLayout.size(ofValue: chapterNo))
+//                let div = Data(bytes: &division, count: MemoryLayout.size(ofValue: division))
+//                let rem = Data(bytes: &remainder, count: MemoryLayout.size(ofValue: remainder))
+//
+//                dataToSend.append("S".data(using: String.Encoding.ascii)!)
+//                dataToSend.append(surat)
+//                dataToSend.append(rem)
+//                dataToSend.append(div)
+//                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+
             }
             else
             {
@@ -529,17 +533,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func sliderValueChanged(_ sender: UISlider)
     {
         let currentValue = Int(sender.value)
-            
         lblVolCount.text = "\(currentValue)"
-        var sliderValue = Int(lblVolCount.text ?? "0")
-        print(sliderValue!)
+        let value = UInt8(currentValue)
+        print(value)
         if isMyPeripheralConected
         {
-            let dataToSend = NSMutableData()
-            dataToSend.append("3".data(using: String.Encoding.ascii)!)
-            dataToSend.append(Data(bytes: &sliderValue, count: MemoryLayout.size(ofValue: sliderValue)))
-            myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            print("value written")
+            if value < currentVolume
+            {
+                let dataToSend = Data([21, value])
+                myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                print("value written")
+            }
+            else
+            {
+                let dataToSend = Data([20, value])
+                myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                print("value written")
+            }
+            
+            currentVolume = currentValue
         }
         else
         {
@@ -720,40 +732,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if isMyPeripheralConected
         {
-            let dataToSend = NSMutableData()
-            
             if tag == 1001
             {
-                var value = 3
-                var qari = indexPath.row + 1
-//                var qari = 2
+                let qari = UInt8(indexPath.row + 1)
                 print(qari)
-                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
-                dataToSend.append(Data(bytes: &qari, count: MemoryLayout.size(ofValue: qari)))
+                let dataToSend = Data([3,qari])
+                
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             else if tag == 1002
             {
-                var value = 1
-                var key = Int(booksArray[indexPath.row].key ?? "0")
-//                var key = 27
+                let key =  UInt8(booksArray[indexPath.row].key ?? "0")!
                 print(key)
-                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
-                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                let dataToSend = Data([1,key])
+                
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             else if tag == 1003
             {
-                var value = 4
-                var trans = indexPath.row + 1
-//                var trans = 2
+                let trans =  UInt8(indexPath.row + 1)
                 print(trans)
-                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
-                dataToSend.append(Data(bytes: &trans, count: MemoryLayout.size(ofValue: trans)))
+                let dataToSend = Data([4,trans])
+                
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
-            
-            myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
             qarisView.alpha = 0
         }
         else
@@ -883,28 +885,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if isMyPeripheralConected
             {
-                let dataToSend = NSMutableData()
-                
-                let ayat = indexPath.row + 1
-                var division = 5
-                var remainder = 5
-                
-                print("Surat: \(chapterNo)")
-                print("Ayat: \(ayat)")
-                print("Division: \(division)")
-                print("Remainder: \(remainder)")
-                
-                let surat = Data(bytes: &chapterNo, count: MemoryLayout.size(ofValue: chapterNo))
-                let div = Data(bytes: &division, count: MemoryLayout.size(ofValue: division))
-                let rem = Data(bytes: &remainder, count: MemoryLayout.size(ofValue: remainder))
-                
-                dataToSend.append("S".data(using: String.Encoding.ascii)!)
-                dataToSend.append(surat)
-                dataToSend.append(rem)
-                dataToSend.append(div)
-                
+                let division = verseNo / 255
+                let remainder = verseNo % 255
+
+                let surat = UInt8(chapterNo)
+                let div = UInt8(division)
+                let rem = UInt8(remainder)
+
+                let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                print("value written")
             }
             else
             {
@@ -1049,4 +1038,8 @@ extension String {
         let size = self.size(withAttributes: fontAttributes)
         return size
     }
+}
+
+extension StringProtocol {
+    var asciiValues: [UInt8] { compactMap(\.asciiValue) }
 }
