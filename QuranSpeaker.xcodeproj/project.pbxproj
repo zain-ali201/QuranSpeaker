@@ -3058,7 +3058,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q2ZS4CBGES;
+				DEVELOPMENT_TEAM = 77DXFKKCK4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QuranSpeaker/QuranResources",
@@ -3069,9 +3069,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sprintsols.quranapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sprint.quranapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "SprintDevProfile v2";
+				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Dev v1";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -3089,7 +3089,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q2ZS4CBGES;
+				DEVELOPMENT_TEAM = 77DXFKKCK4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QuranSpeaker/QuranResources",
@@ -3100,9 +3100,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sprintsols.quranapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sprint.quranapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "SprintDistProfile v2";
+				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Appstore v1";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
