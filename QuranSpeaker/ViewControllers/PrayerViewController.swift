@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreLocation
+import CoreBluetooth
 
-class PrayerViewController: UIViewController, CLLocationManagerDelegate
+class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate
 {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblTime: UILabel!
@@ -33,6 +34,15 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
     var locationManager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
     
+    var currentYear = 0
+    
+    //BLE
+    var bleManager : CBCentralManager!
+    var myBluetoothPeripheral : CBPeripheral!
+    var myCharacteristic : CBCharacteristic!
+    var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
+    var isMyPeripheralConected = false
+    
     override func viewDidLoad()
     {
         let formatter = DateFormatter()
@@ -41,6 +51,9 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
         
         formatter.dateFormat = "dd MMMM yyyy"
         lblDate.text = formatter.string(from: Date())
+        
+        formatter.dateFormat = "yyyy"
+        currentYear = Int(formatter.string(from: Date()))!
         
         lblAddress.text = defaults.value(forKey: "address") as? String
         lblCity.text = defaults.value(forKey: "city") as? String
@@ -79,6 +92,12 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
         UIView.animate(withDuration: 0.3) { [weak self] in
           self?.view.layoutIfNeeded()
         }
+    }
+    
+    @IBAction func updateBtnAction(_ sender: Any)
+    {
+        bleManager = CBCentralManager(delegate: self, queue: nil)
+        getYearPrayersTime()
     }
     
     @IBAction func clickBtnAction(_ button: UIButton)
@@ -124,7 +143,13 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
         {
             lat = currentLoc.coordinate.latitude
             lng = currentLoc.coordinate.longitude
-            getPrayersTime()
+            getCurrentPrayersTime()
+            
+            if !UserDefaults.standard.bool(forKey: "prayersFlag")
+            {
+                bleManager = CBCentralManager(delegate: self, queue: nil)
+                getYearPrayersTime()
+            }
             
             geocoder.reverseGeocodeLocation(currentLoc) { (placemarks, error) in
                 self.processResponse(withPlacemarks: placemarks, error: error)
@@ -163,7 +188,76 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
         }
     }
     
-    func getPrayersTime()
+    func getYearPrayersTime()
+    {
+        if isMyPeripheralConected
+        {
+            let prayerKit:AKPrayerTime = AKPrayerTime(lat: lat, lng: lng)
+            prayerKit.calculationMethod = .Karachi
+            
+            let juristic = defaults.value(forKey: "juristic") as? Int
+            
+            if juristic == 2
+            {
+                prayerKit.asrJuristic = .Shafii
+            }
+            else
+            {
+                prayerKit.asrJuristic = .Hanafi
+            }
+            prayerKit.outputFormat = .Time12
+
+            for month in 1...12
+            {
+                var montNr = month
+                let dataToSend = NSMutableData()
+                dataToSend.append("Z".data(using: String.Encoding.ascii)!)
+                dataToSend.append(Data(bytes: &montNr, count: MemoryLayout.size(ofValue: montNr)))
+                
+                for day in 1...31
+                {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd MM yyyy"
+                    let date = formatter.date(from: String(format: "%d %d %d", day, month, currentYear))
+                    
+                    if date != nil
+                    {
+                        print(date)
+                        let times = prayerKit.getDatePrayerTimes(date: date!)
+                        print(times?[.Fajr])
+                        print(times?[.Dhuhr])
+                        print(times?[.Asr])
+                        print(times?[.Maghrib])
+                        print(times?[.Isha])
+                        let fajr = (times?[.Fajr] as? String) ?? ""
+                        dataToSend.append(fajr.data(using: .utf8)!)
+                        
+                        let dhuhr = (times?[.Dhuhr] as? String) ?? ""
+                        dataToSend.append(dhuhr.data(using: .utf8)!)
+                        
+                        let asr = (times?[.Asr] as? String) ?? ""
+                        dataToSend.append(asr.data(using: .utf8)!)
+                        
+                        let maghrib = (times?[.Maghrib] as? String) ?? ""
+                        dataToSend.append(maghrib.data(using: .utf8)!)
+                        
+                        let isha = (times?[.Isha] as? String) ?? ""
+                        dataToSend.append(isha.data(using: .utf8)!)
+                    }
+                }
+                
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+            
+            UserDefaults.standard.set(true, forKey: "prayersFlag")
+        }
+        else
+        {
+            self.view.makeToast("Bluetooth device disconnected")
+        }
+    }
+    
+    func getCurrentPrayersTime()
     {
         let prayerKit:AKPrayerTime = AKPrayerTime(lat: lat, lng: lng)
         prayerKit.calculationMethod = .Karachi
@@ -203,6 +297,93 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate
         {
             let lightVC = self.storyboard?.instantiateViewController(withIdentifier: "LightViewController") as! LightViewController
             self.navigationController?.pushViewController(lightVC, animated: false)
+        }
+    }
+    
+    //BLE delegate functions
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        
+        var msg = ""
+        
+        switch central.state {
+            
+            case .poweredOff:
+                msg = "Bluetooth is Off"
+            case .poweredOn:
+                msg = "Bluetooth is On"
+                bleManager.scanForPeripherals(withServices: nil, options: nil)
+            case .unsupported:
+                msg = "Not Supported"
+            default:
+                msg = "😔"
+        }
+        
+//        self.view.makeToast(msg)
+        print("STATE: " + msg)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        
+        print("Name: \(peripheral.name)")
+       
+        if peripheral.name != nil || peripheral.name == "AC692x_BLE"
+        {
+            self.myBluetoothPeripheral = peripheral
+            self.myBluetoothPeripheral.delegate = self
+            
+            bleManager.stopScan()
+            bleManager.connect(myBluetoothPeripheral, options: nil)
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        
+        isMyPeripheralConected = true
+        peripheral.delegate = self
+        peripheral.discoverServices(nil)
+        self.view.makeToast("Bluetooth device connected")
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        isMyPeripheralConected = false
+    }
+    
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        
+        if let servicePeripheral = peripheral.services as [CBService]? {
+            
+            for service in servicePeripheral {
+                
+                peripheral.discoverCharacteristics(nil, for: service)
+            }
+        }
+    }
+
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        
+        if let characterArray = service.characteristics as [CBCharacteristic]? {
+            
+            for cc in characterArray {
+                print(cc.uuid)
+                if(cc.uuid == quranUUID) {
+                    print(cc.uuid.uuidString)
+                    myCharacteristic = cc
+                    print("characteristics")
+//                    peripheral.readValue(for: cc)
+//                    writeValue()
+                }
+            }
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+
+        if (characteristic.uuid == quranUUID) {
+            
+            let readValue = characteristic.value
+            let value = (readValue! as NSData).bytes.bindMemory(to: Int.self, capacity: readValue!.count).pointee //used to read an Int value
+            print ("Value: \(value)")
         }
     }
 }

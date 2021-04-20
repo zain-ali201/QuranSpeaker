@@ -250,6 +250,22 @@ class AKPrayerTime {
         return computeDayTimes()
     }
     
+    /// Returns prayer times for a date(or today) when everything is set
+    func getDatePrayerTimes(date: Date)->[TimeNames: Any]? {
+        // If coordinate is not set, cannot obtain prayer times
+        if coordinate == nil {
+            return nil
+        }
+        
+        // If date is not set, set today as calcDate
+        if calcDate == nil {
+            calcDate = date
+        }
+        
+        // jDate should be autometically set already
+        return computeDayTimes()
+    }
+    
     //------------------------------------------------------
     // MARK: - Public Methods: Configurations
     //------------------------------------------------------

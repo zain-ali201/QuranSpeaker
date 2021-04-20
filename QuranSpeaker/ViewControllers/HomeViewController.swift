@@ -351,6 +351,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 lblMain.alpha = 0
             }
             
+            let fontName = String(format:"%@%d", prefix, ayatObj.page)
+            let font = UIFont(name: fontName, size: 50)!
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .center
+            let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+            
             for view in txtMainView.subviews
             {
                 view.removeFromSuperview()
@@ -360,27 +366,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             var xAxis:CGFloat =  txtMainView.frame.width
             var yAxis:CGFloat = 10.0
             
+            var printResult = ""
+            
             for i in ayatObj.start...ayatObj.end
             {
                 resultStr = String(Character(UnicodeScalar(i)!))
-                print(resultStr)
                 var width:CGFloat = 0.0
-
-                let paragraphStyle = NSMutableParagraphStyle()
-                paragraphStyle.alignment = .center
                 
-                let fontName = String(format:"%@%d", prefix, ayatObj.page)
-                
-                print(fontName)
-                let font = UIFont(name: fontName, size: 50)!
-                
-                let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                printResult += "{\(i), \(resultStr)}, "
 
                 let string = resultStr
                 let size:CGSize = string.sizeOfString(usingFont: attrs)
                 width = size.width
                 
-                if width > 10 && string != "·"
+                if width > 10 //&& string != "·"
                 {
                     if (xAxis - width) < 0
                     {
@@ -395,6 +394,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     xAxis -= width + 5
                 }
             }
+            print("//////////////////////////////////////////////")
+            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
+            print("Font: \(fontName)")
+            print(printResult)
+            print("//////////////////////////////////////////////")
             
             scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
             
@@ -409,26 +413,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                 let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
-
-                
-//                let dataToSend = NSMutableData()
-//                var division = verseNo / 255
-//                var remainder = verseNo % 255
-//
-//                print("Surat: \(chapterNo)")
-//                print("Ayat: \(verseNo)")
-//                print("Division: \(division)")
-//                print("Remainder: \(remainder)")
-//
-//                let surat = Data(bytes: &chapterNo, count: MemoryLayout.size(ofValue: chapterNo))
-//                let div = Data(bytes: &division, count: MemoryLayout.size(ofValue: division))
-//                let rem = Data(bytes: &remainder, count: MemoryLayout.size(ofValue: remainder))
-//
-//                dataToSend.append("S".data(using: String.Encoding.ascii)!)
-//                dataToSend.append(surat)
-//                dataToSend.append(rem)
-//                dataToSend.append(div)
-//                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
 
             }
             else
@@ -807,6 +791,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else
         {
+            lblTitle.text = String(format: "سورة %@",indexArray[chapterNo - 1])
             verseNo = indexPath.row + 1
             let ayatObj = ayaTitle[indexPath.row]
             
@@ -835,8 +820,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             let fontName = String(format:"%@%d", prefix, ayatObj.page)
+            let font = UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .center
+            let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
             
-            print(fontName)
+            var printResult = ""
             
             for view in txtMainView.subviews
             {
@@ -851,18 +840,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 resultStr = String(Character(UnicodeScalar(i)!))
                 var width:CGFloat = 0.0
-
-                let paragraphStyle = NSMutableParagraphStyle()
-                paragraphStyle.alignment = .center
-                let font = UIFont(name: String(format:"%@%d", prefix, ayatObj.page), size: 50)!
                 
-                let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
-
+                printResult += "{\(i), \(resultStr)}, "
+                
                 let string = resultStr
                 let size:CGSize = string.sizeOfString(usingFont: attrs)
                 width = size.width
                 
-                if width > 10 && string != "·"
+                if width > 17 //&& string != "·"
                 {
                     if (xAxis - width) < 0
                     {
@@ -877,6 +862,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     xAxis -= width + 5
                 }
             }
+            
+            print("//////////////////////////////////////////////")
+            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
+            print("Font: \(fontName)")
+            print(printResult)
+            print("//////////////////////////////////////////////")
             
             scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
 

@@ -88,8 +88,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-ZB-T04">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="317"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% $ # &quot; !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mO4-fs-vn6">
-                                                        <rect key="frame" x="95" y="10" width="254" height="65"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% $ # &quot; !" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mO4-fs-vn6">
+                                                        <rect key="frame" x="10" y="10" width="339" height="65"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="65" id="WB7-Mz-E8i"/>
                                                         </constraints>
@@ -102,6 +102,7 @@
                                                 <constraints>
                                                     <constraint firstItem="mO4-fs-vn6" firstAttribute="top" secondItem="HqN-ZB-T04" secondAttribute="top" constant="10" id="FJx-eC-KcE"/>
                                                     <constraint firstAttribute="trailing" secondItem="mO4-fs-vn6" secondAttribute="trailing" constant="10" id="vKH-7E-pLx"/>
+                                                    <constraint firstItem="mO4-fs-vn6" firstAttribute="leading" secondItem="HqN-ZB-T04" secondAttribute="leading" constant="10" id="vbB-a7-hjV"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -1672,10 +1673,16 @@
                                                     <action selector="backBtnAction:" destination="pdU-nm-WYI" eventType="touchUpInside" id="oKl-ux-Mma"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ti-3i-QJu">
+                                                <rect key="frame" x="315" y="10" width="45" height="45"/>
+                                                <state key="normal" image="update"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.24705882352941178" green="0.71764705882352942" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="WV1-yS-vmg" firstAttribute="centerX" secondItem="qzQ-l1-rM5" secondAttribute="centerX" id="GJv-qm-lP5"/>
+                                            <constraint firstAttribute="trailing" secondItem="8ti-3i-QJu" secondAttribute="trailing" constant="15" id="ZR8-fA-BRk"/>
+                                            <constraint firstItem="8ti-3i-QJu" firstAttribute="centerY" secondItem="qzQ-l1-rM5" secondAttribute="centerY" id="Ze7-r9-skC"/>
                                             <constraint firstItem="6zd-2W-IMo" firstAttribute="leading" secondItem="qzQ-l1-rM5" secondAttribute="leading" constant="8" id="bt3-hY-VEQ"/>
                                             <constraint firstItem="6zd-2W-IMo" firstAttribute="centerY" secondItem="qzQ-l1-rM5" secondAttribute="centerY" id="jjl-qV-arj"/>
                                             <constraint firstItem="WV1-yS-vmg" firstAttribute="centerY" secondItem="qzQ-l1-rM5" secondAttribute="centerY" id="rlk-Dc-3Qo"/>
@@ -1776,6 +1783,7 @@
         <image name="tafseer" width="91" height="52"/>
         <image name="trans" width="91" height="52"/>
         <image name="up" width="91" height="52"/>
+        <image name="update" width="45" height="45"/>
         <image name="word" width="91" height="52"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
