@@ -15,6 +15,7 @@ class AyatObj: NSObject
     var page: Int!
     var start: Int!
     var end: Int!
+    var text: String!
 }
 
 class Verse: NSObject {

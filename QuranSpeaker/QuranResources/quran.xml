@@ -8,13 +8,13 @@
 -->
 <quran>
     <sura index="1" name="الفاتحة">
-        <aya index="1" text="" page="1" start="33" end= "37"/>
-        <aya index="2" text="" page="1" start="38" end= "42"/>
-        <aya index="3" text="" page="1" start="43" end= "45"/>
-        <aya index="4" text="" page="1" start="46" end= "49"/>
-        <aya index="5" text="" page="1" start="50" end= "54"/>
-        <aya index="6" text="" page="1" start="55" end= "58"/>
-        <aya index="7" text="" page="1" start="59" end= "68"/>
+        <aya index="1" text="بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ" page="1" start="33" end= "37"/>
+        <aya index="2" text="ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ" page="1" start="38" end= "42"/>
+        <aya index="3" text="ٱلرَّحْمَٰنِ ٱلرَّحِيمِ" page="1" start="43" end= "45"/>
+        <aya index="4" text="مَٰلِكِ يَوْمِ ٱلدِّينِ" page="1" start="46" end= "49"/>
+        <aya index="5" text="إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ" page="1" start="50" end= "54"/>
+        <aya index="6" text="ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ" page="1" start="55" end= "58"/>
+        <aya index="7" text="صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ لا٥ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ" page="1" start="59" end= "68"/>
     </sura>
     <sura index="2" name="البقرة">
         <aya index="1" text="الم" bismillah="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"  page="2" start="33" end= "34"/>

@@ -205,7 +205,9 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
             {
                 prayerKit.asrJuristic = .Hanafi
             }
-            prayerKit.outputFormat = .Time12
+            prayerKit.outputFormat = .Time24
+        
+            let formatter = DateFormatter()
 
             for month in 1...12
             {
@@ -214,38 +216,85 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
                 dataToSend.append("Z".data(using: String.Encoding.ascii)!)
                 dataToSend.append(Data(bytes: &montNr, count: MemoryLayout.size(ofValue: montNr)))
                 
+//                print("//////////////////////////////////////////")
+//                print("Month: \(montNr)")
                 for day in 1...31
                 {
-                    let formatter = DateFormatter()
                     formatter.dateFormat = "dd MM yyyy"
                     let date = formatter.date(from: String(format: "%d %d %d", day, month, currentYear))
                     
                     if date != nil
                     {
-                        print(date)
                         let times = prayerKit.getDatePrayerTimes(date: date!)
-                        print(times?[.Fajr])
-                        print(times?[.Dhuhr])
-                        print(times?[.Asr])
-                        print(times?[.Maghrib])
-                        print(times?[.Isha])
+//                        print(" ")
+//                        print("======================================")
+//                        print("Date: \(date!)")
+                        
+//                        print("======================================")
+//                        print(" ")
+//                        dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
                         let fajr = (times?[.Fajr] as? String) ?? ""
-                        dataToSend.append(fajr.data(using: .utf8)!)
-                        
+                        let sunrise = (times?[.Sunrise] as? String) ?? ""
                         let dhuhr = (times?[.Dhuhr] as? String) ?? ""
-                        dataToSend.append(dhuhr.data(using: .utf8)!)
-                        
                         let asr = (times?[.Asr] as? String) ?? ""
-                        dataToSend.append(asr.data(using: .utf8)!)
-                        
                         let maghrib = (times?[.Maghrib] as? String) ?? ""
-                        dataToSend.append(maghrib.data(using: .utf8)!)
-                        
                         let isha = (times?[.Isha] as? String) ?? ""
-                        dataToSend.append(isha.data(using: .utf8)!)
+                        
+                        formatter.dateFormat = "HH:mm"
+                        let fajrTime = formatter.date(from: fajr)
+                        let sunTime = formatter.date(from: sunrise)
+                        let dhurTime = formatter.date(from: dhuhr)
+                        let asrTime = formatter.date(from: asr)
+                        let maghribTime = formatter.date(from: maghrib)
+                        let ishaTime = formatter.date(from: isha)
+                        formatter.dateFormat = "HH"
+                        var fajrHours = Int(formatter.string(from: fajrTime!))!
+                        var sunHours = Int(formatter.string(from: sunTime!))!
+                        var dhuhrHours = Int(formatter.string(from: dhurTime!))!
+                        var asrHours = Int(formatter.string(from: asrTime!))!
+                        var maghribHours = Int(formatter.string(from: maghribTime!))!
+                        var ishaHours = Int(formatter.string(from: ishaTime!))!
+                        formatter.dateFormat = "mm"
+                        var fajrMin = Int(formatter.string(from: fajrTime!))!
+                        var sunMin = Int(formatter.string(from: sunTime!))!
+                        var dhuhrMin = Int(formatter.string(from: dhurTime!))!
+                        var asrMin = Int(formatter.string(from: asrTime!))!
+                        var maghribMin = Int(formatter.string(from: maghribTime!))!
+                        var ishaMin = Int(formatter.string(from: ishaTime!))!
+                        
+                        print("\(fajrHours):\(fajrMin), \(sunHours):\(sunMin), \(dhuhrHours):\(dhuhrMin), \(asrHours):\(asrMin), \(maghribHours):\(maghribMin), \(ishaHours):\(ishaMin)")
+                        
+                        //Fajr
+                        dataToSend.append(Data(bytes: &fajrHours, count: MemoryLayout.size(ofValue: fajrHours)))
+                        dataToSend.append(Data(bytes: &fajrMin, count: MemoryLayout.size(ofValue: fajrMin)))
+
+                        //Sunrise
+                        dataToSend.append(Data(bytes: &sunHours, count: MemoryLayout.size(ofValue: sunHours)))
+                        dataToSend.append(Data(bytes: &sunMin, count: MemoryLayout.size(ofValue: sunMin)))
+
+                        //Dhuhr
+                        dataToSend.append(Data(bytes: &dhuhrHours, count: MemoryLayout.size(ofValue: dhuhrHours)))
+                        dataToSend.append(Data(bytes: &dhuhrMin, count: MemoryLayout.size(ofValue: dhuhrMin)))
+
+                        //Asr
+                        dataToSend.append(Data(bytes: &asrHours, count: MemoryLayout.size(ofValue: asrHours)))
+                        dataToSend.append(Data(bytes: &asrMin, count: MemoryLayout.size(ofValue: asrMin)))
+
+                        //Maghrib
+                        dataToSend.append(Data(bytes: &maghribHours, count: MemoryLayout.size(ofValue: maghribHours)))
+                        dataToSend.append(Data(bytes: &maghribMin, count: MemoryLayout.size(ofValue: maghribMin)))
+
+                        //Isha
+                        dataToSend.append(Data(bytes: &ishaHours, count: MemoryLayout.size(ofValue: ishaHours)))
+                        dataToSend.append(Data(bytes: &ishaMin, count: MemoryLayout.size(ofValue: ishaMin)))
+                    }
+                    else
+                    {
+                        print("0:0, 0:0, 0:0, 0:0, 0:0, 0:0")
                     }
                 }
                 
+//                print("//////////////////////////////////////////")
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             
