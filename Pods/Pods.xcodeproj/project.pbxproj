@@ -7,73 +7,103 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2024EE5E265681137A9FEBC630E6E0F1 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27DB06B71F965D4D41558CD4490F24C0 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		376BBB5F58476C267217CB6F4ED7C285 /* CollapsibleTableSectionViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E8992518E5AB8B727E8DAA105D1DC359 /* CollapsibleTableSectionViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38BBBF82A240DB98EE0D74D298941037 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */; };
-		3E4280E396856C22F255FB7338E74647 /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B69A09D2C6280BEC6983AFBA983C30 /* CollapsibleTableSectionViewController.swift */; };
-		4753716AE7A1AB22FB6BA61AA74D942F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BBFE33F974BD09FAD0D690DF017FC /* Toast.swift */; };
-		5D49651B70698C9DDABE99469DE047DF /* Pods-QuranSpeaker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C42638D06C737C0E542AA9C3C54DB55E /* Pods-QuranSpeaker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B326644BB08AEDF697A82A0F1A66D68 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9B2DBB170C749DAAE35B73DF35556 /* Toast-Swift-dummy.m */; };
-		86743E87D71FCCAED52879959514FD50 /* CollapsibleTableSectionViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A019616E9CD14A32888FAD2942FB /* CollapsibleTableSectionViewController-dummy.m */; };
-		87B6BDB037B87A03AA10EE7182A3078B /* Pods-QuranSpeaker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF403E3382E0451E1ABB6623A8A624 /* Pods-QuranSpeaker-dummy.m */; };
-		8FCB32BC0CE471C1856C2C36C2268544 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE848EAA916741AFBEE6CE45A49D2378 /* CollapsibleTableViewHeader.swift */; };
-		95ACABC71585D657249CC92BA7731A8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
-		968E4B247214E2A50FAF553BC2E4861C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
-		A12623B9A99A396BD0F4BAC58538B046 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
-		C06D290B9216533843023A0BF93F5927 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */; };
+		113CE9DF654D708E3B154F448B8CB5FF /* ColorMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A65E94B1323CFBA1177364DC6553209 /* ColorMapView.swift */; };
+		129AD3704930C28226E00E01EBEE48F4 /* ColorMapCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ACABCDBF90CB115D3DD2A494C69649 /* ColorMapCursor.swift */; };
+		2024EE5E265681137A9FEBC630E6E0F1 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DC95354118BF9F4E9064151452E929 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21117DDE18C0291DDBC4AC1799D2C391 /* Pods-QuranSpeaker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C42638D06C737C0E542AA9C3C54DB55E /* Pods-QuranSpeaker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		376BBB5F58476C267217CB6F4ED7C285 /* CollapsibleTableSectionViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7C58744DCC5EFE4B1877A073E4627EE /* CollapsibleTableSectionViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E4280E396856C22F255FB7338E74647 /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B316082541FFDE5E7BD3E4370975531 /* CollapsibleTableSectionViewController.swift */; };
+		4753716AE7A1AB22FB6BA61AA74D942F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1D50A4AD69EF133DA659CF288238D /* Toast.swift */; };
+		50834A78578E96C1F3B93985ED7F99B1 /* Colorful-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E31D9ECB2B4C01899FD3F2484015 /* Colorful-dummy.m */; };
+		69FA23FA121BC3528F4235E2D787939C /* Colorful-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA4B34313971C2E1C92F178C928FFA84 /* Colorful-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B326644BB08AEDF697A82A0F1A66D68 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 449D537B0F3652D2F3E17908086CBB11 /* Toast-Swift-dummy.m */; };
+		6DFC75226E16B941990DBBAB9772702F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
+		753C8C42CEFBED94E1F1E752955F0254 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
+		83D08F0A49F23BCFE3AD5633F8521D5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
+		86743E87D71FCCAED52879959514FD50 /* CollapsibleTableSectionViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AAE97FD3AD326533491125016AD1D6 /* CollapsibleTableSectionViewController-dummy.m */; };
+		8FCB32BC0CE471C1856C2C36C2268544 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74218EED04D4781C050D1D9D4909F2CC /* CollapsibleTableViewHeader.swift */; };
+		A662FC332AEB300FCD5098A37A0939BE /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AFADDC7A85170814FFFCD80AF74801 /* ColorPicker.swift */; };
+		AEC3B34A8ACBDD78BB57A64F06AC354F /* BrightnessCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4410A9250E4E93699A7E9D4F2E9A35 /* BrightnessCursor.swift */; };
+		BA9F28E605C7B2D8AFC52E3F6DC6729D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
+		CBDFA60D03FA8BA5178EAB2A5BAAA839 /* Pods-QuranSpeaker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF403E3382E0451E1ABB6623A8A624 /* Pods-QuranSpeaker-dummy.m */; };
+		CEC0D9104EE779A5B3D1E2C360C59BB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */; };
+		DF03C6CFA598B0401917E8AFB3C564D7 /* ColorfulEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952D6106BBCEFA8A6DE2F31EB2FAA38 /* ColorfulEntity.swift */; };
+		DF3D7E16E983CC1FC0A2BC8D7E020531 /* BrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804424A8DA578E25A21FDAC9EC61891C /* BrightnessSlider.swift */; };
+		E30AFF09BE355906C38B27B0CD35F806 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE46B11FEBCBB7C689EB07A5E57BD38 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		251BD12B1354BF714EB09DB5B4DC5C1A /* PBXContainerItemProxy */ = {
+		1721A82D2D2A99DCF6881DE5D37D23ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
-			remoteInfo = "Toast-Swift";
+			remoteGlobalIDString = D0BB23E38358EC80363667EF7366D412;
+			remoteInfo = Colorful;
 		};
-		767663195CD7F725177B1592AAB79D9B /* PBXContainerItemProxy */ = {
+		515129E8F458CF08AD6A19F4186A66AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FFD6448D737EF94143E2B341B01CD35E;
 			remoteInfo = CollapsibleTableSectionViewController;
 		};
+		8DBAC17DFEC136C141E8B522A2F62C27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
+			remoteInfo = "Toast-Swift";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02BE5910349E416830D7A46A1F9A0B94 /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
-		04D524B9C5D44E36A2C5B0EDEE5C08B5 /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
-		1B046274F5BB5A204CFD9F101C860ACE /* CollapsibleTableSectionViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CollapsibleTableSectionViewController.modulemap; sourceTree = "<group>"; };
+		047E14DFDFA43E9ECD14EC692905438F /* Colorful-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Colorful-prefix.pch"; sourceTree = "<group>"; };
+		078B758BAB86A5CDAE445643C5AE6156 /* Colorful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Colorful.framework; path = Colorful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14AFADDC7A85170814FFFCD80AF74801 /* ColorPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorPicker.swift; path = Colorful/Classes/ColorPicker.swift; sourceTree = "<group>"; };
+		1A80D503573A320E81992CCFCB8E1086 /* Colorful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Colorful.release.xcconfig; sourceTree = "<group>"; };
+		2287F14687C6A6F9392D010D63FC50D5 /* CollapsibleTableSectionViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CollapsibleTableSectionViewController.modulemap; sourceTree = "<group>"; };
+		2346E45F057739A0D98EF343CCA40717 /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		26517F0465D86AE3919587B8DECDEE91 /* Pods-QuranSpeaker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QuranSpeaker-acknowledgements.markdown"; sourceTree = "<group>"; };
-		27DB06B71F965D4D41558CD4490F24C0 /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
-		2A0AB6047031C17605B494FB142C7CC9 /* CollapsibleTableSectionViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTableSectionViewController-prefix.pch"; sourceTree = "<group>"; };
-		2B2BBFE33F974BD09FAD0D690DF017FC /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
-		2C880792BAA5B02B5E38442E7EE51888 /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
+		308B98DB1303F550E4DC4F713C967399 /* Toast-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		34A79406DA8580DAD3078D223D1290E2 /* Pods-QuranSpeaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QuranSpeaker.debug.xcconfig"; sourceTree = "<group>"; };
 		3B731B998F9DC6AECD4C80A7C0CD6C23 /* Pods-QuranSpeaker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QuranSpeaker-acknowledgements.plist"; sourceTree = "<group>"; };
-		3D6375405727C0C2DB8B8ADC04838DA5 /* CollapsibleTableSectionViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTableSectionViewController.debug.xcconfig; sourceTree = "<group>"; };
-		43FB4A5584FA0460AFAE52FC13A61222 /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		5BC9B2DBB170C749DAAE35B73DF35556 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
-		69B69A09D2C6280BEC6983AFBA983C30 /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollapsibleTableSectionViewController.swift; path = CollapsibleTableSectionViewController/CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
+		449D537B0F3652D2F3E17908086CBB11 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
+		45DC95354118BF9F4E9064151452E929 /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
+		4A284B6D2B6AFC0F7969BCB146B77E03 /* Colorful.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Colorful.modulemap; sourceTree = "<group>"; };
+		4A99E31D9ECB2B4C01899FD3F2484015 /* Colorful-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Colorful-dummy.m"; sourceTree = "<group>"; };
+		4AF095DDDAF40012221AE7F34378BB71 /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
+		4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4B316082541FFDE5E7BD3E4370975531 /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollapsibleTableSectionViewController.swift; path = CollapsibleTableSectionViewController/CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
+		70F1D50A4AD69EF133DA659CF288238D /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
+		72ACABCDBF90CB115D3DD2A494C69649 /* ColorMapCursor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorMapCursor.swift; path = Colorful/Classes/ColorMapCursor.swift; sourceTree = "<group>"; };
+		74218EED04D4781C050D1D9D4909F2CC /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollapsibleTableViewHeader.swift; path = CollapsibleTableSectionViewController/CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
 		76D09E9FD484F615620B00C9CFCB96C5 /* CollapsibleTableSectionViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CollapsibleTableSectionViewController.framework; path = CollapsibleTableSectionViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4410A9250E4E93699A7E9D4F2E9A35 /* BrightnessCursor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BrightnessCursor.swift; path = Colorful/Classes/BrightnessCursor.swift; sourceTree = "<group>"; };
+		804424A8DA578E25A21FDAC9EC61891C /* BrightnessSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BrightnessSlider.swift; path = Colorful/Classes/BrightnessSlider.swift; sourceTree = "<group>"; };
 		835466762D9866972758581E08103F48 /* Pods-QuranSpeaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QuranSpeaker.release.xcconfig"; sourceTree = "<group>"; };
+		8A65E94B1323CFBA1177364DC6553209 /* ColorMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorMapView.swift; path = Colorful/Classes/ColorMapView.swift; sourceTree = "<group>"; };
 		8A7277FCE533217508A1BEF6BB82DC8F /* Pods-QuranSpeaker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QuranSpeaker-Info.plist"; sourceTree = "<group>"; };
-		9174A019616E9CD14A32888FAD2942FB /* CollapsibleTableSectionViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollapsibleTableSectionViewController-dummy.m"; sourceTree = "<group>"; };
-		950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9866144B1FA1FF73B2AB9B56607A0D7A /* CollapsibleTableSectionViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CollapsibleTableSectionViewController-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E493A39B6965C7C4FF5D0E2E8889FCD /* Pods-QuranSpeaker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QuranSpeaker.modulemap"; sourceTree = "<group>"; };
-		AB73991D56205A241B0766C0744A3357 /* CollapsibleTableSectionViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTableSectionViewController.release.xcconfig; sourceTree = "<group>"; };
+		9FE46B11FEBCBB7C689EB07A5E57BD38 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		A7C58744DCC5EFE4B1877A073E4627EE /* CollapsibleTableSectionViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTableSectionViewController-umbrella.h"; sourceTree = "<group>"; };
+		A9504A8001E52CB0395AEECCBCF9C75E /* CollapsibleTableSectionViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTableSectionViewController.debug.xcconfig; sourceTree = "<group>"; };
+		AA4B34313971C2E1C92F178C928FFA84 /* Colorful-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Colorful-umbrella.h"; sourceTree = "<group>"; };
 		B2DF403E3382E0451E1ABB6623A8A624 /* Pods-QuranSpeaker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QuranSpeaker-dummy.m"; sourceTree = "<group>"; };
+		B74AA663A1BAF8544E29A74AE0F6A1F6 /* Colorful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Colorful.debug.xcconfig; sourceTree = "<group>"; };
+		C0DA747BB2D3A7D6B6938782CAD8F889 /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
 		C42638D06C737C0E542AA9C3C54DB55E /* Pods-QuranSpeaker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QuranSpeaker-umbrella.h"; sourceTree = "<group>"; };
-		C8183D6A1A98948BF7DB672107809513 /* CollapsibleTableSectionViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CollapsibleTableSectionViewController-Info.plist"; sourceTree = "<group>"; };
-		CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		D18E2F4BD797FF9F5A1A58F7DEF802A8 /* Pods-QuranSpeaker-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QuranSpeaker-frameworks.sh"; sourceTree = "<group>"; };
+		D4C6A8739167CD3E5E3FA077D63169E0 /* CollapsibleTableSectionViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTableSectionViewController-prefix.pch"; sourceTree = "<group>"; };
 		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast_Swift.framework; path = "Toast-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7453C6D43C644EA2753985C3489C67B /* Toast-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		E8992518E5AB8B727E8DAA105D1DC359 /* CollapsibleTableSectionViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTableSectionViewController-umbrella.h"; sourceTree = "<group>"; };
+		D78A76D2848B5AFB3545DA97DC69F6FC /* CollapsibleTableSectionViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTableSectionViewController.release.xcconfig; sourceTree = "<group>"; };
+		D8B47C7E95F80468E571C7A5F4AA9231 /* Colorful-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Colorful-Info.plist"; sourceTree = "<group>"; };
+		E5AAE97FD3AD326533491125016AD1D6 /* CollapsibleTableSectionViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollapsibleTableSectionViewController-dummy.m"; sourceTree = "<group>"; };
+		E952D6106BBCEFA8A6DE2F31EB2FAA38 /* ColorfulEntity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorfulEntity.swift; path = Colorful/Classes/ColorfulEntity.swift; sourceTree = "<group>"; };
 		F0DC0D3015AFCB70C215BF4BD7629BB5 /* Pods_QuranSpeaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QuranSpeaker.framework; path = "Pods-QuranSpeaker.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE848EAA916741AFBEE6CE45A49D2378 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollapsibleTableViewHeader.swift; path = CollapsibleTableSectionViewController/CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
+		FAEF3C01CF399F9B485B9911DC5BD3BF /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,16 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A12623B9A99A396BD0F4BAC58538B046 /* Foundation.framework in Frameworks */,
-				38BBBF82A240DB98EE0D74D298941037 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5F5BC4CA9D8BF3DC66EB49CC834A8F14 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				968E4B247214E2A50FAF553BC2E4861C /* Foundation.framework in Frameworks */,
+				BA9F28E605C7B2D8AFC52E3F6DC6729D /* Foundation.framework in Frameworks */,
+				CEC0D9104EE779A5B3D1E2C360C59BB2 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +120,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95ACABC71585D657249CC92BA7731A8F /* Foundation.framework in Frameworks */,
-				C06D290B9216533843023A0BF93F5927 /* QuartzCore.framework in Frameworks */,
+				753C8C42CEFBED94E1F1E752955F0254 /* Foundation.framework in Frameworks */,
+				E30AFF09BE355906C38B27B0CD35F806 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		804A71BEFC21420D82DBEA6EFF3C77CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DFC75226E16B941990DBBAB9772702F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE18A384B8FAEC904C9BD99F819FB142 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83D08F0A49F23BCFE3AD5633F8521D5B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,9 +147,30 @@
 		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C18BABFF9523A33465B5A91496FF0C3D /* iOS */,
+				F0A778C0229E9BF1FD97896B93F3272B /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2114760775E22ED0AA8BB7AFBBE5DDB3 /* CollapsibleTableSectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4B316082541FFDE5E7BD3E4370975531 /* CollapsibleTableSectionViewController.swift */,
+				74218EED04D4781C050D1D9D4909F2CC /* CollapsibleTableViewHeader.swift */,
+				434522DC303A59CBB4A222380C8E5B81 /* Support Files */,
+			);
+			name = CollapsibleTableSectionViewController;
+			path = CollapsibleTableSectionViewController;
+			sourceTree = "<group>";
+		};
+		21D3D05D1F77873B6B9C733B0E84BEF8 /* Toast-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				70F1D50A4AD69EF133DA659CF288238D /* Toast.swift */,
+				DCDA4C7E82A9631631F53049AEF9EA8C /* Support Files */,
+			);
+			name = "Toast-Swift";
+			path = "Toast-Swift";
 			sourceTree = "<group>";
 		};
 		32DAB0C93490A663CAAD4018B1554F62 /* Pods-QuranSpeaker */ = {
@@ -131,43 +190,44 @@
 			path = "Target Support Files/Pods-QuranSpeaker";
 			sourceTree = "<group>";
 		};
-		4E8F18C4CB6510A65A3C1241EB70FB54 /* Support Files */ = {
+		434522DC303A59CBB4A222380C8E5B81 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1B046274F5BB5A204CFD9F101C860ACE /* CollapsibleTableSectionViewController.modulemap */,
-				9174A019616E9CD14A32888FAD2942FB /* CollapsibleTableSectionViewController-dummy.m */,
-				C8183D6A1A98948BF7DB672107809513 /* CollapsibleTableSectionViewController-Info.plist */,
-				2A0AB6047031C17605B494FB142C7CC9 /* CollapsibleTableSectionViewController-prefix.pch */,
-				E8992518E5AB8B727E8DAA105D1DC359 /* CollapsibleTableSectionViewController-umbrella.h */,
-				3D6375405727C0C2DB8B8ADC04838DA5 /* CollapsibleTableSectionViewController.debug.xcconfig */,
-				AB73991D56205A241B0766C0744A3357 /* CollapsibleTableSectionViewController.release.xcconfig */,
+				2287F14687C6A6F9392D010D63FC50D5 /* CollapsibleTableSectionViewController.modulemap */,
+				E5AAE97FD3AD326533491125016AD1D6 /* CollapsibleTableSectionViewController-dummy.m */,
+				9866144B1FA1FF73B2AB9B56607A0D7A /* CollapsibleTableSectionViewController-Info.plist */,
+				D4C6A8739167CD3E5E3FA077D63169E0 /* CollapsibleTableSectionViewController-prefix.pch */,
+				A7C58744DCC5EFE4B1877A073E4627EE /* CollapsibleTableSectionViewController-umbrella.h */,
+				A9504A8001E52CB0395AEECCBCF9C75E /* CollapsibleTableSectionViewController.debug.xcconfig */,
+				D78A76D2848B5AFB3545DA97DC69F6FC /* CollapsibleTableSectionViewController.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/CollapsibleTableSectionViewController";
 			sourceTree = "<group>";
 		};
-		57E18B3148AF984BBA22DD6EE3A4A0BC /* Support Files */ = {
+		5B8D67DBF8580493E0AFC391314D2F30 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2C880792BAA5B02B5E38442E7EE51888 /* Toast-Swift.modulemap */,
-				5BC9B2DBB170C749DAAE35B73DF35556 /* Toast-Swift-dummy.m */,
-				04D524B9C5D44E36A2C5B0EDEE5C08B5 /* Toast-Swift-Info.plist */,
-				02BE5910349E416830D7A46A1F9A0B94 /* Toast-Swift-prefix.pch */,
-				27DB06B71F965D4D41558CD4490F24C0 /* Toast-Swift-umbrella.h */,
-				43FB4A5584FA0460AFAE52FC13A61222 /* Toast-Swift.debug.xcconfig */,
-				D7453C6D43C644EA2753985C3489C67B /* Toast-Swift.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Toast-Swift";
-			sourceTree = "<group>";
-		};
-		8F8FB317F7F302F73A7D0B66FD9100EF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F88CB86E65746E90251453CF86CC03FF /* CollapsibleTableSectionViewController */,
-				F7762192829CA71100DBD874A597A938 /* Toast-Swift */,
+				2114760775E22ED0AA8BB7AFBBE5DDB3 /* CollapsibleTableSectionViewController */,
+				EC29E855B0754F77C0B679CDD39FAF70 /* Colorful */,
+				21D3D05D1F77873B6B9C733B0E84BEF8 /* Toast-Swift */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		852CD56AB8A16EE690CDBB27AEB5E9ED /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A284B6D2B6AFC0F7969BCB146B77E03 /* Colorful.modulemap */,
+				4A99E31D9ECB2B4C01899FD3F2484015 /* Colorful-dummy.m */,
+				D8B47C7E95F80468E571C7A5F4AA9231 /* Colorful-Info.plist */,
+				047E14DFDFA43E9ECD14EC692905438F /* Colorful-prefix.pch */,
+				AA4B34313971C2E1C92F178C928FFA84 /* Colorful-umbrella.h */,
+				B74AA663A1BAF8544E29A74AE0F6A1F6 /* Colorful.debug.xcconfig */,
+				1A80D503573A320E81992CCFCB8E1086 /* Colorful.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Colorful";
 			sourceTree = "<group>";
 		};
 		904F17145C3B4EED253C9448F71E1A6A /* Targets Support Files */ = {
@@ -178,24 +238,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		998161DE175653CEAD8946FA921ED736 /* Products */ = {
+		BEB73CE67E36EC2BC3692735EAD1A140 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				76D09E9FD484F615620B00C9CFCB96C5 /* CollapsibleTableSectionViewController.framework */,
+				078B758BAB86A5CDAE445643C5AE6156 /* Colorful.framework */,
 				F0DC0D3015AFCB70C215BF4BD7629BB5 /* Pods_QuranSpeaker.framework */,
 				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C18BABFF9523A33465B5A91496FF0C3D /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */,
-				CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */,
-				49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -203,36 +254,63 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
-				8F8FB317F7F302F73A7D0B66FD9100EF /* Pods */,
-				998161DE175653CEAD8946FA921ED736 /* Products */,
+				5B8D67DBF8580493E0AFC391314D2F30 /* Pods */,
+				BEB73CE67E36EC2BC3692735EAD1A140 /* Products */,
 				904F17145C3B4EED253C9448F71E1A6A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		F7762192829CA71100DBD874A597A938 /* Toast-Swift */ = {
+		DCDA4C7E82A9631631F53049AEF9EA8C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2B2BBFE33F974BD09FAD0D690DF017FC /* Toast.swift */,
-				57E18B3148AF984BBA22DD6EE3A4A0BC /* Support Files */,
+				FAEF3C01CF399F9B485B9911DC5BD3BF /* Toast-Swift.modulemap */,
+				449D537B0F3652D2F3E17908086CBB11 /* Toast-Swift-dummy.m */,
+				4AF095DDDAF40012221AE7F34378BB71 /* Toast-Swift-Info.plist */,
+				C0DA747BB2D3A7D6B6938782CAD8F889 /* Toast-Swift-prefix.pch */,
+				45DC95354118BF9F4E9064151452E929 /* Toast-Swift-umbrella.h */,
+				2346E45F057739A0D98EF343CCA40717 /* Toast-Swift.debug.xcconfig */,
+				308B98DB1303F550E4DC4F713C967399 /* Toast-Swift.release.xcconfig */,
 			);
-			name = "Toast-Swift";
-			path = "Toast-Swift";
+			name = "Support Files";
+			path = "../Target Support Files/Toast-Swift";
 			sourceTree = "<group>";
 		};
-		F88CB86E65746E90251453CF86CC03FF /* CollapsibleTableSectionViewController */ = {
+		EC29E855B0754F77C0B679CDD39FAF70 /* Colorful */ = {
 			isa = PBXGroup;
 			children = (
-				69B69A09D2C6280BEC6983AFBA983C30 /* CollapsibleTableSectionViewController.swift */,
-				FE848EAA916741AFBEE6CE45A49D2378 /* CollapsibleTableViewHeader.swift */,
-				4E8F18C4CB6510A65A3C1241EB70FB54 /* Support Files */,
+				7A4410A9250E4E93699A7E9D4F2E9A35 /* BrightnessCursor.swift */,
+				804424A8DA578E25A21FDAC9EC61891C /* BrightnessSlider.swift */,
+				E952D6106BBCEFA8A6DE2F31EB2FAA38 /* ColorfulEntity.swift */,
+				72ACABCDBF90CB115D3DD2A494C69649 /* ColorMapCursor.swift */,
+				8A65E94B1323CFBA1177364DC6553209 /* ColorMapView.swift */,
+				14AFADDC7A85170814FFFCD80AF74801 /* ColorPicker.swift */,
+				852CD56AB8A16EE690CDBB27AEB5E9ED /* Support Files */,
 			);
-			name = CollapsibleTableSectionViewController;
-			path = CollapsibleTableSectionViewController;
+			name = Colorful;
+			path = Colorful;
+			sourceTree = "<group>";
+		};
+		F0A778C0229E9BF1FD97896B93F3272B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */,
+				9FE46B11FEBCBB7C689EB07A5E57BD38 /* QuartzCore.framework */,
+				8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		02A2FA602D802D4FFC34F68759FF47B8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21117DDE18C0291DDBC4AC1799D2C391 /* Pods-QuranSpeaker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		204C4A199CEE67630D521CB1D7A8779F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,11 +327,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB68C35B1D561581AFFCE9FD84B4D3E0 /* Headers */ = {
+		567DD544B190825A19A6BEDA1EB5F39E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D49651B70698C9DDABE99469DE047DF /* Pods-QuranSpeaker-umbrella.h in Headers */,
+				69FA23FA121BC3528F4235E2D787939C /* Colorful-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,18 +340,19 @@
 /* Begin PBXNativeTarget section */
 		5B7C0F388171A581FCB09B6F806CB9B9 /* Pods-QuranSpeaker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 621F3E4B4718AE12AD8F2EEF3C4C130B /* Build configuration list for PBXNativeTarget "Pods-QuranSpeaker" */;
+			buildConfigurationList = BF862827AA2998E486582853F0CF174E /* Build configuration list for PBXNativeTarget "Pods-QuranSpeaker" */;
 			buildPhases = (
-				DB68C35B1D561581AFFCE9FD84B4D3E0 /* Headers */,
-				1B571738FD8862B2B9C4D82F4C03F239 /* Sources */,
-				5F5BC4CA9D8BF3DC66EB49CC834A8F14 /* Frameworks */,
-				DA4BAA2675705D258E05C24DB9FE31BB /* Resources */,
+				02A2FA602D802D4FFC34F68759FF47B8 /* Headers */,
+				5C897B32B60120E2C6D9A00FA48D42FE /* Sources */,
+				804A71BEFC21420D82DBEA6EFF3C77CB /* Frameworks */,
+				5129BFCFED31C46F18E1CB4E7EE9495C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4F4A449DD45F8CB965845CC6F58CED9 /* PBXTargetDependency */,
-				10FFD6D048C5ECE67162C701C79BF9B6 /* PBXTargetDependency */,
+				4678CDF48F01C722196C9AE99047E96F /* PBXTargetDependency */,
+				56DD3BA26174358C30FA0D43E96167CB /* PBXTargetDependency */,
+				337141423451B2F0698582DC9277B23E /* PBXTargetDependency */,
 			);
 			name = "Pods-QuranSpeaker";
 			productName = "Pods-QuranSpeaker";
@@ -296,6 +375,24 @@
 			name = "Toast-Swift";
 			productName = "Toast-Swift";
 			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D0BB23E38358EC80363667EF7366D412 /* Colorful */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3F34DDE224D2942E796BE6C710B0C9E /* Build configuration list for PBXNativeTarget "Colorful" */;
+			buildPhases = (
+				567DD544B190825A19A6BEDA1EB5F39E /* Headers */,
+				335E5E3A20FC74C7739BB7C2AB43E5D2 /* Sources */,
+				BE18A384B8FAEC904C9BD99F819FB142 /* Frameworks */,
+				400E8ABE5FFBDDC43B5089802FEF5574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Colorful;
+			productName = Colorful;
+			productReference = 078B758BAB86A5CDAE445643C5AE6156 /* Colorful.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FFD6448D737EF94143E2B341B01CD35E /* CollapsibleTableSectionViewController */ = {
@@ -334,11 +431,12 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 998161DE175653CEAD8946FA921ED736 /* Products */;
+			productRefGroup = BEB73CE67E36EC2BC3692735EAD1A140 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FFD6448D737EF94143E2B341B01CD35E /* CollapsibleTableSectionViewController */,
+				D0BB23E38358EC80363667EF7366D412 /* Colorful */,
 				5B7C0F388171A581FCB09B6F806CB9B9 /* Pods-QuranSpeaker */,
 				B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */,
 			);
@@ -346,6 +444,20 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		400E8ABE5FFBDDC43B5089802FEF5574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5129BFCFED31C46F18E1CB4E7EE9495C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8812DCC289D1E7BE07818E350A3B8656 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,24 +472,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA4BAA2675705D258E05C24DB9FE31BB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1B571738FD8862B2B9C4D82F4C03F239 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				87B6BDB037B87A03AA10EE7182A3078B /* Pods-QuranSpeaker-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2A837191F0224A82667DA39091BADB39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,29 +494,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		335E5E3A20FC74C7739BB7C2AB43E5D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEC3B34A8ACBDD78BB57A64F06AC354F /* BrightnessCursor.swift in Sources */,
+				DF3D7E16E983CC1FC0A2BC8D7E020531 /* BrightnessSlider.swift in Sources */,
+				50834A78578E96C1F3B93985ED7F99B1 /* Colorful-dummy.m in Sources */,
+				DF03C6CFA598B0401917E8AFB3C564D7 /* ColorfulEntity.swift in Sources */,
+				129AD3704930C28226E00E01EBEE48F4 /* ColorMapCursor.swift in Sources */,
+				113CE9DF654D708E3B154F448B8CB5FF /* ColorMapView.swift in Sources */,
+				A662FC332AEB300FCD5098A37A0939BE /* ColorPicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C897B32B60120E2C6D9A00FA48D42FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBDFA60D03FA8BA5178EAB2A5BAAA839 /* Pods-QuranSpeaker-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		10FFD6D048C5ECE67162C701C79BF9B6 /* PBXTargetDependency */ = {
+		337141423451B2F0698582DC9277B23E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Toast-Swift";
 			target = B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */;
-			targetProxy = 251BD12B1354BF714EB09DB5B4DC5C1A /* PBXContainerItemProxy */;
+			targetProxy = 8DBAC17DFEC136C141E8B522A2F62C27 /* PBXContainerItemProxy */;
 		};
-		F4F4A449DD45F8CB965845CC6F58CED9 /* PBXTargetDependency */ = {
+		4678CDF48F01C722196C9AE99047E96F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CollapsibleTableSectionViewController;
 			target = FFD6448D737EF94143E2B341B01CD35E /* CollapsibleTableSectionViewController */;
-			targetProxy = 767663195CD7F725177B1592AAB79D9B /* PBXContainerItemProxy */;
+			targetProxy = 515129E8F458CF08AD6A19F4186A66AA /* PBXContainerItemProxy */;
+		};
+		56DD3BA26174358C30FA0D43E96167CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Colorful;
+			target = D0BB23E38358EC80363667EF7366D412 /* Colorful */;
+			targetProxy = 1721A82D2D2A99DCF6881DE5D37D23ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		17D39D711BFE55BA0088E4F08C9A1F73 /* Release */ = {
+		03E76E2FE0A9366114F81640AA5875EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7453C6D43C644EA2753985C3489C67B /* Toast-Swift.release.xcconfig */;
+			baseConfigurationReference = 308B98DB1303F550E4DC4F713C967399 /* Toast-Swift.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -451,10 +575,157 @@
 			};
 			name = Release;
 		};
-		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
+		177805FD7C8DD20E110DECF2A9CA3217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34A79406DA8580DAD3078D223D1290E2 /* Pods-QuranSpeaker.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3694A79E2A60A8049950CD94B7C504A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A80D503573A320E81992CCFCB8E1086 /* Colorful.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Colorful/Colorful-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Colorful/Colorful-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Colorful/Colorful.modulemap";
+				PRODUCT_MODULE_NAME = Colorful;
+				PRODUCT_NAME = Colorful;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3F6B6558A2FC5EEDD21F2684177E1E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B74AA663A1BAF8544E29A74AE0F6A1F6 /* Colorful.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Colorful/Colorful-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Colorful/Colorful-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Colorful/Colorful.modulemap";
+				PRODUCT_MODULE_NAME = Colorful;
+				PRODUCT_NAME = Colorful;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5B7A03246D31911C283FD5CED15549E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 835466762D9866972758581E08103F48 /* Pods-QuranSpeaker.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -477,6 +748,172 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AD54443263C5DA71EF1FF9403D77241B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9504A8001E52CB0395AEECCBCF9C75E /* CollapsibleTableSectionViewController.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController.modulemap";
+				PRODUCT_MODULE_NAME = CollapsibleTableSectionViewController;
+				PRODUCT_NAME = CollapsibleTableSectionViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C646B80E4D8A9B6FB6B471288AD9746F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2346E45F057739A0D98EF343CCA40717 /* Toast-Swift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C78331776F312D982393824D790FE01B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D78A76D2848B5AFB3545DA97DC69F6FC /* CollapsibleTableSectionViewController.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController.modulemap";
+				PRODUCT_MODULE_NAME = CollapsibleTableSectionViewController;
+				PRODUCT_NAME = CollapsibleTableSectionViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -515,257 +952,14 @@
 			};
 			name = Debug;
 		};
-		6C10F1DBA5640205C2F9F453FBB8555B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34A79406DA8580DAD3078D223D1290E2 /* Pods-QuranSpeaker.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6FA9A877FF69B9D72906513EB84DEF01 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB73991D56205A241B0766C0744A3357 /* CollapsibleTableSectionViewController.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController.modulemap";
-				PRODUCT_MODULE_NAME = CollapsibleTableSectionViewController;
-				PRODUCT_NAME = CollapsibleTableSectionViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		87AEE5BC238645494F7F94F67F2BED7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43FB4A5584FA0460AFAE52FC13A61222 /* Toast-Swift.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
-				PRODUCT_MODULE_NAME = Toast_Swift;
-				PRODUCT_NAME = Toast_Swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		B4782F96560B6526EDC040C1A1945137 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 835466762D9866972758581E08103F48 /* Pods-QuranSpeaker.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C4BF9BA59531C39661B01490585CFD1F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D6375405727C0C2DB8B8ADC04838DA5 /* CollapsibleTableSectionViewController.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController.modulemap";
-				PRODUCT_MODULE_NAME = CollapsibleTableSectionViewController;
-				PRODUCT_NAME = CollapsibleTableSectionViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		16484632408CCE76007968205CA6415D /* Build configuration list for PBXNativeTarget "CollapsibleTableSectionViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C4BF9BA59531C39661B01490585CFD1F /* Debug */,
-				6FA9A877FF69B9D72906513EB84DEF01 /* Release */,
+				AD54443263C5DA71EF1FF9403D77241B /* Debug */,
+				C78331776F312D982393824D790FE01B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -773,17 +967,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				196DFA3E4A09A28224918543529A1885 /* Debug */,
-				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		621F3E4B4718AE12AD8F2EEF3C4C130B /* Build configuration list for PBXNativeTarget "Pods-QuranSpeaker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6C10F1DBA5640205C2F9F453FBB8555B /* Debug */,
-				B4782F96560B6526EDC040C1A1945137 /* Release */,
+				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
+				7EE7A78859F657F6BEFC651185B43192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -791,8 +976,26 @@
 		B8C401847A53B4C2810311A8CBD715AD /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87AEE5BC238645494F7F94F67F2BED7A /* Debug */,
-				17D39D711BFE55BA0088E4F08C9A1F73 /* Release */,
+				C646B80E4D8A9B6FB6B471288AD9746F /* Debug */,
+				03E76E2FE0A9366114F81640AA5875EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF862827AA2998E486582853F0CF174E /* Build configuration list for PBXNativeTarget "Pods-QuranSpeaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177805FD7C8DD20E110DECF2A9CA3217 /* Debug */,
+				5B7A03246D31911C283FD5CED15549E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3F34DDE224D2942E796BE6C710B0C9E /* Build configuration list for PBXNativeTarget "Colorful" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6B6558A2FC5EEDD21F2684177E1E8D /* Debug */,
+				3694A79E2A60A8049950CD94B7C504A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

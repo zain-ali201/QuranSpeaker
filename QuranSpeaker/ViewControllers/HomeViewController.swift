@@ -99,6 +99,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return .lightContent
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        manager = nil
+        isMyPeripheralConected = false
+        myBluetoothPeripheral = nil
+    }
+    
     func loadQaris()
     {
         let qariNames:[String] = [
@@ -943,7 +949,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         print("Name: \(peripheral.name)")
        
-        if peripheral.name != nil || peripheral.name == "AC692x_BLE"
+        if peripheral.name != nil
         {
             self.myBluetoothPeripheral = peripheral
             self.myBluetoothPeripheral.delegate = self

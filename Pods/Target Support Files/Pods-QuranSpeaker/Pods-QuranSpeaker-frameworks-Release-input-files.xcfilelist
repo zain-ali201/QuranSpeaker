@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-QuranSpeaker/Pods-QuranSpeaker-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/CollapsibleTableSectionViewController/CollapsibleTableSectionViewController.framework
+${BUILT_PRODUCTS_DIR}/Colorful/Colorful.framework
 ${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework

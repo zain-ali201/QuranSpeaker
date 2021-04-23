@@ -8,5 +8,6 @@ target 'QuranSpeaker' do
   # Pods for QuranSpeaker
   pod 'Toast-Swift'
   pod 'CollapsibleTableSectionViewController'
+  pod 'Colorful'
 
 end

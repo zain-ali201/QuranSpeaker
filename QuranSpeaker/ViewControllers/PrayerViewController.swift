@@ -40,7 +40,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
     var bleManager : CBCentralManager!
     var myBluetoothPeripheral : CBPeripheral!
     var myCharacteristic : CBCharacteristic!
-    var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
+    var quranUUID: CBUUID = CBUUID(string: "00002a00-0000-1000-8000-00805f9b34fb")
     var isMyPeripheralConected = false
     
     override func viewDidLoad()
@@ -70,6 +70,12 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
     
     override func viewDidAppear(_ animated: Bool) {
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: 550)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        bleManager = nil
+        isMyPeripheralConected = false
+        myBluetoothPeripheral = nil
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -190,7 +196,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
     
     func getYearPrayersTime()
     {
-        if isMyPeripheralConected
+        if isMyPeripheralConected && myCharacteristic != nil
         {
             let prayerKit:AKPrayerTime = AKPrayerTime(lat: lat, lng: lng)
             prayerKit.calculationMethod = .Karachi
@@ -209,6 +215,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
         
             let formatter = DateFormatter()
 
+            var zero = 0
+            let zeroData = Data(bytes: &zero, count: MemoryLayout.size(ofValue: zero))
             for month in 1...12
             {
                 var montNr = month
@@ -291,6 +299,18 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
                     else
                     {
                         print("0:0, 0:0, 0:0, 0:0, 0:0, 0:0")
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
+                        dataToSend.append(zeroData)
                     }
                 }
                 
@@ -375,7 +395,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
         
         print("Name: \(peripheral.name)")
        
-        if peripheral.name != nil || peripheral.name == "AC692x_BLE"
+        if peripheral.name != nil
         {
             self.myBluetoothPeripheral = peripheral
             self.myBluetoothPeripheral.delegate = self

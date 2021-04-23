@@ -1,20 +1,24 @@
 PODS:
   - CollapsibleTableSectionViewController (2.0.1)
+  - Colorful (3.0.0)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - CollapsibleTableSectionViewController
+  - Colorful
   - Toast-Swift
 
 SPEC REPOS:
   trunk:
     - CollapsibleTableSectionViewController
+    - Colorful
     - Toast-Swift
 
 SPEC CHECKSUMS:
   CollapsibleTableSectionViewController: 40d97d684d870044522a0dc29b128a6acaaa99df
+  Colorful: 9e093edacaa9fb73512ad9da157f0707b82d2542
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 074d7530a81d8baf28f9f45dbb262953b3596da0
+PODFILE CHECKSUM: 73e19d023b4b158d92109dc30aad5ca973c79332
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

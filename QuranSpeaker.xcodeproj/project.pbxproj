@@ -696,7 +696,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprintsols.quranspeaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Appstore v1";
+				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Dist v1";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
