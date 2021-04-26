@@ -42,6 +42,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
     var myCharacteristic : CBCharacteristic!
     var quranUUID: CBUUID = CBUUID(string: "00002a00-0000-1000-8000-00805f9b34fb")
     var isMyPeripheralConected = false
+    var isFirstTime = true
     
     override func viewDidLoad()
     {
@@ -151,8 +152,10 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
             lng = currentLoc.coordinate.longitude
             getCurrentPrayersTime()
             
-            if !UserDefaults.standard.bool(forKey: "prayersFlag")
+            if !UserDefaults.standard.bool(forKey: "prayersFlag") && isFirstTime
             {
+                print("zain ali")
+                isFirstTime = false
                 bleManager = CBCentralManager(delegate: self, queue: nil)
                 getYearPrayersTime()
             }
@@ -322,7 +325,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
         }
         else
         {
-            self.view.makeToast("Bluetooth device disconnected")
+//            self.view.makeToast("Bluetooth device disconnected")
         }
     }
     

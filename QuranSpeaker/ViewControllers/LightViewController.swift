@@ -95,8 +95,8 @@ class LightViewController: UIViewController, CBCentralManagerDelegate, CBPeriphe
         }
         else if button.tag == 1006
         {
-            red = 61
-            green = 168
+            red = 122
+            green = 203
         }
         else if button.tag == 1007
         {

@@ -531,20 +531,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         let currentValue = Int(sender.value)
         lblVolCount.text = "\(currentValue)"
-        let value = UInt8(currentValue)
+        var value = UInt8(currentValue)
         print(value)
         if isMyPeripheralConected
         {
             if value < currentVolume
             {
-                let dataToSend = Data([21, value])
-                myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                var key = 21
+                let dataToSend = NSMutableData()
+                dataToSend.append("2".data(using: String.Encoding.ascii)!)
+                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
                 print("value written")
             }
             else
             {
-                let dataToSend = Data([20, value])
-                myBluetoothPeripheral.writeValue(dataToSend, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                var key = 20
+                let dataToSend = NSMutableData()
+                dataToSend.append("2".data(using: String.Encoding.ascii)!)
+                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
                 print("value written")
             }
             
@@ -644,7 +652,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if flag
         {
-            if isMyPeripheralConected
+            if isMyPeripheralConected && myCharacteristic != nil
             {
                 let dataToSend = NSMutableData()
                 dataToSend.append("1".data(using: String.Encoding.ascii)!)
