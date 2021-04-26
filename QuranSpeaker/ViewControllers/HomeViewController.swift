@@ -413,8 +413,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if isMyPeripheralConected
             {
-                let division = verseNo / 255
-                let remainder = verseNo % 255
+                let division = verseNo / 127
+                let remainder = verseNo % 127
 
                 let surat = UInt8(chapterNo)
                 let div = UInt8(division)
@@ -890,8 +890,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if isMyPeripheralConected
             {
-                let division = verseNo / 255
-                let remainder = verseNo % 255
+                let division = verseNo / 127
+                let remainder = verseNo % 127
 
                 let surat = UInt8(chapterNo)
                 let div = UInt8(division)
