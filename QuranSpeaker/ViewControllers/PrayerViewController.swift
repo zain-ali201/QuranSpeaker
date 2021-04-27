@@ -413,7 +413,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
         isMyPeripheralConected = true
         peripheral.delegate = self
         peripheral.discoverServices(nil)
-        self.view.makeToast("Bluetooth device connected")
+//        self.view.makeToast("Bluetooth device connected")
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
