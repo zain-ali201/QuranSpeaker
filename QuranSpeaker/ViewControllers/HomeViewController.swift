@@ -541,31 +541,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(value)
         if isMyPeripheralConected
         {
-            var val = 2
             if value < currentVolume
             {
-                var key = 21
+//                var key = 21
                 let dataToSend = NSMutableData()
-//                dataToSend.append("2".data(using: String.Encoding.ascii)!)
-                dataToSend.append(Data(bytes: &val, count: MemoryLayout.size(ofValue: val)))
-                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                dataToSend.append("2".data(using: String.Encoding.utf8)!)
+//                dataToSend.append(Data(bytes: &val, count: MemoryLayout.size(ofValue: val)))
+//                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
                 dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
                 print("value written")
+                currentVolume = currentValue
             }
-            else
+            else if value > currentVolume
             {
-                var key = 20
+//                var key = 20
                 let dataToSend = NSMutableData()
-//                dataToSend.append("2".data(using: String.Encoding.ascii)!)
-                dataToSend.append(Data(bytes: &val, count: MemoryLayout.size(ofValue: val)))
-                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                dataToSend.append("2".data(using: String.Encoding.utf8)!)
+//                dataToSend.append(Data(bytes: &val, count: MemoryLayout.size(ofValue: val)))
+//                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
                 dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
                 print("value written")
+                currentVolume = currentValue
             }
-            
-            currentVolume = currentValue
         }
         else
         {

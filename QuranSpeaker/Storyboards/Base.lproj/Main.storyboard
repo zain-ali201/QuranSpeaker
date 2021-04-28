@@ -604,8 +604,7 @@
                                                         <rect key="frame" x="34" y="40" width="255" height="31"/>
                                                         <color key="tintColor" red="0.24705882352941178" green="0.71764705882352942" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <connections>
-                                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cLh-Gw-hwd"/>
-                                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="z4v-Fi-yzL"/>
+                                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="wwn-KC-jcp"/>
                                                         </connections>
                                                     </slider>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speaker" translatesAutoresizingMaskIntoConstraints="NO" id="i76-kh-Lr3">
