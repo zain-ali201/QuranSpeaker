@@ -9,7 +9,7 @@ import UIKit
 import CoreLocation
 import CoreBluetooth
 
-class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate
+class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCentralManagerDelegate, CBPeripheralDelegate
 {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblTime: UILabel!
@@ -37,15 +37,16 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
     var currentYear = 0
     
     //BLE
-    var bleManager : CBCentralManager!
-    var myBluetoothPeripheral : CBPeripheral!
-    var myCharacteristic : CBCharacteristic!
-    var quranUUID: CBUUID = CBUUID(string: "00002a00-0000-1000-8000-00805f9b34fb")
-    var isMyPeripheralConected = false
+//    var bleManager : CBCentralManager!
+//    var myBluetoothPeripheral : CBPeripheral!
+//    var myCharacteristic : CBCharacteristic!
+//    var quranUUID: CBUUID = CBUUID(string: "00002a00-0000-1000-8000-00805f9b34fb")
+//    var isMyPeripheralConected = false
     var isFirstTime = true
     
     override func viewDidLoad()
     {
+        prayersVC = self
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
         lblTime.text = formatter.string(from: Date())
@@ -73,11 +74,11 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: 550)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        bleManager = nil
-        isMyPeripheralConected = false
-        myBluetoothPeripheral = nil
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        bleManager = nil
+//        isMyPeripheralConected = false
+//        myBluetoothPeripheral = nil
+//    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -103,7 +104,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
     
     @IBAction func updateBtnAction(_ sender: Any)
     {
-        bleManager = CBCentralManager(delegate: self, queue: nil)
+//        bleManager = CBCentralManager(delegate: self, queue: nil)
         getYearPrayersTime()
     }
     
@@ -156,7 +157,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
             {
                 print("zain ali")
                 isFirstTime = false
-                bleManager = CBCentralManager(delegate: self, queue: nil)
+//                bleManager = CBCentralManager(delegate: self, queue: nil)
                 getYearPrayersTime()
             }
             
@@ -199,7 +200,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
     
     func getYearPrayersTime()
     {
-        if isMyPeripheralConected && myCharacteristic != nil
+        if isMyPeripheralConected && prayersCharacteristic != nil
         {
             let prayerKit:AKPrayerTime = AKPrayerTime(lat: lat, lng: lng)
             prayerKit.calculationMethod = .Karachi
@@ -318,14 +319,14 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
                 }
                 
 //                print("//////////////////////////////////////////")
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: prayersCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             
             UserDefaults.standard.set(true, forKey: "prayersFlag")
         }
         else
         {
-//            self.view.makeToast("Bluetooth device disconnected")
+            self.view.makeToast("Bluetooth device disconnected")
         }
     }
     
@@ -372,92 +373,92 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, CBCentr
         }
     }
     
-    //BLE delegate functions
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        
-        var msg = ""
-        
-        switch central.state {
-            
-            case .poweredOff:
-                msg = "Bluetooth is Off"
-            case .poweredOn:
-                msg = "Bluetooth is On"
-                bleManager.scanForPeripherals(withServices: nil, options: nil)
-            case .unsupported:
-                msg = "Not Supported"
-            default:
-                msg = "😔"
-        }
-        
-//        self.view.makeToast(msg)
-        print("STATE: " + msg)
-    }
-    
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        
-        print("Name: \(peripheral.name)")
-       
-        if peripheral.name != nil
-        {
-            self.myBluetoothPeripheral = peripheral
-            self.myBluetoothPeripheral.delegate = self
-            
-            bleManager.stopScan()
-            bleManager.connect(myBluetoothPeripheral, options: nil)
-        }
-    }
-    
-    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        
-        isMyPeripheralConected = true
-        peripheral.delegate = self
-        peripheral.discoverServices(nil)
-//        self.view.makeToast("Bluetooth device connected")
-    }
-    
-    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        isMyPeripheralConected = false
-    }
-    
-    
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        
-        if let servicePeripheral = peripheral.services as [CBService]? {
-            
-            for service in servicePeripheral {
-                
-                peripheral.discoverCharacteristics(nil, for: service)
-            }
-        }
-    }
-
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        
-        if let characterArray = service.characteristics as [CBCharacteristic]? {
-            
-            for cc in characterArray {
-                print(cc.uuid)
-                if(cc.uuid == quranUUID) {
-                    print(cc.uuid.uuidString)
-                    myCharacteristic = cc
-                    print("characteristics")
-//                    peripheral.readValue(for: cc)
-//                    writeValue()
-                }
-            }
-        }
-    }
-    
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-
-        if (characteristic.uuid == quranUUID) {
-            
-            let readValue = characteristic.value
-            let value = (readValue! as NSData).bytes.bindMemory(to: Int.self, capacity: readValue!.count).pointee //used to read an Int value
-            print ("Value: \(value)")
-        }
-    }
+//    //BLE delegate functions
+//    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+//        
+//        var msg = ""
+//        
+//        switch central.state {
+//            
+//            case .poweredOff:
+//                msg = "Bluetooth is Off"
+//            case .poweredOn:
+//                msg = "Bluetooth is On"
+//                bleManager.scanForPeripherals(withServices: nil, options: nil)
+//            case .unsupported:
+//                msg = "Not Supported"
+//            default:
+//                msg = "😔"
+//        }
+//        
+////        self.view.makeToast(msg)
+//        print("STATE: " + msg)
+//    }
+//    
+//    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+//        
+//        print("Name: \(peripheral.name)")
+//       
+//        if peripheral.name != nil
+//        {
+//            self.myBluetoothPeripheral = peripheral
+//            self.myBluetoothPeripheral.delegate = self
+//            
+//            bleManager.stopScan()
+//            bleManager.connect(myBluetoothPeripheral, options: nil)
+//        }
+//    }
+//    
+//    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+//        
+//        isMyPeripheralConected = true
+//        peripheral.delegate = self
+//        peripheral.discoverServices(nil)
+////        self.view.makeToast("Bluetooth device connected")
+//    }
+//    
+//    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+//        isMyPeripheralConected = false
+//    }
+//    
+//    
+//    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+//        
+//        if let servicePeripheral = peripheral.services as [CBService]? {
+//            
+//            for service in servicePeripheral {
+//                
+//                peripheral.discoverCharacteristics(nil, for: service)
+//            }
+//        }
+//    }
+//
+//    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+//        
+//        if let characterArray = service.characteristics as [CBCharacteristic]? {
+//            
+//            for cc in characterArray {
+//                print(cc.uuid)
+//                if(cc.uuid == quranUUID) {
+//                    print(cc.uuid.uuidString)
+//                    myCharacteristic = cc
+//                    print("characteristics")
+////                    peripheral.readValue(for: cc)
+////                    writeValue()
+//                }
+//            }
+//        }
+//    }
+//    
+//    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+//
+//        if (characteristic.uuid == quranUUID) {
+//            
+//            let readValue = characteristic.value
+//            let value = (readValue! as NSData).bytes.bindMemory(to: Int.self, capacity: readValue!.count).pointee //used to read an Int value
+//            print ("Value: \(value)")
+//        }
+//    }
 }
 
 extension CLPlacemark {

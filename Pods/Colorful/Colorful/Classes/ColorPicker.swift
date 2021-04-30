@@ -100,6 +100,7 @@ public class ColorPicker: UIControl {
         case .began:
             colorMapCursor.startEditing()
         case .cancelled, .ended, .failed:
+            sendActionIfNeeds()
             colorMapCursor.endEditing()
         default:
             break
@@ -108,7 +109,6 @@ public class ColorPicker: UIControl {
         hsvColor = selected.with(brightness: hsvColor.brightness)
         mapColorToView()
         feedbackIfNeeds()
-        sendActionIfNeeds()
     }
 
     @objc
@@ -127,12 +127,12 @@ public class ColorPicker: UIControl {
             prevFeedbackedHSV = hsvColor
         }
     }
-
    
     private var prevSentActionHSV: HSVColor?
-    func sendActionIfNeeds() {
+    func sendActionIfNeeds()
+    {
         if prevSentActionHSV != hsvColor {
-            sendActions(for: .valueChanged)
+            sendActions(for: .touchUpInside)
             prevSentActionHSV = hsvColor
         }
     }

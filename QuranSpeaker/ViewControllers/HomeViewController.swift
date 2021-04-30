@@ -54,10 +54,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //BLE
     var manager : CBCentralManager!
-    var myBluetoothPeripheral : CBPeripheral!
-    var myCharacteristic : CBCharacteristic!
-    var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
-    var isMyPeripheralConected = false
+//    var myBluetoothPeripheral : CBPeripheral!
+//    var myCharacteristic : CBCharacteristic!
+//    var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
+//    var isMyPeripheralConected = false
     
     var tag = 0
     
@@ -69,7 +69,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         transArray = [HomeObject(name: "Urdu", img: UIImage(named: "Pakistan")!, key: ""), HomeObject(name: "English", img: UIImage(named: "England")!, key: "") , HomeObject(name: "French", img: UIImage(named: "France")!, key: ""), HomeObject(name: "Turkish", img: UIImage(named: "Turki")!, key: "")]
         
-        manager = CBCentralManager(delegate: self, queue: nil)
+//        manager = CBCentralManager(delegate: self, queue: nil)
         
         quranView.layer.borderWidth = 1
         quranView.layer.borderColor = UIColor.darkGray.cgColor
@@ -99,11 +99,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return .lightContent
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        manager = nil
-        isMyPeripheralConected = false
-        myBluetoothPeripheral = nil
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        manager = nil
+//        isMyPeripheralConected = false
+//        myBluetoothPeripheral = nil
+//    }
     
     func loadQaris()
     {
@@ -394,7 +394,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let size:CGSize = string.sizeOfString(usingFont: attrs)
                 width = size.width
 
-                if width > 10 //&& string != "·"
+                if width > 17 //&& string != "·"
                 {
                     if (xAxis - width) < 0
                     {
@@ -427,7 +427,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let rem = UInt8(remainder)
 
                 let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
 
             }
             else
@@ -541,27 +541,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(value)
         if isMyPeripheralConected
         {
+            var key = 2
             if value < currentVolume
             {
-//                var key = 21
                 let dataToSend = NSMutableData()
-                dataToSend.append("2".data(using: String.Encoding.utf8)!)
+//                dataToSend.append("2".data(using: String.Encoding.utf8)!)
 //                dataToSend.append(Data(bytes: &val, count: MemoryLayout.size(ofValue: val)))
-//                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
                 dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
                 print("value written")
                 currentVolume = currentValue
             }
             else if value > currentVolume
             {
-//                var key = 20
                 let dataToSend = NSMutableData()
-                dataToSend.append("2".data(using: String.Encoding.utf8)!)
+//                dataToSend.append("2".data(using: String.Encoding.utf8)!)
 //                dataToSend.append(Data(bytes: &val, count: MemoryLayout.size(ofValue: val)))
-//                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
                 dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
                 print("value written")
                 currentVolume = currentValue
             }
@@ -660,12 +659,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if flag
         {
-            if isMyPeripheralConected && myCharacteristic != nil
+            if isMyPeripheralConected && quranCharacteristic != nil
             {
                 let dataToSend = NSMutableData()
                 dataToSend.append("1".data(using: String.Encoding.ascii)!)
                 dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
                 print("value written: \(key)")
             }
             else
@@ -751,7 +750,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print(qari)
                 let dataToSend = Data([3,qari])
                 
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             else if tag == 1002
             {
@@ -759,7 +758,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print(key)
                 let dataToSend = Data([1,key])
                 
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             else if tag == 1003
             {
@@ -767,7 +766,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print(trans)
                 let dataToSend = Data([4,trans])
                 
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             qarisView.alpha = 0
         }
@@ -921,7 +920,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let rem = UInt8(remainder)
 
                 let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: myCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             else
             {
@@ -974,8 +973,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
        
         if peripheral.name != nil
         {
-            self.myBluetoothPeripheral = peripheral
-            self.myBluetoothPeripheral.delegate = self
+            myBluetoothPeripheral = peripheral
+            myBluetoothPeripheral.delegate = self
             
             manager.stopScan()
             manager.connect(myBluetoothPeripheral, options: nil)
@@ -1013,11 +1012,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             for cc in characterArray {
                 print(cc.uuid)
                 if(cc.uuid == quranUUID) {
-                    print(cc.uuid.uuidString)
-                    myCharacteristic = cc
-                    print("characteristics")
-//                    peripheral.readValue(for: cc)
-//                    writeValue()
+                    print("UUID: \(cc.uuid.uuidString)")
+                    quranCharacteristic = cc
+                }
+                else if(cc.uuid == prayersUUID) {
+                    print("UUID: \(cc.uuid.uuidString)")
+                    prayersCharacteristic = cc
                 }
             }
         }
