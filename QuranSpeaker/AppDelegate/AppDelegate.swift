@@ -9,23 +9,24 @@ import UIKit
 import CoreBluetooth
 
 var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
-var prayersUUID: CBUUID = CBUUID(string: "0000ae02-0000-1000-8000-00805f9b34fb")
+var prayersUUID: CBUUID = CBUUID(string: "0000ae01-0000-1000-8000-00805f9b34fb")
 var quranCharacteristic : CBCharacteristic!
 var prayersCharacteristic : CBCharacteristic!
 var isMyPeripheralConected = false
 var myBluetoothPeripheral : CBPeripheral!
+var manager : CBCentralManager!
+
 var prayersVC : PrayerViewController!
+var homeVC : HomeViewController!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate, CBPeripheralDelegate
 {
     var window: UIWindow?
-    var manager : CBCentralManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Thread.sleep(forTimeInterval: 3)
-        
         manager = CBCentralManager(delegate: self, queue: nil)
         return true
     }
@@ -46,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
             default:
                 msg = "😔"
         }
-//        self.view.makeToast(msg)
         print("STATE: " + msg)
     }
     
@@ -102,24 +102,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
                 else if(cc.uuid == prayersUUID) {
                     print("PrayersUUID: \(cc.uuid.uuidString)")
                     prayersCharacteristic = cc
-                    if !UserDefaults.standard.bool(forKey: "prayersFlag")
-                    {
-                        prayersVC.isFirstTime = false
-                        prayersVC.getYearPrayersTime()
-                    }
                 }
             }
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-
+        
         if (characteristic.uuid == quranUUID) {
             
-            let readValue = characteristic.value
-            let value = (readValue! as NSData).bytes.bindMemory(to: Int.self, capacity: readValue!.count).pointee //used to read an Int value
-            print ("Value: \(value)")
+            guard let characteristicData = characteristic.value else { return }
+            let byteArray = [UInt8](characteristicData)
+            homeVC.fetchAppData(byteArray: byteArray)
         }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
+
+        print("didUpdateNotificationStateFor")
+
+        print("characteristic description:", characteristic.description)
+
+    }
+    
+    var orientationLock = UIInterfaceOrientationMask.all
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+            return self.orientationLock
     }
 }
 
+struct AppUtility {
+
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
+    
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = orientation
+        }
+    }
+
+    /// OPTIONAL Added method to adjust lock and rotate to the desired orientation
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
+   
+        self.lockOrientation(orientation)
+    
+        UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
+        UINavigationController.attemptRotationToDeviceOrientation()
+    }
+
+}

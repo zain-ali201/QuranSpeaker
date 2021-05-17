@@ -109,6 +109,7 @@ public class ColorPicker: UIControl {
         hsvColor = selected.with(brightness: hsvColor.brightness)
         mapColorToView()
         feedbackIfNeeds()
+//        sendActionIfNeeds()
     }
 
     @objc

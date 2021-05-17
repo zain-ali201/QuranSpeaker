@@ -42,7 +42,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
 //    var myCharacteristic : CBCharacteristic!
 //    var quranUUID: CBUUID = CBUUID(string: "00002a00-0000-1000-8000-00805f9b34fb")
 //    var isMyPeripheralConected = false
-    var isFirstTime = true
     
     override func viewDidLoad()
     {
@@ -68,10 +67,20 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
+        
+        AppUtility.lockOrientation(.portrait)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: 550)
+    }
+    
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
 //    override func viewWillDisappear(_ animated: Bool) {
@@ -131,6 +140,11 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
         }
         else
         {
+            leading.constant = -200
+            menuFlag = false
+            UIView.animate(withDuration: 0.3) { [weak self] in
+              self?.view.layoutIfNeeded()
+            }
             let setVC = self.storyboard?.instantiateViewController(withIdentifier: "SetViewController") as! SetViewController
             self.navigationController?.pushViewController(setVC, animated: true)
         }
@@ -151,15 +165,9 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
         {
             lat = currentLoc.coordinate.latitude
             lng = currentLoc.coordinate.longitude
+//            print(lat)
+//            print(lng)
             getCurrentPrayersTime()
-            
-            if !UserDefaults.standard.bool(forKey: "prayersFlag") && isFirstTime
-            {
-                print("zain ali")
-                isFirstTime = false
-//                bleManager = CBCentralManager(delegate: self, queue: nil)
-                getYearPrayersTime()
-            }
             
             geocoder.reverseGeocodeLocation(currentLoc) { (placemarks, error) in
                 self.processResponse(withPlacemarks: placemarks, error: error)
@@ -203,18 +211,50 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
         if isMyPeripheralConected && prayersCharacteristic != nil
         {
             let prayerKit:AKPrayerTime = AKPrayerTime(lat: lat, lng: lng)
-            prayerKit.calculationMethod = .Karachi
+//            prayerKit.calculationMethod = .Karachi
             
             let juristic = defaults.value(forKey: "juristic") as? Int
             
             if juristic == 2
             {
-                prayerKit.asrJuristic = .Shafii
+                prayerKit.asrJuristic = .Hanafi
             }
             else
             {
-                prayerKit.asrJuristic = .Hanafi
+                prayerKit.asrJuristic = .Shafii
             }
+            
+            let method = defaults.value(forKey: "method") as? Int
+            
+            if method == 2
+            {
+                prayerKit.calculationMethod = .ISNA
+            }
+            else if method == 3
+            {
+                prayerKit.calculationMethod = .Egypt
+            }
+            else if method == 4
+            {
+                prayerKit.calculationMethod = .Makkah
+            }
+            else if method == 5
+            {
+                prayerKit.calculationMethod = .Karachi
+            }
+            else if method == 6
+            {
+                prayerKit.calculationMethod = .Tehran
+            }
+            else if method == 7
+            {
+                prayerKit.calculationMethod = .Jafari
+            }
+            else
+            {
+                prayerKit.calculationMethod = .MWL
+            }
+            
             prayerKit.outputFormat = .Time24
         
             let formatter = DateFormatter()
@@ -237,20 +277,28 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                     
                     if date != nil
                     {
-                        let times = prayerKit.getDatePrayerTimes(date: date!)
+//                        let times = prayerKit.getDatePrayerTimes(date: date!)
+                            let times = prayerKit.getDatePrayerTimes(year: currentYear, month: month, day: day, latitude: lat, longitude: lng, tZone: AKPrayerTime.systemTimeZone())
 //                        print(" ")
 //                        print("======================================")
 //                        print("Date: \(date!)")
                         
 //                        print("======================================")
 //                        print(" ")
-//                        dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
-                        let fajr = (times?[.Fajr] as? String) ?? ""
-                        let sunrise = (times?[.Sunrise] as? String) ?? ""
-                        let dhuhr = (times?[.Dhuhr] as? String) ?? ""
-                        let asr = (times?[.Asr] as? String) ?? ""
-                        let maghrib = (times?[.Maghrib] as? String) ?? ""
-                        let isha = (times?[.Isha] as? String) ?? ""
+                        var fajr = (times[.Fajr] as? String) ?? ""
+                        fajr = fajr.replacingOccurrences(of: "60", with: "59")
+                        var sunrise = (times[.Sunrise] as? String) ?? ""
+                        sunrise = sunrise.replacingOccurrences(of: "60", with: "59")
+                        var dhuhr = (times[.Dhuhr] as? String) ?? ""
+                        dhuhr = dhuhr.replacingOccurrences(of: "60", with: "59")
+                        var asr = (times[.Asr] as? String) ?? ""
+                        asr = asr.replacingOccurrences(of: "60", with: "59")
+                        var maghrib = (times[.Maghrib] as? String) ?? ""
+                        maghrib = maghrib.replacingOccurrences(of: "60", with: "59")
+                        var isha = (times[.Isha] as? String) ?? ""
+                        isha = isha.replacingOccurrences(of: "60", with: "59")
+                        
+                        print("\(fajr), \(sunrise), \(dhuhr), \(asr), \(maghrib), \(isha)")
                         
                         formatter.dateFormat = "HH:mm"
                         let fajrTime = formatter.date(from: fajr)
@@ -260,6 +308,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                         let maghribTime = formatter.date(from: maghrib)
                         let ishaTime = formatter.date(from: isha)
                         formatter.dateFormat = "HH"
+                        
                         var fajrHours = Int(formatter.string(from: fajrTime!))!
                         var sunHours = Int(formatter.string(from: sunTime!))!
                         var dhuhrHours = Int(formatter.string(from: dhurTime!))!
@@ -274,7 +323,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                         var maghribMin = Int(formatter.string(from: maghribTime!))!
                         var ishaMin = Int(formatter.string(from: ishaTime!))!
                         
-                        print("\(fajrHours):\(fajrMin), \(sunHours):\(sunMin), \(dhuhrHours):\(dhuhrMin), \(asrHours):\(asrMin), \(maghribHours):\(maghribMin), \(ishaHours):\(ishaMin)")
+//                        print("\(fajrHours):\(fajrMin), \(sunHours):\(sunMin), \(dhuhrHours):\(dhuhrMin), \(asrHours):\(asrMin), \(maghribHours):\(maghribMin), \(ishaHours):\(ishaMin)")
                         
                         //Fajr
                         dataToSend.append(Data(bytes: &fajrHours, count: MemoryLayout.size(ofValue: fajrHours)))
@@ -317,12 +366,13 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                         dataToSend.append(zeroData)
                     }
                 }
-                
+                print(dataToSend)
 //                print("//////////////////////////////////////////")
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: prayersCharacteristic, type: CBCharacteristicWriteType.withResponse)
+//                let data = Data([UInt8(Character("Z").asciiValue!), UInt8(montNr), UInt8(5), UInt8(30)])
+//
+//                myBluetoothPeripheral.writeValue(data as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
-            
-            UserDefaults.standard.set(true, forKey: "prayersFlag")
         }
         else
         {

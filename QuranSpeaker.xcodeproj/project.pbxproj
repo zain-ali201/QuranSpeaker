@@ -2084,9 +2084,9 @@
 		18B8542825B6B62900667E67 /* QuranSpeaker */ = {
 			isa = PBXGroup;
 			children = (
+				18B8543225B6B63C00667E67 /* Assets.xcassets */,
 				1865EFA126383754005552FC /* Fonts */,
 				181A795626301A2900E3F730 /* NewFonts */,
-				18B8543225B6B63C00667E67 /* Assets.xcassets */,
 				1878F047261C58D300B8153D /* Reader */,
 				1837DF94261205E800FCF9EC /* books */,
 				18B8544125B6B69500667E67 /* AppDelegate */,
@@ -3093,7 +3093,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -3123,7 +3123,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "QuranApp Dist v1";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuranSpeaker/ViewControllers/QuranSpeaker-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

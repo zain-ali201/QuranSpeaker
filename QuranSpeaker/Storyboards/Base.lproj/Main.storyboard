@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5z6-kN-hGb" kind="relationship" relationship="rootViewController" id="9dY-jn-POk"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QHc-oI-HA4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGs-7K-WoR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -35,7 +35,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="QuranSpeaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="HomeViewController" customModule="QuranSpeaker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yT3-Cg-LGn"/>
                         <viewControllerLayoutGuide type="bottom" id="JSn-Jf-NLS"/>
@@ -89,7 +89,7 @@
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="36"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="t78-w4-Kvz">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="t78-w4-Kvz">
                                         <rect key="frame" x="8" y="65" width="359" height="317"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-ZB-T04">
@@ -604,7 +604,8 @@
                                                         <rect key="frame" x="34" y="40" width="255" height="31"/>
                                                         <color key="tintColor" red="0.24705882352941178" green="0.71764705882352942" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <connections>
-                                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="wwn-KC-jcp"/>
+                                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="GX3-U4-Bcb"/>
+                                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K8B-fX-m8g"/>
                                                         </connections>
                                                     </slider>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speaker" translatesAutoresizingMaskIntoConstraints="NO" id="i76-kh-Lr3">
@@ -788,6 +789,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="7ny-7m-YKt"/>
                     <connections>
+                        <outlet property="bottom" destination="4pz-lT-Myp" id="uS9-nA-a3t"/>
+                        <outlet property="buttonsView" destination="y0q-xD-ByA" id="CoT-Su-u2N"/>
                         <outlet property="chaptersTblView" destination="xIe-OK-s5W" id="H8g-Ph-K6c"/>
                         <outlet property="collectionView" destination="zEm-F2-dr0" id="UHG-wp-IUb"/>
                         <outlet property="lblMain" destination="mO4-fs-vn6" id="Y87-ME-Yrf"/>
@@ -795,6 +798,7 @@
                         <outlet property="lblVerse" destination="exI-SS-lmt" id="CnZ-gR-7qF"/>
                         <outlet property="lblVolCount" destination="UOd-R0-6d6" id="PA7-Qz-adu"/>
                         <outlet property="leading" destination="Xtc-Lc-5ae" id="ByH-be-tj9"/>
+                        <outlet property="menuView" destination="bZn-ZK-J2a" id="sm9-Cn-CUT"/>
                         <outlet property="qarisView" destination="b9C-9x-ah7" id="Wnn-wN-wC1"/>
                         <outlet property="quranView" destination="i9I-TN-DIo" id="VOu-ZJ-btA"/>
                         <outlet property="scrollView" destination="t78-w4-Kvz" id="Tu1-6i-Tid"/>
@@ -808,7 +812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.60000000000002" y="80.50974512743629"/>
+            <point key="canvasLocation" x="244" y="81"/>
         </scene>
         <!--Light View Controller-->
         <scene sceneID="tEV-2t-xGk">
@@ -902,6 +906,7 @@
                                             <constraint firstItem="LWE-8E-pUO" firstAttribute="top" secondItem="B9t-JF-bmi" secondAttribute="top" id="7by-UA-ztB"/>
                                             <constraint firstAttribute="trailing" secondItem="Ix6-7x-tgp" secondAttribute="trailing" id="BBp-9j-kCl"/>
                                             <constraint firstItem="atx-eT-ARL" firstAttribute="leading" secondItem="B9t-JF-bmi" secondAttribute="leading" id="CEc-DE-Nhq"/>
+                                            <constraint firstAttribute="height" constant="93.5" id="OTO-Y8-Ax9"/>
                                             <constraint firstItem="SLs-5y-tjM" firstAttribute="top" secondItem="B9t-JF-bmi" secondAttribute="top" id="PgS-d1-pqy"/>
                                             <constraint firstItem="SLs-5y-tjM" firstAttribute="leading" secondItem="LWE-8E-pUO" secondAttribute="trailing" id="Uvk-lG-v8U"/>
                                             <constraint firstAttribute="bottom" secondItem="LWE-8E-pUO" secondAttribute="bottom" id="aCl-WP-nVj"/>
@@ -964,6 +969,7 @@
                                             <constraint firstItem="CKX-lW-rpw" firstAttribute="leading" secondItem="fPA-lk-kQM" secondAttribute="trailing" id="2Ki-AH-fvg"/>
                                             <constraint firstAttribute="bottom" secondItem="fPA-lk-kQM" secondAttribute="bottom" id="3G2-aS-zKl"/>
                                             <constraint firstItem="fal-Wy-ayf" firstAttribute="top" secondItem="uJQ-FJ-Iwq" secondAttribute="top" id="5YA-IA-sTw"/>
+                                            <constraint firstAttribute="height" constant="93.5" id="8ZM-y6-4Yq"/>
                                             <constraint firstAttribute="trailing" secondItem="Rlf-6G-iAg" secondAttribute="trailing" id="A9f-lC-1ZS"/>
                                             <constraint firstAttribute="bottom" secondItem="fal-Wy-ayf" secondAttribute="bottom" id="BtA-Ag-8md"/>
                                             <constraint firstAttribute="bottom" secondItem="Rlf-6G-iAg" secondAttribute="bottom" id="FDq-RZ-lmX"/>
@@ -1081,7 +1087,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oez-jC-Qp9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="80.50974512743629"/>
+            <point key="canvasLocation" x="966" y="81"/>
         </scene>
         <!--Prayer View Controller-->
         <scene sceneID="b4p-0f-As9">
@@ -1675,7 +1681,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbL-Tv-hwk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="80.50974512743629"/>
+            <point key="canvasLocation" x="1695" y="81"/>
         </scene>
         <!--Set View Controller-->
         <scene sceneID="MML-oi-L5e">

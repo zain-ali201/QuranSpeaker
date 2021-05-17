@@ -224,7 +224,6 @@ class AKPrayerTime {
         comp.month = month
         comp.day = day
         calcDate = AKPrayerTime.gregorianCalendar.date(from: comp)
-        
         timeZone = tZone
         
         jDate = AKPrayerTime.julianDate(year: year, month: month, day: day)

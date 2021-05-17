@@ -13,6 +13,9 @@ var currentVolume = 20
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate
 {
+    @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var buttonsView: UIView!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblMain: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -53,7 +56,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var test = false
     
     //BLE
-    var manager : CBCentralManager!
+//    var manager : CBCentralManager!
 //    var myBluetoothPeripheral : CBPeripheral!
 //    var myCharacteristic : CBCharacteristic!
 //    var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
@@ -63,6 +66,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad()
     {
+        homeVC = self
+        
         sliderView.layer.cornerRadius = 10.0
         sliderView.layer.masksToBounds = true
         volSlider.value = Float(currentVolume)
@@ -93,17 +98,187 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         txtMainView.addGestureRecognizer(swipeGestureRecognizerRight)
         txtMainView.addGestureRecognizer(swipeGestureRecognizerLeft)
+        
+//        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
+//        txtMainView.addGestureRecognizer(pinchGesture)
+        
+        AppUtility.lockOrientation(.all)
+        
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        manager = nil
-//        isMyPeripheralConected = false
-//        myBluetoothPeripheral = nil
-//    }
+    @objc func readDeviceValues()
+    {
+        if myBluetoothPeripheral != nil && quranCharacteristic != nil
+        {
+            myBluetoothPeripheral.readValue(for: quranCharacteristic)
+        }
+    }
+    
+    func fetchAppData(byteArray: [UInt8])
+    {
+        let firstBitValue = byteArray[0] & 0x01
+        
+        if firstBitValue != 0
+        {
+            let type = Character(UnicodeScalar(byteArray[0]))
+            
+            if type == "Q"
+            {
+                let bleSurah = Int(byteArray[1])
+                let bleAyat = Int(byteArray[3])
+                
+                print("bleSurah: \(bleSurah)")
+                print("bleAyat: \(bleAyat)")
+                
+                if bleAyat != verseNo
+                {
+                    chapterNo = bleSurah
+                    verseNo = bleAyat
+                    changeAyat()
+                }
+            }
+            
+            if type == "R"
+            {
+                for i in 1..<byteArray.count
+                {
+                    let qari = Int(byteArray[i])
+                    print("qari: \(qari)")
+                }
+            }
+            
+            if type == "T"
+            {
+                for i in 1..<byteArray.count
+                {
+                    let trans = Int(byteArray[i])
+                    print("trans: \(trans)")
+                }
+            }
+        }
+    }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
+    {
+        if toInterfaceOrientation == .landscapeLeft || toInterfaceOrientation == .landscapeRight{
+            menuView.isHidden = true
+            buttonsView.isHidden = true
+            bottom.constant = -285
+        }
+        else{
+            menuView.isHidden = false
+            buttonsView.isHidden = false
+            bottom.constant = 0
+        }
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        changeAyat()
+    }
+    
+    func changeAyat()
+    {
+        if chapterNo == 0
+        {
+            chapterNo = 1
+        }
+        
+        if verseNo == 0
+        {
+            verseNo = 1
+        }
+        
+        lblTitle.text = String(format: "سورة %@",indexArray[chapterNo - 1])
+        
+        let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
+        let ayatObj = ayatsArray[verseNo - 1]
+        
+        var prefix = "KSF"
+
+        if ayatObj.page < 3
+        {
+            prefix.append("00")
+        }
+        else if ayatObj.page < 10
+        {
+            prefix.append("P00")
+        }
+        else if ayatObj.page < 100
+        {
+            prefix.append("P0")
+        }
+        else
+        {
+            prefix.append("P")
+        }
+
+        if lblMain != nil
+        {
+            lblMain.alpha = 0
+        }
+        
+        let fontName = String(format:"%@%d", prefix, ayatObj.page)
+        let font = UIFont(name: fontName, size: 50)!
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        
+        for view in txtMainView.subviews
+        {
+            view.removeFromSuperview()
+        }
+        
+        var resultStr = ""
+        var xAxis:CGFloat =  txtMainView.frame.width
+        var yAxis:CGFloat = 10.0
+
+//            var printResult = ""
+
+        for i in ayatObj.start...ayatObj.end
+        {
+            var code = i
+            if code == 127
+            {
+                code = 254
+            }
+            
+            resultStr = String(Character(UnicodeScalar(code)!))
+            var width:CGFloat = 0.0
+
+//                printResult += "{\(1), \(resultStr)}, "
+
+            let string = resultStr
+            let size:CGSize = string.sizeOfString(usingFont: attrs)
+            width = size.width
+
+            if width > 17 //&& string != "·"
+            {
+                if (xAxis - width) < 0
+                {
+                    xAxis = txtMainView.frame.width
+                    yAxis += 70.0
+                }
+
+                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                lbl.font = font
+                lbl.text = string
+                txtMainView.addSubview(lbl)
+                xAxis -= width + 5
+            }
+        }
+//            print("//////////////////////////////////////////////")
+//            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
+//            print("Font: \(fontName)")
+//            print(printResult)
+//            print("//////////////////////////////////////////////")
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
+    }
     
     func loadQaris()
     {
@@ -271,15 +446,67 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         qarisView.alpha = 1
     }
     
+//    @objc private func didPinch(_ sender: UIPinchGestureRecognizer) {
+//        guard let targetView = sender.view else {return}
+//
+//        targetView.transform = targetView.transform.scaledBy(x: sender.scale, y: sender.scale)
+//        sender.scale = 1
+//    }
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return txtMainView
     }
     
-    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
-
+    func scrollViewDidZoom (_ scrollView: UIScrollView)
+    {
+        /// If paging is not switched depending on the scale, it will shift when it is enlarged.
+        if scrollView.zoomScale == 1.0 {
+            self.scrollView.isPagingEnabled = true
+        } else {
+            self.scrollView.isPagingEnabled = false
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // horizontal
+//        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
+//        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
+//
+//        // vertical
+//        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
+//        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
+//
+//        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
+//        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
+//
+//        print(percentageHorizontalOffset)
+//
+//        if percentageHorizontalOffset <= 0
+//        {
+//            changeAyat(sender: UISwipeGestureRecognizer.Direction.right)
+//        }
+//        else if percentageHorizontalOffset >= 1
+//        {
+//            changeAyat(sender: UISwipeGestureRecognizer.Direction.left)
+//        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+    }
+    
+    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer)
+    {
+        changeAyat(sender: sender.direction)
+    }
+    
+    func changeAyat(sender: UISwipeGestureRecognizer.Direction)
+    {
         var flag = false
         
-        if sender.direction == .left
+        if sender == .left
         {
             if chapterNo > 1
             {
@@ -537,33 +764,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         let currentValue = Int(sender.value)
         lblVolCount.text = "\(currentValue)"
-        var value = UInt8(currentValue)
+        let value = UInt8(currentValue)
         print(value)
         if isMyPeripheralConected
         {
-            var key = 2
-            if value < currentVolume
-            {
-                let dataToSend = NSMutableData()
-//                dataToSend.append("2".data(using: String.Encoding.utf8)!)
-//                dataToSend.append(Data(bytes: &val, count: MemoryLayout.size(ofValue: val)))
-                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
-                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                print("value written")
-                currentVolume = currentValue
-            }
-            else if value > currentVolume
-            {
-                let dataToSend = NSMutableData()
-//                dataToSend.append("2".data(using: String.Encoding.utf8)!)
-//                dataToSend.append(Data(bytes: &val, count: MemoryLayout.size(ofValue: val)))
-                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
-                dataToSend.append(Data(bytes: &value, count: MemoryLayout.size(ofValue: value)))
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                print("value written")
-                currentVolume = currentValue
-            }
+            let dataToSend = Data([2,value])
+            myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
         else
         {
@@ -1010,13 +1216,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let characterArray = service.characteristics as [CBCharacteristic]? {
             
             for cc in characterArray {
-                print(cc.uuid)
+                print("UUID: \(cc.uuid.uuidString)")
                 if(cc.uuid == quranUUID) {
-                    print("UUID: \(cc.uuid.uuidString)")
+                    print("QuranUUID: \(cc.uuid.uuidString)")
                     quranCharacteristic = cc
                 }
                 else if(cc.uuid == prayersUUID) {
-                    print("UUID: \(cc.uuid.uuidString)")
+                    print("PrayersUUID: \(cc.uuid.uuidString)")
                     prayersCharacteristic = cc
                 }
             }
@@ -1033,7 +1239,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 }
-
 
 class TableCell: UITableViewCell
 {

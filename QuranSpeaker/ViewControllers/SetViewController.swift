@@ -22,15 +22,14 @@ class SetViewController: CollapsibleTableSectionViewController, CollapsibleTable
             Item(name: "ON", detail: "")
         ]),
         Section(name: "Calculation Method", items: [
-            Item(name: "Jafari", detail: ""),
-            Item(name: "Karachi", detail: ""),
-            Item(name: "ISNA", detail: ""),
             Item(name: "MWL", detail: ""),
-            Item(name: "Makkah", detail: ""),
+            Item(name: "ISNA", detail: ""),
             Item(name: "Egypt", detail: ""),
-            Item(name: "Custom", detail: ""),
-            Item(name: "Tehran", detail: "")
-            
+            Item(name: "Makkah", detail: ""),
+            Item(name: "Karachi", detail: ""),
+            Item(name: "Tehran", detail: ""),
+            Item(name: "Jafari", detail: "")//,
+//            Item(name: "Custom", detail: "")
         ])]
     
     override func viewDidLoad() {
@@ -88,7 +87,67 @@ class SetViewController: CollapsibleTableSectionViewController, CollapsibleTable
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.detail
         
+        
+        
+        if indexPath.section == 0
+        {
+            let juristic = defaults.value(forKey: "juristic") as? Int
+            
+            if juristic == indexPath.row + 1
+            {
+                cell.accessoryType = .checkmark
+            }
+            else
+            {
+                cell.accessoryType = .none
+            }
+        }
+        
+        if indexPath.section == 1
+        {
+            let daylight = defaults.value(forKey: "daylight") as? Int
+            if daylight == indexPath.row + 1
+            {
+                cell.accessoryType = .checkmark
+            }
+            else
+            {
+                cell.accessoryType = .none
+            }
+        }
+        
+        if indexPath.section == 2
+        {
+            let method = defaults.value(forKey: "method") as? Int
+            if method == indexPath.row + 1
+            {
+                cell.accessoryType = .checkmark
+            }
+            else
+            {
+                cell.accessoryType = .none
+            }
+            
+        }
+        
         return cell
+    }
+    
+    func collapsibleTableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0
+        {
+            defaults.set(indexPath.row + 1, forKey: "juristic")
+        }
+        else if indexPath.section == 1
+        {
+            defaults.set(indexPath.row + 1, forKey: "daylight")
+        }
+        else if indexPath.section == 2
+        {
+            defaults.set(indexPath.row + 1, forKey: "method")
+        }
+        tableView.reloadData()
+//        self.navigationController?.popViewController(animated: true)
     }
     
     func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

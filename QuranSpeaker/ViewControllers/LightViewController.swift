@@ -26,25 +26,8 @@ class LightViewController: UIViewController
         colorView.set(color: .red, colorSpace: .extendedSRGB)
         
 //        manager = CBCentralManager(delegate: self, queue: nil)
-    }
-    
-    @objc func selectColor()
-    {
-        let red = colorView.color.components.red * 255 > 0 ? colorView.color.components.red * 255 : 0
-        let green = colorView.color.components.green * 255 > 0 ? colorView.color.components.green * 255 : 0
-        let blue = colorView.color.components.blue * 255 > 0 ? colorView.color.components.blue * 255 : 0
         
-        print(green)
-        
-        if isMyPeripheralConected && myBluetoothPeripheral != nil
-        {
-            let dataToSend = Data([UInt8(Character("L").asciiValue!), UInt8(red), UInt8(green), UInt8(blue)])
-            myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        }
-        else
-        {
-            self.view.makeToast("Bluetooth device disconnected")
-        }
+        AppUtility.lockOrientation(.portrait)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -56,6 +39,27 @@ class LightViewController: UIViewController
 //        isMyPeripheralConected = false
 //        myBluetoothPeripheral = nil
 //    }
+    
+    @objc func selectColor()
+    {
+        let red = colorView.color.components.red * 255 > 0 ? colorView.color.components.red * 255 : 0
+        let green = colorView.color.components.green * 255 > 0 ? colorView.color.components.green * 255 : 0
+        let blue = colorView.color.components.blue * 255 > 0 ? colorView.color.components.blue * 255 : 0
+        
+//        print(red)
+//        print(green)
+//        print(blue)
+        
+        if isMyPeripheralConected && myBluetoothPeripheral != nil
+        {
+            let dataToSend = Data([UInt8(Character("L").asciiValue!), UInt8(red/2), UInt8(green/2), UInt8(blue/2)])
+            myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
+        else
+        {
+            self.view.makeToast("Bluetooth device disconnected")
+        }
+    }
     
     @IBAction func colorsBtnAction(_ button: UIButton)
     {
@@ -111,7 +115,7 @@ class LightViewController: UIViewController
         
         if isMyPeripheralConected && quranCharacteristic != nil
         {
-            let dataToSend = Data([UInt8(Character("L").asciiValue!), UInt8(red), UInt8(green), UInt8(blue)])
+            let dataToSend = Data([UInt8(Character("L").asciiValue!), UInt8(red/2), UInt8(green/2), UInt8(blue/2)])
             myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
         else
