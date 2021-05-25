@@ -9,7 +9,6 @@ import UIKit
 import CoreBluetooth
 
 var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
-var prayersUUID: CBUUID = CBUUID(string: "0000ae01-0000-1000-8000-00805f9b34fb")
 var quranCharacteristic : CBCharacteristic!
 var prayersCharacteristic : CBCharacteristic!
 var isMyPeripheralConected = false
@@ -98,10 +97,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
                 if(cc.uuid == quranUUID) {
                     print("QuranUUID: \(cc.uuid.uuidString)")
                     quranCharacteristic = cc
-                }
-                else if(cc.uuid == prayersUUID) {
-                    print("PrayersUUID: \(cc.uuid.uuidString)")
-                    prayersCharacteristic = cc
                 }
             }
         }

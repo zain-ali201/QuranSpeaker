@@ -54,6 +54,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var verseNo = 1
     var verseCount = 0
     var test = false
+    var timer:Timer!
     
     //BLE
 //    var manager : CBCentralManager!
@@ -72,9 +73,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         sliderView.layer.masksToBounds = true
         volSlider.value = Float(currentVolume)
         
-        transArray = [HomeObject(name: "Urdu", img: UIImage(named: "Pakistan")!, key: ""), HomeObject(name: "English", img: UIImage(named: "England")!, key: "") , HomeObject(name: "French", img: UIImage(named: "France")!, key: ""), HomeObject(name: "Turkish", img: UIImage(named: "Turki")!, key: "")]
-        
-//        manager = CBCentralManager(delegate: self, queue: nil)
+        transArray = [HomeObject(name: "Farsi", img: UIImage(named: "Iran")!, key: ""), HomeObject(name: "Other", img: UIImage(named: "Other")!, key: ""), HomeObject(name: "Uzbek", img: UIImage(named: "Uzbekistan")!, key: ""), HomeObject(name: "English", img: UIImage(named: "England")!, key:""), HomeObject(name: "Urdu", img: UIImage(named: "Pakistan")!, key:""), HomeObject(name: "French", img: UIImage(named: "France")!, key: "")]
         
         quranView.layer.borderWidth = 1
         quranView.layer.borderColor = UIColor.darkGray.cgColor
@@ -104,7 +103,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         AppUtility.lockOrientation(.all)
         
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -283,122 +282,54 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadQaris()
     {
         let qariNames:[String] = [
-                        "Abdul Rahman Al Sudais",
-                        "Abdul Basit",
-                        "Maher Almuaiqly",
-                        "Ahmed Bin Ali Ajmi",
-                        "Saad Al-Ghamidi",
-                        "Muhammad Siddiq al-Minshawi",
-                        "Mishary Rashid Alafasy",
-                        "Mahmoud Khalil Al Hussary",
-                        "Abdur Rahman al Hudhaifi",
-                        "Muhammad Ayub",
                         "Abdullah Basfar",
-                        "Abu Bakr Al Shatri",
-                        "Hani Ar Rifai",
+                        "Muhammad Ibrahim",
+                        "Saad Al-Ghamidi",
+                        "Mishary Rashid Alafasy",
+                        "Maher Almuaiqly",
+                        "Abdur Rehman al Hudhaifi",
+                        "Muhammad Siddiq al-Minshawi",
+                        "Abdul Mohsen Al Qasim",
+                        "Abdul Basit",
                         "Muhammad Jebril",
-                        "Ibrahim Al Akhdar",
-                        "Other",
-                        "Saleh Albudair",
-                        "Other",
-                        "Qari Barakatullah Saleem",
-                        "Abdurrashid Sufi",
-                        "Other",
-                        "Other",
-                        "Other",
-                        "Other",
-                        "WBW",
-                        "Abdulmohsen Al Qasim",
-                        "Abdur Rahman Bukhatir",
-                        "MUHAMMAD Al Tablawy",
-                        "Ibrahim Al Akhdar",
-                        "Wahid Zafar Qasmi",
-                        "Sadaqat Ali",
-                        "Other",
-                        "Other",
-                        "Other",
-                        "Other",
-                        "Minshawi with Children",
-                        "Mahmoud Khalil Hussary with Chiled",
-                        "Abdul Basit Mujawid",
-                        "Saleh Albudair",
-                        "Abdullah Awwad Aljuhany",
-                        "Ayman Swad",
-                        "Other",
-                        "Yasir Quresi",
-                        "Ibraheem Jamal",
-                        "Ahmed Deban",
-                        "Raad Alkurd",
-                        "Alsultani riwayah Hasham ibne amir",
-                        "Alsultani riwayah Hasham ibne amir",
-                        "Yaqoob al hazarmi",
+                        "Muhammad Ayub",
+                        "Ahmed Bin Ali Ajmi",
+                        "Mahmoud Khalil Al Hussary",
+                        "Abdul Rahman Al Sudais"
         ]
         
         let qariImages:[String] = [
-                    "01Sudais",
-                    "02abdulbasit",
-                    "03Muaqly",
-                    "04ajmi",
-                    "05Ghamdi",
-                    "06minshawi",
-                    "07Alfasey",
-                    "08alhusary",
-                    "09hudaify",
-                    "10Ayub",
-                    "11basfer",
-                    "12abubakershatery",
-                    "13arrifai",
-                    "14jibreel",
-                    "15ibraheemakhder",
-                    "defaultReader",
-                    "17SalehBudair",
-                    "defaultReader",
-                    "19qarisaleem",
-                    "20rasheedsofi",
-                    "defaultReader",
-                    "defaultReader",
-                    "defaultReader",
-                    "defaultReader",
-                    "defaultReader",
-                    "26Muhsin",
-                    "27bukhater",
-                    "28Tablawy",
-                    "29ibraheem",
-                    "30waheedzafer",
-                    "31sadaqatali",
-                    "defaultReader",
-                    "defaultReader",
-                    "defaultReader",
-                    "defaultReader",
-                    "36minshawiwithchiled",
-                    "37AlhusarywithChild",
-                    "38AbdulBasit(Mujawed)",
-                    "defaultReader",
-                    "40Aljuhany",
-                    "41AymanSwad",
-                    "defaultReader",
-                    "43YasirQuresi",
-                    "defaultReader",
-                    "defaultReader",
-                    "46RaadAlkurd",
-                    "defaultReader",
-                    "defaultReader",
-                    "defaultReader",
-                    "defaultReader",
+                    "01basfer",
+                    "02ibraheem",
+                    "03Ghamdi",
+                    "04Alfasey",
+                    "05Muaqly",
+                    "06hudaify",
+                    "07minshawi",
+                    "08Muhsin",
+                    "09abdulbasit",
+                    "10jibreel",
+                    "11Ayub",
+                    "12ajmi",
+                    "13alhusary",
+                    "14Sudais"
             ]
         
-        for i in 0..<qariNames.count
+        for i in 0..<qariImages.count
         {
             //Simple usage example with NSData
+//            print(qariImages[i])
             let filePath = Bundle.main.path(forResource: qariImages[i], ofType: "webp")
-
+//            print(filePath)
             if filePath != nil && filePath != ""
             {
                 var fileData:NSData? = nil
-                do {
+                do
+                {
                     fileData = try NSData(contentsOfFile: filePath!, options: NSData.ReadingOptions.uncached)
                 }
-                catch {
+                catch
+                {
                     print("Error loading WebP file")
                 }
                 
@@ -422,7 +353,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 "Sahih Bukhari",
                 "Sahih Muslim",
                 "Hisnul Muslim",
-                "40 Ahdith"]
+                "40 Ahdith",
+                "MP3"
+        ]
         
         let bookKeys:[Int] = [5,27,10,6,7,8,9,26,27]
         
@@ -652,6 +585,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let surat = UInt8(chapterNo)
                 let div = UInt8(division)
                 let rem = UInt8(remainder)
+                
+                timer.invalidate()
+                timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
 
                 let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
@@ -1124,6 +1060,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let surat = UInt8(chapterNo)
                 let div = UInt8(division)
                 let rem = UInt8(remainder)
+                
+                timer.invalidate()
+                timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
 
                 let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
@@ -1221,10 +1160,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("QuranUUID: \(cc.uuid.uuidString)")
                     quranCharacteristic = cc
                 }
-                else if(cc.uuid == prayersUUID) {
-                    print("PrayersUUID: \(cc.uuid.uuidString)")
-                    prayersCharacteristic = cc
-                }
             }
         }
     }
@@ -1233,9 +1168,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         if (characteristic.uuid == quranUUID) {
             
-            let readValue = characteristic.value
-            let value = (readValue! as NSData).bytes.bindMemory(to: Int.self, capacity: readValue!.count).pointee //used to read an Int value
-            print ("Value: \(value)")
+            guard let characteristicData = characteristic.value else { return }
+            let byteArray = [UInt8](characteristicData)
+            fetchAppData(byteArray: byteArray)
         }
     }
 }

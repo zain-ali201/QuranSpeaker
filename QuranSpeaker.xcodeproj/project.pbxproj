@@ -10,14 +10,29 @@
 		1815DC1625E1AC4000DBF6DA /* BLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815DC1525E1AC4000DBF6DA /* BLEViewController.swift */; };
 		182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD3FE25CC2DD500D59FF2 /* Chapter.swift */; };
 		182FD40325CC2E2200D59FF2 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD40225CC2E2200D59FF2 /* Verse.swift */; };
-		1837DF9D261205E800FCF9EC /* Book7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1837DF95261205E800FCF9EC /* Book7.webp */; };
-		1837DF9E261205E800FCF9EC /* Book6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1837DF96261205E800FCF9EC /* Book6.webp */; };
-		1837DF9F261205E800FCF9EC /* Book1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1837DF97261205E800FCF9EC /* Book1.webp */; };
-		1837DFA0261205E800FCF9EC /* Book3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1837DF98261205E800FCF9EC /* Book3.webp */; };
-		1837DFA1261205E800FCF9EC /* Book2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1837DF99261205E800FCF9EC /* Book2.webp */; };
-		1837DFA2261205E800FCF9EC /* Book5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1837DF9A261205E800FCF9EC /* Book5.webp */; };
-		1837DFA3261205E800FCF9EC /* Book8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1837DF9B261205E800FCF9EC /* Book8.webp */; };
-		1837DFA4261205E800FCF9EC /* Book4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1837DF9C261205E800FCF9EC /* Book4.webp */; };
+		18454B10265D434C0049F661 /* 11Ayub.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B02265D434A0049F661 /* 11Ayub.webp */; };
+		18454B11265D434C0049F661 /* 04Alfasey.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B03265D434A0049F661 /* 04Alfasey.webp */; };
+		18454B12265D434C0049F661 /* 02ibraheem.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B04265D434A0049F661 /* 02ibraheem.webp */; };
+		18454B13265D434C0049F661 /* 12ajmi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B05265D434A0049F661 /* 12ajmi.webp */; };
+		18454B14265D434C0049F661 /* 05Muaqly.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B06265D434B0049F661 /* 05Muaqly.webp */; };
+		18454B15265D434C0049F661 /* 01basfer.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B07265D434B0049F661 /* 01basfer.webp */; };
+		18454B16265D434C0049F661 /* 09abdulbasit.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B08265D434B0049F661 /* 09abdulbasit.webp */; };
+		18454B17265D434C0049F661 /* 13alhusary.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B09265D434B0049F661 /* 13alhusary.webp */; };
+		18454B18265D434C0049F661 /* 10jibreel.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0A265D434B0049F661 /* 10jibreel.webp */; };
+		18454B19265D434C0049F661 /* 08Muhsin.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0B265D434B0049F661 /* 08Muhsin.webp */; };
+		18454B1A265D434C0049F661 /* 03Ghamdi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0C265D434B0049F661 /* 03Ghamdi.webp */; };
+		18454B1B265D434C0049F661 /* 07minshawi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0D265D434C0049F661 /* 07minshawi.webp */; };
+		18454B1C265D434C0049F661 /* 14Sudais.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0E265D434C0049F661 /* 14Sudais.webp */; };
+		18454B1D265D434C0049F661 /* 06hudaify.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0F265D434C0049F661 /* 06hudaify.webp */; };
+		18454B29265D44370049F661 /* Book7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B20265D44360049F661 /* Book7.webp */; };
+		18454B2A265D44370049F661 /* Book8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B21265D44370049F661 /* Book8.webp */; };
+		18454B2B265D44370049F661 /* Book5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B22265D44370049F661 /* Book5.webp */; };
+		18454B2C265D44370049F661 /* Book4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B23265D44370049F661 /* Book4.webp */; };
+		18454B2D265D44370049F661 /* Book1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B24265D44370049F661 /* Book1.webp */; };
+		18454B2E265D44370049F661 /* Book6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B25265D44370049F661 /* Book6.webp */; };
+		18454B2F265D44370049F661 /* Book2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B26265D44370049F661 /* Book2.webp */; };
+		18454B30265D44370049F661 /* Book3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B27265D44370049F661 /* Book3.webp */; };
+		18454B31265D44370049F661 /* Book9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B28265D44370049F661 /* Book9.webp */; };
 		185332A525DD44C20045A745 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185332A425DD44C20045A745 /* CountryViewController.swift */; };
 		1865F1FE26383760005552FC /* KSF_P581.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1865EFA226383754005552FC /* KSF_P581.ttf */; };
 		1865F1FF26383760005552FC /* KSF_P595.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1865EFA326383754005552FC /* KSF_P595.ttf */; };
@@ -626,38 +641,6 @@
 		186DA40225C7FEE000D4F154 /* DaylightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */; };
 		186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40025C7FEE000D4F154 /* JuristicViewController.swift */; };
 		186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40125C7FEE000D4F154 /* CityViewController.swift */; };
-		1878F088261C597500B8153D /* 37AlhusarywithChild.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F049261C597100B8153D /* 37AlhusarywithChild.webp */; };
-		1878F089261C597500B8153D /* 41AymanSwad.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F04A261C597100B8153D /* 41AymanSwad.webp */; };
-		1878F08B261C597500B8153D /* 36minshawiwithchiled.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F04C261C597100B8153D /* 36minshawiwithchiled.webp */; };
-		1878F090261C597500B8153D /* 46RaadAlkurd.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F051261C597100B8153D /* 46RaadAlkurd.webp */; };
-		1878F092261C597500B8153D /* 29ibraheem.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F053261C597100B8153D /* 29ibraheem.webp */; };
-		1878F093261C597500B8153D /* 14jibreel.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F054261C597100B8153D /* 14jibreel.webp */; };
-		1878F094261C597500B8153D /* 17SalehBudair.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F055261C597100B8153D /* 17SalehBudair.webp */; };
-		1878F095261C597500B8153D /* 40Aljuhany.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F056261C597100B8153D /* 40Aljuhany.webp */; };
-		1878F096261C597500B8153D /* 11basfer.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F057261C597200B8153D /* 11basfer.webp */; };
-		1878F097261C597500B8153D /* 04ajmi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F058261C597200B8153D /* 04ajmi.webp */; };
-		1878F098261C597500B8153D /* 43YasirQuresi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F059261C597200B8153D /* 43YasirQuresi.webp */; };
-		1878F099261C597500B8153D /* 08alhusary.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F05A261C597200B8153D /* 08alhusary.webp */; };
-		1878F09A261C597500B8153D /* 09hudaify.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F05B261C597200B8153D /* 09hudaify.webp */; };
-		1878F09F261C597500B8153D /* 05Ghamdi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F060261C597200B8153D /* 05Ghamdi.webp */; };
-		1878F0A0261C597500B8153D /* 15ibraheemakhder.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F061261C597200B8153D /* 15ibraheemakhder.webp */; };
-		1878F0A3261C597500B8153D /* 19qarisaleem.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F064261C597200B8153D /* 19qarisaleem.webp */; };
-		1878F0A5261C597500B8153D /* 13arrifai.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F066261C597300B8153D /* 13arrifai.webp */; };
-		1878F0A8261C597500B8153D /* 03Muaqly.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F069261C597300B8153D /* 03Muaqly.webp */; };
-		1878F0A9261C597500B8153D /* defaultReader.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F06A261C597300B8153D /* defaultReader.webp */; };
-		1878F0AA261C597500B8153D /* 01Sudais.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F06B261C597300B8153D /* 01Sudais.webp */; };
-		1878F0AC261C597500B8153D /* 27bukhater.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F06D261C597300B8153D /* 27bukhater.webp */; };
-		1878F0B0261C597500B8153D /* 07Alfasey.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F071261C597300B8153D /* 07Alfasey.webp */; };
-		1878F0B2261C597500B8153D /* 06minshawi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F073261C597300B8153D /* 06minshawi.webp */; };
-		1878F0B3261C597500B8153D /* 31sadaqatali.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F074261C597300B8153D /* 31sadaqatali.webp */; };
-		1878F0B8261C597500B8153D /* 20rasheedsofi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F079261C597400B8153D /* 20rasheedsofi.webp */; };
-		1878F0B9261C597500B8153D /* 02abdulbasit.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F07A261C597400B8153D /* 02abdulbasit.webp */; };
-		1878F0BA261C597500B8153D /* 10Ayub.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F07B261C597400B8153D /* 10Ayub.webp */; };
-		1878F0BB261C597500B8153D /* 28Tablawy.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F07C261C597400B8153D /* 28Tablawy.webp */; };
-		1878F0BC261C597500B8153D /* 12abubakershatery.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F07D261C597400B8153D /* 12abubakershatery.webp */; };
-		1878F0CF261C5A9000B8153D /* 26Muhsin.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0CE261C5A9000B8153D /* 26Muhsin.webp */; };
-		1878F0D3261C5AE300B8153D /* 30waheedzafer.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0D2261C5AE300B8153D /* 30waheedzafer.webp */; };
-		1878F0D7261C5B1F00B8153D /* 38AbdulBasit(Mujawed).webp in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0D6261C5B1F00B8153D /* 38AbdulBasit(Mujawed).webp */; };
 		1879A86325C3E2D200FC0219 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879A86225C3E2D100FC0219 /* SetViewController.swift */; };
 		18A9C64126038F7E004D1078 /* quran.xml in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64026038F7E004D1078 /* quran.xml */; };
 		18AD5DC625EFCC8F006D27FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD5DC525EFCC8F006D27FD /* Toast.swift */; };
@@ -683,14 +666,29 @@
 		181A795B26301A5600E3F730 /* ScheherazadeNew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Regular.ttf"; sourceTree = "<group>"; };
 		182FD3FE25CC2DD500D59FF2 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		182FD40225CC2E2200D59FF2 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
-		1837DF95261205E800FCF9EC /* Book7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book7.webp; sourceTree = "<group>"; };
-		1837DF96261205E800FCF9EC /* Book6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book6.webp; sourceTree = "<group>"; };
-		1837DF97261205E800FCF9EC /* Book1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book1.webp; sourceTree = "<group>"; };
-		1837DF98261205E800FCF9EC /* Book3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book3.webp; sourceTree = "<group>"; };
-		1837DF99261205E800FCF9EC /* Book2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book2.webp; sourceTree = "<group>"; };
-		1837DF9A261205E800FCF9EC /* Book5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book5.webp; sourceTree = "<group>"; };
-		1837DF9B261205E800FCF9EC /* Book8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book8.webp; sourceTree = "<group>"; };
-		1837DF9C261205E800FCF9EC /* Book4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book4.webp; sourceTree = "<group>"; };
+		18454B02265D434A0049F661 /* 11Ayub.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11Ayub.webp; sourceTree = "<group>"; };
+		18454B03265D434A0049F661 /* 04Alfasey.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04Alfasey.webp; sourceTree = "<group>"; };
+		18454B04265D434A0049F661 /* 02ibraheem.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02ibraheem.webp; sourceTree = "<group>"; };
+		18454B05265D434A0049F661 /* 12ajmi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 12ajmi.webp; sourceTree = "<group>"; };
+		18454B06265D434B0049F661 /* 05Muaqly.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05Muaqly.webp; sourceTree = "<group>"; };
+		18454B07265D434B0049F661 /* 01basfer.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01basfer.webp; sourceTree = "<group>"; };
+		18454B08265D434B0049F661 /* 09abdulbasit.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 09abdulbasit.webp; sourceTree = "<group>"; };
+		18454B09265D434B0049F661 /* 13alhusary.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 13alhusary.webp; sourceTree = "<group>"; };
+		18454B0A265D434B0049F661 /* 10jibreel.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10jibreel.webp; sourceTree = "<group>"; };
+		18454B0B265D434B0049F661 /* 08Muhsin.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 08Muhsin.webp; sourceTree = "<group>"; };
+		18454B0C265D434B0049F661 /* 03Ghamdi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 03Ghamdi.webp; sourceTree = "<group>"; };
+		18454B0D265D434C0049F661 /* 07minshawi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07minshawi.webp; sourceTree = "<group>"; };
+		18454B0E265D434C0049F661 /* 14Sudais.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 14Sudais.webp; sourceTree = "<group>"; };
+		18454B0F265D434C0049F661 /* 06hudaify.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 06hudaify.webp; sourceTree = "<group>"; };
+		18454B20265D44360049F661 /* Book7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book7.webp; sourceTree = "<group>"; };
+		18454B21265D44370049F661 /* Book8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book8.webp; sourceTree = "<group>"; };
+		18454B22265D44370049F661 /* Book5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book5.webp; sourceTree = "<group>"; };
+		18454B23265D44370049F661 /* Book4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book4.webp; sourceTree = "<group>"; };
+		18454B24265D44370049F661 /* Book1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book1.webp; sourceTree = "<group>"; };
+		18454B25265D44370049F661 /* Book6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book6.webp; sourceTree = "<group>"; };
+		18454B26265D44370049F661 /* Book2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book2.webp; sourceTree = "<group>"; };
+		18454B27265D44370049F661 /* Book3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book3.webp; sourceTree = "<group>"; };
+		18454B28265D44370049F661 /* Book9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book9.webp; sourceTree = "<group>"; };
 		18506F45260B3609003C2BBC /* QuranSpeaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranSpeaker-Bridging-Header.h"; sourceTree = "<group>"; };
 		185332A425DD44C20045A745 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		1865EFA226383754005552FC /* KSF_P581.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P581.ttf; sourceTree = "<group>"; };
@@ -1300,38 +1298,6 @@
 		186DA3FF25C7FEE000D4F154 /* DaylightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaylightViewController.swift; sourceTree = "<group>"; };
 		186DA40025C7FEE000D4F154 /* JuristicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuristicViewController.swift; sourceTree = "<group>"; };
 		186DA40125C7FEE000D4F154 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
-		1878F049261C597100B8153D /* 37AlhusarywithChild.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 37AlhusarywithChild.webp; sourceTree = "<group>"; };
-		1878F04A261C597100B8153D /* 41AymanSwad.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 41AymanSwad.webp; sourceTree = "<group>"; };
-		1878F04C261C597100B8153D /* 36minshawiwithchiled.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 36minshawiwithchiled.webp; sourceTree = "<group>"; };
-		1878F051261C597100B8153D /* 46RaadAlkurd.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 46RaadAlkurd.webp; sourceTree = "<group>"; };
-		1878F053261C597100B8153D /* 29ibraheem.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 29ibraheem.webp; sourceTree = "<group>"; };
-		1878F054261C597100B8153D /* 14jibreel.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 14jibreel.webp; sourceTree = "<group>"; };
-		1878F055261C597100B8153D /* 17SalehBudair.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 17SalehBudair.webp; sourceTree = "<group>"; };
-		1878F056261C597100B8153D /* 40Aljuhany.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 40Aljuhany.webp; sourceTree = "<group>"; };
-		1878F057261C597200B8153D /* 11basfer.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11basfer.webp; sourceTree = "<group>"; };
-		1878F058261C597200B8153D /* 04ajmi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04ajmi.webp; sourceTree = "<group>"; };
-		1878F059261C597200B8153D /* 43YasirQuresi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 43YasirQuresi.webp; sourceTree = "<group>"; };
-		1878F05A261C597200B8153D /* 08alhusary.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 08alhusary.webp; sourceTree = "<group>"; };
-		1878F05B261C597200B8153D /* 09hudaify.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 09hudaify.webp; sourceTree = "<group>"; };
-		1878F060261C597200B8153D /* 05Ghamdi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05Ghamdi.webp; sourceTree = "<group>"; };
-		1878F061261C597200B8153D /* 15ibraheemakhder.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 15ibraheemakhder.webp; sourceTree = "<group>"; };
-		1878F064261C597200B8153D /* 19qarisaleem.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 19qarisaleem.webp; sourceTree = "<group>"; };
-		1878F066261C597300B8153D /* 13arrifai.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 13arrifai.webp; sourceTree = "<group>"; };
-		1878F069261C597300B8153D /* 03Muaqly.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 03Muaqly.webp; sourceTree = "<group>"; };
-		1878F06A261C597300B8153D /* defaultReader.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = defaultReader.webp; sourceTree = "<group>"; };
-		1878F06B261C597300B8153D /* 01Sudais.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01Sudais.webp; sourceTree = "<group>"; };
-		1878F06D261C597300B8153D /* 27bukhater.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 27bukhater.webp; sourceTree = "<group>"; };
-		1878F071261C597300B8153D /* 07Alfasey.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07Alfasey.webp; sourceTree = "<group>"; };
-		1878F073261C597300B8153D /* 06minshawi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 06minshawi.webp; sourceTree = "<group>"; };
-		1878F074261C597300B8153D /* 31sadaqatali.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 31sadaqatali.webp; sourceTree = "<group>"; };
-		1878F079261C597400B8153D /* 20rasheedsofi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 20rasheedsofi.webp; sourceTree = "<group>"; };
-		1878F07A261C597400B8153D /* 02abdulbasit.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02abdulbasit.webp; sourceTree = "<group>"; };
-		1878F07B261C597400B8153D /* 10Ayub.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10Ayub.webp; sourceTree = "<group>"; };
-		1878F07C261C597400B8153D /* 28Tablawy.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 28Tablawy.webp; sourceTree = "<group>"; };
-		1878F07D261C597400B8153D /* 12abubakershatery.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 12abubakershatery.webp; sourceTree = "<group>"; };
-		1878F0CE261C5A9000B8153D /* 26Muhsin.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 26Muhsin.webp; sourceTree = "<group>"; };
-		1878F0D2261C5AE300B8153D /* 30waheedzafer.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 30waheedzafer.webp; sourceTree = "<group>"; };
-		1878F0D6261C5B1F00B8153D /* 38AbdulBasit(Mujawed).webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "38AbdulBasit(Mujawed).webp"; sourceTree = "<group>"; };
 		1879A86225C3E2D100FC0219 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		18A9C64026038F7E004D1078 /* quran.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = quran.xml; sourceTree = "<group>"; };
 		18AD5DC525EFCC8F006D27FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = "Pods/Toast-Swift/Toast/Toast.swift"; sourceTree = SOURCE_ROOT; };
@@ -1401,14 +1367,15 @@
 		1837DF94261205E800FCF9EC /* books */ = {
 			isa = PBXGroup;
 			children = (
-				1837DF97261205E800FCF9EC /* Book1.webp */,
-				1837DF99261205E800FCF9EC /* Book2.webp */,
-				1837DF98261205E800FCF9EC /* Book3.webp */,
-				1837DF9C261205E800FCF9EC /* Book4.webp */,
-				1837DF9A261205E800FCF9EC /* Book5.webp */,
-				1837DF96261205E800FCF9EC /* Book6.webp */,
-				1837DF95261205E800FCF9EC /* Book7.webp */,
-				1837DF9B261205E800FCF9EC /* Book8.webp */,
+				18454B24265D44370049F661 /* Book1.webp */,
+				18454B26265D44370049F661 /* Book2.webp */,
+				18454B27265D44370049F661 /* Book3.webp */,
+				18454B23265D44370049F661 /* Book4.webp */,
+				18454B22265D44370049F661 /* Book5.webp */,
+				18454B25265D44370049F661 /* Book6.webp */,
+				18454B20265D44360049F661 /* Book7.webp */,
+				18454B21265D44370049F661 /* Book8.webp */,
+				18454B28265D44370049F661 /* Book9.webp */,
 			);
 			path = books;
 			sourceTree = "<group>";
@@ -2027,38 +1994,20 @@
 		1878F047261C58D300B8153D /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				1878F06B261C597300B8153D /* 01Sudais.webp */,
-				1878F07A261C597400B8153D /* 02abdulbasit.webp */,
-				1878F069261C597300B8153D /* 03Muaqly.webp */,
-				1878F058261C597200B8153D /* 04ajmi.webp */,
-				1878F060261C597200B8153D /* 05Ghamdi.webp */,
-				1878F073261C597300B8153D /* 06minshawi.webp */,
-				1878F071261C597300B8153D /* 07Alfasey.webp */,
-				1878F05A261C597200B8153D /* 08alhusary.webp */,
-				1878F05B261C597200B8153D /* 09hudaify.webp */,
-				1878F07B261C597400B8153D /* 10Ayub.webp */,
-				1878F057261C597200B8153D /* 11basfer.webp */,
-				1878F07D261C597400B8153D /* 12abubakershatery.webp */,
-				1878F066261C597300B8153D /* 13arrifai.webp */,
-				1878F054261C597100B8153D /* 14jibreel.webp */,
-				1878F061261C597200B8153D /* 15ibraheemakhder.webp */,
-				1878F055261C597100B8153D /* 17SalehBudair.webp */,
-				1878F064261C597200B8153D /* 19qarisaleem.webp */,
-				1878F079261C597400B8153D /* 20rasheedsofi.webp */,
-				1878F0CE261C5A9000B8153D /* 26Muhsin.webp */,
-				1878F06D261C597300B8153D /* 27bukhater.webp */,
-				1878F07C261C597400B8153D /* 28Tablawy.webp */,
-				1878F053261C597100B8153D /* 29ibraheem.webp */,
-				1878F0D2261C5AE300B8153D /* 30waheedzafer.webp */,
-				1878F074261C597300B8153D /* 31sadaqatali.webp */,
-				1878F04C261C597100B8153D /* 36minshawiwithchiled.webp */,
-				1878F049261C597100B8153D /* 37AlhusarywithChild.webp */,
-				1878F0D6261C5B1F00B8153D /* 38AbdulBasit(Mujawed).webp */,
-				1878F056261C597100B8153D /* 40Aljuhany.webp */,
-				1878F04A261C597100B8153D /* 41AymanSwad.webp */,
-				1878F059261C597200B8153D /* 43YasirQuresi.webp */,
-				1878F051261C597100B8153D /* 46RaadAlkurd.webp */,
-				1878F06A261C597300B8153D /* defaultReader.webp */,
+				18454B07265D434B0049F661 /* 01basfer.webp */,
+				18454B04265D434A0049F661 /* 02ibraheem.webp */,
+				18454B0C265D434B0049F661 /* 03Ghamdi.webp */,
+				18454B03265D434A0049F661 /* 04Alfasey.webp */,
+				18454B06265D434B0049F661 /* 05Muaqly.webp */,
+				18454B0F265D434C0049F661 /* 06hudaify.webp */,
+				18454B0D265D434C0049F661 /* 07minshawi.webp */,
+				18454B0B265D434B0049F661 /* 08Muhsin.webp */,
+				18454B08265D434B0049F661 /* 09abdulbasit.webp */,
+				18454B0A265D434B0049F661 /* 10jibreel.webp */,
+				18454B02265D434A0049F661 /* 11Ayub.webp */,
+				18454B05265D434A0049F661 /* 12ajmi.webp */,
+				18454B09265D434B0049F661 /* 13alhusary.webp */,
+				18454B0E265D434C0049F661 /* 14Sudais.webp */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -2210,15 +2159,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1878F098261C597500B8153D /* 43YasirQuresi.webp in Resources */,
 				1865F34F26383761005552FC /* KSF_P266.ttf in Resources */,
 				1865F21A26383760005552FC /* KSF_P153.ttf in Resources */,
 				1865F27226383760005552FC /* KSF_P196.ttf in Resources */,
+				18454B16265D434C0049F661 /* 09abdulbasit.webp in Resources */,
 				1865F37826383761005552FC /* KSF_P107.ttf in Resources */,
 				1865F35D26383761005552FC /* KSF_P306.ttf in Resources */,
 				1865F28426383760005552FC /* KSF_P235.ttf in Resources */,
 				1865F23526383760005552FC /* KSF_P384.ttf in Resources */,
-				1878F0BB261C597500B8153D /* 28Tablawy.webp in Resources */,
 				1865F38C26383761005552FC /* KSF_P502.ttf in Resources */,
 				1865F33B26383761005552FC /* KSF_P337.ttf in Resources */,
 				1865F25A26383760005552FC /* KSF_P034.ttf in Resources */,
@@ -2229,21 +2177,17 @@
 				1865F37C26383761005552FC /* KSF_P463.ttf in Resources */,
 				1865F43326383761005552FC /* KSF_P028.ttf in Resources */,
 				1865F41626383761005552FC /* KSF_P575.ttf in Resources */,
-				1878F0A8261C597500B8153D /* 03Muaqly.webp in Resources */,
-				1878F0BA261C597500B8153D /* 10Ayub.webp in Resources */,
 				1865F3C126383761005552FC /* KSF_P302.ttf in Resources */,
 				1865F32426383761005552FC /* KSF_P518.ttf in Resources */,
 				1865F21626383760005552FC /* KSF_P351.ttf in Resources */,
 				1865F3FB26383761005552FC /* KSF_P038.ttf in Resources */,
 				1865F2AC26383760005552FC /* KSF_P509.ttf in Resources */,
-				1837DFA3261205E800FCF9EC /* Book8.webp in Resources */,
 				1865F27426383760005552FC /* KSF_P021.ttf in Resources */,
 				1865F45226383761005552FC /* KSF_P017.ttf in Resources */,
 				1865F2C326383760005552FC /* KSF_P118.ttf in Resources */,
-				1878F09A261C597500B8153D /* 09hudaify.webp in Resources */,
 				1865F29726383760005552FC /* KSF_P383.ttf in Resources */,
+				18454B18265D434C0049F661 /* 10jibreel.webp in Resources */,
 				1865F43526383761005552FC /* KSF_P202.ttf in Resources */,
-				1878F0A0261C597500B8153D /* 15ibraheemakhder.webp in Resources */,
 				1865F36F26383761005552FC /* KSF_P298.ttf in Resources */,
 				1865F21D26383760005552FC /* KSF_P033.ttf in Resources */,
 				1865F35426383761005552FC /* KSF_P064.ttf in Resources */,
@@ -2273,7 +2217,6 @@
 				1865F36426383761005552FC /* KSF_P139.ttf in Resources */,
 				1865F38826383761005552FC /* KSF_P066.ttf in Resources */,
 				1865F26826383760005552FC /* KSF_P431.ttf in Resources */,
-				1878F093261C597500B8153D /* 14jibreel.webp in Resources */,
 				1865F44126383761005552FC /* KSF_P189.ttf in Resources */,
 				1865F3B026383761005552FC /* KSF_P288.ttf in Resources */,
 				1865F38026383761005552FC /* KSF_P338.ttf in Resources */,
@@ -2284,6 +2227,7 @@
 				1865F2E226383761005552FC /* KSF_P442.ttf in Resources */,
 				1865F37D26383761005552FC /* KSF_P477.ttf in Resources */,
 				1865F34426383761005552FC /* KSF_P069.ttf in Resources */,
+				18454B19265D434C0049F661 /* 08Muhsin.webp in Resources */,
 				1865F33E26383761005552FC /* KSF_P492.ttf in Resources */,
 				1865F26D26383760005552FC /* KSF_P394.ttf in Resources */,
 				1865F24626383760005552FC /* KSF_P193.ttf in Resources */,
@@ -2301,7 +2245,6 @@
 				1865F3E726383761005552FC /* KSF_P370.ttf in Resources */,
 				1865F43B26383761005552FC /* KSF_P200.ttf in Resources */,
 				1865F42626383761005552FC /* KSF_P405.ttf in Resources */,
-				1878F0B0261C597500B8153D /* 07Alfasey.webp in Resources */,
 				1865F22726383760005552FC /* KSF_P582.ttf in Resources */,
 				1865F2BA26383760005552FC /* KSF_P327.ttf in Resources */,
 				1865F3DB26383761005552FC /* KSF_P173.ttf in Resources */,
@@ -2319,11 +2262,10 @@
 				1865F21F26383760005552FC /* KSF_P219.ttf in Resources */,
 				1865F31526383761005552FC /* KSF_P136.ttf in Resources */,
 				1865F30726383761005552FC /* KSF_P484.ttf in Resources */,
+				18454B14265D434C0049F661 /* 05Muaqly.webp in Resources */,
 				1865F33826383761005552FC /* KSF_P323.ttf in Resources */,
 				1865F38126383761005552FC /* KSF_P476.ttf in Resources */,
 				1865F27126383760005552FC /* KSF_P169.ttf in Resources */,
-				1878F0A5261C597500B8153D /* 13arrifai.webp in Resources */,
-				1878F092261C597500B8153D /* 29ibraheem.webp in Resources */,
 				1865F2CD26383760005552FC /* KSF_P252.ttf in Resources */,
 				1865F33526383761005552FC /* KSF_P336.ttf in Resources */,
 				1865F3A826383761005552FC /* KSF_P063.ttf in Resources */,
@@ -2340,7 +2282,6 @@
 				1865F41126383761005552FC /* KSF_P005.ttf in Resources */,
 				1865F2CA26383760005552FC /* KSF_P087.ttf in Resources */,
 				1865F43926383761005552FC /* KSF_P599.ttf in Resources */,
-				1837DF9E261205E800FCF9EC /* Book6.webp in Resources */,
 				1865F26A26383760005552FC /* KSF_P343.ttf in Resources */,
 				1865F22E26383760005552FC /* KSF_P025.ttf in Resources */,
 				1865F23A26383760005552FC /* KSF_P435.ttf in Resources */,
@@ -2348,13 +2289,10 @@
 				1865F35926383761005552FC /* KSF_P138.ttf in Resources */,
 				1865F2D826383760005552FC /* KSF_P278.ttf in Resources */,
 				1865F20C26383760005552FC /* KSF_P387.ttf in Resources */,
-				1837DFA1261205E800FCF9EC /* Book2.webp in Resources */,
 				1865F37726383761005552FC /* KSF_P067.ttf in Resources */,
 				1865F31B26383761005552FC /* KSF_P240.ttf in Resources */,
 				1865F43226383761005552FC /* KSF_P014.ttf in Resources */,
-				1878F0D3261C5AE300B8153D /* 30waheedzafer.webp in Resources */,
 				1865F25626383760005552FC /* KSF_P550.ttf in Resources */,
-				1878F0CF261C5A9000B8153D /* 26Muhsin.webp in Resources */,
 				1865F26726383760005552FC /* KSF_P356.ttf in Resources */,
 				1865F3C826383761005552FC /* KSF_P128.ttf in Resources */,
 				1865F21226383760005552FC /* KSF_P379.ttf in Resources */,
@@ -2399,8 +2337,6 @@
 				1865F2E326383761005552FC /* KSF_P456.ttf in Resources */,
 				1865F3FF26383761005552FC /* KSF_P158.ttf in Resources */,
 				1865F23926383760005552FC /* KSF_P353.ttf in Resources */,
-				1837DF9F261205E800FCF9EC /* Book1.webp in Resources */,
-				1878F0A9261C597500B8153D /* defaultReader.webp in Resources */,
 				1865F2AA26383760005552FC /* KSF_P535.ttf in Resources */,
 				1865F3ED26383761005552FC /* KSF_P006.ttf in Resources */,
 				1865F44B26383761005552FC /* KSF_P361.ttf in Resources */,
@@ -2414,13 +2350,12 @@
 				1865F20326383760005552FC /* KSF_P556.ttf in Resources */,
 				1865F42B26383761005552FC /* KSF_P362.ttf in Resources */,
 				1865F2B226383760005552FC /* KSF_P131.ttf in Resources */,
+				18454B2C265D44370049F661 /* Book4.webp in Resources */,
 				1865F33926383761005552FC /* KSF_P445.ttf in Resources */,
 				1865F36E26383761005552FC /* KSF_P501.ttf in Resources */,
-				1837DFA4261205E800FCF9EC /* Book4.webp in Resources */,
 				1865F21426383760005552FC /* KSF_P423.ttf in Resources */,
 				1865F44326383761005552FC /* KSF_P162.ttf in Resources */,
 				1865F3F926383761005552FC /* KSF_P010.ttf in Resources */,
-				1878F099261C597500B8153D /* 08alhusary.webp in Resources */,
 				1865F2D026383760005552FC /* KSF_P291.ttf in Resources */,
 				1865F20726383760005552FC /* KSF_P191.ttf in Resources */,
 				1865F34326383761005552FC /* KSF_P041.ttf in Resources */,
@@ -2432,13 +2367,11 @@
 				1865F34A26383761005552FC /* KSF_P243.ttf in Resources */,
 				1865F3BB26383761005552FC /* KSF_P101.ttf in Resources */,
 				1865F20126383760005552FC /* KSF_P224.ttf in Resources */,
-				1837DFA2261205E800FCF9EC /* Book5.webp in Resources */,
 				1865F42D26383761005552FC /* KSF_P438.ttf in Resources */,
 				1865F3F126383761005552FC /* KSF_P562.ttf in Resources */,
 				1865F3E826383761005552FC /* KSF_P600.ttf in Resources */,
 				1865F2B926383760005552FC /* KSF_P441.ttf in Resources */,
 				1865F30126383761005552FC /* KSF_P094.ttf in Resources */,
-				1878F0A3261C597500B8153D /* 19qarisaleem.webp in Resources */,
 				1865F3B626383761005552FC /* KSF_P049.ttf in Resources */,
 				1865F34726383761005552FC /* KSF_P257.ttf in Resources */,
 				1865F29C26383760005552FC /* KSF_P195.ttf in Resources */,
@@ -2448,6 +2381,7 @@
 				1865F3DC26383761005552FC /* KSF_P601.ttf in Resources */,
 				1865F31126383761005552FC /* KSF_P320.ttf in Resources */,
 				1865F33426383761005552FC /* KSF_P450.ttf in Resources */,
+				18454B29265D44370049F661 /* Book7.webp in Resources */,
 				1865F41926383761005552FC /* KSF_P217.ttf in Resources */,
 				1865F2F826383761005552FC /* KSF_P286.ttf in Resources */,
 				1865F26C26383760005552FC /* KSF_P419.ttf in Resources */,
@@ -2472,12 +2406,12 @@
 				1865F3D026383761005552FC /* KSF_P538.ttf in Resources */,
 				1865F29E26383760005552FC /* KSF_P022.ttf in Resources */,
 				1865F2C626383760005552FC /* KSF_P078.ttf in Resources */,
-				1878F088261C597500B8153D /* 37AlhusarywithChild.webp in Resources */,
 				1865F40326383761005552FC /* KSF_P372.ttf in Resources */,
 				1865F2FE26383761005552FC /* KSF_P255.ttf in Resources */,
 				1865F2A126383760005552FC /* KSF_P220.ttf in Resources */,
 				1865F28D26383760005552FC /* KSF_P369.ttf in Resources */,
 				1865F3C626383761005552FC /* KSF_P100.ttf in Resources */,
+				18454B2D265D44370049F661 /* Book1.webp in Resources */,
 				1865F2E826383761005552FC /* KSF_P331.ttf in Resources */,
 				1865F41226383761005552FC /* KSF_P011.ttf in Resources */,
 				1865F24E26383760005552FC /* KSF_P554.ttf in Resources */,
@@ -2504,27 +2438,26 @@
 				1865F33126383761005552FC /* KSF_P493.ttf in Resources */,
 				1865F39626383761005552FC /* KSF_P076.ttf in Resources */,
 				1865F2BF26383760005552FC /* KSF_P332.ttf in Resources */,
+				18454B1B265D434C0049F661 /* 07minshawi.webp in Resources */,
 				1865F2E126383761005552FC /* KSF_P324.ttf in Resources */,
 				1865F3EA26383761005552FC /* KSF_P172.ttf in Resources */,
 				1865F28026383760005552FC /* KSF_P209.ttf in Resources */,
 				1865F38F26383761005552FC /* KSF_P516.ttf in Resources */,
 				1865F20A26383760005552FC /* KSF_P146.ttf in Resources */,
-				1878F09F261C597500B8153D /* 05Ghamdi.webp in Resources */,
 				1865F28126383760005552FC /* KSF_P221.ttf in Resources */,
 				1865F28826383760005552FC /* KSF_P180.ttf in Resources */,
+				18454B2E265D44370049F661 /* Book6.webp in Resources */,
 				1865F35126383761005552FC /* KSF_P514.ttf in Resources */,
 				1865F3D726383761005552FC /* KSF_P239.ttf in Resources */,
 				1865F42C26383761005552FC /* KSF_P404.ttf in Resources */,
 				1865F41426383761005552FC /* KSF_P207.ttf in Resources */,
+				18454B1D265D434C0049F661 /* 06hudaify.webp in Resources */,
 				1865F38926383761005552FC /* KSF_P072.ttf in Resources */,
-				1878F08B261C597500B8153D /* 36minshawiwithchiled.webp in Resources */,
 				1865F35026383761005552FC /* KSF_P500.ttf in Resources */,
-				1878F0AC261C597500B8153D /* 27bukhater.webp in Resources */,
 				1865F32126383761005552FC /* KSF_P297.ttf in Resources */,
 				1865F1FF26383760005552FC /* KSF_P595.ttf in Resources */,
 				1865F2C726383760005552FC /* KSF_P050.ttf in Resources */,
 				1865F37926383761005552FC /* KSF_P113.ttf in Resources */,
-				1878F0B8261C597500B8153D /* 20rasheedsofi.webp in Resources */,
 				1865F34B26383761005552FC /* KSF_P519.ttf in Resources */,
 				1865F27B26383760005552FC /* KSF_P579.ttf in Resources */,
 				1865F36126383761005552FC /* KSF_P307.ttf in Resources */,
@@ -2536,17 +2469,18 @@
 				1865F44426383761005552FC /* KSF_P604.ttf in Resources */,
 				1865F3AF26383761005552FC /* KSF_P249.ttf in Resources */,
 				1865F23026383760005552FC /* KSF_P186.ttf in Resources */,
+				18454B1C265D434C0049F661 /* 14Sudais.webp in Resources */,
 				1865F23F26383760005552FC /* KSF_P420.ttf in Resources */,
 				1865F3BA26383761005552FC /* KSF_P115.ttf in Resources */,
 				1865F3B926383761005552FC /* KSF_P129.ttf in Resources */,
 				1865F27C26383760005552FC /* KSF_P586.ttf in Resources */,
-				1878F090261C597500B8153D /* 46RaadAlkurd.webp in Resources */,
 				1865F20426383760005552FC /* KSF_P218.ttf in Resources */,
 				1865F30C26383761005552FC /* KSF_P335.ttf in Resources */,
 				1865F33C26383761005552FC /* KSF_P479.ttf in Resources */,
 				1865F20926383760005552FC /* KSF_P152.ttf in Resources */,
 				1865F2EE26383761005552FC /* KSF_P127.ttf in Resources */,
 				1865F27826383760005552FC /* KSF_P223.ttf in Resources */,
+				18454B2B265D44370049F661 /* Book5.webp in Resources */,
 				1865F25126383760005552FC /* KSF_P597.ttf in Resources */,
 				1865F42126383761005552FC /* KSF_P161.ttf in Resources */,
 				1865F3D626383761005552FC /* KSF_P577.ttf in Resources */,
@@ -2594,7 +2528,6 @@
 				1865F3B726383761005552FC /* KSF_P061.ttf in Resources */,
 				1865F43726383761005552FC /* KSF_P570.ttf in Resources */,
 				1865F2D226383760005552FC /* KSF_P293.ttf in Resources */,
-				1878F095261C597500B8153D /* 40Aljuhany.webp in Resources */,
 				1865F2CC26383760005552FC /* KSF_P534.ttf in Resources */,
 				1865F2D426383760005552FC /* KSF_P250.ttf in Resources */,
 				1865F43E26383761005552FC /* KSF_P214.ttf in Resources */,
@@ -2617,7 +2550,6 @@
 				1865F41026383761005552FC /* KSF_P039.ttf in Resources */,
 				1865F2BE26383760005552FC /* KSF_P326.ttf in Resources */,
 				1865F44526383761005552FC /* KSF_P348.ttf in Resources */,
-				1878F097261C597500B8153D /* 04ajmi.webp in Resources */,
 				1865F3FA26383761005552FC /* KSF_P004.ttf in Resources */,
 				1865F41D26383761005552FC /* KSF_P029.ttf in Resources */,
 				1865F40426383761005552FC /* KSF_P414.ttf in Resources */,
@@ -2639,11 +2571,13 @@
 				1865F30F26383761005552FC /* KSF_P452.ttf in Resources */,
 				1865F28526383760005552FC /* KSF_P023.ttf in Resources */,
 				1865F39526383761005552FC /* KSF_P089.ttf in Resources */,
+				18454B17265D434C0049F661 /* 13alhusary.webp in Resources */,
 				1865F3CE26383761005552FC /* KSF_P504.ttf in Resources */,
 				1865F2B026383760005552FC /* KSF_P051.ttf in Resources */,
 				1865F2B526383760005552FC /* KSF_P496.ttf in Resources */,
 				1865F26226383760005552FC /* KSF_P395.ttf in Resources */,
 				1865F37626383761005552FC /* KSF_P073.ttf in Resources */,
+				18454B13265D434C0049F661 /* 12ajmi.webp in Resources */,
 				1865F3CF26383761005552FC /* KSF_P262.ttf in Resources */,
 				1865F44626383761005552FC /* KSF_P374.ttf in Resources */,
 				1865F22F26383760005552FC /* KSF_P019.ttf in Resources */,
@@ -2656,6 +2590,7 @@
 				1865F35826383761005552FC /* KSF_P104.ttf in Resources */,
 				1865F3CC26383761005552FC /* KSF_P276.ttf in Resources */,
 				1865F26B26383760005552FC /* KSF_P425.ttf in Resources */,
+				18454B10265D434C0049F661 /* 11Ayub.webp in Resources */,
 				1865F42A26383761005552FC /* KSF_P376.ttf in Resources */,
 				1865F3C026383761005552FC /* KSF_P465.ttf in Resources */,
 				1865F3A926383761005552FC /* KSF_P077.ttf in Resources */,
@@ -2664,15 +2599,12 @@
 				1865F2EF26383761005552FC /* KSF_P047.ttf in Resources */,
 				1865F2DE26383761005552FC /* KSF_P132.ttf in Resources */,
 				1865F24726383760005552FC /* KSF_P187.ttf in Resources */,
-				1837DFA0261205E800FCF9EC /* Book3.webp in Resources */,
 				1865F3EE26383761005552FC /* KSF_P238.ttf in Resources */,
 				1865F36926383761005552FC /* KSF_P065.ttf in Resources */,
 				1865F22A26383760005552FC /* KSF_P227.ttf in Resources */,
 				1865F2F426383761005552FC /* KSF_P523.ttf in Resources */,
 				1865F30B26383761005552FC /* KSF_P321.ttf in Resources */,
 				1865F21C26383760005552FC /* KSF_P190.ttf in Resources */,
-				1878F0B9261C597500B8153D /* 02abdulbasit.webp in Resources */,
-				1878F0B3261C597500B8153D /* 31sadaqatali.webp in Resources */,
 				1865F35A26383761005552FC /* KSF_P312.ttf in Resources */,
 				1865F2ED26383761005552FC /* KSF_P133.ttf in Resources */,
 				1865F36626383761005552FC /* KSF_P111.ttf in Resources */,
@@ -2685,7 +2617,7 @@
 				1865F23C26383760005552FC /* KSF_P408.ttf in Resources */,
 				1865F20826383760005552FC /* KSF_P185.ttf in Resources */,
 				1865F31C26383761005552FC /* KSF_P526.ttf in Resources */,
-				1878F0B2261C597500B8153D /* 06minshawi.webp in Resources */,
+				18454B30265D44370049F661 /* Book3.webp in Resources */,
 				1865F37426383761005552FC /* KSF_P259.ttf in Resources */,
 				1865F38A26383761005552FC /* KSF_P099.ttf in Resources */,
 				1865F34826383761005552FC /* KSF_P531.ttf in Resources */,
@@ -2702,6 +2634,7 @@
 				1865F32726383761005552FC /* KSF_P256.ttf in Resources */,
 				1865F2D126383760005552FC /* KSF_P285.ttf in Resources */,
 				1865F41E26383761005552FC /* KSF_P015.ttf in Resources */,
+				18454B11265D434C0049F661 /* 04Alfasey.webp in Resources */,
 				1865F25926383760005552FC /* KSF_P008.ttf in Resources */,
 				1865F32C26383761005552FC /* KSF_P040.ttf in Resources */,
 				1865F33026383761005552FC /* KSF_P120.ttf in Resources */,
@@ -2713,12 +2646,11 @@
 				1865F3E326383761005552FC /* KSF_P358.ttf in Resources */,
 				1865F24F26383760005552FC /* KSF_P232.ttf in Resources */,
 				1865F2B326383760005552FC /* KSF_P125.ttf in Resources */,
-				1878F0BC261C597500B8153D /* 12abubakershatery.webp in Resources */,
 				1865F2AB26383760005552FC /* KSF_P253.ttf in Resources */,
 				1865F35726383761005552FC /* KSF_P110.ttf in Resources */,
+				18454B1A265D434C0049F661 /* 03Ghamdi.webp in Resources */,
 				1865F27F26383760005552FC /* KSF_P590.ttf in Resources */,
 				1865F38726383761005552FC /* KSF_P106.ttf in Resources */,
-				1878F094261C597500B8153D /* 17SalehBudair.webp in Resources */,
 				1865F45526383761005552FC /* KSF_P215.ttf in Resources */,
 				1865F2A026383760005552FC /* KSF_P234.ttf in Resources */,
 				1865F37326383761005552FC /* KSF_P265.ttf in Resources */,
@@ -2728,17 +2660,16 @@
 				1865F3A326383761005552FC /* KSF_P301.ttf in Resources */,
 				1865F44226383761005552FC /* KSF_P176.ttf in Resources */,
 				1865F25226383760005552FC /* KSF_P593.ttf in Resources */,
-				1878F0AA261C597500B8153D /* 01Sudais.webp in Resources */,
 				1865F3D826383761005552FC /* KSF_P007.ttf in Resources */,
 				1865F3E026383761005552FC /* KSF_P365.ttf in Resources */,
 				1865F3AE26383761005552FC /* KSF_P275.ttf in Resources */,
-				1837DF9D261205E800FCF9EC /* Book7.webp in Resources */,
 				1865F3CA26383761005552FC /* KSF_P060.ttf in Resources */,
 				1865F32326383761005552FC /* KSF_P295.ttf in Resources */,
 				1865F27326383760005552FC /* KSF_P182.ttf in Resources */,
 				1865F3F826383761005552FC /* KSF_P548.ttf in Resources */,
 				1865F25E26383760005552FC /* KSF_P168.ttf in Resources */,
 				1865F2CE26383760005552FC /* KSF_P246.ttf in Resources */,
+				18454B2A265D44370049F661 /* Book8.webp in Resources */,
 				1865F28C26383760005552FC /* KSF_P382.ttf in Resources */,
 				1865F2C526383760005552FC /* KSF_P130.ttf in Resources */,
 				1865F23726383760005552FC /* KSF_P421.ttf in Resources */,
@@ -2756,7 +2687,6 @@
 				1865F35326383761005552FC /* KSF_P528.ttf in Resources */,
 				1865F38226383761005552FC /* KSF_P310.ttf in Resources */,
 				1865F20D26383760005552FC /* KSF_P436.ttf in Resources */,
-				1878F096261C597500B8153D /* 11basfer.webp in Resources */,
 				1865F3C726383761005552FC /* KSF_P114.ttf in Resources */,
 				1865F39026383761005552FC /* KSF_P248.ttf in Resources */,
 				1865F3A126383761005552FC /* KSF_P473.ttf in Resources */,
@@ -2765,10 +2695,10 @@
 				1865F2DC26383760005552FC /* KSF_P046.ttf in Resources */,
 				1865F3A226383761005552FC /* KSF_P467.ttf in Resources */,
 				1865F24526383760005552FC /* KSF_P144.ttf in Resources */,
-				1878F089261C597500B8153D /* 41AymanSwad.webp in Resources */,
 				1865F3B126383761005552FC /* KSF_P539.ttf in Resources */,
 				1865F25426383760005552FC /* KSF_P578.ttf in Resources */,
 				1865F21B26383760005552FC /* KSF_P184.ttf in Resources */,
+				18454B31265D44370049F661 /* Book9.webp in Resources */,
 				1865F31D26383761005552FC /* KSF_P532.ttf in Resources */,
 				1865F2C126383760005552FC /* KSF_P483.ttf in Resources */,
 				1865F29B26383760005552FC /* KSF_P181.ttf in Resources */,
@@ -2786,7 +2716,6 @@
 				1865F42026383761005552FC /* KSF_P149.ttf in Resources */,
 				1865F28626383760005552FC /* KSF_P037.ttf in Resources */,
 				1865F21826383760005552FC /* KSF_P392.ttf in Resources */,
-				1878F0D7261C5B1F00B8153D /* 38AbdulBasit(Mujawed).webp in Resources */,
 				1865F33326383761005552FC /* KSF_P478.ttf in Resources */,
 				1865F30026383761005552FC /* KSF_P527.ttf in Resources */,
 				1865F45126383761005552FC /* KSF_P188.ttf in Resources */,
@@ -2795,6 +2724,7 @@
 				1865F27D26383760005552FC /* KSF_P592.ttf in Resources */,
 				1865F3AC26383761005552FC /* KSF_P507.ttf in Resources */,
 				1865F34526383761005552FC /* KSF_P096.ttf in Resources */,
+				18454B15265D434C0049F661 /* 01basfer.webp in Resources */,
 				1865F35B26383761005552FC /* KSF_P474.ttf in Resources */,
 				1865F3B326383761005552FC /* KSF_P263.ttf in Resources */,
 				18B8543625B6B63C00667E67 /* LaunchScreen.storyboard in Resources */,
@@ -2803,6 +2733,7 @@
 				1865F24226383760005552FC /* KSF_P385.ttf in Resources */,
 				1865F43C26383761005552FC /* KSF_P566.ttf in Resources */,
 				1865F29026383760005552FC /* KSF_P427.ttf in Resources */,
+				18454B2F265D44370049F661 /* Book2.webp in Resources */,
 				1865F3F726383761005552FC /* KSF_P560.ttf in Resources */,
 				1865F2E526383761005552FC /* KSF_P318.ttf in Resources */,
 				1865F21326383760005552FC /* KSF_P345.ttf in Resources */,
@@ -2854,6 +2785,7 @@
 				1865F22826383760005552FC /* KSF_P555.ttf in Resources */,
 				1865F3F026383761005552FC /* KSF_P576.ttf in Resources */,
 				1865F24026383760005552FC /* KSF_P346.ttf in Resources */,
+				18454B12265D434C0049F661 /* 02ibraheem.webp in Resources */,
 				1865F40C26383761005552FC /* KSF_P159.ttf in Resources */,
 				1865F32F26383761005552FC /* KSF_P134.ttf in Resources */,
 				1865F2D326383760005552FC /* KSF_P287.ttf in Resources */,

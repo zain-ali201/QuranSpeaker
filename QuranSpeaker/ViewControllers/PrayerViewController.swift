@@ -208,7 +208,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     
     func getYearPrayersTime()
     {
-        if isMyPeripheralConected && prayersCharacteristic != nil
+        if isMyPeripheralConected && quranCharacteristic != nil
         {
             let prayerKit:AKPrayerTime = AKPrayerTime(lat: lat, lng: lng)
 //            prayerKit.calculationMethod = .Karachi
@@ -261,9 +261,10 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
 
             var zero = 0
             let zeroData = Data(bytes: &zero, count: MemoryLayout.size(ofValue: zero))
-            for month in 1...12
-            {
-                var montNr = month
+//            for month in 1...12
+//            {
+//                var montNr = month
+                var montNr = 1
                 let dataToSend = NSMutableData()
                 dataToSend.append("Z".data(using: String.Encoding.ascii)!)
                 dataToSend.append(Data(bytes: &montNr, count: MemoryLayout.size(ofValue: montNr)))
@@ -273,12 +274,12 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 for day in 1...31
                 {
                     formatter.dateFormat = "dd MM yyyy"
-                    let date = formatter.date(from: String(format: "%d %d %d", day, month, currentYear))
+                    let date = formatter.date(from: String(format: "%d %d %d", day, montNr, currentYear))
                     
                     if date != nil
                     {
 //                        let times = prayerKit.getDatePrayerTimes(date: date!)
-                            let times = prayerKit.getDatePrayerTimes(year: currentYear, month: month, day: day, latitude: lat, longitude: lng, tZone: AKPrayerTime.systemTimeZone())
+                            let times = prayerKit.getDatePrayerTimes(year: currentYear, month: montNr, day: day, latitude: lat, longitude: lng, tZone: AKPrayerTime.systemTimeZone())
 //                        print(" ")
 //                        print("======================================")
 //                        print("Date: \(date!)")
@@ -308,7 +309,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                         let maghribTime = formatter.date(from: maghrib)
                         let ishaTime = formatter.date(from: isha)
                         formatter.dateFormat = "HH"
-                        
                         var fajrHours = Int(formatter.string(from: fajrTime!))!
                         var sunHours = Int(formatter.string(from: sunTime!))!
                         var dhuhrHours = Int(formatter.string(from: dhurTime!))!
@@ -368,11 +368,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 }
                 print(dataToSend)
 //                print("//////////////////////////////////////////")
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: prayersCharacteristic, type: CBCharacteristicWriteType.withResponse)
-//                let data = Data([UInt8(Character("Z").asciiValue!), UInt8(montNr), UInt8(5), UInt8(30)])
-//
-//                myBluetoothPeripheral.writeValue(data as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            }
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+//            }
         }
         else
         {
