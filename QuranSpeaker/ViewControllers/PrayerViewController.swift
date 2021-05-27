@@ -36,6 +36,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     
     var currentYear = 0
     
+    var month = 1
+    
     //BLE
 //    var bleManager : CBCentralManager!
 //    var myBluetoothPeripheral : CBPeripheral!
@@ -88,6 +90,27 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
 //        isMyPeripheralConected = false
 //        myBluetoothPeripheral = nil
 //    }
+    
+    func fetchPrayerData(byteArray: [UInt8])
+    {
+        let firstBitValue = byteArray[0] & 0x01
+        
+        if firstBitValue != 0
+        {
+            let type = Character(UnicodeScalar(byteArray[0]))
+            print(type)
+            if type == "Z"
+            {
+                print("MonthNbr : \(Int(byteArray[1]))")
+                let receivedMonth = Int(byteArray[1])
+                if month != receivedMonth && receivedMonth > 0 && receivedMonth < 13
+                {
+                    month = Int(byteArray[1])
+                    getYearPrayersTime()
+                }
+            }
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -259,27 +282,23 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
         
             let formatter = DateFormatter()
 
-            var zero = 0
-            let zeroData = Data(bytes: &zero, count: MemoryLayout.size(ofValue: zero))
+            let zeroData = UInt8(0)
 //            for month in 1...12
 //            {
 //                var montNr = month
-                var montNr = 1
-                let dataToSend = NSMutableData()
-                dataToSend.append("Z".data(using: String.Encoding.ascii)!)
-                dataToSend.append(Data(bytes: &montNr, count: MemoryLayout.size(ofValue: montNr)))
                 
+                var dataToSend = Data([UInt8(Character("Z").asciiValue!), UInt8(month)])
 //                print("//////////////////////////////////////////")
 //                print("Month: \(montNr)")
                 for day in 1...31
                 {
                     formatter.dateFormat = "dd MM yyyy"
-                    let date = formatter.date(from: String(format: "%d %d %d", day, montNr, currentYear))
+                    let date = formatter.date(from: String(format: "%d %d %d", day, month, currentYear))
                     
                     if date != nil
                     {
 //                        let times = prayerKit.getDatePrayerTimes(date: date!)
-                            let times = prayerKit.getDatePrayerTimes(year: currentYear, month: montNr, day: day, latitude: lat, longitude: lng, tZone: AKPrayerTime.systemTimeZone())
+                            let times = prayerKit.getDatePrayerTimes(year: currentYear, month: month, day: day, latitude: lat, longitude: lng, tZone: AKPrayerTime.systemTimeZone())
 //                        print(" ")
 //                        print("======================================")
 //                        print("Date: \(date!)")
@@ -299,7 +318,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                         var isha = (times[.Isha] as? String) ?? ""
                         isha = isha.replacingOccurrences(of: "60", with: "59")
                         
-                        print("\(fajr), \(sunrise), \(dhuhr), \(asr), \(maghrib), \(isha)")
+//                        print("\(fajr), \(sunrise), \(dhuhr), \(asr), \(maghrib), \(isha)")
                         
                         formatter.dateFormat = "HH:mm"
                         let fajrTime = formatter.date(from: fajr)
@@ -309,45 +328,45 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                         let maghribTime = formatter.date(from: maghrib)
                         let ishaTime = formatter.date(from: isha)
                         formatter.dateFormat = "HH"
-                        var fajrHours = Int(formatter.string(from: fajrTime!))!
-                        var sunHours = Int(formatter.string(from: sunTime!))!
-                        var dhuhrHours = Int(formatter.string(from: dhurTime!))!
-                        var asrHours = Int(formatter.string(from: asrTime!))!
-                        var maghribHours = Int(formatter.string(from: maghribTime!))!
-                        var ishaHours = Int(formatter.string(from: ishaTime!))!
+                        let fajrHours = UInt8(formatter.string(from: fajrTime!))!
+                        let sunHours = UInt8(formatter.string(from: sunTime!))!
+                        let dhuhrHours = UInt8(formatter.string(from: dhurTime!))!
+                        let asrHours = UInt8(formatter.string(from: asrTime!))!
+                        let maghribHours = UInt8(formatter.string(from: maghribTime!))!
+                        let ishaHours = UInt8(formatter.string(from: ishaTime!))!
                         formatter.dateFormat = "mm"
-                        var fajrMin = Int(formatter.string(from: fajrTime!))!
-                        var sunMin = Int(formatter.string(from: sunTime!))!
-                        var dhuhrMin = Int(formatter.string(from: dhurTime!))!
-                        var asrMin = Int(formatter.string(from: asrTime!))!
-                        var maghribMin = Int(formatter.string(from: maghribTime!))!
-                        var ishaMin = Int(formatter.string(from: ishaTime!))!
+                        let fajrMin = UInt8(formatter.string(from: fajrTime!))!
+                        let sunMin = UInt8(formatter.string(from: sunTime!))!
+                        let dhuhrMin = UInt8(formatter.string(from: dhurTime!))!
+                        let asrMin = UInt8(formatter.string(from: asrTime!))!
+                        let maghribMin = UInt8(formatter.string(from: maghribTime!))!
+                        let ishaMin = UInt8(formatter.string(from: ishaTime!))!
                         
-//                        print("\(fajrHours):\(fajrMin), \(sunHours):\(sunMin), \(dhuhrHours):\(dhuhrMin), \(asrHours):\(asrMin), \(maghribHours):\(maghribMin), \(ishaHours):\(ishaMin)")
+                        print("\(fajrHours):\(fajrMin), \(sunHours):\(sunMin), \(dhuhrHours):\(dhuhrMin), \(asrHours):\(asrMin), \(maghribHours):\(maghribMin), \(ishaHours):\(ishaMin)")
                         
                         //Fajr
-                        dataToSend.append(Data(bytes: &fajrHours, count: MemoryLayout.size(ofValue: fajrHours)))
-                        dataToSend.append(Data(bytes: &fajrMin, count: MemoryLayout.size(ofValue: fajrMin)))
+                        dataToSend.append(fajrHours)
+                        dataToSend.append(fajrMin)
 
                         //Sunrise
-                        dataToSend.append(Data(bytes: &sunHours, count: MemoryLayout.size(ofValue: sunHours)))
-                        dataToSend.append(Data(bytes: &sunMin, count: MemoryLayout.size(ofValue: sunMin)))
+                        dataToSend.append(sunHours)
+                        dataToSend.append(sunMin)
 
                         //Dhuhr
-                        dataToSend.append(Data(bytes: &dhuhrHours, count: MemoryLayout.size(ofValue: dhuhrHours)))
-                        dataToSend.append(Data(bytes: &dhuhrMin, count: MemoryLayout.size(ofValue: dhuhrMin)))
+                        dataToSend.append(dhuhrHours)
+                        dataToSend.append(dhuhrMin)
 
                         //Asr
-                        dataToSend.append(Data(bytes: &asrHours, count: MemoryLayout.size(ofValue: asrHours)))
-                        dataToSend.append(Data(bytes: &asrMin, count: MemoryLayout.size(ofValue: asrMin)))
+                        dataToSend.append(asrHours)
+                        dataToSend.append(asrMin)
 
                         //Maghrib
-                        dataToSend.append(Data(bytes: &maghribHours, count: MemoryLayout.size(ofValue: maghribHours)))
-                        dataToSend.append(Data(bytes: &maghribMin, count: MemoryLayout.size(ofValue: maghribMin)))
+                        dataToSend.append(maghribHours)
+                        dataToSend.append(maghribMin)
 
                         //Isha
-                        dataToSend.append(Data(bytes: &ishaHours, count: MemoryLayout.size(ofValue: ishaHours)))
-                        dataToSend.append(Data(bytes: &ishaMin, count: MemoryLayout.size(ofValue: ishaMin)))
+                        dataToSend.append(ishaHours)
+                        dataToSend.append(ishaMin)
                     }
                     else
                     {
@@ -419,93 +438,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
             self.navigationController?.pushViewController(lightVC, animated: false)
         }
     }
-    
-//    //BLE delegate functions
-//    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-//        
-//        var msg = ""
-//        
-//        switch central.state {
-//            
-//            case .poweredOff:
-//                msg = "Bluetooth is Off"
-//            case .poweredOn:
-//                msg = "Bluetooth is On"
-//                bleManager.scanForPeripherals(withServices: nil, options: nil)
-//            case .unsupported:
-//                msg = "Not Supported"
-//            default:
-//                msg = "😔"
-//        }
-//        
-////        self.view.makeToast(msg)
-//        print("STATE: " + msg)
-//    }
-//    
-//    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-//        
-//        print("Name: \(peripheral.name)")
-//       
-//        if peripheral.name != nil
-//        {
-//            self.myBluetoothPeripheral = peripheral
-//            self.myBluetoothPeripheral.delegate = self
-//            
-//            bleManager.stopScan()
-//            bleManager.connect(myBluetoothPeripheral, options: nil)
-//        }
-//    }
-//    
-//    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-//        
-//        isMyPeripheralConected = true
-//        peripheral.delegate = self
-//        peripheral.discoverServices(nil)
-////        self.view.makeToast("Bluetooth device connected")
-//    }
-//    
-//    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-//        isMyPeripheralConected = false
-//    }
-//    
-//    
-//    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-//        
-//        if let servicePeripheral = peripheral.services as [CBService]? {
-//            
-//            for service in servicePeripheral {
-//                
-//                peripheral.discoverCharacteristics(nil, for: service)
-//            }
-//        }
-//    }
-//
-//    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-//        
-//        if let characterArray = service.characteristics as [CBCharacteristic]? {
-//            
-//            for cc in characterArray {
-//                print(cc.uuid)
-//                if(cc.uuid == quranUUID) {
-//                    print(cc.uuid.uuidString)
-//                    myCharacteristic = cc
-//                    print("characteristics")
-////                    peripheral.readValue(for: cc)
-////                    writeValue()
-//                }
-//            }
-//        }
-//    }
-//    
-//    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-//
-//        if (characteristic.uuid == quranUUID) {
-//            
-//            let readValue = characteristic.value
-//            let value = (readValue! as NSData).bytes.bindMemory(to: Int.self, capacity: readValue!.count).pointee //used to read an Int value
-//            print ("Value: \(value)")
-//        }
-//    }
 }
 
 extension CLPlacemark {

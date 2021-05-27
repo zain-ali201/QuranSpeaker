@@ -87,8 +87,6 @@ class SetViewController: CollapsibleTableSectionViewController, CollapsibleTable
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.detail
         
-        
-        
         if indexPath.section == 0
         {
             let juristic = defaults.value(forKey: "juristic") as? Int

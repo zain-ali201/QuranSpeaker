@@ -108,7 +108,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
             
             guard let characteristicData = characteristic.value else { return }
             let byteArray = [UInt8](characteristicData)
+            
             homeVC.fetchAppData(byteArray: byteArray)
+            if prayersVC != nil
+            {
+                prayersVC.fetchPrayerData(byteArray: byteArray)
+            }
         }
     }
     

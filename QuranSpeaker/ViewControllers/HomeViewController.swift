@@ -131,8 +131,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let bleSurah = Int(byteArray[1])
                 let bleAyat = Int(byteArray[3])
                 
-                print("bleSurah: \(bleSurah)")
-                print("bleAyat: \(bleAyat)")
+//                print("bleSurah: \(bleSurah)")
+//                print("bleAyat: \(bleAyat)")
                 
                 if bleAyat != verseNo
                 {
@@ -1171,6 +1171,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard let characteristicData = characteristic.value else { return }
             let byteArray = [UInt8](characteristicData)
             fetchAppData(byteArray: byteArray)
+            if prayersVC != nil
+            {
+                prayersVC.fetchPrayerData(byteArray: byteArray)
+            }
         }
     }
 }
