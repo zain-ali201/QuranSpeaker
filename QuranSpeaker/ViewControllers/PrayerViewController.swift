@@ -103,11 +103,11 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
             {
                 print("MonthNbr : \(Int(byteArray[1]))")
                 let receivedMonth = Int(byteArray[1])
-                if month != receivedMonth && receivedMonth > 0 && receivedMonth < 13
-                {
+//                if receivedMonth != month && receivedMonth > 0 && receivedMonth < 13
+//                {
                     month = Int(byteArray[1])
                     getYearPrayersTime()
-                }
+//                }
             }
         }
     }
@@ -137,6 +137,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     @IBAction func updateBtnAction(_ sender: Any)
     {
 //        bleManager = CBCentralManager(delegate: self, queue: nil)
+        month = 1
         getYearPrayersTime()
     }
     
