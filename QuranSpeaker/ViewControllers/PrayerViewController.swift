@@ -69,6 +69,10 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
+        else
+        {
+            self.view.makeToast("Please enable your GPS location from device settings.")
+        }
         
         AppUtility.lockOrientation(.portrait)
     }
@@ -93,8 +97,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     
     func fetchPrayerData(byteArray: [UInt8])
     {
-        let firstBitValue = byteArray[0] & 0x01
-        
+        let firstBitValue = byteArray[0] & 0x02
+        print("firstBitValue: \(firstBitValue)")
         if firstBitValue != 0
         {
             let type = Character(UnicodeScalar(byteArray[0]))
@@ -103,11 +107,11 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
             {
                 print("MonthNbr : \(Int(byteArray[1]))")
                 let receivedMonth = Int(byteArray[1])
-//                if receivedMonth != month && receivedMonth > 0 && receivedMonth < 13
-//                {
+                if receivedMonth != month && receivedMonth > 0 && receivedMonth < 13
+                {
                     month = Int(byteArray[1])
                     getYearPrayersTime()
-//                }
+                }
             }
         }
     }

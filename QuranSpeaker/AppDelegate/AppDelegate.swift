@@ -109,6 +109,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
             guard let characteristicData = characteristic.value else { return }
             let byteArray = [UInt8](characteristicData)
             
+            print("Count: \(byteArray.count)")
+            
             homeVC.fetchAppData(byteArray: byteArray)
             if prayersVC != nil
             {

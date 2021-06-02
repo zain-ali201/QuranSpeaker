@@ -120,7 +120,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func fetchAppData(byteArray: [UInt8])
     {
-        let firstBitValue = byteArray[0] & 0x01
+        let firstBitValue = byteArray[0] & 0x02
         
         if firstBitValue != 0
         {
@@ -131,8 +131,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let bleSurah = Int(byteArray[1])
                 let bleAyat = Int(byteArray[3])
                 
-//                print("bleSurah: \(bleSurah)")
-//                print("bleAyat: \(bleAyat)")
+                print("bleSurah: \(bleSurah)")
+                print("bleAyat: \(bleAyat)")
                 
                 if bleAyat != verseNo
                 {
@@ -1166,8 +1166,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
 
-        if (characteristic.uuid == quranUUID) {
-            
+        if (characteristic.uuid == quranUUID)
+        {
             guard let characteristicData = characteristic.value else { return }
             let byteArray = [UInt8](characteristicData)
             fetchAppData(byteArray: byteArray)
