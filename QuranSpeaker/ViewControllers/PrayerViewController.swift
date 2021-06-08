@@ -11,6 +11,12 @@ import CoreBluetooth
 
 class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCentralManagerDelegate, CBPeripheralDelegate
 {
+    @IBOutlet weak var alarmMainView: UIView!
+    @IBOutlet weak var alarmView: UIView!
+    @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var onBtn: UIButton!
+    @IBOutlet weak var offBtn: UIButton!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblDate: UILabel!
@@ -24,8 +30,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     @IBOutlet weak var lblSunset: UILabel!
     @IBOutlet weak var lblMaghrib: UILabel!
     @IBOutlet weak var lblIsha: UILabel!
-    
     @IBOutlet weak var leading: NSLayoutConstraint!
+    
     
     var menuFlag = false
     var lat = 0.0
@@ -33,9 +39,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     
     var locationManager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
-    
     var currentYear = 0
-    
     var month = 1
     
     //BLE
@@ -47,6 +51,9 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     
     override func viewDidLoad()
     {
+        alarmView.layer.cornerRadius = 10.0
+        alarmView.layer.masksToBounds = true
+        
         prayersVC = self
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
@@ -98,7 +105,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     func fetchPrayerData(byteArray: [UInt8])
     {
         let firstBitValue = byteArray[0] & 0x02
-        print("firstBitValue: \(firstBitValue)")
+//        print("firstBitValue: \(firstBitValue)")
         if firstBitValue != 0
         {
             let type = Character(UnicodeScalar(byteArray[0]))
@@ -118,6 +125,60 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    @IBAction func alarmBtnAction(button: UIButton)
+    {
+        if button.tag == 1001
+        {
+            
+        }
+        else if button.tag == 1002
+        {
+            
+        }
+        else if button.tag == 1003
+        {
+            
+        }
+        else if button.tag == 1004
+        {
+            
+        }
+        else if button.tag == 1005
+        {
+            
+        }
+        
+        alarmMainView.alpha = 1
+    }
+    
+    @IBAction func applyCancelBtnAction(button: UIButton)
+    {
+        if button.tag == 1001
+        {
+            
+        }
+        else
+        {
+            
+        }
+        
+        alarmMainView.alpha = 0
+    }
+    
+    @IBAction func onofflBtnAction(button: UIButton)
+    {
+        if button.tag == 1001
+        {
+            onBtn.setImage(UIImage(named: "on"), for: .normal)
+            offBtn.setImage(UIImage(named: "off"), for: .normal)
+        }
+        else
+        {
+            offBtn.setImage(UIImage(named: "on"), for: .normal)
+            onBtn.setImage(UIImage(named: "off"), for: .normal)
+        }
     }
     
     @IBAction func sidemenuBtnAction(_ sender: Any)
@@ -238,6 +299,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     {
         if isMyPeripheralConected && quranCharacteristic != nil
         {
+            homeVC.setDeviceTime()
+            
             let prayerKit:AKPrayerTime = AKPrayerTime(lat: lat, lng: lng)
 //            prayerKit.calculationMethod = .Karachi
             
@@ -483,3 +546,14 @@ extension CLPlacemark {
         return nil
     }
 }
+
+//alarm setting from app
+//byte index1=2,index2=8;
+//        data[0] = 'P';
+//        data[1]= PTVARS.DLSaving;
+//        for(byte c=0; c<7; c++) {
+//            if(c==1) continue;
+//            data[index1]=PTVARS.alarm_status[c];
+//            data[index2] = PTVARS.alarm_time[c];
+//            index1++;index2++;
+//        }

@@ -27,6 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
         // Override point for customization after application launch.
         Thread.sleep(forTimeInterval: 3)
         manager = CBCentralManager(delegate: self, queue: nil)
+        
+        UIApplication.shared.windows.forEach { window in
+            if #available(iOS 13.0, *) {
+                window.overrideUserInterfaceStyle = .light
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
         return true
     }
     
@@ -97,6 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
                 if(cc.uuid == quranUUID) {
                     print("QuranUUID: \(cc.uuid.uuidString)")
                     quranCharacteristic = cc
+                    homeVC.setDeviceTime()
                 }
             }
         }
@@ -109,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
             guard let characteristicData = characteristic.value else { return }
             let byteArray = [UInt8](characteristicData)
             
-            print("Count: \(byteArray.count)")
+//            print("Count: \(byteArray.count)")
             
             homeVC.fetchAppData(byteArray: byteArray)
             if prayersVC != nil

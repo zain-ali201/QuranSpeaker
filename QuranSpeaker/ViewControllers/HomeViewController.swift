@@ -120,7 +120,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func fetchAppData(byteArray: [UInt8])
     {
-        let firstBitValue = byteArray[0] & 0x02
+        let firstBitValue = byteArray[0] & 0x01
         
         if firstBitValue != 0
         {
@@ -160,6 +160,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
         }
+    }
+    
+    func setDeviceTime()
+    {
+        let components = Calendar.current.dateComponents([.hour, .day, .month, .year], from: Date())
+        
+        let year = UInt8(components.year! - 2000)
+        let month = UInt8(components.month! + 1)
+        let day = UInt8(components.day!)
+        let hour = UInt8(components.hour!)
+        let min = UInt8(components.minute!)
+        let sec = UInt8(components.second!)
+        
+        let dataToSend = Data([UInt8(Character("C").asciiValue!), year, month, day, hour, min, sec])
+        myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
     }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
@@ -493,110 +508,115 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
             let ayatObj = ayatsArray[verseNo - 1]
-            
-//            txtView.text = ayatObj.text
-            
-            var prefix = "KSF"
+            getSurahAyat(ayatObj: ayatObj)
+        }
+    }
+    
+    func getSurahAyat(ayatObj: AyatObj)
+    {
+        var prefix = "KSF"
+        
+        if ayatObj.page < 3
+        {
+            prefix.append("00")
+        }
+        else if ayatObj.page < 10
+        {
+            prefix.append("P00")
+        }
+        else if ayatObj.page < 100
+        {
+            prefix.append("P0")
+        }
+        else
+        {
+            prefix.append("P")
+        }
 
-            if ayatObj.page < 3
-            {
-                prefix.append("00")
-            }
-            else if ayatObj.page < 10
-            {
-                prefix.append("P00")
-            }
-            else if ayatObj.page < 100
-            {
-                prefix.append("P0")
-            }
-            else
-            {
-                prefix.append("P")
-            }
-
-            if lblMain != nil
-            {
-                lblMain.alpha = 0
-            }
-            
-            let fontName = String(format:"%@%d", prefix, ayatObj.page)
-            let font = UIFont(name: fontName, size: 50)!
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .center
-            let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
-            
-            for view in txtMainView.subviews
-            {
-                view.removeFromSuperview()
-            }
-            
-            var resultStr = ""
-            var xAxis:CGFloat =  txtMainView.frame.width
-            var yAxis:CGFloat = 10.0
+        if lblMain != nil
+        {
+            lblMain.alpha = 0
+        }
+        
+        let fontName = String(format:"%@%d", prefix, ayatObj.page)
+        print(fontName)
+        let font = UIFont(name: fontName, size: 50)!
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        
+        for view in txtMainView.subviews
+        {
+            view.removeFromSuperview()
+        }
+        
+        var resultStr = ""
+        var xAxis:CGFloat =  txtMainView.frame.width
+        var yAxis:CGFloat = 10.0
 
 //            var printResult = ""
 
-            for i in ayatObj.start...ayatObj.end
+        for i in ayatObj.start...ayatObj.end
+        {
+            var code = i
+            if code == 127
             {
-                var code = i
-                if code == 127
-                {
-                    code = 254
-                }
-                
-                resultStr = String(Character(UnicodeScalar(code)!))
-                var width:CGFloat = 0.0
+                code = 254
+            }
+            
+            resultStr = String(Character(UnicodeScalar(code)!))
+            var width:CGFloat = 0.0
 
 //                printResult += "{\(1), \(resultStr)}, "
 
-                let string = resultStr
-                let size:CGSize = string.sizeOfString(usingFont: attrs)
-                width = size.width
+            let string = resultStr
+            let size:CGSize = string.sizeOfString(usingFont: attrs)
+            width = size.width
 
-                if width > 17 //&& string != "·"
+            if width > 10 //&& string != "·"
+            {
+                if (xAxis - width) < 0
                 {
-                    if (xAxis - width) < 0
-                    {
-                        xAxis = txtMainView.frame.width
-                        yAxis += 70.0
-                    }
-
-                    let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
-                    lbl.font = font
-                    lbl.text = string
-                    txtMainView.addSubview(lbl)
-                    xAxis -= width + 5
+                    xAxis = txtMainView.frame.width
+                    yAxis += 70.0
                 }
+
+                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                lbl.font = font
+                lbl.text = string
+                txtMainView.addSubview(lbl)
+                xAxis -= width + 5
             }
+        }
 //            print("//////////////////////////////////////////////")
 //            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
 //            print("Font: \(fontName)")
 //            print(printResult)
 //            print("//////////////////////////////////////////////")
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
+
+        leading.constant = -160
+        quranFlag = false
+        
+        if isMyPeripheralConected
+        {
+            let division = verseNo / 127
+            let remainder = verseNo % 127
+
+            let surat = UInt8(chapterNo)
+            let div = UInt8(division)
+            let rem = UInt8(remainder)
             
-            scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
-            
-            if isMyPeripheralConected
-            {
-                let division = verseNo / 127
-                let remainder = verseNo % 127
+            timer.invalidate()
+            timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
 
-                let surat = UInt8(chapterNo)
-                let div = UInt8(division)
-                let rem = UInt8(remainder)
-                
-                timer.invalidate()
-                timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
-
-                let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-
-            }
-            else
-            {
-                self.view.makeToast("Bluetooth device disconnected")
-            }
+            let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
+            myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
+        else
+        {
+            self.view.makeToast("Bluetooth device disconnected")
         }
     }
 
@@ -964,113 +984,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             lblTitle.text = String(format: "سورة %@",indexArray[chapterNo - 1])
             verseNo = indexPath.row + 1
             let ayatObj = ayaTitle[indexPath.row]
-            
-//            txtView.text = ayatObj.text
-            
-            var prefix = "KSF"
-            
-            if ayatObj.page < 3
-            {
-                prefix.append("00")
-            }
-            else if ayatObj.page < 10
-            {
-                prefix.append("P00")
-            }
-            else if ayatObj.page < 100
-            {
-                prefix.append("P0")
-            }
-            else
-            {
-                prefix.append("P")
-            }
-
-            if lblMain != nil
-            {
-                lblMain.alpha = 0
-            }
-            
-            let fontName = String(format:"%@%d", prefix, ayatObj.page)
-            print(fontName)
-            let font = UIFont(name: fontName, size: 50)!
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .center
-            let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
-            
-            for view in txtMainView.subviews
-            {
-                view.removeFromSuperview()
-            }
-            
-            var resultStr = ""
-            var xAxis:CGFloat =  txtMainView.frame.width
-            var yAxis:CGFloat = 10.0
-
-//            var printResult = ""
-
-            for i in ayatObj.start...ayatObj.end
-            {
-                var code = i
-                if code == 127
-                {
-                    code = 254
-                }
-                
-                resultStr = String(Character(UnicodeScalar(code)!))
-                var width:CGFloat = 0.0
-
-//                printResult += "{\(1), \(resultStr)}, "
-
-                let string = resultStr
-                let size:CGSize = string.sizeOfString(usingFont: attrs)
-                width = size.width
-
-                if width > 10 //&& string != "·"
-                {
-                    if (xAxis - width) < 0
-                    {
-                        xAxis = txtMainView.frame.width
-                        yAxis += 70.0
-                    }
-
-                    let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
-                    lbl.font = font
-                    lbl.text = string
-                    txtMainView.addSubview(lbl)
-                    xAxis -= width + 5
-                }
-            }
-//            print("//////////////////////////////////////////////")
-//            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
-//            print("Font: \(fontName)")
-//            print(printResult)
-//            print("//////////////////////////////////////////////")
-            
-            scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
-
-            leading.constant = -160
-            quranFlag = false
-            
-            if isMyPeripheralConected
-            {
-                let division = verseNo / 127
-                let remainder = verseNo % 127
-
-                let surat = UInt8(chapterNo)
-                let div = UInt8(division)
-                let rem = UInt8(remainder)
-                
-                timer.invalidate()
-                timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
-
-                let dataToSend = Data([UInt8(Character("S").asciiValue!), surat, div, rem])
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            }
-            else
-            {
-                self.view.makeToast("Bluetooth device disconnected")
-            }
+            getSurahAyat(ayatObj: ayatObj)
         }
     }
     
