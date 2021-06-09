@@ -106,7 +106,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
                 if(cc.uuid == quranUUID) {
                     print("QuranUUID: \(cc.uuid.uuidString)")
                     quranCharacteristic = cc
-                    homeVC.setDeviceTime()
+                    if homeVC != nil
+                    {
+                        homeVC.setDeviceTime()
+                    }
                 }
             }
         }
@@ -161,5 +164,4 @@ struct AppUtility {
         UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
         UINavigationController.attemptRotationToDeviceOrientation()
     }
-
 }

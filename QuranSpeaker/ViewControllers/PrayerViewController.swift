@@ -32,7 +32,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     @IBOutlet weak var lblIsha: UILabel!
     @IBOutlet weak var leading: NSLayoutConstraint!
     
-    
     var menuFlag = false
     var lat = 0.0
     var lng = 0.0
@@ -42,6 +41,13 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     var currentYear = 0
     var month = 1
     
+    var prayer = 0
+    var fajrFlag = 0
+    var sunriseFlag = 0
+    var dhuhrFlag = 0
+    var asrFlag = 0
+    var maghribFlag = 0
+    var ishaFlag = 0
     //BLE
 //    var bleManager : CBCentralManager!
 //    var myBluetoothPeripheral : CBPeripheral!
@@ -129,25 +135,106 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     
     @IBAction func alarmBtnAction(button: UIButton)
     {
-        if button.tag == 1001
+        prayer = button.tag
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        
+        if prayer == 1001
         {
+            if (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1
+            {
+                onBtn.setImage(UIImage(named: "on"), for: .normal)
+                offBtn.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else
+            {
+                onBtn.setImage(UIImage(named: "off"), for: .normal)
+                offBtn.setImage(UIImage(named: "on"), for: .normal)
+            }
             
+            let time = formatter.date(from: lblFajr.text!)!
+            timePicker.setDate(time, animated: false)
         }
-        else if button.tag == 1002
+        else if prayer == 1002
         {
+            if (defaults.value(forKey: "sunriseFlag") as? Int ?? 0) == 1
+            {
+                onBtn.setImage(UIImage(named: "on"), for: .normal)
+                offBtn.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else
+            {
+                onBtn.setImage(UIImage(named: "off"), for: .normal)
+                offBtn.setImage(UIImage(named: "on"), for: .normal)
+            }
             
+            let time = formatter.date(from: lblSunset.text!)!
+            timePicker.setDate(time, animated: false)
         }
-        else if button.tag == 1003
+        else if prayer == 1003
         {
+            if (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1
+            {
+                onBtn.setImage(UIImage(named: "on"), for: .normal)
+                offBtn.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else
+            {
+                onBtn.setImage(UIImage(named: "off"), for: .normal)
+                offBtn.setImage(UIImage(named: "on"), for: .normal)
+            }
             
+            let time = formatter.date(from: lblDhuhr.text!)!
+            timePicker.setDate(time, animated: false)
         }
-        else if button.tag == 1004
+        else if prayer == 1004
         {
+            if (defaults.value(forKey: "asrFlag") as? Int ?? 0) == 1
+            {
+                onBtn.setImage(UIImage(named: "on"), for: .normal)
+                offBtn.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else
+            {
+                onBtn.setImage(UIImage(named: "off"), for: .normal)
+                offBtn.setImage(UIImage(named: "on"), for: .normal)
+            }
             
+            let time = formatter.date(from: lblAsr.text!)!
+            timePicker.setDate(time, animated: false)
         }
-        else if button.tag == 1005
+        else if prayer == 1005
         {
+            if (defaults.value(forKey: "maghribFlag") as? Int ?? 0) == 1
+            {
+                onBtn.setImage(UIImage(named: "on"), for: .normal)
+                offBtn.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else
+            {
+                onBtn.setImage(UIImage(named: "off"), for: .normal)
+                offBtn.setImage(UIImage(named: "on"), for: .normal)
+            }
             
+            let time = formatter.date(from: lblMaghrib.text!)!
+            timePicker.setDate(time, animated: false)
+        }
+        else if prayer == 1006
+        {
+            if (defaults.value(forKey: "ishaFlag") as? Int ?? 0) == 1
+            {
+                onBtn.setImage(UIImage(named: "on"), for: .normal)
+                offBtn.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else
+            {
+                onBtn.setImage(UIImage(named: "off"), for: .normal)
+                offBtn.setImage(UIImage(named: "on"), for: .normal)
+            }
+            
+            let time = formatter.date(from: lblIsha.text!)!
+            timePicker.setDate(time, animated: false)
         }
         
         alarmMainView.alpha = 1
@@ -157,11 +244,86 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     {
         if button.tag == 1001
         {
+            let DLSaving = defaults.value(forKey: "daylight") as? Int ?? 0
+            var dataToSend = Data([UInt8(Character("P").asciiValue!), UInt8(DLSaving)])
             
+            if prayer == 1001 && (fajrFlag == 1 || (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1)
+            {
+                dataToSend.append(UInt8(1))
+                defaults.set(1, forKey: "fajrFlag")
+            }
+            else
+            {
+                dataToSend.append(UInt8(0))
+            }
+            
+            if prayer == 1002 && (sunriseFlag == 1 || (defaults.value(forKey: "sunriseFlag") as? Int ?? 0) == 1)
+            {
+                dataToSend.append(UInt8(1))
+                defaults.set(1, forKey: "sunriseFlag")
+            }
+            else
+            {
+                dataToSend.append(UInt8(0))
+            }
+            
+            if prayer == 1003 && (dhuhrFlag == 1 || (defaults.value(forKey: "dhuhrFlag") as? Int ?? 0) == 1)
+            {
+                dataToSend.append(UInt8(1))
+                defaults.set(1, forKey: "fajrFlag")
+            }
+            else
+            {
+                dataToSend.append(UInt8(0))
+            }
+            
+            if prayer == 1004 && (asrFlag == 1 || (defaults.value(forKey: "asrFlag") as? Int ?? 0) == 1)
+            {
+                dataToSend.append(UInt8(1))
+                defaults.set(1, forKey: "asrFlag")
+            }
+            else
+            {
+                dataToSend.append(UInt8(0))
+            }
+            
+            if prayer == 1005 && (maghribFlag == 1 || (defaults.value(forKey: "maghribFlag") as? Int ?? 0) == 1)
+            {
+                dataToSend.append(UInt8(1))
+                defaults.set(1, forKey: "maghribFlag")
+            }
+            else
+            {
+                dataToSend.append(UInt8(0))
+            }
+            
+            if prayer == 1006 && (ishaFlag == 1 || (defaults.value(forKey: "ishaFlag") as? Int ?? 0) == 1)
+            {
+                dataToSend.append(UInt8(1))
+                defaults.set(1, forKey: "ishaFlag")
+            }
+            else
+            {
+                dataToSend.append(UInt8(0))
+            }
+            
+            dataToSend.append(UInt8(0))
+            dataToSend.append(UInt8(0))
+            dataToSend.append(UInt8(0))
+            dataToSend.append(UInt8(0))
+            dataToSend.append(UInt8(0))
+            dataToSend.append(UInt8(0))
+            
+            myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
         else
         {
-            
+            fajrFlag = 0
+            sunriseFlag = 0
+            dhuhrFlag = 0
+            asrFlag = 0
+            maghribFlag = 0
+            ishaFlag = 0
         }
         
         alarmMainView.alpha = 0
@@ -169,6 +331,31 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     
     @IBAction func onofflBtnAction(button: UIButton)
     {
+        if prayer == 1001 && button.tag == 1001
+        {
+            fajrFlag = 1
+        }
+        else if prayer == 1002 && button.tag == 1001
+        {
+            sunriseFlag = 1
+        }
+        else if prayer == 1003 && button.tag == 1001
+        {
+            dhuhrFlag = 1
+        }
+        else if prayer == 1004 && button.tag == 1001
+        {
+            asrFlag = 1
+        }
+        else if prayer == 1005 && button.tag == 1001
+        {
+            maghribFlag = 1
+        }
+        else if prayer == 1006 && button.tag == 1001
+        {
+            ishaFlag = 1
+        }
+        
         if button.tag == 1001
         {
             onBtn.setImage(UIImage(named: "on"), for: .normal)
@@ -546,14 +733,3 @@ extension CLPlacemark {
         return nil
     }
 }
-
-//alarm setting from app
-//byte index1=2,index2=8;
-//        data[0] = 'P';
-//        data[1]= PTVARS.DLSaving;
-//        for(byte c=0; c<7; c++) {
-//            if(c==1) continue;
-//            data[index1]=PTVARS.alarm_status[c];
-//            data[index2] = PTVARS.alarm_time[c];
-//            index1++;index2++;
-//        }

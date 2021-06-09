@@ -164,27 +164,35 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func setDeviceTime()
     {
-        let components = Calendar.current.dateComponents([.hour, .day, .month, .year], from: Date())
+        let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
         
-        let year = UInt8(components.year! - 2000)
-        let month = UInt8(components.month! + 1)
-        let day = UInt8(components.day!)
-        let hour = UInt8(components.hour!)
-        let min = UInt8(components.minute!)
-        let sec = UInt8(components.second!)
+        var year = components.year ?? 0
+        let month = UInt8(components.month ?? 0 + 1)
+        let day = UInt8(components.day ?? 0)
+        let hour = UInt8(components.hour ?? 0)
+        let min = UInt8(components.minute ?? 0)
+        let sec = UInt8(components.second ?? 0)
         
-        let dataToSend = Data([UInt8(Character("C").asciiValue!), year, month, day, hour, min, sec])
+        if year > 2000
+        {
+            year = year - 2000
+        }
+        
+        let dataToSend = Data([UInt8(Character("C").asciiValue!), UInt8(year), month, day, hour, min, sec])
         myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        print("time updated")
     }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
     {
-        if toInterfaceOrientation == .landscapeLeft || toInterfaceOrientation == .landscapeRight{
+        if toInterfaceOrientation == .landscapeLeft || toInterfaceOrientation == .landscapeRight
+        {
             menuView.isHidden = true
             buttonsView.isHidden = true
             bottom.constant = -285
         }
-        else{
+        else
+        {
             menuView.isHidden = false
             buttonsView.isHidden = false
             bottom.constant = 0
@@ -211,87 +219,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
         let ayatObj = ayatsArray[verseNo - 1]
-        
-        var prefix = "KSF"
-
-        if ayatObj.page < 3
-        {
-            prefix.append("00")
-        }
-        else if ayatObj.page < 10
-        {
-            prefix.append("P00")
-        }
-        else if ayatObj.page < 100
-        {
-            prefix.append("P0")
-        }
-        else
-        {
-            prefix.append("P")
-        }
-
-        if lblMain != nil
-        {
-            lblMain.alpha = 0
-        }
-        
-        let fontName = String(format:"%@%d", prefix, ayatObj.page)
-        let font = UIFont(name: fontName, size: 50)!
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
-        
-        for view in txtMainView.subviews
-        {
-            view.removeFromSuperview()
-        }
-        
-        var resultStr = ""
-        var xAxis:CGFloat =  txtMainView.frame.width
-        var yAxis:CGFloat = 10.0
-
-//            var printResult = ""
-
-        for i in ayatObj.start...ayatObj.end
-        {
-            var code = i
-            if code == 127
-            {
-                code = 254
-            }
-            
-            resultStr = String(Character(UnicodeScalar(code)!))
-            var width:CGFloat = 0.0
-
-//                printResult += "{\(1), \(resultStr)}, "
-
-            let string = resultStr
-            let size:CGSize = string.sizeOfString(usingFont: attrs)
-            width = size.width
-
-            if width > 17 //&& string != "·"
-            {
-                if (xAxis - width) < 0
-                {
-                    xAxis = txtMainView.frame.width
-                    yAxis += 70.0
-                }
-
-                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
-                lbl.font = font
-                lbl.text = string
-                txtMainView.addSubview(lbl)
-                xAxis -= width + 5
-            }
-        }
-//            print("//////////////////////////////////////////////")
-//            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
-//            print("Font: \(fontName)")
-//            print(printResult)
-//            print("//////////////////////////////////////////////")
-        
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
+        getSurahAyat(ayatObj: ayatObj)
     }
     
     func loadQaris()
@@ -573,7 +501,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let size:CGSize = string.sizeOfString(usingFont: attrs)
             width = size.width
 
-            if width > 10 //&& string != "·"
+            if width > 17
             {
                 if (xAxis - width) < 0
                 {
