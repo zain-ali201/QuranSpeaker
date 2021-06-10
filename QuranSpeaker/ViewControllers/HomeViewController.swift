@@ -131,8 +131,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let bleSurah = Int(byteArray[1])
                 let bleAyat = Int(byteArray[3])
                 
+                print("/////////////////////////////")
                 print("bleSurah: \(bleSurah)")
                 print("bleAyat: \(bleAyat)")
+                
+                print("chapterNo: \(chapterNo)")
+                print("verseNo: \(verseNo)")
+                print("/////////////////////////////")
                 
                 if bleAyat != verseNo
                 {
@@ -144,6 +149,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if type == "R"
             {
+                print("Qaris")
                 for i in 1..<byteArray.count
                 {
                     let qari = Int(byteArray[i])
@@ -153,6 +159,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if type == "T"
             {
+                print("Translations")
                 for i in 1..<byteArray.count
                 {
                     let trans = Int(byteArray[i])
@@ -209,7 +216,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             chapterNo = 1
         }
-        
+
         if verseNo == 0
         {
             verseNo = 1
@@ -219,43 +226,124 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
         let ayatObj = ayatsArray[verseNo - 1]
-        getSurahAyat(ayatObj: ayatObj)
+        
+        var prefix = "KSF"
+        
+        if ayatObj.page < 3
+        {
+            prefix.append("00")
+        }
+        else if ayatObj.page < 10
+        {
+            prefix.append("P00")
+        }
+        else if ayatObj.page < 100
+        {
+            prefix.append("P0")
+        }
+        else
+        {
+            prefix.append("P")
+        }
+
+        if lblMain != nil
+        {
+            lblMain.alpha = 0
+        }
+        
+        let fontName = String(format:"%@%d", prefix, ayatObj.page)
+        print(fontName)
+        let font = UIFont(name: fontName, size: 50)!
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        
+        for view in txtMainView.subviews
+        {
+            view.removeFromSuperview()
+        }
+        
+        var resultStr = ""
+        var xAxis:CGFloat =  txtMainView.frame.width
+        var yAxis:CGFloat = 10.0
+
+//            var printResult = ""
+
+        for i in ayatObj.start...ayatObj.end
+        {
+            var code = i
+            if code == 127
+            {
+                code = 254
+            }
+            
+            resultStr = String(Character(UnicodeScalar(code)!))
+            var width:CGFloat = 0.0
+
+//                printResult += "{\(1), \(resultStr)}, "
+
+            let string = resultStr
+            let size:CGSize = string.sizeOfString(usingFont: attrs)
+            width = size.width
+
+            if width > 8
+            {
+                if (xAxis - width) < 0
+                {
+                    xAxis = txtMainView.frame.width
+                    yAxis += 70.0
+                }
+
+                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                lbl.font = font
+                lbl.text = string
+                txtMainView.addSubview(lbl)
+                xAxis -= width + 5
+            }
+        }
+//            print("//////////////////////////////////////////////")
+//            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
+//            print("Font: \(fontName)")
+//            print(printResult)
+//            print("//////////////////////////////////////////////")
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
     }
     
     func loadQaris()
     {
         let qariNames:[String] = [
-                        "Abdullah Basfar",
-                        "Muhammad Ibrahim",
-                        "Saad Al-Ghamidi",
-                        "Mishary Rashid Alafasy",
-                        "Maher Almuaiqly",
-                        "Abdur Rehman al Hudhaifi",
-                        "Muhammad Siddiq al-Minshawi",
-                        "Abdul Mohsen Al Qasim",
-                        "Abdul Basit",
-                        "Muhammad Jebril",
-                        "Muhammad Ayub",
-                        "Ahmed Bin Ali Ajmi",
-                        "Mahmoud Khalil Al Hussary",
-                        "Abdul Rahman Al Sudais"
+            "Abdullah Basfar",
+            "Muhammad Ibrahim",
+            "Saad Al-Ghamidi",
+            "Mishary Rashid Alafasy",
+            "Maher Almuaiqly",
+            "Abdur Rehman al Hudhaifi",
+            "Muhammad Siddiq al-Minshawi",
+            "Abdul Mohsen Al Qasim",
+            "Abdul Basit",
+            "Muhammad Jebril",
+            "Muhammad Ayub",
+            "Ahmed Bin Ali Ajmi",
+            "Mahmoud Khalil Al Hussary",
+            "Abdul Rahman Al Sudais"
         ]
         
         let qariImages:[String] = [
-                    "01basfer",
-                    "02ibraheem",
-                    "03Ghamdi",
-                    "04Alfasey",
-                    "05Muaqly",
-                    "06hudaify",
-                    "07minshawi",
-                    "08Muhsin",
-                    "09abdulbasit",
-                    "10jibreel",
-                    "11Ayub",
-                    "12ajmi",
-                    "13alhusary",
-                    "14Sudais"
+                "01basfer",
+                "02ibraheem",
+                "03Ghamdi",
+                "04Alfasey",
+                "05Muaqly",
+                "06hudaify",
+                "07minshawi",
+                "08Muhsin",
+                "09abdulbasit",
+                "10jibreel",
+                "11Ayub",
+                "12ajmi",
+                "13alhusary",
+                "14Sudais"
             ]
         
         for i in 0..<qariImages.count
@@ -501,7 +589,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let size:CGSize = string.sizeOfString(usingFont: attrs)
             width = size.width
 
-            if width > 17
+            if width > 8
             {
                 if (xAxis - width) < 0
                 {

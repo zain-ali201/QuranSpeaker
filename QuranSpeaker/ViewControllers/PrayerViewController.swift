@@ -670,14 +670,29 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
         
         prayerKit.outputFormat = .Time12
         let times = prayerKit.getPrayerTimes()
+        
+        var fajr = (times?[.Fajr] as? String) ?? ""
+        fajr = fajr.replacingOccurrences(of: "60", with: "59")
+        var sunrise = (times?[.Sunrise] as? String) ?? ""
+        sunrise = sunrise.replacingOccurrences(of: "60", with: "59")
+        var dhuhr = (times?[.Dhuhr] as? String) ?? ""
+        dhuhr = dhuhr.replacingOccurrences(of: "60", with: "59")
+        var asr = (times?[.Asr] as? String) ?? ""
+        asr = asr.replacingOccurrences(of: "60", with: "59")
+        var sunset = (times?[.Sunset] as? String) ?? ""
+        sunset = sunset.replacingOccurrences(of: "60", with: "59")
+        var maghrib = (times?[.Maghrib] as? String) ?? ""
+        maghrib = maghrib.replacingOccurrences(of: "60", with: "59")
+        var isha = (times?[.Isha] as? String) ?? ""
+        isha = isha.replacingOccurrences(of: "60", with: "59")
 
-        lblFajr.text = times?[.Fajr] as? String
-        lblSunrise.text = times?[.Sunrise] as? String
-        lblDhuhr.text = times?[.Dhuhr] as? String
-        lblAsr.text = times?[.Asr] as? String
-        lblSunset.text = times?[.Sunset] as? String
-        lblMaghrib.text = times?[.Maghrib] as? String
-        lblIsha.text = times?[.Isha] as? String
+        lblFajr.text = fajr
+        lblSunrise.text = sunrise
+        lblDhuhr.text = dhuhr
+        lblAsr.text = asr
+        lblSunset.text = sunset
+        lblMaghrib.text = maghrib
+        lblIsha.text = isha
     }
     
     @IBAction func menuBtnAction(_ button: UIButton)
