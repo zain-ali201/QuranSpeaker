@@ -44,6 +44,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var aya = String()
     var indexArray:[String] = []
     
+    var qariNames:[String] = []
+    var transNames:[String] = []
+    
     var qarisArray:[HomeObject] = []
     var booksArray:[HomeObject] = []
     var transArray:[HomeObject] = []
@@ -69,11 +72,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         homeVC = self
         
+        loadNames()
+        
+        let qArray = UserDefaults.standard.value(forKey: "qarisArray")
+        
+        if qArray != nil
+        {
+            qarisArray = qArray as? [HomeObject] ?? []
+        }
+        
+        let tArray = UserDefaults.standard.value(forKey: "transArray")
+        
+        if tArray != nil
+        {
+            qarisArray = tArray as? [HomeObject] ?? []
+        }
+        
         sliderView.layer.cornerRadius = 10.0
         sliderView.layer.masksToBounds = true
         volSlider.value = Float(currentVolume)
-        
-        transArray = [HomeObject(name: "Farsi", img: UIImage(named: "Iran")!, key: ""), HomeObject(name: "Other", img: UIImage(named: "Other")!, key: ""), HomeObject(name: "Uzbek", img: UIImage(named: "Uzbekistan")!, key: ""), HomeObject(name: "English", img: UIImage(named: "England")!, key:""), HomeObject(name: "Urdu", img: UIImage(named: "Pakistan")!, key:""), HomeObject(name: "French", img: UIImage(named: "France")!, key: "")]
         
         quranView.layer.borderWidth = 1
         quranView.layer.borderColor = UIColor.darkGray.cgColor
@@ -118,57 +135,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func fetchAppData(byteArray: [UInt8])
-    {
-        let firstBitValue = byteArray[0] & 0x01
-        
-        if firstBitValue != 0
-        {
-            let type = Character(UnicodeScalar(byteArray[0]))
-            
-            if type == "Q"
-            {
-                let bleSurah = Int(byteArray[1])
-                let bleAyat = Int(byteArray[3])
-                
-                print("/////////////////////////////")
-                print("bleSurah: \(bleSurah)")
-                print("bleAyat: \(bleAyat)")
-                
-                print("chapterNo: \(chapterNo)")
-                print("verseNo: \(verseNo)")
-                print("/////////////////////////////")
-                
-                if bleAyat != verseNo
-                {
-                    chapterNo = bleSurah
-                    verseNo = bleAyat
-                    changeAyat()
-                }
-            }
-            
-            if type == "R"
-            {
-                print("Qaris")
-                for i in 1..<byteArray.count
-                {
-                    let qari = Int(byteArray[i])
-                    print("qari: \(qari)")
-                }
-            }
-            
-            if type == "T"
-            {
-                print("Translations")
-                for i in 1..<byteArray.count
-                {
-                    let trans = Int(byteArray[i])
-                    print("trans: \(trans)")
-                }
-            }
-        }
-    }
-    
     func setDeviceTime()
     {
         let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
@@ -185,7 +151,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             year = year - 2000
         }
         
-        let dataToSend = Data([UInt8(Character("C").asciiValue!), UInt8(year), month, day, hour, min, sec])
+        let dataToSend = Data([UInt8(Character("C").asciiValue!), hour, min, sec, day, month, UInt8(year)])
         myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
         print("time updated")
     }
@@ -310,68 +276,116 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
     }
     
-    func loadQaris()
+    func loadNames()
     {
-        let qariNames:[String] = [
+        qariNames = [
+            "",
             "Abdullah Basfar",
-            "Muhammad Ibrahim",
+            "Muhammad Ibraheem",
             "Saad Al-Ghamidi",
             "Mishary Rashid Alafasy",
             "Maher Almuaiqly",
-            "Abdur Rehman al Hudhaifi",
+            "Abdur Rahman al Hudhaifi",
             "Muhammad Siddiq al-Minshawi",
-            "Abdul Mohsen Al Qasim",
+            "Abdulmohsen Al Qasim",
             "Abdul Basit",
             "Muhammad Jebril",
             "Muhammad Ayub",
             "Ahmed Bin Ali Ajmi",
             "Mahmoud Khalil Al Hussary",
-            "Abdul Rahman Al Sudais"
+            "Abdul Rahman Al Sudais",
+            "Abu Bakr Al Shatri",
+            "Qari Barakatullah Saleem",
+            "Abdullah Awwad Aljuhany",
+            "Abdurrashid SufiOther",
+            "Minshawi with Children",
+            "Abdur Rahman Bukhatir",
+            "Sadaqat Ali",
+            "Abdul Basit Mujawid",
+            "Other",
+            "Ibrahim Al Akhdar",
+            "WBW",
+            "Hani Ar Rifai",
+            "Other",
+            "Other",
+            "Other",
+            "Saleh Albudair",
+            "Other",
+            "Muhammad Al Tablawy",
+            "Wahid Zafar Qasmi",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Raad Alkurdi",
+            "Other ",
+            "Ibraheem Jamal",
+            "Ahmed Deban",
+            "Alsultani Riwayah Hasham ibne amir",
+            "Yaqoob al hazarmi",
+            "Other",
+            "Other",
+            "Ayman Swad",
+            "Other",
         ]
         
-        let qariImages:[String] = [
-                "01basfer",
-                "02ibraheem",
-                "03Ghamdi",
-                "04Alfasey",
-                "05Muaqly",
-                "06hudaify",
-                "07minshawi",
-                "08Muhsin",
-                "09abdulbasit",
-                "10jibreel",
-                "11Ayub",
-                "12ajmi",
-                "13alhusary",
-                "14Sudais"
-            ]
-        
-        for i in 0..<qariImages.count
-        {
-            //Simple usage example with NSData
-//            print(qariImages[i])
-            let filePath = Bundle.main.path(forResource: qariImages[i], ofType: "webp")
-//            print(filePath)
-            if filePath != nil && filePath != ""
-            {
-                var fileData:NSData? = nil
-                do
-                {
-                    fileData = try NSData(contentsOfFile: filePath!, options: NSData.ReadingOptions.uncached)
-                }
-                catch
-                {
-                    print("Error loading WebP file")
-                }
-                
-                let image:UIImage = UIImage(webpWithData: fileData!)
-                let homeObj = HomeObject(name: qariNames[i], img: image, key: "")
-                qarisArray.append(homeObj)
-            }
-        }
-        
-        collectionView.reloadData()
-        qarisView.alpha = 1
+        transNames = [
+            "",
+            "Farsi",
+            "Other",
+            "Uzbeck",
+            "English",
+            "Urdu",
+            "French",
+            "Turkish",
+            "Kyrgyz",
+            "Marathi",
+            "Tamil",
+            "Somali",
+            "Dari",
+            "Pashto",
+            "Bangla",
+            "Bosnian",
+            "Gujrati",
+            "Portugese",
+            "Russian",
+            "German",
+            "Kazakh",
+            "Malaysian",
+            "Other",
+            "Spanish",
+            "Thai",
+            "Malyalam",
+            "Kurdish",
+            "Indonesian",
+            "Other",
+            "Swahili",
+            "Other",
+            "Other",
+            "Italian",
+            "Hindi",
+            "Tatar",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Other",
+            "Jalalain"
+        ]
     }
     
     func loadBooks()
@@ -790,9 +804,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 8
         {
-            tag = 1003
-            collectionView.reloadData()
-            qarisView.alpha = 1
+            if isMyPeripheralConected && quranCharacteristic != nil
+            {
+                let dataToSend = Data([UInt8(Character("T").asciiValue!)])
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                print("value written: \(key)")
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
+            
+            if transArray.count > 0
+            {
+                tag = 1003
+                collectionView.reloadData()
+                qarisView.alpha = 1
+            }
         }
         else if button.tag == 9
         {
@@ -816,8 +844,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 13
         {
-            tag = 1001
-            loadQaris()
+            if isMyPeripheralConected && quranCharacteristic != nil
+            {
+                let dataToSend = Data([UInt8(Character("R").asciiValue!)])
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                print("value written: \(key)")
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
+            
+            if qarisArray.count > 0
+            {
+                tag = 1001
+                collectionView.reloadData()
+                qarisView.alpha = 1
+            }
         }
         else if button.tag == 14
         {
@@ -848,6 +891,124 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             else
             {
                 self.view.makeToast("Bluetooth device disconnected")
+            }
+        }
+    }
+    
+    func fetchAppData(byteArray: [UInt8])
+    {
+        let firstBitValue = byteArray[0] & 0x01
+        
+        if firstBitValue != 0
+        {
+            let type = Character(UnicodeScalar(byteArray[0]))
+            
+            if type == "Q"
+            {
+                let bleSurah = Int(byteArray[1])
+                let bleAyat = Int(byteArray[3])
+                
+                let totalQaris = Int(byteArray[6])
+                let totalTrans = Int(byteArray[7])
+                let volume = Int(byteArray[9])
+                
+                let ledMode = Int(byteArray[39])
+                let ledContrast = Int(byteArray[40])
+                let whiteContrast = Int(byteArray[41])
+                let colorContrast = Int(byteArray[42])
+                
+                UserDefaults.standard.setValue(totalQaris, forKey: "totalQaris")
+                UserDefaults.standard.setValue(totalTrans, forKey: "totalTrans")
+                UserDefaults.standard.setValue(volume, forKey: "volume")
+                UserDefaults.standard.setValue(ledMode, forKey: "ledMode")
+                UserDefaults.standard.setValue(ledContrast, forKey: "ledContrast")
+                UserDefaults.standard.setValue(whiteContrast, forKey: "whiteContrast")
+                UserDefaults.standard.setValue(colorContrast, forKey: "colorContrast")
+                
+                print("/////////////////////////////")
+                print("bleSurah: \(bleSurah)")
+                print("bleAyat: \(bleAyat)")
+                
+                print("totalQaris: \(totalQaris)")
+                print("totalTrans: \(totalTrans)")
+                print("/////////////////////////////")
+                
+                if bleAyat != verseNo
+                {
+                    chapterNo = bleSurah
+                    verseNo = bleAyat
+                    changeAyat()
+                }
+            }
+        }
+    }
+    
+    func fetchQaris(byteArray: [UInt8])
+    {
+        print("qari")
+        let firstBitValue = byteArray[0] & 0x02
+        
+        if firstBitValue != 0
+        {
+            let type = Character(UnicodeScalar(byteArray[0]))
+            print(type)
+            if type == "R"
+            {
+                print("QarisCount: \(byteArray[1])")
+                
+                qarisArray = []
+                let totalQari = UserDefaults.standard.integer(forKey: "totalQaris")
+                for i in 0..<totalQari
+                {
+                    let filePath = Bundle.main.path(forResource: String(format: "%d", i + 1), ofType: "webp")!
+                    var fileData:NSData? = nil
+                    do {
+                        fileData = try NSData(contentsOfFile: filePath, options: NSData.ReadingOptions.uncached)
+                    }
+                    catch {
+                        print("Error loading Webp file")
+                    }
+                    
+                    let image:UIImage = UIImage(webpWithData: fileData!)
+                    let homeObj = HomeObject(name: qariNames[i + 1], img: image, key: "\(i + 1)")
+                    qarisArray.append(homeObj)
+                }
+                
+                tag = 1001
+                collectionView.reloadData()
+                qarisView.alpha = 1
+                
+//                UserDefaults.standard.setValue(qarisArray, forKey: "qarisArray")
+            }
+        }
+    }
+    
+    func fetchTrans(byteArray: [UInt8])
+    {
+        print("trans")
+        let firstBitValue = byteArray[0] & 0x02
+        
+        if firstBitValue != 0
+        {
+            print("trans1")
+            let type = Character(UnicodeScalar(byteArray[0]))
+            print(type)
+            if type == "T"
+            {
+                transArray = []
+                let totalTrans = UserDefaults.standard.integer(forKey: "totalTrans")
+                for i in 1..<totalTrans
+                {
+                    let image:UIImage = UIImage(named: "\(i)") ?? UIImage(named: "0")!
+                    let homeObj = HomeObject(name: transNames[i], img: image, key: "\(i)")
+                    transArray.append(homeObj)
+                }
+                
+                tag = 1003
+                collectionView.reloadData()
+                qarisView.alpha = 1
+                
+//                UserDefaults.standard.setValue(transArray, forKey: "transArray")
             }
         }
     }
@@ -924,7 +1085,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             if tag == 1001
             {
-                let qari = UInt8(indexPath.row + 1)
+                let qari = UInt8(qarisArray[indexPath.row].key)!
                 print(qari)
                 let dataToSend = Data([3,qari])
                 
@@ -940,7 +1101,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             else if tag == 1003
             {
-                let trans =  UInt8(indexPath.row + 1)
+                let trans =  UInt8(transArray[indexPath.row].key)!
                 print(trans)
                 let dataToSend = Data([4,trans])
                 
@@ -1101,6 +1262,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard let characteristicData = characteristic.value else { return }
             let byteArray = [UInt8](characteristicData)
             fetchAppData(byteArray: byteArray)
+            fetchQaris(byteArray: byteArray)
+            fetchTrans(byteArray: byteArray)
             if prayersVC != nil
             {
                 prayersVC.fetchPrayerData(byteArray: byteArray)

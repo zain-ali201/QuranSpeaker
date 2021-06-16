@@ -10,20 +10,10 @@
 		1815DC1625E1AC4000DBF6DA /* BLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815DC1525E1AC4000DBF6DA /* BLEViewController.swift */; };
 		182FD3FF25CC2DD500D59FF2 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD3FE25CC2DD500D59FF2 /* Chapter.swift */; };
 		182FD40325CC2E2200D59FF2 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FD40225CC2E2200D59FF2 /* Verse.swift */; };
-		18454B10265D434C0049F661 /* 11Ayub.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B02265D434A0049F661 /* 11Ayub.webp */; };
-		18454B11265D434C0049F661 /* 04Alfasey.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B03265D434A0049F661 /* 04Alfasey.webp */; };
-		18454B12265D434C0049F661 /* 02ibraheem.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B04265D434A0049F661 /* 02ibraheem.webp */; };
-		18454B13265D434C0049F661 /* 12ajmi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B05265D434A0049F661 /* 12ajmi.webp */; };
-		18454B14265D434C0049F661 /* 05Muaqly.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B06265D434B0049F661 /* 05Muaqly.webp */; };
-		18454B15265D434C0049F661 /* 01basfer.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B07265D434B0049F661 /* 01basfer.webp */; };
-		18454B16265D434C0049F661 /* 09abdulbasit.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B08265D434B0049F661 /* 09abdulbasit.webp */; };
-		18454B17265D434C0049F661 /* 13alhusary.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B09265D434B0049F661 /* 13alhusary.webp */; };
-		18454B18265D434C0049F661 /* 10jibreel.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0A265D434B0049F661 /* 10jibreel.webp */; };
-		18454B19265D434C0049F661 /* 08Muhsin.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0B265D434B0049F661 /* 08Muhsin.webp */; };
-		18454B1A265D434C0049F661 /* 03Ghamdi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0C265D434B0049F661 /* 03Ghamdi.webp */; };
-		18454B1B265D434C0049F661 /* 07minshawi.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0D265D434C0049F661 /* 07minshawi.webp */; };
-		18454B1C265D434C0049F661 /* 14Sudais.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0E265D434C0049F661 /* 14Sudais.webp */; };
-		18454B1D265D434C0049F661 /* 06hudaify.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0F265D434C0049F661 /* 06hudaify.webp */; };
+		18454B11265D434C0049F661 /* 4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B03265D434A0049F661 /* 4.webp */; };
+		18454B12265D434C0049F661 /* 2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B04265D434A0049F661 /* 2.webp */; };
+		18454B15265D434C0049F661 /* 1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B07265D434B0049F661 /* 1.webp */; };
+		18454B1A265D434C0049F661 /* 3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B0C265D434B0049F661 /* 3.webp */; };
 		18454B29265D44370049F661 /* Book7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B20265D44360049F661 /* Book7.webp */; };
 		18454B2A265D44370049F661 /* Book8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B21265D44370049F661 /* Book8.webp */; };
 		18454B2B265D44370049F661 /* Book5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B22265D44370049F661 /* Book5.webp */; };
@@ -34,6 +24,45 @@
 		18454B30265D44370049F661 /* Book3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B27265D44370049F661 /* Book3.webp */; };
 		18454B31265D44370049F661 /* Book9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18454B28265D44370049F661 /* Book9.webp */; };
 		185332A525DD44C20045A745 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185332A425DD44C20045A745 /* CountryViewController.swift */; };
+		185932842679E06000524BFF /* 10.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859327A2679E05E00524BFF /* 10.webp */; };
+		185932852679E06000524BFF /* 13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859327B2679E05E00524BFF /* 13.webp */; };
+		185932862679E06000524BFF /* 8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859327C2679E05E00524BFF /* 8.webp */; };
+		185932872679E06000524BFF /* 6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859327D2679E05E00524BFF /* 6.webp */; };
+		185932882679E06000524BFF /* 7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859327E2679E05F00524BFF /* 7.webp */; };
+		185932892679E06000524BFF /* 12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859327F2679E05F00524BFF /* 12.webp */; };
+		1859328A2679E06000524BFF /* 14.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185932802679E05F00524BFF /* 14.webp */; };
+		1859328B2679E06000524BFF /* 5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185932812679E05F00524BFF /* 5.webp */; };
+		1859328C2679E06000524BFF /* 9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185932822679E05F00524BFF /* 9.webp */; };
+		1859328D2679E06000524BFF /* 11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185932832679E05F00524BFF /* 11.webp */; };
+		185932A62679E20100524BFF /* 17.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185932932679E1FE00524BFF /* 17.webp */; };
+		185932A92679E20100524BFF /* 19.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185932962679E1FE00524BFF /* 19.webp */; };
+		185932AA2679E20100524BFF /* 26.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185932972679E1FE00524BFF /* 26.webp */; };
+		185932AE2679E20100524BFF /* 30.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859329B2679E1FF00524BFF /* 30.webp */; };
+		185932AF2679E20100524BFF /* 20.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859329C2679E1FF00524BFF /* 20.webp */; };
+		185932B12679E20100524BFF /* 15.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859329E2679E20000524BFF /* 15.webp */; };
+		185932B42679E20100524BFF /* 41.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185932A12679E20000524BFF /* 41.webp */; };
+		1859331C2679F80B00524BFF /* 49.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185933132679F7D500524BFF /* 49.webp */; };
+		1859331D2679F80B00524BFF /* 50.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185933142679F7DA00524BFF /* 50.webp */; };
+		1859331E2679F80B00524BFF /* 21.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185933152679F7DF00524BFF /* 21.webp */; };
+		1859331F2679F80B00524BFF /* 22.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185933162679F7E000524BFF /* 22.webp */; };
+		185933202679F80B00524BFF /* 32.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185933172679F7EA00524BFF /* 32.webp */; };
+		185933212679F80B00524BFF /* 33.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185933182679F7F200524BFF /* 33.webp */; };
+		185933222679F80B00524BFF /* 24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 185933192679F7FE00524BFF /* 24.webp */; };
+		185933232679F80B00524BFF /* 18.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859331A2679F80200524BFF /* 18.webp */; };
+		185933242679F80B00524BFF /* 16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859331B2679F80600524BFF /* 16.webp */; };
+		18593334267A0B2E00524BFF /* 28.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18593327267A0B2900524BFF /* 28.webp */; };
+		18593335267A0B2E00524BFF /* 36.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18593328267A0B2A00524BFF /* 36.webp */; };
+		18593336267A0B2E00524BFF /* 38.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18593329267A0B2A00524BFF /* 38.webp */; };
+		18593337267A0B2E00524BFF /* 40.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859332A267A0B2A00524BFF /* 40.webp */; };
+		18593338267A0B2E00524BFF /* 47.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859332B267A0B2B00524BFF /* 47.webp */; };
+		18593339267A0B2E00524BFF /* 34.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859332C267A0B2B00524BFF /* 34.webp */; };
+		1859333A267A0B2E00524BFF /* 27.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859332D267A0B2C00524BFF /* 27.webp */; };
+		1859333B267A0B2E00524BFF /* 37.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859332E267A0B2C00524BFF /* 37.webp */; };
+		1859333C267A0B2E00524BFF /* 48.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1859332F267A0B2D00524BFF /* 48.webp */; };
+		1859333D267A0B2E00524BFF /* 23.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18593330267A0B2D00524BFF /* 23.webp */; };
+		1859333E267A0B2E00524BFF /* 39.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18593331267A0B2E00524BFF /* 39.webp */; };
+		1859333F267A0B2E00524BFF /* 35.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18593332267A0B2E00524BFF /* 35.webp */; };
+		18593340267A0B2E00524BFF /* 29.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18593333267A0B2E00524BFF /* 29.webp */; };
 		1865F1FE26383760005552FC /* KSF_P581.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1865EFA226383754005552FC /* KSF_P581.ttf */; };
 		1865F1FF26383760005552FC /* KSF_P595.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1865EFA326383754005552FC /* KSF_P595.ttf */; };
 		1865F20026383760005552FC /* KSF_P542.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1865EFA426383754005552FC /* KSF_P542.ttf */; };
@@ -666,20 +695,10 @@
 		181A795B26301A5600E3F730 /* ScheherazadeNew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Regular.ttf"; sourceTree = "<group>"; };
 		182FD3FE25CC2DD500D59FF2 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		182FD40225CC2E2200D59FF2 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
-		18454B02265D434A0049F661 /* 11Ayub.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11Ayub.webp; sourceTree = "<group>"; };
-		18454B03265D434A0049F661 /* 04Alfasey.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04Alfasey.webp; sourceTree = "<group>"; };
-		18454B04265D434A0049F661 /* 02ibraheem.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02ibraheem.webp; sourceTree = "<group>"; };
-		18454B05265D434A0049F661 /* 12ajmi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 12ajmi.webp; sourceTree = "<group>"; };
-		18454B06265D434B0049F661 /* 05Muaqly.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05Muaqly.webp; sourceTree = "<group>"; };
-		18454B07265D434B0049F661 /* 01basfer.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01basfer.webp; sourceTree = "<group>"; };
-		18454B08265D434B0049F661 /* 09abdulbasit.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 09abdulbasit.webp; sourceTree = "<group>"; };
-		18454B09265D434B0049F661 /* 13alhusary.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 13alhusary.webp; sourceTree = "<group>"; };
-		18454B0A265D434B0049F661 /* 10jibreel.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10jibreel.webp; sourceTree = "<group>"; };
-		18454B0B265D434B0049F661 /* 08Muhsin.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 08Muhsin.webp; sourceTree = "<group>"; };
-		18454B0C265D434B0049F661 /* 03Ghamdi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 03Ghamdi.webp; sourceTree = "<group>"; };
-		18454B0D265D434C0049F661 /* 07minshawi.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07minshawi.webp; sourceTree = "<group>"; };
-		18454B0E265D434C0049F661 /* 14Sudais.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 14Sudais.webp; sourceTree = "<group>"; };
-		18454B0F265D434C0049F661 /* 06hudaify.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 06hudaify.webp; sourceTree = "<group>"; };
+		18454B03265D434A0049F661 /* 4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4.webp; sourceTree = "<group>"; };
+		18454B04265D434A0049F661 /* 2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.webp; sourceTree = "<group>"; };
+		18454B07265D434B0049F661 /* 1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.webp; sourceTree = "<group>"; };
+		18454B0C265D434B0049F661 /* 3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.webp; sourceTree = "<group>"; };
 		18454B20265D44360049F661 /* Book7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book7.webp; sourceTree = "<group>"; };
 		18454B21265D44370049F661 /* Book8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book8.webp; sourceTree = "<group>"; };
 		18454B22265D44370049F661 /* Book5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book5.webp; sourceTree = "<group>"; };
@@ -691,6 +710,45 @@
 		18454B28265D44370049F661 /* Book9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book9.webp; sourceTree = "<group>"; };
 		18506F45260B3609003C2BBC /* QuranSpeaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranSpeaker-Bridging-Header.h"; sourceTree = "<group>"; };
 		185332A425DD44C20045A745 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		1859327A2679E05E00524BFF /* 10.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10.webp; sourceTree = "<group>"; };
+		1859327B2679E05E00524BFF /* 13.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 13.webp; sourceTree = "<group>"; };
+		1859327C2679E05E00524BFF /* 8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.webp; sourceTree = "<group>"; };
+		1859327D2679E05E00524BFF /* 6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.webp; sourceTree = "<group>"; };
+		1859327E2679E05F00524BFF /* 7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7.webp; sourceTree = "<group>"; };
+		1859327F2679E05F00524BFF /* 12.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 12.webp; sourceTree = "<group>"; };
+		185932802679E05F00524BFF /* 14.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 14.webp; sourceTree = "<group>"; };
+		185932812679E05F00524BFF /* 5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.webp; sourceTree = "<group>"; };
+		185932822679E05F00524BFF /* 9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9.webp; sourceTree = "<group>"; };
+		185932832679E05F00524BFF /* 11.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11.webp; sourceTree = "<group>"; };
+		185932932679E1FE00524BFF /* 17.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 17.webp; sourceTree = "<group>"; };
+		185932962679E1FE00524BFF /* 19.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 19.webp; sourceTree = "<group>"; };
+		185932972679E1FE00524BFF /* 26.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 26.webp; sourceTree = "<group>"; };
+		1859329B2679E1FF00524BFF /* 30.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 30.webp; sourceTree = "<group>"; };
+		1859329C2679E1FF00524BFF /* 20.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 20.webp; sourceTree = "<group>"; };
+		1859329E2679E20000524BFF /* 15.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 15.webp; sourceTree = "<group>"; };
+		185932A12679E20000524BFF /* 41.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 41.webp; sourceTree = "<group>"; };
+		185933132679F7D500524BFF /* 49.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 49.webp; sourceTree = "<group>"; };
+		185933142679F7DA00524BFF /* 50.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 50.webp; sourceTree = "<group>"; };
+		185933152679F7DF00524BFF /* 21.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 21.webp; sourceTree = "<group>"; };
+		185933162679F7E000524BFF /* 22.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 22.webp; sourceTree = "<group>"; };
+		185933172679F7EA00524BFF /* 32.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 32.webp; sourceTree = "<group>"; };
+		185933182679F7F200524BFF /* 33.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 33.webp; sourceTree = "<group>"; };
+		185933192679F7FE00524BFF /* 24.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 24.webp; sourceTree = "<group>"; };
+		1859331A2679F80200524BFF /* 18.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 18.webp; sourceTree = "<group>"; };
+		1859331B2679F80600524BFF /* 16.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 16.webp; sourceTree = "<group>"; };
+		18593327267A0B2900524BFF /* 28.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 28.webp; sourceTree = "<group>"; };
+		18593328267A0B2A00524BFF /* 36.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 36.webp; sourceTree = "<group>"; };
+		18593329267A0B2A00524BFF /* 38.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 38.webp; sourceTree = "<group>"; };
+		1859332A267A0B2A00524BFF /* 40.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 40.webp; sourceTree = "<group>"; };
+		1859332B267A0B2B00524BFF /* 47.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 47.webp; sourceTree = "<group>"; };
+		1859332C267A0B2B00524BFF /* 34.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 34.webp; sourceTree = "<group>"; };
+		1859332D267A0B2C00524BFF /* 27.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 27.webp; sourceTree = "<group>"; };
+		1859332E267A0B2C00524BFF /* 37.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 37.webp; sourceTree = "<group>"; };
+		1859332F267A0B2D00524BFF /* 48.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 48.webp; sourceTree = "<group>"; };
+		18593330267A0B2D00524BFF /* 23.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 23.webp; sourceTree = "<group>"; };
+		18593331267A0B2E00524BFF /* 39.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 39.webp; sourceTree = "<group>"; };
+		18593332267A0B2E00524BFF /* 35.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 35.webp; sourceTree = "<group>"; };
+		18593333267A0B2E00524BFF /* 29.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 29.webp; sourceTree = "<group>"; };
 		1865EFA226383754005552FC /* KSF_P581.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P581.ttf; sourceTree = "<group>"; };
 		1865EFA326383754005552FC /* KSF_P595.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P595.ttf; sourceTree = "<group>"; };
 		1865EFA426383754005552FC /* KSF_P542.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KSF_P542.ttf; sourceTree = "<group>"; };
@@ -1994,20 +2052,49 @@
 		1878F047261C58D300B8153D /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				18454B07265D434B0049F661 /* 01basfer.webp */,
-				18454B04265D434A0049F661 /* 02ibraheem.webp */,
-				18454B0C265D434B0049F661 /* 03Ghamdi.webp */,
-				18454B03265D434A0049F661 /* 04Alfasey.webp */,
-				18454B06265D434B0049F661 /* 05Muaqly.webp */,
-				18454B0F265D434C0049F661 /* 06hudaify.webp */,
-				18454B0D265D434C0049F661 /* 07minshawi.webp */,
-				18454B0B265D434B0049F661 /* 08Muhsin.webp */,
-				18454B08265D434B0049F661 /* 09abdulbasit.webp */,
-				18454B0A265D434B0049F661 /* 10jibreel.webp */,
-				18454B02265D434A0049F661 /* 11Ayub.webp */,
-				18454B05265D434A0049F661 /* 12ajmi.webp */,
-				18454B09265D434B0049F661 /* 13alhusary.webp */,
-				18454B0E265D434C0049F661 /* 14Sudais.webp */,
+				18454B07265D434B0049F661 /* 1.webp */,
+				18454B04265D434A0049F661 /* 2.webp */,
+				18454B0C265D434B0049F661 /* 3.webp */,
+				18454B03265D434A0049F661 /* 4.webp */,
+				185932812679E05F00524BFF /* 5.webp */,
+				1859327D2679E05E00524BFF /* 6.webp */,
+				1859327E2679E05F00524BFF /* 7.webp */,
+				1859327C2679E05E00524BFF /* 8.webp */,
+				185932822679E05F00524BFF /* 9.webp */,
+				1859327A2679E05E00524BFF /* 10.webp */,
+				185932832679E05F00524BFF /* 11.webp */,
+				1859327F2679E05F00524BFF /* 12.webp */,
+				1859327B2679E05E00524BFF /* 13.webp */,
+				185932802679E05F00524BFF /* 14.webp */,
+				1859329E2679E20000524BFF /* 15.webp */,
+				1859331B2679F80600524BFF /* 16.webp */,
+				185932932679E1FE00524BFF /* 17.webp */,
+				1859331A2679F80200524BFF /* 18.webp */,
+				185932962679E1FE00524BFF /* 19.webp */,
+				1859329C2679E1FF00524BFF /* 20.webp */,
+				185933152679F7DF00524BFF /* 21.webp */,
+				185933162679F7E000524BFF /* 22.webp */,
+				18593330267A0B2D00524BFF /* 23.webp */,
+				185933192679F7FE00524BFF /* 24.webp */,
+				185932972679E1FE00524BFF /* 26.webp */,
+				1859332D267A0B2C00524BFF /* 27.webp */,
+				18593327267A0B2900524BFF /* 28.webp */,
+				18593333267A0B2E00524BFF /* 29.webp */,
+				1859329B2679E1FF00524BFF /* 30.webp */,
+				185933172679F7EA00524BFF /* 32.webp */,
+				185933182679F7F200524BFF /* 33.webp */,
+				1859332C267A0B2B00524BFF /* 34.webp */,
+				18593332267A0B2E00524BFF /* 35.webp */,
+				18593328267A0B2A00524BFF /* 36.webp */,
+				1859332E267A0B2C00524BFF /* 37.webp */,
+				18593329267A0B2A00524BFF /* 38.webp */,
+				18593331267A0B2E00524BFF /* 39.webp */,
+				1859332A267A0B2A00524BFF /* 40.webp */,
+				185932A12679E20000524BFF /* 41.webp */,
+				1859332B267A0B2B00524BFF /* 47.webp */,
+				1859332F267A0B2D00524BFF /* 48.webp */,
+				185933132679F7D500524BFF /* 49.webp */,
+				185933142679F7DA00524BFF /* 50.webp */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -2162,7 +2249,6 @@
 				1865F34F26383761005552FC /* KSF_P266.ttf in Resources */,
 				1865F21A26383760005552FC /* KSF_P153.ttf in Resources */,
 				1865F27226383760005552FC /* KSF_P196.ttf in Resources */,
-				18454B16265D434C0049F661 /* 09abdulbasit.webp in Resources */,
 				1865F37826383761005552FC /* KSF_P107.ttf in Resources */,
 				1865F35D26383761005552FC /* KSF_P306.ttf in Resources */,
 				1865F28426383760005552FC /* KSF_P235.ttf in Resources */,
@@ -2181,12 +2267,13 @@
 				1865F32426383761005552FC /* KSF_P518.ttf in Resources */,
 				1865F21626383760005552FC /* KSF_P351.ttf in Resources */,
 				1865F3FB26383761005552FC /* KSF_P038.ttf in Resources */,
+				185932B12679E20100524BFF /* 15.webp in Resources */,
 				1865F2AC26383760005552FC /* KSF_P509.ttf in Resources */,
 				1865F27426383760005552FC /* KSF_P021.ttf in Resources */,
 				1865F45226383761005552FC /* KSF_P017.ttf in Resources */,
 				1865F2C326383760005552FC /* KSF_P118.ttf in Resources */,
 				1865F29726383760005552FC /* KSF_P383.ttf in Resources */,
-				18454B18265D434C0049F661 /* 10jibreel.webp in Resources */,
+				185932862679E06000524BFF /* 8.webp in Resources */,
 				1865F43526383761005552FC /* KSF_P202.ttf in Resources */,
 				1865F36F26383761005552FC /* KSF_P298.ttf in Resources */,
 				1865F21D26383760005552FC /* KSF_P033.ttf in Resources */,
@@ -2194,6 +2281,7 @@
 				1865F35626383761005552FC /* KSF_P058.ttf in Resources */,
 				1865F43826383761005552FC /* KSF_P558.ttf in Resources */,
 				1865F36526383761005552FC /* KSF_P105.ttf in Resources */,
+				1859331D2679F80B00524BFF /* 50.webp in Resources */,
 				1865F25F26383760005552FC /* KSF_P140.ttf in Resources */,
 				1865F28926383760005552FC /* KSF_P157.ttf in Resources */,
 				1865F3FC26383761005552FC /* KSF_P164.ttf in Resources */,
@@ -2217,6 +2305,7 @@
 				1865F36426383761005552FC /* KSF_P139.ttf in Resources */,
 				1865F38826383761005552FC /* KSF_P066.ttf in Resources */,
 				1865F26826383760005552FC /* KSF_P431.ttf in Resources */,
+				185932892679E06000524BFF /* 12.webp in Resources */,
 				1865F44126383761005552FC /* KSF_P189.ttf in Resources */,
 				1865F3B026383761005552FC /* KSF_P288.ttf in Resources */,
 				1865F38026383761005552FC /* KSF_P338.ttf in Resources */,
@@ -2227,12 +2316,12 @@
 				1865F2E226383761005552FC /* KSF_P442.ttf in Resources */,
 				1865F37D26383761005552FC /* KSF_P477.ttf in Resources */,
 				1865F34426383761005552FC /* KSF_P069.ttf in Resources */,
-				18454B19265D434C0049F661 /* 08Muhsin.webp in Resources */,
 				1865F33E26383761005552FC /* KSF_P492.ttf in Resources */,
 				1865F26D26383760005552FC /* KSF_P394.ttf in Resources */,
 				1865F24626383760005552FC /* KSF_P193.ttf in Resources */,
 				1865F38E26383761005552FC /* KSF_P270.ttf in Resources */,
 				1865F25726383760005552FC /* KSF_P544.ttf in Resources */,
+				18593339267A0B2E00524BFF /* 34.webp in Resources */,
 				1865F37526383761005552FC /* KSF_P098.ttf in Resources */,
 				1865F22126383760005552FC /* KSF_P557.ttf in Resources */,
 				1865F31326383761005552FC /* KSF_P491.ttf in Resources */,
@@ -2250,6 +2339,7 @@
 				1865F3DB26383761005552FC /* KSF_P173.ttf in Resources */,
 				1865F41726383761005552FC /* KSF_P213.ttf in Resources */,
 				1865F40226383761005552FC /* KSF_P366.ttf in Resources */,
+				1859333F267A0B2E00524BFF /* 35.webp in Resources */,
 				1865F32E26383761005552FC /* KSF_P108.ttf in Resources */,
 				1865F32926383761005552FC /* KSF_P083.ttf in Resources */,
 				1865F2E926383761005552FC /* KSF_P325.ttf in Resources */,
@@ -2261,8 +2351,8 @@
 				1865F44D26383761005552FC /* KSF_P413.ttf in Resources */,
 				1865F21F26383760005552FC /* KSF_P219.ttf in Resources */,
 				1865F31526383761005552FC /* KSF_P136.ttf in Resources */,
+				185933222679F80B00524BFF /* 24.webp in Resources */,
 				1865F30726383761005552FC /* KSF_P484.ttf in Resources */,
-				18454B14265D434C0049F661 /* 05Muaqly.webp in Resources */,
 				1865F33826383761005552FC /* KSF_P323.ttf in Resources */,
 				1865F38126383761005552FC /* KSF_P476.ttf in Resources */,
 				1865F27126383760005552FC /* KSF_P169.ttf in Resources */,
@@ -2273,6 +2363,7 @@
 				1865F25826383760005552FC /* KSF_P222.ttf in Resources */,
 				1865F3B226383761005552FC /* KSF_P505.ttf in Resources */,
 				1865F3C926383761005552FC /* KSF_P074.ttf in Resources */,
+				185932A92679E20100524BFF /* 19.webp in Resources */,
 				1865F42926383761005552FC /* KSF_P410.ttf in Resources */,
 				1865F2C026383760005552FC /* KSF_P454.ttf in Resources */,
 				1865F23326383760005552FC /* KSF_P151.ttf in Resources */,
@@ -2287,6 +2378,7 @@
 				1865F23A26383760005552FC /* KSF_P435.ttf in Resources */,
 				1865F42826383761005552FC /* KSF_P377.ttf in Resources */,
 				1865F35926383761005552FC /* KSF_P138.ttf in Resources */,
+				185933212679F80B00524BFF /* 33.webp in Resources */,
 				1865F2D826383760005552FC /* KSF_P278.ttf in Resources */,
 				1865F20C26383760005552FC /* KSF_P387.ttf in Resources */,
 				1865F37726383761005552FC /* KSF_P067.ttf in Resources */,
@@ -2342,6 +2434,7 @@
 				1865F44B26383761005552FC /* KSF_P361.ttf in Resources */,
 				1865F3A026383761005552FC /* KSF_P315.ttf in Resources */,
 				1865F2B626383760005552FC /* KSF_P482.ttf in Resources */,
+				18593337267A0B2E00524BFF /* 40.webp in Resources */,
 				1865F39A26383761005552FC /* KSF_P499.ttf in Resources */,
 				1865F2FC26383761005552FC /* KSF_P269.ttf in Resources */,
 				1865F40526383761005552FC /* KSF_P428.ttf in Resources */,
@@ -2356,6 +2449,7 @@
 				1865F21426383760005552FC /* KSF_P423.ttf in Resources */,
 				1865F44326383761005552FC /* KSF_P162.ttf in Resources */,
 				1865F3F926383761005552FC /* KSF_P010.ttf in Resources */,
+				1859328C2679E06000524BFF /* 9.webp in Resources */,
 				1865F2D026383760005552FC /* KSF_P291.ttf in Resources */,
 				1865F20726383760005552FC /* KSF_P191.ttf in Resources */,
 				1865F34326383761005552FC /* KSF_P041.ttf in Resources */,
@@ -2364,8 +2458,12 @@
 				1865F2A326383760005552FC /* KSF_P208.ttf in Resources */,
 				1865F39326383761005552FC /* KSF_P260.ttf in Resources */,
 				1865F3C226383761005552FC /* KSF_P464.ttf in Resources */,
+				185932842679E06000524BFF /* 10.webp in Resources */,
+				185933242679F80B00524BFF /* 16.webp in Resources */,
 				1865F34A26383761005552FC /* KSF_P243.ttf in Resources */,
+				1859331C2679F80B00524BFF /* 49.webp in Resources */,
 				1865F3BB26383761005552FC /* KSF_P101.ttf in Resources */,
+				1859333A267A0B2E00524BFF /* 27.webp in Resources */,
 				1865F20126383760005552FC /* KSF_P224.ttf in Resources */,
 				1865F42D26383761005552FC /* KSF_P438.ttf in Resources */,
 				1865F3F126383761005552FC /* KSF_P562.ttf in Resources */,
@@ -2376,7 +2474,9 @@
 				1865F34726383761005552FC /* KSF_P257.ttf in Resources */,
 				1865F29C26383760005552FC /* KSF_P195.ttf in Resources */,
 				1865F2DA26383760005552FC /* KSF_P085.ttf in Resources */,
+				18593336267A0B2E00524BFF /* 38.webp in Resources */,
 				1865F35C26383761005552FC /* KSF_P460.ttf in Resources */,
+				185933232679F80B00524BFF /* 18.webp in Resources */,
 				1865F31926383761005552FC /* KSF_P081.ttf in Resources */,
 				1865F3DC26383761005552FC /* KSF_P601.ttf in Resources */,
 				1865F31126383761005552FC /* KSF_P320.ttf in Resources */,
@@ -2387,8 +2487,10 @@
 				1865F26C26383760005552FC /* KSF_P419.ttf in Resources */,
 				1865F3D126383761005552FC /* KSF_P289.ttf in Resources */,
 				1865F40126383761005552FC /* KSF_P400.ttf in Resources */,
+				185932AA2679E20100524BFF /* 26.webp in Resources */,
 				1865F43F26383761005552FC /* KSF_P002.ttf in Resources */,
 				1865F2C826383760005552FC /* KSF_P044.ttf in Resources */,
+				1859333E267A0B2E00524BFF /* 39.webp in Resources */,
 				1865F35526383761005552FC /* KSF_P070.ttf in Resources */,
 				1865F29A26383760005552FC /* KSF_P156.ttf in Resources */,
 				1865F39F26383761005552FC /* KSF_P472.ttf in Resources */,
@@ -2438,7 +2540,6 @@
 				1865F33126383761005552FC /* KSF_P493.ttf in Resources */,
 				1865F39626383761005552FC /* KSF_P076.ttf in Resources */,
 				1865F2BF26383760005552FC /* KSF_P332.ttf in Resources */,
-				18454B1B265D434C0049F661 /* 07minshawi.webp in Resources */,
 				1865F2E126383761005552FC /* KSF_P324.ttf in Resources */,
 				1865F3EA26383761005552FC /* KSF_P172.ttf in Resources */,
 				1865F28026383760005552FC /* KSF_P209.ttf in Resources */,
@@ -2451,7 +2552,6 @@
 				1865F3D726383761005552FC /* KSF_P239.ttf in Resources */,
 				1865F42C26383761005552FC /* KSF_P404.ttf in Resources */,
 				1865F41426383761005552FC /* KSF_P207.ttf in Resources */,
-				18454B1D265D434C0049F661 /* 06hudaify.webp in Resources */,
 				1865F38926383761005552FC /* KSF_P072.ttf in Resources */,
 				1865F35026383761005552FC /* KSF_P500.ttf in Resources */,
 				1865F32126383761005552FC /* KSF_P297.ttf in Resources */,
@@ -2469,7 +2569,6 @@
 				1865F44426383761005552FC /* KSF_P604.ttf in Resources */,
 				1865F3AF26383761005552FC /* KSF_P249.ttf in Resources */,
 				1865F23026383760005552FC /* KSF_P186.ttf in Resources */,
-				18454B1C265D434C0049F661 /* 14Sudais.webp in Resources */,
 				1865F23F26383760005552FC /* KSF_P420.ttf in Resources */,
 				1865F3BA26383761005552FC /* KSF_P115.ttf in Resources */,
 				1865F3B926383761005552FC /* KSF_P129.ttf in Resources */,
@@ -2487,6 +2586,7 @@
 				1865F20E26383760005552FC /* KSF_P350.ttf in Resources */,
 				1865F2D926383760005552FC /* KSF_P091.ttf in Resources */,
 				1865F22226383760005552FC /* KSF_P543.ttf in Resources */,
+				1859328A2679E06000524BFF /* 14.webp in Resources */,
 				1865F39826383761005552FC /* KSF_P102.ttf in Resources */,
 				1865F2B826383760005552FC /* KSF_P455.ttf in Resources */,
 				1865F36B26383761005552FC /* KSF_P515.ttf in Resources */,
@@ -2516,6 +2616,7 @@
 				1865F2F726383761005552FC /* KSF_P537.ttf in Resources */,
 				1865F29826383760005552FC /* KSF_P397.ttf in Resources */,
 				1865F24B26383760005552FC /* KSF_P568.ttf in Resources */,
+				185932B42679E20100524BFF /* 41.webp in Resources */,
 				1865F22526383760005552FC /* KSF_P580.ttf in Resources */,
 				1865F3F226383761005552FC /* KSF_P204.ttf in Resources */,
 				1865F32D26383761005552FC /* KSF_P054.ttf in Resources */,
@@ -2559,6 +2660,7 @@
 				1865F3D926383761005552FC /* KSF_P013.ttf in Resources */,
 				1865F34226383761005552FC /* KSF_P055.ttf in Resources */,
 				1865F2D726383760005552FC /* KSF_P244.ttf in Resources */,
+				185932872679E06000524BFF /* 6.webp in Resources */,
 				1865F23E26383760005552FC /* KSF_P434.ttf in Resources */,
 				1865F29926383760005552FC /* KSF_P142.ttf in Resources */,
 				1865F40E26383761005552FC /* KSF_P165.ttf in Resources */,
@@ -2570,16 +2672,16 @@
 				1865F3BE26383761005552FC /* KSF_P317.ttf in Resources */,
 				1865F30F26383761005552FC /* KSF_P452.ttf in Resources */,
 				1865F28526383760005552FC /* KSF_P023.ttf in Resources */,
+				18593338267A0B2E00524BFF /* 47.webp in Resources */,
 				1865F39526383761005552FC /* KSF_P089.ttf in Resources */,
-				18454B17265D434C0049F661 /* 13alhusary.webp in Resources */,
 				1865F3CE26383761005552FC /* KSF_P504.ttf in Resources */,
 				1865F2B026383760005552FC /* KSF_P051.ttf in Resources */,
 				1865F2B526383760005552FC /* KSF_P496.ttf in Resources */,
 				1865F26226383760005552FC /* KSF_P395.ttf in Resources */,
 				1865F37626383761005552FC /* KSF_P073.ttf in Resources */,
-				18454B13265D434C0049F661 /* 12ajmi.webp in Resources */,
 				1865F3CF26383761005552FC /* KSF_P262.ttf in Resources */,
 				1865F44626383761005552FC /* KSF_P374.ttf in Resources */,
+				185932AF2679E20100524BFF /* 20.webp in Resources */,
 				1865F22F26383760005552FC /* KSF_P019.ttf in Resources */,
 				1865F20226383760005552FC /* KSF_P230.ttf in Resources */,
 				1865F43126383761005552FC /* KSF_P148.ttf in Resources */,
@@ -2590,16 +2692,17 @@
 				1865F35826383761005552FC /* KSF_P104.ttf in Resources */,
 				1865F3CC26383761005552FC /* KSF_P276.ttf in Resources */,
 				1865F26B26383760005552FC /* KSF_P425.ttf in Resources */,
-				18454B10265D434C0049F661 /* 11Ayub.webp in Resources */,
 				1865F42A26383761005552FC /* KSF_P376.ttf in Resources */,
 				1865F3C026383761005552FC /* KSF_P465.ttf in Resources */,
 				1865F3A926383761005552FC /* KSF_P077.ttf in Resources */,
+				1859331F2679F80B00524BFF /* 22.webp in Resources */,
 				1865F29226383760005552FC /* KSF_P426.ttf in Resources */,
 				1865F37B26383761005552FC /* KSF_P305.ttf in Resources */,
 				1865F2EF26383761005552FC /* KSF_P047.ttf in Resources */,
 				1865F2DE26383761005552FC /* KSF_P132.ttf in Resources */,
 				1865F24726383760005552FC /* KSF_P187.ttf in Resources */,
 				1865F3EE26383761005552FC /* KSF_P238.ttf in Resources */,
+				185932A62679E20100524BFF /* 17.webp in Resources */,
 				1865F36926383761005552FC /* KSF_P065.ttf in Resources */,
 				1865F22A26383760005552FC /* KSF_P227.ttf in Resources */,
 				1865F2F426383761005552FC /* KSF_P523.ttf in Resources */,
@@ -2627,28 +2730,34 @@
 				1865F22B26383760005552FC /* KSF_P541.ttf in Resources */,
 				1865F44F26383761005552FC /* KSF_P163.ttf in Resources */,
 				1865F3BD26383761005552FC /* KSF_P471.ttf in Resources */,
+				18593334267A0B2E00524BFF /* 28.webp in Resources */,
 				1865F39426383761005552FC /* KSF_P506.ttf in Resources */,
+				18593340267A0B2E00524BFF /* 29.webp in Resources */,
 				1865F40B26383761005552FC /* KSF_P398.ttf in Resources */,
 				1865F3FD26383761005552FC /* KSF_P602.ttf in Resources */,
 				1865F26126383760005552FC /* KSF_P381.ttf in Resources */,
 				1865F32726383761005552FC /* KSF_P256.ttf in Resources */,
 				1865F2D126383760005552FC /* KSF_P285.ttf in Resources */,
 				1865F41E26383761005552FC /* KSF_P015.ttf in Resources */,
-				18454B11265D434C0049F661 /* 04Alfasey.webp in Resources */,
+				1859328B2679E06000524BFF /* 5.webp in Resources */,
+				1859331E2679F80B00524BFF /* 21.webp in Resources */,
+				18454B11265D434C0049F661 /* 4.webp in Resources */,
 				1865F25926383760005552FC /* KSF_P008.ttf in Resources */,
+				185932AE2679E20100524BFF /* 30.webp in Resources */,
 				1865F32C26383761005552FC /* KSF_P040.ttf in Resources */,
 				1865F33026383761005552FC /* KSF_P120.ttf in Resources */,
 				1865F25C26383760005552FC /* KSF_P183.ttf in Resources */,
 				1865F28A26383760005552FC /* KSF_P143.ttf in Resources */,
 				1865F38D26383761005552FC /* KSF_P264.ttf in Resources */,
 				1865F24326383760005552FC /* KSF_P178.ttf in Resources */,
+				1859333D267A0B2E00524BFF /* 23.webp in Resources */,
 				1865F20B26383760005552FC /* KSF_P393.ttf in Resources */,
 				1865F3E326383761005552FC /* KSF_P358.ttf in Resources */,
 				1865F24F26383760005552FC /* KSF_P232.ttf in Resources */,
 				1865F2B326383760005552FC /* KSF_P125.ttf in Resources */,
 				1865F2AB26383760005552FC /* KSF_P253.ttf in Resources */,
 				1865F35726383761005552FC /* KSF_P110.ttf in Resources */,
-				18454B1A265D434C0049F661 /* 03Ghamdi.webp in Resources */,
+				18454B1A265D434C0049F661 /* 3.webp in Resources */,
 				1865F27F26383760005552FC /* KSF_P590.ttf in Resources */,
 				1865F38726383761005552FC /* KSF_P106.ttf in Resources */,
 				1865F45526383761005552FC /* KSF_P215.ttf in Resources */,
@@ -2666,6 +2775,7 @@
 				1865F3CA26383761005552FC /* KSF_P060.ttf in Resources */,
 				1865F32326383761005552FC /* KSF_P295.ttf in Resources */,
 				1865F27326383760005552FC /* KSF_P182.ttf in Resources */,
+				185932852679E06000524BFF /* 13.webp in Resources */,
 				1865F3F826383761005552FC /* KSF_P548.ttf in Resources */,
 				1865F25E26383760005552FC /* KSF_P168.ttf in Resources */,
 				1865F2CE26383760005552FC /* KSF_P246.ttf in Resources */,
@@ -2696,8 +2806,10 @@
 				1865F3A226383761005552FC /* KSF_P467.ttf in Resources */,
 				1865F24526383760005552FC /* KSF_P144.ttf in Resources */,
 				1865F3B126383761005552FC /* KSF_P539.ttf in Resources */,
+				185932882679E06000524BFF /* 7.webp in Resources */,
 				1865F25426383760005552FC /* KSF_P578.ttf in Resources */,
 				1865F21B26383760005552FC /* KSF_P184.ttf in Resources */,
+				1859328D2679E06000524BFF /* 11.webp in Resources */,
 				18454B31265D44370049F661 /* Book9.webp in Resources */,
 				1865F31D26383761005552FC /* KSF_P532.ttf in Resources */,
 				1865F2C126383760005552FC /* KSF_P483.ttf in Resources */,
@@ -2724,7 +2836,7 @@
 				1865F27D26383760005552FC /* KSF_P592.ttf in Resources */,
 				1865F3AC26383761005552FC /* KSF_P507.ttf in Resources */,
 				1865F34526383761005552FC /* KSF_P096.ttf in Resources */,
-				18454B15265D434C0049F661 /* 01basfer.webp in Resources */,
+				18454B15265D434C0049F661 /* 1.webp in Resources */,
 				1865F35B26383761005552FC /* KSF_P474.ttf in Resources */,
 				1865F3B326383761005552FC /* KSF_P263.ttf in Resources */,
 				18B8543625B6B63C00667E67 /* LaunchScreen.storyboard in Resources */,
@@ -2745,9 +2857,12 @@
 				1865F36026383761005552FC /* KSF_P461.ttf in Resources */,
 				1865F2E626383761005552FC /* KSF_P319.ttf in Resources */,
 				1865F34126383761005552FC /* KSF_P109.ttf in Resources */,
+				1859333C267A0B2E00524BFF /* 48.webp in Resources */,
 				18A9C64126038F7E004D1078 /* quran.xml in Resources */,
 				1865F39926383761005552FC /* KSF_P116.ttf in Resources */,
+				18593335267A0B2E00524BFF /* 36.webp in Resources */,
 				1865F42F26383761005552FC /* KSF_P174.ttf in Resources */,
+				1859333B267A0B2E00524BFF /* 37.webp in Resources */,
 				1865F21126383760005552FC /* KSF_P378.ttf in Resources */,
 				1865F41326383761005552FC /* KSF_P549.ttf in Resources */,
 				1865F3E426383761005552FC /* KSF_P364.ttf in Resources */,
@@ -2775,6 +2890,7 @@
 				1865F44A26383761005552FC /* KSF_P407.ttf in Resources */,
 				1865F24C26383760005552FC /* KSF_P226.ttf in Resources */,
 				1865F38326383761005552FC /* KSF_P304.ttf in Resources */,
+				185933202679F80B00524BFF /* 32.webp in Resources */,
 				1865F25B26383760005552FC /* KSF_P020.ttf in Resources */,
 				1865F2B426383760005552FC /* KSF_P119.ttf in Resources */,
 				1865F2A926383760005552FC /* KSF_P521.ttf in Resources */,
@@ -2785,7 +2901,7 @@
 				1865F22826383760005552FC /* KSF_P555.ttf in Resources */,
 				1865F3F026383761005552FC /* KSF_P576.ttf in Resources */,
 				1865F24026383760005552FC /* KSF_P346.ttf in Resources */,
-				18454B12265D434C0049F661 /* 02ibraheem.webp in Resources */,
+				18454B12265D434C0049F661 /* 2.webp in Resources */,
 				1865F40C26383761005552FC /* KSF_P159.ttf in Resources */,
 				1865F32F26383761005552FC /* KSF_P134.ttf in Resources */,
 				1865F2D326383760005552FC /* KSF_P287.ttf in Resources */,

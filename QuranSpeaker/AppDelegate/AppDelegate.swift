@@ -125,6 +125,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
 //            print("Count: \(byteArray.count)")
             
             homeVC.fetchAppData(byteArray: byteArray)
+            homeVC.fetchQaris(byteArray: byteArray)
+            homeVC.fetchTrans(byteArray: byteArray)
             if prayersVC != nil
             {
                 prayersVC.fetchPrayerData(byteArray: byteArray)

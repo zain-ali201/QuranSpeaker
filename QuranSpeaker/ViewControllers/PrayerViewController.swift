@@ -153,7 +153,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
             
-            let time = formatter.date(from: lblFajr.text!)!
+            let time = formatter.date(from: lblFajr.text ?? "00:00")!
             timePicker.setDate(time, animated: false)
         }
         else if prayer == 1002
@@ -169,7 +169,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
             
-            let time = formatter.date(from: lblSunset.text!)!
+            let time = formatter.date(from: lblSunrise.text ?? "00:00")!
             timePicker.setDate(time, animated: false)
         }
         else if prayer == 1003
@@ -185,7 +185,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
             
-            let time = formatter.date(from: lblDhuhr.text!)!
+            let time = formatter.date(from: lblDhuhr.text ?? "00:00")!
             timePicker.setDate(time, animated: false)
         }
         else if prayer == 1004
@@ -201,7 +201,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
             
-            let time = formatter.date(from: lblAsr.text!)!
+            let time = formatter.date(from: lblAsr.text ?? "00:00")!
             timePicker.setDate(time, animated: false)
         }
         else if prayer == 1005
@@ -217,7 +217,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
             
-            let time = formatter.date(from: lblMaghrib.text!)!
+            let time = formatter.date(from: lblMaghrib.text ?? "00:00")!
             timePicker.setDate(time, animated: false)
         }
         else if prayer == 1006
@@ -233,7 +233,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
             
-            let time = formatter.date(from: lblIsha.text!)!
+            let time = formatter.date(from: lblIsha.text ?? "00:00")!
             timePicker.setDate(time, animated: false)
         }
         
@@ -244,77 +244,84 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     {
         if button.tag == 1001
         {
-            let DLSaving = defaults.value(forKey: "daylight") as? Int ?? 0
-            var dataToSend = Data([UInt8(Character("P").asciiValue!), UInt8(DLSaving)])
-            
-            if prayer == 1001 && (fajrFlag == 1 || (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1)
+            if isMyPeripheralConected
             {
-                dataToSend.append(UInt8(1))
-                defaults.set(1, forKey: "fajrFlag")
+                let DLSaving = defaults.value(forKey: "daylight") as? Int ?? 0
+                var dataToSend = Data([UInt8(Character("P").asciiValue!), UInt8(DLSaving)])
+                
+                if prayer == 1001 && (fajrFlag == 1 || (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1)
+                {
+                    dataToSend.append(UInt8(1))
+                    defaults.set(1, forKey: "fajrFlag")
+                }
+                else
+                {
+                    dataToSend.append(UInt8(0))
+                }
+                
+                if prayer == 1002 && (sunriseFlag == 1 || (defaults.value(forKey: "sunriseFlag") as? Int ?? 0) == 1)
+                {
+                    dataToSend.append(UInt8(1))
+                    defaults.set(1, forKey: "sunriseFlag")
+                }
+                else
+                {
+                    dataToSend.append(UInt8(0))
+                }
+                
+                if prayer == 1003 && (dhuhrFlag == 1 || (defaults.value(forKey: "dhuhrFlag") as? Int ?? 0) == 1)
+                {
+                    dataToSend.append(UInt8(1))
+                    defaults.set(1, forKey: "fajrFlag")
+                }
+                else
+                {
+                    dataToSend.append(UInt8(0))
+                }
+                
+                if prayer == 1004 && (asrFlag == 1 || (defaults.value(forKey: "asrFlag") as? Int ?? 0) == 1)
+                {
+                    dataToSend.append(UInt8(1))
+                    defaults.set(1, forKey: "asrFlag")
+                }
+                else
+                {
+                    dataToSend.append(UInt8(0))
+                }
+                
+                if prayer == 1005 && (maghribFlag == 1 || (defaults.value(forKey: "maghribFlag") as? Int ?? 0) == 1)
+                {
+                    dataToSend.append(UInt8(1))
+                    defaults.set(1, forKey: "maghribFlag")
+                }
+                else
+                {
+                    dataToSend.append(UInt8(0))
+                }
+                
+                if prayer == 1006 && (ishaFlag == 1 || (defaults.value(forKey: "ishaFlag") as? Int ?? 0) == 1)
+                {
+                    dataToSend.append(UInt8(1))
+                    defaults.set(1, forKey: "ishaFlag")
+                }
+                else
+                {
+                    dataToSend.append(UInt8(0))
+                }
+                
+                dataToSend.append(UInt8(0))
+                dataToSend.append(UInt8(0))
+                dataToSend.append(UInt8(0))
+                dataToSend.append(UInt8(0))
+                dataToSend.append(UInt8(0))
+                dataToSend.append(UInt8(0))
+                
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
             else
             {
-                dataToSend.append(UInt8(0))
+                self.view.makeToast("Bluetooth device disconnected")
             }
-            
-            if prayer == 1002 && (sunriseFlag == 1 || (defaults.value(forKey: "sunriseFlag") as? Int ?? 0) == 1)
-            {
-                dataToSend.append(UInt8(1))
-                defaults.set(1, forKey: "sunriseFlag")
-            }
-            else
-            {
-                dataToSend.append(UInt8(0))
-            }
-            
-            if prayer == 1003 && (dhuhrFlag == 1 || (defaults.value(forKey: "dhuhrFlag") as? Int ?? 0) == 1)
-            {
-                dataToSend.append(UInt8(1))
-                defaults.set(1, forKey: "fajrFlag")
-            }
-            else
-            {
-                dataToSend.append(UInt8(0))
-            }
-            
-            if prayer == 1004 && (asrFlag == 1 || (defaults.value(forKey: "asrFlag") as? Int ?? 0) == 1)
-            {
-                dataToSend.append(UInt8(1))
-                defaults.set(1, forKey: "asrFlag")
-            }
-            else
-            {
-                dataToSend.append(UInt8(0))
-            }
-            
-            if prayer == 1005 && (maghribFlag == 1 || (defaults.value(forKey: "maghribFlag") as? Int ?? 0) == 1)
-            {
-                dataToSend.append(UInt8(1))
-                defaults.set(1, forKey: "maghribFlag")
-            }
-            else
-            {
-                dataToSend.append(UInt8(0))
-            }
-            
-            if prayer == 1006 && (ishaFlag == 1 || (defaults.value(forKey: "ishaFlag") as? Int ?? 0) == 1)
-            {
-                dataToSend.append(UInt8(1))
-                defaults.set(1, forKey: "ishaFlag")
-            }
-            else
-            {
-                dataToSend.append(UInt8(0))
-            }
-            
-            dataToSend.append(UInt8(0))
-            dataToSend.append(UInt8(0))
-            dataToSend.append(UInt8(0))
-            dataToSend.append(UInt8(0))
-            dataToSend.append(UInt8(0))
-            dataToSend.append(UInt8(0))
-            
-            myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
         else
         {
