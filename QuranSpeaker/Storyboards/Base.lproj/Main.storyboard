@@ -1642,10 +1642,10 @@
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7e4-Z9-nUW">
-                                                <rect key="frame" x="37.5" y="223.5" width="300" height="220"/>
+                                                <rect key="frame" x="62.5" y="223.5" width="250" height="220"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pa1-cq-AnY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Alarm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcM-wh-weM">
                                                                 <rect key="frame" x="25" y="9.5" width="78.5" height="21.5"/>
@@ -1654,7 +1654,7 @@
                                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUu-j1-pDv">
-                                                                <rect key="frame" x="180" y="9" width="95" height="22"/>
+                                                                <rect key="frame" x="130" y="9" width="95" height="22"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1689,15 +1689,18 @@
                                                             <action selector="onofflBtnActionWithButton:" destination="5z6-kN-hGb" eventType="touchUpInside" id="7hz-ql-lwh"/>
                                                         </connections>
                                                     </button>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Sti-Q8-s4d">
-                                                        <rect key="frame" x="144" y="45" width="135" height="130"/>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkq-XV-gwz">
+                                                        <rect key="frame" x="147" y="50" width="60" height="120"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="130" id="4Xt-JB-lza"/>
-                                                            <constraint firstAttribute="width" constant="135" id="sQn-Ap-j2v"/>
+                                                            <constraint firstAttribute="width" constant="60" id="kU5-KX-2gw"/>
                                                         </constraints>
-                                                    </datePicker>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="5z6-kN-hGb" id="OeA-Xi-glJ"/>
+                                                            <outlet property="delegate" destination="5z6-kN-hGb" id="LwP-pb-wkN"/>
+                                                        </connections>
+                                                    </pickerView>
                                                     <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTa-5n-hPt">
-                                                        <rect key="frame" x="70" y="178" width="45" height="30"/>
+                                                        <rect key="frame" x="42" y="178" width="45" height="30"/>
                                                         <state key="normal" title="APPLY">
                                                             <color key="titleColor" red="0.2470588235" green="0.71764705880000002" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         </state>
@@ -1706,7 +1709,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-Jb-Y7g">
-                                                        <rect key="frame" x="171" y="178" width="59" height="30"/>
+                                                        <rect key="frame" x="149" y="180" width="59" height="28"/>
                                                         <state key="normal" title="CANCEL">
                                                             <color key="titleColor" red="0.2470588235" green="0.71764705880000002" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         </state>
@@ -1717,19 +1720,21 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="LvW-Jb-Y7g" firstAttribute="top" secondItem="Rkq-XV-gwz" secondAttribute="bottom" constant="10" id="4Ql-D3-Ujk"/>
                                                     <constraint firstAttribute="bottom" secondItem="pTa-5n-hPt" secondAttribute="bottom" constant="12" id="5x7-s6-kW3"/>
+                                                    <constraint firstItem="Rkq-XV-gwz" firstAttribute="top" secondItem="pa1-cq-AnY" secondAttribute="bottom" constant="10" id="Byx-Ez-HKv"/>
                                                     <constraint firstItem="s8R-zi-7ea" firstAttribute="top" secondItem="kwK-IF-fg7" secondAttribute="bottom" constant="15" id="DHh-pG-Muy"/>
-                                                    <constraint firstAttribute="width" constant="300" id="H1N-Q8-mi4"/>
-                                                    <constraint firstItem="pTa-5n-hPt" firstAttribute="leading" secondItem="7e4-Z9-nUW" secondAttribute="leading" constant="70" id="IEb-Nj-Dl2"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Sti-Q8-s4d" secondAttribute="trailing" constant="21" id="LrB-c5-4qK"/>
+                                                    <constraint firstAttribute="width" constant="250" id="H1N-Q8-mi4"/>
+                                                    <constraint firstItem="pTa-5n-hPt" firstAttribute="leading" secondItem="7e4-Z9-nUW" secondAttribute="leading" constant="42" id="IEb-Nj-Dl2"/>
+                                                    <constraint firstItem="Rkq-XV-gwz" firstAttribute="centerY" secondItem="7e4-Z9-nUW" secondAttribute="centerY" id="KmF-nY-vCh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rkq-XV-gwz" secondAttribute="trailing" constant="43" id="M6s-1d-Qix"/>
                                                     <constraint firstAttribute="height" constant="220" id="PqQ-lT-TGe"/>
                                                     <constraint firstItem="pa1-cq-AnY" firstAttribute="leading" secondItem="7e4-Z9-nUW" secondAttribute="leading" id="TRs-oi-cfi"/>
                                                     <constraint firstItem="s8R-zi-7ea" firstAttribute="leading" secondItem="kwK-IF-fg7" secondAttribute="leading" id="ZYF-zq-3bY"/>
                                                     <constraint firstItem="pa1-cq-AnY" firstAttribute="top" secondItem="7e4-Z9-nUW" secondAttribute="top" id="aij-ut-8nz"/>
                                                     <constraint firstItem="kwK-IF-fg7" firstAttribute="leading" secondItem="7e4-Z9-nUW" secondAttribute="leading" constant="34.5" id="dZA-l9-eN1"/>
                                                     <constraint firstAttribute="trailing" secondItem="pa1-cq-AnY" secondAttribute="trailing" id="gJz-BL-rxW"/>
-                                                    <constraint firstAttribute="trailing" secondItem="LvW-Jb-Y7g" secondAttribute="trailing" constant="70" id="pMY-YX-3mW"/>
-                                                    <constraint firstItem="Sti-Q8-s4d" firstAttribute="top" secondItem="pa1-cq-AnY" secondAttribute="bottom" constant="5" id="qZ3-bc-2Ga"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LvW-Jb-Y7g" secondAttribute="trailing" constant="42" id="pMY-YX-3mW"/>
                                                     <constraint firstAttribute="bottom" secondItem="LvW-Jb-Y7g" secondAttribute="bottom" constant="12" id="r5h-3K-XR2"/>
                                                     <constraint firstItem="kwK-IF-fg7" firstAttribute="top" secondItem="pa1-cq-AnY" secondAttribute="bottom" constant="40.5" id="vJv-8M-zfe"/>
                                                 </constraints>
@@ -1814,7 +1819,7 @@
                         <outlet property="offBtn" destination="s8R-zi-7ea" id="Olu-mE-0bM"/>
                         <outlet property="onBtn" destination="kwK-IF-fg7" id="0ag-De-rfZ"/>
                         <outlet property="scrollView" destination="TPF-vt-cKw" id="drT-vz-xa4"/>
-                        <outlet property="timePicker" destination="Sti-Q8-s4d" id="pHi-H0-703"/>
+                        <outlet property="timePicker" destination="Rkq-XV-gwz" id="LLQ-1X-tzG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbL-Tv-hwk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

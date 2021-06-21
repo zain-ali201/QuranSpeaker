@@ -9,11 +9,11 @@ import UIKit
 import CoreLocation
 import CoreBluetooth
 
-class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCentralManagerDelegate, CBPeripheralDelegate
+class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource//, CBCentralManagerDelegate, CBPeripheralDelegate
 {
     @IBOutlet weak var alarmMainView: UIView!
     @IBOutlet weak var alarmView: UIView!
-    @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var onBtn: UIButton!
     @IBOutlet weak var offBtn: UIButton!
     
@@ -48,6 +48,13 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
     var asrFlag = 0
     var maghribFlag = 0
     var ishaFlag = 0
+    
+    var fajrInterval = 0
+    var sunriseInterval = 0
+    var dhuhrInterval = 0
+    var asrInterval = 0
+    var maghribInterval = 0
+    var ishaInterval = 0
     //BLE
 //    var bleManager : CBCentralManager!
 //    var myBluetoothPeripheral : CBPeripheral!
@@ -152,9 +159,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 onBtn.setImage(UIImage(named: "off"), for: .normal)
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
-            
-            let time = formatter.date(from: lblFajr.text ?? "00:00")!
-            timePicker.setDate(time, animated: false)
         }
         else if prayer == 1002
         {
@@ -168,9 +172,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 onBtn.setImage(UIImage(named: "off"), for: .normal)
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
-            
-            let time = formatter.date(from: lblSunrise.text ?? "00:00")!
-            timePicker.setDate(time, animated: false)
         }
         else if prayer == 1003
         {
@@ -184,9 +185,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 onBtn.setImage(UIImage(named: "off"), for: .normal)
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
-            
-            let time = formatter.date(from: lblDhuhr.text ?? "00:00")!
-            timePicker.setDate(time, animated: false)
         }
         else if prayer == 1004
         {
@@ -200,9 +198,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 onBtn.setImage(UIImage(named: "off"), for: .normal)
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
-            
-            let time = formatter.date(from: lblAsr.text ?? "00:00")!
-            timePicker.setDate(time, animated: false)
         }
         else if prayer == 1005
         {
@@ -216,9 +211,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 onBtn.setImage(UIImage(named: "off"), for: .normal)
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
-            
-            let time = formatter.date(from: lblMaghrib.text ?? "00:00")!
-            timePicker.setDate(time, animated: false)
         }
         else if prayer == 1006
         {
@@ -232,9 +224,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 onBtn.setImage(UIImage(named: "off"), for: .normal)
                 offBtn.setImage(UIImage(named: "on"), for: .normal)
             }
-            
-            let time = formatter.date(from: lblIsha.text ?? "00:00")!
-            timePicker.setDate(time, animated: false)
         }
         
         alarmMainView.alpha = 1
@@ -253,6 +242,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 {
                     dataToSend.append(UInt8(1))
                     defaults.set(1, forKey: "fajrFlag")
+                    defaults.set(fajrInterval, forKey: "fajrInterval")
                 }
                 else
                 {
@@ -263,6 +253,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 {
                     dataToSend.append(UInt8(1))
                     defaults.set(1, forKey: "sunriseFlag")
+                    defaults.set(sunriseInterval, forKey: "sunriseInterval")
                 }
                 else
                 {
@@ -272,7 +263,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 if prayer == 1003 && (dhuhrFlag == 1 || (defaults.value(forKey: "dhuhrFlag") as? Int ?? 0) == 1)
                 {
                     dataToSend.append(UInt8(1))
-                    defaults.set(1, forKey: "fajrFlag")
+                    defaults.set(1, forKey: "dhuhrFlag")
+                    defaults.set(dhuhrInterval, forKey: "dhuhrInterval")
                 }
                 else
                 {
@@ -283,6 +275,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 {
                     dataToSend.append(UInt8(1))
                     defaults.set(1, forKey: "asrFlag")
+                    defaults.set(asrInterval, forKey: "asrInterval")
                 }
                 else
                 {
@@ -293,6 +286,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 {
                     dataToSend.append(UInt8(1))
                     defaults.set(1, forKey: "maghribFlag")
+                    defaults.set(maghribInterval, forKey: "maghribInterval")
                 }
                 else
                 {
@@ -303,18 +297,19 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
                 {
                     dataToSend.append(UInt8(1))
                     defaults.set(1, forKey: "ishaFlag")
+                    defaults.set(ishaInterval, forKey: "ishaInterval")
                 }
                 else
                 {
                     dataToSend.append(UInt8(0))
                 }
                 
-                dataToSend.append(UInt8(0))
-                dataToSend.append(UInt8(0))
-                dataToSend.append(UInt8(0))
-                dataToSend.append(UInt8(0))
-                dataToSend.append(UInt8(0))
-                dataToSend.append(UInt8(0))
+                dataToSend.append(UInt8(fajrInterval))
+                dataToSend.append(UInt8(sunriseInterval))
+                dataToSend.append(UInt8(dhuhrInterval))
+                dataToSend.append(UInt8(asrInterval))
+                dataToSend.append(UInt8(maghribInterval))
+                dataToSend.append(UInt8(ishaInterval))
                 
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
@@ -331,6 +326,13 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
             asrFlag = 0
             maghribFlag = 0
             ishaFlag = 0
+            
+            fajrInterval = 0
+            sunriseInterval = 0
+            dhuhrInterval = 0
+            asrInterval = 0
+            maghribInterval = 0
+            ishaInterval = 0
         }
         
         alarmMainView.alpha = 0
@@ -714,6 +716,19 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate//, CBCen
             let lightVC = self.storyboard?.instantiateViewController(withIdentifier: "LightViewController") as! LightViewController
             self.navigationController?.pushViewController(lightVC, animated: false)
         }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 61
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return "\(row)"
     }
 }
 

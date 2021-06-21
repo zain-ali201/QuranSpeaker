@@ -122,14 +122,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
             guard let characteristicData = characteristic.value else { return }
             let byteArray = [UInt8](characteristicData)
             
-//            print("Count: \(byteArray.count)")
-            
-            homeVC.fetchAppData(byteArray: byteArray)
-            homeVC.fetchQaris(byteArray: byteArray)
-            homeVC.fetchTrans(byteArray: byteArray)
-            if prayersVC != nil
+            if byteArray.count > 0
             {
-                prayersVC.fetchPrayerData(byteArray: byteArray)
+                homeVC.fetchAppData(byteArray: byteArray)
+                homeVC.fetchQaris(byteArray: byteArray)
+                homeVC.fetchTrans(byteArray: byteArray)
+                
+                if prayersVC != nil
+                {
+                    prayersVC.fetchPrayerData(byteArray: byteArray)
+                }
             }
         }
     }
