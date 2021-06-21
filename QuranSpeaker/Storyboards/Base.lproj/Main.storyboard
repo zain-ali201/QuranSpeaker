@@ -1269,7 +1269,7 @@
                                                             </label>
                                                             <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptN-Xo-G9R">
                                                                 <rect key="frame" x="311" y="23.5" width="36" height="28.5"/>
-                                                                <state key="normal" image="bell"/>
+                                                                <state key="normal" image="alarm_off"/>
                                                                 <connections>
                                                                     <action selector="alarmBtnActionWithButton:" destination="5z6-kN-hGb" eventType="touchUpInside" id="kIs-Pm-w26"/>
                                                                 </connections>
@@ -1351,7 +1351,7 @@
                                                             </label>
                                                             <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHU-gI-PtY">
                                                                 <rect key="frame" x="311" y="23.5" width="36" height="28.5"/>
-                                                                <state key="normal" image="bell"/>
+                                                                <state key="normal" image="alarm_off"/>
                                                                 <connections>
                                                                     <action selector="alarmBtnActionWithButton:" destination="5z6-kN-hGb" eventType="touchUpInside" id="7dC-s7-EZ9"/>
                                                                 </connections>
@@ -1392,7 +1392,7 @@
                                                             </label>
                                                             <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4b-67-I7l">
                                                                 <rect key="frame" x="311" y="23.5" width="36" height="28.5"/>
-                                                                <state key="normal" image="bell"/>
+                                                                <state key="normal" image="alarm_off"/>
                                                                 <connections>
                                                                     <action selector="alarmBtnActionWithButton:" destination="5z6-kN-hGb" eventType="touchUpInside" id="3lH-bb-Sa9"/>
                                                                 </connections>
@@ -1471,7 +1471,7 @@
                                                             </label>
                                                             <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ez-9y-Ct3">
                                                                 <rect key="frame" x="311" y="23.5" width="36" height="28.5"/>
-                                                                <state key="normal" image="bell"/>
+                                                                <state key="normal" image="alarm_off"/>
                                                                 <connections>
                                                                     <action selector="alarmBtnActionWithButton:" destination="5z6-kN-hGb" eventType="touchUpInside" id="ca5-RZ-UMf"/>
                                                                 </connections>
@@ -1512,7 +1512,7 @@
                                                             </label>
                                                             <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVl-Wq-79d">
                                                                 <rect key="frame" x="311" y="23.5" width="36" height="28.5"/>
-                                                                <state key="normal" image="bell"/>
+                                                                <state key="normal" image="alarm_off"/>
                                                                 <connections>
                                                                     <action selector="alarmBtnActionWithButton:" destination="5z6-kN-hGb" eventType="touchUpInside" id="3Gj-es-Igt"/>
                                                                 </connections>
@@ -1679,7 +1679,7 @@
                                                             <action selector="onofflBtnActionWithButton:" destination="5z6-kN-hGb" eventType="touchUpInside" id="kuu-iX-akT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8R-zi-7ea">
+                                                    <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8R-zi-7ea">
                                                         <rect key="frame" x="34.5" y="115.5" width="58.5" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                         <state key="normal" title="  OFF" image="on">
@@ -1803,6 +1803,10 @@
                     <connections>
                         <outlet property="alarmMainView" destination="Vof-IC-hDv" id="pyf-jv-fww"/>
                         <outlet property="alarmView" destination="7e4-Z9-nUW" id="hXG-ts-KWl"/>
+                        <outlet property="asrBtn" destination="H4b-67-I7l" id="FJ7-pL-ffC"/>
+                        <outlet property="dhuhrBtn" destination="QHU-gI-PtY" id="CtK-rD-fFJ"/>
+                        <outlet property="fajrBtn" destination="ptN-Xo-G9R" id="FNj-g0-yG8"/>
+                        <outlet property="ishaBtn" destination="MVl-Wq-79d" id="AN0-pA-GS7"/>
                         <outlet property="lblAddress" destination="p6B-8K-0Qc" id="C4k-KD-cK3"/>
                         <outlet property="lblAsr" destination="Y6H-Pa-scP" id="Sgv-s7-tPg"/>
                         <outlet property="lblCity" destination="7tg-54-A4s" id="Rvg-he-w1q"/>
@@ -1816,6 +1820,7 @@
                         <outlet property="lblSunset" destination="Tbu-rR-ryF" id="dju-K3-FYl"/>
                         <outlet property="lblTime" destination="kDZ-6j-bMg" id="K1O-Xc-PoQ"/>
                         <outlet property="leading" destination="H1f-zE-0Jd" id="z0P-Kc-kzT"/>
+                        <outlet property="maghribBtn" destination="2ez-9y-Ct3" id="HJu-2t-Iy6"/>
                         <outlet property="offBtn" destination="s8R-zi-7ea" id="Olu-mE-0bM"/>
                         <outlet property="onBtn" destination="kwK-IF-fg7" id="0ag-De-rfZ"/>
                         <outlet property="scrollView" destination="TPF-vt-cKw" id="drT-vz-xa4"/>
@@ -1922,8 +1927,8 @@
         <image name="activelight" width="82.5" height="45"/>
         <image name="activeprayer" width="75" height="44.5"/>
         <image name="activequran" width="39.5" height="42"/>
+        <image name="alarm_off" width="36" height="28.5"/>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
-        <image name="bell" width="36" height="28.5"/>
         <image name="bluecircle" width="81.5" height="83"/>
         <image name="book" width="55" height="49.5"/>
         <image name="bookb" width="91" height="52"/>

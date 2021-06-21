@@ -11,6 +11,13 @@ import CoreBluetooth
 
 class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource//, CBCentralManagerDelegate, CBPeripheralDelegate
 {
+    @IBOutlet weak var fajrBtn: UIButton!
+    @IBOutlet weak var dhuhrBtn: UIButton!
+    @IBOutlet weak var asrBtn: UIButton!
+    @IBOutlet weak var maghribBtn: UIButton!
+    @IBOutlet weak var ishaBtn: UIButton!
+    
+    
     @IBOutlet weak var alarmMainView: UIView!
     @IBOutlet weak var alarmView: UIView!
     @IBOutlet weak var timePicker: UIPickerView!
@@ -55,6 +62,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     var asrInterval = 0
     var maghribInterval = 0
     var ishaInterval = 0
+    
+    var selectedInterval = 0
     //BLE
 //    var bleManager : CBCentralManager!
 //    var myBluetoothPeripheral : CBPeripheral!
@@ -66,6 +75,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     {
         alarmView.layer.cornerRadius = 10.0
         alarmView.layer.masksToBounds = true
+        
         
         prayersVC = self
         let formatter = DateFormatter()
@@ -94,6 +104,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
             self.view.makeToast("Please enable your GPS location from device settings.")
         }
         
+        changePrayerButtons()
+        
         AppUtility.lockOrientation(.portrait)
     }
     
@@ -114,6 +126,54 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
 //        isMyPeripheralConected = false
 //        myBluetoothPeripheral = nil
 //    }
+    
+    func changePrayerButtons()
+    {
+        if (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1
+        {
+            fajrBtn.setImage(UIImage(named: "alarm_on"), for: .normal)
+        }
+        else
+        {
+            fajrBtn.setImage(UIImage(named: "alarm_off"), for: .normal)
+        }
+        
+        if (defaults.value(forKey: "dhuhrFlag") as? Int ?? 0) == 1
+        {
+            dhuhrBtn.setImage(UIImage(named: "alarm_on"), for: .normal)
+        }
+        else
+        {
+            dhuhrBtn.setImage(UIImage(named: "alarm_off"), for: .normal)
+        }
+        
+        if (defaults.value(forKey: "asrFlag") as? Int ?? 0) == 1
+        {
+            asrBtn.setImage(UIImage(named: "alarm_on"), for: .normal)
+        }
+        else
+        {
+            asrBtn.setImage(UIImage(named: "alarm_off"), for: .normal)
+        }
+        
+        if (defaults.value(forKey: "maghribFlag") as? Int ?? 0) == 1
+        {
+            maghribBtn.setImage(UIImage(named: "alarm_on"), for: .normal)
+        }
+        else
+        {
+            maghribBtn.setImage(UIImage(named: "alarm_off"), for: .normal)
+        }
+        
+        if (defaults.value(forKey: "ishaFlag") as? Int ?? 0) == 1
+        {
+            ishaBtn.setImage(UIImage(named: "alarm_on"), for: .normal)
+        }
+        else
+        {
+            ishaBtn.setImage(UIImage(named: "alarm_off"), for: .normal)
+        }
+    }
     
     func fetchPrayerData(byteArray: [UInt8])
     {
@@ -142,7 +202,9 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     
     @IBAction func alarmBtnAction(button: UIButton)
     {
+        var flag = false
         prayer = button.tag
+        selectedInterval = 0
         
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
@@ -151,81 +213,150 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         {
             if (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1
             {
-                onBtn.setImage(UIImage(named: "on"), for: .normal)
-                offBtn.setImage(UIImage(named: "off"), for: .normal)
+                fajrFlag = 1
+                flag = true
+            }
+            
+            let fajr: Int = defaults.value(forKey: "fajrInterval") as? Int ?? 0
+            
+            if fajr > 0
+            {
+                fajrInterval = fajr
+                selectedInterval = fajr
             }
             else
             {
-                onBtn.setImage(UIImage(named: "off"), for: .normal)
-                offBtn.setImage(UIImage(named: "on"), for: .normal)
+                fajrInterval = 0
+                selectedInterval = 0
             }
+            
         }
         else if prayer == 1002
         {
             if (defaults.value(forKey: "sunriseFlag") as? Int ?? 0) == 1
             {
-                onBtn.setImage(UIImage(named: "on"), for: .normal)
-                offBtn.setImage(UIImage(named: "off"), for: .normal)
+                sunriseFlag = 1
+                flag = true
+            }
+            
+            let sunrise: Int = defaults.value(forKey: "sunriseInterval") as? Int ?? 0
+            
+            if sunrise > 0
+            {
+                sunriseInterval = sunrise
+                selectedInterval = sunrise
             }
             else
             {
-                onBtn.setImage(UIImage(named: "off"), for: .normal)
-                offBtn.setImage(UIImage(named: "on"), for: .normal)
+                sunriseInterval = 0
+                selectedInterval = 0
             }
         }
         else if prayer == 1003
         {
-            if (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1
+            if (defaults.value(forKey: "dhuhrFlag") as? Int ?? 0) == 1
             {
-                onBtn.setImage(UIImage(named: "on"), for: .normal)
-                offBtn.setImage(UIImage(named: "off"), for: .normal)
+                dhuhrFlag = 1
+                flag = true
+            }
+            
+            let dhuhr: Int = defaults.value(forKey: "dhuhrInterval") as? Int ?? 0
+            
+            if dhuhr > 0
+            {
+                dhuhrInterval = dhuhr
+                selectedInterval = dhuhr
             }
             else
             {
-                onBtn.setImage(UIImage(named: "off"), for: .normal)
-                offBtn.setImage(UIImage(named: "on"), for: .normal)
+                dhuhrInterval = 0
+                selectedInterval = 0
             }
         }
         else if prayer == 1004
         {
             if (defaults.value(forKey: "asrFlag") as? Int ?? 0) == 1
             {
-                onBtn.setImage(UIImage(named: "on"), for: .normal)
-                offBtn.setImage(UIImage(named: "off"), for: .normal)
+                asrFlag = 1
+                flag = true
+            }
+            
+            let asr: Int = defaults.value(forKey: "asrInterval") as? Int ?? 0
+            
+            if asr > 0
+            {
+                asrInterval = asr
+                selectedInterval = asr
             }
             else
             {
-                onBtn.setImage(UIImage(named: "off"), for: .normal)
-                offBtn.setImage(UIImage(named: "on"), for: .normal)
+                asrInterval = 0
+                selectedInterval = 0
             }
         }
         else if prayer == 1005
         {
             if (defaults.value(forKey: "maghribFlag") as? Int ?? 0) == 1
             {
-                onBtn.setImage(UIImage(named: "on"), for: .normal)
-                offBtn.setImage(UIImage(named: "off"), for: .normal)
+                maghribFlag = 1
+                flag = true
+            }
+            
+            let maghrib: Int = defaults.value(forKey: "maghribInterval") as? Int ?? 0
+            
+            if maghrib > 0
+            {
+                maghribInterval = maghrib
+                selectedInterval = maghrib
             }
             else
             {
-                onBtn.setImage(UIImage(named: "off"), for: .normal)
-                offBtn.setImage(UIImage(named: "on"), for: .normal)
+                maghribInterval = 0
+                selectedInterval = 0
             }
         }
         else if prayer == 1006
         {
             if (defaults.value(forKey: "ishaFlag") as? Int ?? 0) == 1
             {
-                onBtn.setImage(UIImage(named: "on"), for: .normal)
-                offBtn.setImage(UIImage(named: "off"), for: .normal)
+                ishaFlag = 1
+                flag = true
+            }
+            
+            let isha: Int = defaults.value(forKey: "ishaInterval") as? Int ?? 0
+            
+            if isha > 0
+            {
+                ishaInterval = isha
+                selectedInterval = isha
             }
             else
             {
-                onBtn.setImage(UIImage(named: "off"), for: .normal)
-                offBtn.setImage(UIImage(named: "on"), for: .normal)
+                ishaInterval = 0
+                selectedInterval = 0
             }
         }
         
+        if flag
+        {
+            onBtn.setImage(UIImage(named: "on"), for: .normal)
+            offBtn.setImage(UIImage(named: "off"), for: .normal)
+        }
+        else
+        {
+            onBtn.setImage(UIImage(named: "off"), for: .normal)
+            offBtn.setImage(UIImage(named: "on"), for: .normal)
+        }
+
+        if selectedInterval > 0
+        {
+            timePicker.selectRow(selectedInterval, inComponent: 0, animated: false)
+        }
+        else
+        {
+            timePicker.selectRow(0, inComponent: 0, animated: false)
+        }
+
         alarmMainView.alpha = 1
     }
     
@@ -233,75 +364,57 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     {
         if button.tag == 1001
         {
-            if isMyPeripheralConected
-            {
+//            if isMyPeripheralConected
+//            {
                 let DLSaving = defaults.value(forKey: "daylight") as? Int ?? 0
                 var dataToSend = Data([UInt8(Character("P").asciiValue!), UInt8(DLSaving)])
                 
-                if prayer == 1001 && (fajrFlag == 1 || (defaults.value(forKey: "fajrFlag") as? Int ?? 0) == 1)
+                if prayer == 1001
                 {
-                    dataToSend.append(UInt8(1))
-                    defaults.set(1, forKey: "fajrFlag")
+                    dataToSend.append(UInt8(fajrFlag))
+                    defaults.set(fajrFlag, forKey: "fajrFlag")
+                    fajrInterval = selectedInterval
                     defaults.set(fajrInterval, forKey: "fajrInterval")
                 }
-                else
-                {
-                    dataToSend.append(UInt8(0))
-                }
                 
-                if prayer == 1002 && (sunriseFlag == 1 || (defaults.value(forKey: "sunriseFlag") as? Int ?? 0) == 1)
+                if prayer == 1002
                 {
-                    dataToSend.append(UInt8(1))
-                    defaults.set(1, forKey: "sunriseFlag")
+                    dataToSend.append(UInt8(sunriseFlag))
+                    defaults.set(sunriseFlag, forKey: "sunriseFlag")
+                    sunriseInterval = selectedInterval
                     defaults.set(sunriseInterval, forKey: "sunriseInterval")
                 }
-                else
-                {
-                    dataToSend.append(UInt8(0))
-                }
                 
-                if prayer == 1003 && (dhuhrFlag == 1 || (defaults.value(forKey: "dhuhrFlag") as? Int ?? 0) == 1)
+                if prayer == 1003
                 {
-                    dataToSend.append(UInt8(1))
-                    defaults.set(1, forKey: "dhuhrFlag")
+                    dataToSend.append(UInt8(dhuhrFlag))
+                    defaults.set(dhuhrFlag, forKey: "dhuhrFlag")
+                    dhuhrInterval = selectedInterval
                     defaults.set(dhuhrInterval, forKey: "dhuhrInterval")
                 }
-                else
-                {
-                    dataToSend.append(UInt8(0))
-                }
                 
-                if prayer == 1004 && (asrFlag == 1 || (defaults.value(forKey: "asrFlag") as? Int ?? 0) == 1)
+                if prayer == 1004
                 {
-                    dataToSend.append(UInt8(1))
-                    defaults.set(1, forKey: "asrFlag")
+                    dataToSend.append(UInt8(asrFlag))
+                    defaults.set(asrFlag, forKey: "asrFlag")
+                    asrInterval = selectedInterval
                     defaults.set(asrInterval, forKey: "asrInterval")
                 }
-                else
-                {
-                    dataToSend.append(UInt8(0))
-                }
                 
-                if prayer == 1005 && (maghribFlag == 1 || (defaults.value(forKey: "maghribFlag") as? Int ?? 0) == 1)
+                if prayer == 1005
                 {
-                    dataToSend.append(UInt8(1))
-                    defaults.set(1, forKey: "maghribFlag")
+                    dataToSend.append(UInt8(maghribFlag))
+                    defaults.set(maghribFlag, forKey: "maghribFlag")
+                    maghribInterval = selectedInterval
                     defaults.set(maghribInterval, forKey: "maghribInterval")
                 }
-                else
-                {
-                    dataToSend.append(UInt8(0))
-                }
                 
-                if prayer == 1006 && (ishaFlag == 1 || (defaults.value(forKey: "ishaFlag") as? Int ?? 0) == 1)
+                if prayer == 1006
                 {
-                    dataToSend.append(UInt8(1))
-                    defaults.set(1, forKey: "ishaFlag")
+                    dataToSend.append(UInt8(ishaFlag))
+                    defaults.set(ishaFlag, forKey: "ishaFlag")
+                    ishaInterval = selectedInterval
                     defaults.set(ishaInterval, forKey: "ishaInterval")
-                }
-                else
-                {
-                    dataToSend.append(UInt8(0))
                 }
                 
                 dataToSend.append(UInt8(fajrInterval))
@@ -311,12 +424,14 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 dataToSend.append(UInt8(maghribInterval))
                 dataToSend.append(UInt8(ishaInterval))
                 
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            }
-            else
-            {
-                self.view.makeToast("Bluetooth device disconnected")
-            }
+//                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+//            }
+//            else
+//            {
+//                self.view.makeToast("Bluetooth device disconnected")
+//            }
+            
+            changePrayerButtons()
         }
         else
         {
@@ -344,25 +459,54 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         {
             fajrFlag = 1
         }
-        else if prayer == 1002 && button.tag == 1001
+        else if prayer == 1001 && button.tag == 1002
+        {
+            fajrFlag = 0
+        }
+        
+        if prayer == 1002 && button.tag == 1001
         {
             sunriseFlag = 1
         }
-        else if prayer == 1003 && button.tag == 1001
+        else if prayer == 1002 && button.tag == 1002
+        {
+            sunriseFlag = 0
+        }
+        
+        if prayer == 1003 && button.tag == 1001
         {
             dhuhrFlag = 1
         }
-        else if prayer == 1004 && button.tag == 1001
+        else if prayer == 1003 && button.tag == 1002
+        {
+            dhuhrFlag = 0
+        }
+        
+        if prayer == 1004 && button.tag == 1001
         {
             asrFlag = 1
         }
-        else if prayer == 1005 && button.tag == 1001
+        else if prayer == 1004 && button.tag == 1002
+        {
+            asrFlag = 0
+        }
+        
+        if prayer == 1005 && button.tag == 1001
         {
             maghribFlag = 1
         }
-        else if prayer == 1006 && button.tag == 1001
+        else if prayer == 1005 && button.tag == 1002
+        {
+            maghribFlag = 0
+        }
+        
+        if prayer == 1006 && button.tag == 1001
         {
             ishaFlag = 1
+        }
+        else if prayer == 1006 && button.tag == 1002
+        {
+            ishaFlag = 0
         }
         
         if button.tag == 1001
@@ -729,6 +873,10 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return "\(row)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedInterval = row
     }
 }
 

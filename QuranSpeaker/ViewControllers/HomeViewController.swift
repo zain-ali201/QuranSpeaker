@@ -953,7 +953,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         }
                         
                         let image:UIImage = UIImage(webpWithData: fileData!)
-                        let homeObj = HomeObject(name: qariNames[qari], img: image, key: "\(qari)")
+                        let homeObj = HomeObject(name: qariNames[qari], img: image, key: "\(i)")
                         qarisArray.append(homeObj)
                     }
                 }
@@ -989,7 +989,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("Trans: \(trans)")
                     
                     let image:UIImage = UIImage(named: "\(trans)") ?? UIImage(named: "0")!
-                    let homeObj = HomeObject(name: transNames["\(trans)"] ?? "Other", img: image, key: "\(trans)")
+                    let homeObj = HomeObject(name: transNames["\(trans)"] ?? "Other", img: image, key: "\(i)")
                     transArray.append(homeObj)
                 }
                 
