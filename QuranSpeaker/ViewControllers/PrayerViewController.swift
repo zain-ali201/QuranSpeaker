@@ -76,6 +76,12 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         alarmView.layer.cornerRadius = 10.0
         alarmView.layer.masksToBounds = true
         
+        fajrFlag = defaults.value(forKey: "fajrFlag") as? Int ?? 0
+        sunriseFlag = defaults.value(forKey: "sunriseFlag") as? Int ?? 0
+        dhuhrFlag = defaults.value(forKey: "dhuhrFlag") as? Int ?? 0
+        asrFlag = defaults.value(forKey: "asrFlag") as? Int ?? 0
+        maghribFlag = defaults.value(forKey: "maghribFlag") as? Int ?? 0
+        ishaFlag = defaults.value(forKey: "ishaFlag") as? Int ?? 0
         
         prayersVC = self
         let formatter = DateFormatter()
@@ -364,14 +370,13 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     {
         if button.tag == 1001
         {
-//            if isMyPeripheralConected
-//            {
+            if isMyPeripheralConected
+            {
                 let DLSaving = defaults.value(forKey: "daylight") as? Int ?? 0
                 var dataToSend = Data([UInt8(Character("P").asciiValue!), UInt8(DLSaving)])
                 
                 if prayer == 1001
                 {
-                    dataToSend.append(UInt8(fajrFlag))
                     defaults.set(fajrFlag, forKey: "fajrFlag")
                     fajrInterval = selectedInterval
                     defaults.set(fajrInterval, forKey: "fajrInterval")
@@ -379,7 +384,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 
                 if prayer == 1002
                 {
-                    dataToSend.append(UInt8(sunriseFlag))
                     defaults.set(sunriseFlag, forKey: "sunriseFlag")
                     sunriseInterval = selectedInterval
                     defaults.set(sunriseInterval, forKey: "sunriseInterval")
@@ -387,7 +391,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 
                 if prayer == 1003
                 {
-                    dataToSend.append(UInt8(dhuhrFlag))
                     defaults.set(dhuhrFlag, forKey: "dhuhrFlag")
                     dhuhrInterval = selectedInterval
                     defaults.set(dhuhrInterval, forKey: "dhuhrInterval")
@@ -395,7 +398,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 
                 if prayer == 1004
                 {
-                    dataToSend.append(UInt8(asrFlag))
                     defaults.set(asrFlag, forKey: "asrFlag")
                     asrInterval = selectedInterval
                     defaults.set(asrInterval, forKey: "asrInterval")
@@ -403,7 +405,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 
                 if prayer == 1005
                 {
-                    dataToSend.append(UInt8(maghribFlag))
                     defaults.set(maghribFlag, forKey: "maghribFlag")
                     maghribInterval = selectedInterval
                     defaults.set(maghribInterval, forKey: "maghribInterval")
@@ -411,11 +412,24 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 
                 if prayer == 1006
                 {
-                    dataToSend.append(UInt8(ishaFlag))
                     defaults.set(ishaFlag, forKey: "ishaFlag")
                     ishaInterval = selectedInterval
                     defaults.set(ishaInterval, forKey: "ishaInterval")
                 }
+                
+                fajrFlag = defaults.value(forKey: "fajrFlag") as? Int ?? 0
+                sunriseFlag = defaults.value(forKey: "sunriseFlag") as? Int ?? 0
+                dhuhrFlag = defaults.value(forKey: "dhuhrFlag") as? Int ?? 0
+                asrFlag = defaults.value(forKey: "asrFlag") as? Int ?? 0
+                maghribFlag = defaults.value(forKey: "maghribFlag") as? Int ?? 0
+                ishaFlag = defaults.value(forKey: "ishaFlag") as? Int ?? 0
+                
+                dataToSend.append(UInt8(fajrFlag))
+                dataToSend.append(UInt8(sunriseFlag))
+                dataToSend.append(UInt8(dhuhrFlag))
+                dataToSend.append(UInt8(asrFlag))
+                dataToSend.append(UInt8(maghribFlag))
+                dataToSend.append(UInt8(ishaFlag))
                 
                 dataToSend.append(UInt8(fajrInterval))
                 dataToSend.append(UInt8(sunriseInterval))
@@ -424,12 +438,12 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 dataToSend.append(UInt8(maghribInterval))
                 dataToSend.append(UInt8(ishaInterval))
                 
-//                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-//            }
-//            else
-//            {
-//                self.view.makeToast("Bluetooth device disconnected")
-//            }
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
             
             changePrayerButtons()
         }

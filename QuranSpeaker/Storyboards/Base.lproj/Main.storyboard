@@ -707,6 +707,9 @@
                                                             <outlet property="delegate" destination="BYZ-38-t0r" id="i27-Vv-eWF"/>
                                                         </connections>
                                                     </collectionView>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wui-QI-Yof">
+                                                        <rect key="frame" x="177.5" y="75" width="20" height="20"/>
+                                                    </activityIndicatorView>
                                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGW-l1-5KI">
                                                         <rect key="frame" x="0.0" y="169.5" width="375" height="0.5"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -717,6 +720,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="wui-QI-Yof" firstAttribute="centerY" secondItem="PQS-K1-gkr" secondAttribute="centerY" id="7Uq-zD-DLZ"/>
                                                     <constraint firstItem="zEm-F2-dr0" firstAttribute="top" secondItem="PQS-K1-gkr" secondAttribute="top" constant="10" id="FTm-IM-hyi"/>
                                                     <constraint firstAttribute="trailing" secondItem="qGW-l1-5KI" secondAttribute="trailing" id="GmY-rM-ybU"/>
                                                     <constraint firstItem="zEm-F2-dr0" firstAttribute="leading" secondItem="PQS-K1-gkr" secondAttribute="leading" constant="10" id="PRx-5h-LcL"/>
@@ -725,6 +729,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="qGW-l1-5KI" secondAttribute="bottom" id="d3y-nn-L8n"/>
                                                     <constraint firstAttribute="bottom" secondItem="zEm-F2-dr0" secondAttribute="bottom" constant="10" id="dez-T6-Sae"/>
                                                     <constraint firstAttribute="trailing" secondItem="as8-Zk-RyW" secondAttribute="trailing" id="qSt-mS-nup"/>
+                                                    <constraint firstItem="wui-QI-Yof" firstAttribute="centerX" secondItem="PQS-K1-gkr" secondAttribute="centerX" id="qmC-Wa-9xS"/>
                                                     <constraint firstItem="qGW-l1-5KI" firstAttribute="leading" secondItem="PQS-K1-gkr" secondAttribute="leading" id="rcl-NS-Y8B"/>
                                                     <constraint firstAttribute="trailing" secondItem="zEm-F2-dr0" secondAttribute="trailing" id="uNc-qW-hVm"/>
                                                     <constraint firstAttribute="height" constant="170" id="z7G-zc-aUO"/>
@@ -798,6 +803,7 @@
                         <outlet property="lblVerse" destination="exI-SS-lmt" id="CnZ-gR-7qF"/>
                         <outlet property="lblVolCount" destination="UOd-R0-6d6" id="PA7-Qz-adu"/>
                         <outlet property="leading" destination="Xtc-Lc-5ae" id="ByH-be-tj9"/>
+                        <outlet property="loader" destination="wui-QI-Yof" id="5tf-P2-Rrj"/>
                         <outlet property="menuView" destination="bZn-ZK-J2a" id="sm9-Cn-CUT"/>
                         <outlet property="qarisView" destination="b9C-9x-ah7" id="Wnn-wN-wC1"/>
                         <outlet property="quranView" destination="i9I-TN-DIo" id="VOu-ZJ-btA"/>

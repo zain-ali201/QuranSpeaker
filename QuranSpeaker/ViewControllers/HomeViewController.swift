@@ -24,6 +24,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var lblVerse: UILabel!
     @IBOutlet weak var verseTblView: UITableView!
     
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    
     @IBOutlet weak var volView: UIView!
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var volSlider: UISlider!
@@ -776,30 +778,37 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 7
         {
+            collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
             tag = 1002
             loadBooks()
         }
         else if button.tag == 8
         {
-            if transArray.count > 0
-            {
+//            if transArray.count > 0
+//            {
+                collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
+                loader.startAnimating()
                 tag = 1003
                 collectionView.reloadData()
                 qarisView.alpha = 1
-            }
-            else
-            {
-                if isMyPeripheralConected && quranCharacteristic != nil
+//            }
+//            else
+//            {
+                if transArray.count == 0
                 {
-                    let dataToSend = Data([UInt8(Character("T").asciiValue!)])
-                    myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                    print("value written: \(key)")
+                    if isMyPeripheralConected && quranCharacteristic != nil
+                    {
+                        let dataToSend = Data([UInt8(Character("T").asciiValue!)])
+                        myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                        print("value written: \(key)")
+                    }
+                    else
+                    {
+                        self.view.makeToast("Bluetooth device disconnected")
+                    }
                 }
-                else
-                {
-                    self.view.makeToast("Bluetooth device disconnected")
-                }
-            }
+                
+//            }
         }
         else if button.tag == 9
         {
@@ -823,25 +832,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 13
         {
-            if qarisArray.count > 0
-            {
+//            if qarisArray.count > 0
+//            {
+                collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
+                loader.startAnimating()
                 tag = 1001
                 collectionView.reloadData()
                 qarisView.alpha = 1
-            }
-            else
-            {
-                if isMyPeripheralConected && quranCharacteristic != nil
+//            }
+//            else
+//            {
+                if qarisArray.count == 0
                 {
-                    let dataToSend = Data([UInt8(Character("R").asciiValue!)])
-                    myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                    print("value written: \(key)")
+                    if isMyPeripheralConected && quranCharacteristic != nil
+                    {
+                        let dataToSend = Data([UInt8(Character("R").asciiValue!)])
+                        myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                        print("value written: \(key)")
+                    }
+                    else
+                    {
+                        self.view.makeToast("Bluetooth device disconnected")
+                    }
                 }
-                else
-                {
-                    self.view.makeToast("Bluetooth device disconnected")
-                }
-            }
+//            }
         }
         else if button.tag == 14
         {
@@ -937,9 +951,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 qarisArray = []
                 let totalQari = UserDefaults.standard.integer(forKey: "totalQaris")
-                for i in 1...totalQari
+                for i in 0..<totalQari
                 {
-                    let qari = Int(byteArray[i])
+                    let qari = Int(byteArray[i + 1])
                     
                     if qari <= 50
                     {
@@ -958,12 +972,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     }
                 }
                 
-                if qarisArray.count > 0
-                {
-                    tag = 1001
+//                if qarisArray.count > 0
+//                {
+//                    tag = 1001
                     collectionView.reloadData()
-                    qarisView.alpha = 1
-                }
+//                    qarisView.alpha = 1
+//                }
                 
 //                UserDefaults.standard.setValue(qarisArray, forKey: "qarisArray")
             }
@@ -983,9 +997,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 transArray = []
                 let totalTrans = UserDefaults.standard.integer(forKey: "totalTrans")
-                for i in 1...totalTrans
+                for i in 0..<totalTrans
                 {
-                    let trans = Int(byteArray[i])
+                    let trans = Int(byteArray[i + 1])
                     print("Trans: \(trans)")
                     
                     let image:UIImage = UIImage(named: "\(trans)") ?? UIImage(named: "0")!
@@ -993,12 +1007,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     transArray.append(homeObj)
                 }
                 
-                if transArray.count > 0
-                {
-                    tag = 1003
+//                if transArray.count > 0
+//                {
+//                    tag = 1003
                     collectionView.reloadData()
-                    qarisView.alpha = 1
-                }
+//                    qarisView.alpha = 1
+//                }
 //                UserDefaults.standard.setValue(transArray, forKey: "transArray")
             }
         }
@@ -1034,14 +1048,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if tag == 1001
         {
+            if qarisArray.count > 0
+            {
+                loader.stopAnimating()
+            }
             return qarisArray.count
         }
         else if tag == 1002
         {
+            if booksArray.count > 0
+            {
+                loader.stopAnimating()
+            }
             return booksArray.count
         }
         else if tag == 1003
         {
+            if transArray.count > 0
+            {
+                loader.stopAnimating()
+            }
             return transArray.count
         }
         return 0

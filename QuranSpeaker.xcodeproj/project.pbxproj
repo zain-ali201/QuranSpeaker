@@ -671,6 +671,14 @@
 		186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40025C7FEE000D4F154 /* JuristicViewController.swift */; };
 		186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40125C7FEE000D4F154 /* CityViewController.swift */; };
 		1879A86325C3E2D200FC0219 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879A86225C3E2D100FC0219 /* SetViewController.swift */; };
+		18A8DD1E2684A2650008EC2A /* defaultReader.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD172684A2640008EC2A /* defaultReader.webp */; };
+		18A8DD1F2684A2650008EC2A /* 44.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD182684A2650008EC2A /* 44.webp */; };
+		18A8DD202684A2650008EC2A /* 45.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD192684A2650008EC2A /* 45.webp */; };
+		18A8DD212684A2650008EC2A /* 42.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD1A2684A2650008EC2A /* 42.webp */; };
+		18A8DD222684A2650008EC2A /* 43.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD1B2684A2650008EC2A /* 43.webp */; };
+		18A8DD232684A2650008EC2A /* 31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD1C2684A2650008EC2A /* 31.webp */; };
+		18A8DD242684A2650008EC2A /* 46.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD1D2684A2650008EC2A /* 46.webp */; };
+		18A8DD272684A29C0008EC2A /* 25.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD262684A29C0008EC2A /* 25.webp */; };
 		18A9C64126038F7E004D1078 /* quran.xml in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C64026038F7E004D1078 /* quran.xml */; };
 		18AD5DC625EFCC8F006D27FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD5DC525EFCC8F006D27FD /* Toast.swift */; };
 		18B4BE1B25C183DD008AC27B /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4BE1925C183DC008AC27B /* LightViewController.swift */; };
@@ -1357,6 +1365,14 @@
 		186DA40025C7FEE000D4F154 /* JuristicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuristicViewController.swift; sourceTree = "<group>"; };
 		186DA40125C7FEE000D4F154 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		1879A86225C3E2D100FC0219 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		18A8DD172684A2640008EC2A /* defaultReader.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = defaultReader.webp; sourceTree = "<group>"; };
+		18A8DD182684A2650008EC2A /* 44.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 44.webp; sourceTree = "<group>"; };
+		18A8DD192684A2650008EC2A /* 45.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 45.webp; sourceTree = "<group>"; };
+		18A8DD1A2684A2650008EC2A /* 42.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 42.webp; sourceTree = "<group>"; };
+		18A8DD1B2684A2650008EC2A /* 43.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 43.webp; sourceTree = "<group>"; };
+		18A8DD1C2684A2650008EC2A /* 31.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 31.webp; sourceTree = "<group>"; };
+		18A8DD1D2684A2650008EC2A /* 46.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 46.webp; sourceTree = "<group>"; };
+		18A8DD262684A29C0008EC2A /* 25.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 25.webp; sourceTree = "<group>"; };
 		18A9C64026038F7E004D1078 /* quran.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = quran.xml; sourceTree = "<group>"; };
 		18AD5DC525EFCC8F006D27FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = "Pods/Toast-Swift/Toast/Toast.swift"; sourceTree = SOURCE_ROOT; };
 		18B4BE1925C183DC008AC27B /* LightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
@@ -2052,6 +2068,7 @@
 		1878F047261C58D300B8153D /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				18A8DD172684A2640008EC2A /* defaultReader.webp */,
 				18454B07265D434B0049F661 /* 1.webp */,
 				18454B04265D434A0049F661 /* 2.webp */,
 				18454B0C265D434B0049F661 /* 3.webp */,
@@ -2076,11 +2093,13 @@
 				185933162679F7E000524BFF /* 22.webp */,
 				18593330267A0B2D00524BFF /* 23.webp */,
 				185933192679F7FE00524BFF /* 24.webp */,
+				18A8DD262684A29C0008EC2A /* 25.webp */,
 				185932972679E1FE00524BFF /* 26.webp */,
 				1859332D267A0B2C00524BFF /* 27.webp */,
 				18593327267A0B2900524BFF /* 28.webp */,
 				18593333267A0B2E00524BFF /* 29.webp */,
 				1859329B2679E1FF00524BFF /* 30.webp */,
+				18A8DD1C2684A2650008EC2A /* 31.webp */,
 				185933172679F7EA00524BFF /* 32.webp */,
 				185933182679F7F200524BFF /* 33.webp */,
 				1859332C267A0B2B00524BFF /* 34.webp */,
@@ -2091,6 +2110,11 @@
 				18593331267A0B2E00524BFF /* 39.webp */,
 				1859332A267A0B2A00524BFF /* 40.webp */,
 				185932A12679E20000524BFF /* 41.webp */,
+				18A8DD1A2684A2650008EC2A /* 42.webp */,
+				18A8DD1B2684A2650008EC2A /* 43.webp */,
+				18A8DD182684A2650008EC2A /* 44.webp */,
+				18A8DD192684A2650008EC2A /* 45.webp */,
+				18A8DD1D2684A2650008EC2A /* 46.webp */,
 				1859332B267A0B2B00524BFF /* 47.webp */,
 				1859332F267A0B2D00524BFF /* 48.webp */,
 				185933132679F7D500524BFF /* 49.webp */,
@@ -2351,6 +2375,7 @@
 				1865F44D26383761005552FC /* KSF_P413.ttf in Resources */,
 				1865F21F26383760005552FC /* KSF_P219.ttf in Resources */,
 				1865F31526383761005552FC /* KSF_P136.ttf in Resources */,
+				18A8DD202684A2650008EC2A /* 45.webp in Resources */,
 				185933222679F80B00524BFF /* 24.webp in Resources */,
 				1865F30726383761005552FC /* KSF_P484.ttf in Resources */,
 				1865F33826383761005552FC /* KSF_P323.ttf in Resources */,
@@ -2414,6 +2439,7 @@
 				1865F2CB26383760005552FC /* KSF_P508.ttf in Resources */,
 				1865F31A26383761005552FC /* KSF_P095.ttf in Resources */,
 				1865F38626383761005552FC /* KSF_P112.ttf in Resources */,
+				18A8DD1E2684A2650008EC2A /* defaultReader.webp in Resources */,
 				1865F27E26383760005552FC /* KSF_P584.ttf in Resources */,
 				1865F41A26383761005552FC /* KSF_P571.ttf in Resources */,
 				1865F2AF26383760005552FC /* KSF_P045.ttf in Resources */,
@@ -2499,6 +2525,7 @@
 				1865F31F26383761005552FC /* KSF_P268.ttf in Resources */,
 				1865F44E26383761005552FC /* KSF_P349.ttf in Resources */,
 				1865F26026383760005552FC /* KSF_P154.ttf in Resources */,
+				18A8DD222684A2650008EC2A /* 43.webp in Resources */,
 				1865F25526383760005552FC /* KSF_P236.ttf in Resources */,
 				1865F26E26383760005552FC /* KSF_P380.ttf in Resources */,
 				1865F21926383760005552FC /* KSF_P147.ttf in Resources */,
@@ -2745,6 +2772,7 @@
 				1865F25926383760005552FC /* KSF_P008.ttf in Resources */,
 				185932AE2679E20100524BFF /* 30.webp in Resources */,
 				1865F32C26383761005552FC /* KSF_P040.ttf in Resources */,
+				18A8DD272684A29C0008EC2A /* 25.webp in Resources */,
 				1865F33026383761005552FC /* KSF_P120.ttf in Resources */,
 				1865F25C26383760005552FC /* KSF_P183.ttf in Resources */,
 				1865F28A26383760005552FC /* KSF_P143.ttf in Resources */,
@@ -2794,6 +2822,7 @@
 				1865F41826383761005552FC /* KSF_P559.ttf in Resources */,
 				1865F43626383761005552FC /* KSF_P216.ttf in Resources */,
 				1865F45726383761005552FC /* KSF_P567.ttf in Resources */,
+				18A8DD1F2684A2650008EC2A /* 44.webp in Resources */,
 				1865F35326383761005552FC /* KSF_P528.ttf in Resources */,
 				1865F38226383761005552FC /* KSF_P310.ttf in Resources */,
 				1865F20D26383760005552FC /* KSF_P436.ttf in Resources */,
@@ -2815,6 +2844,7 @@
 				1865F2C126383760005552FC /* KSF_P483.ttf in Resources */,
 				1865F29B26383760005552FC /* KSF_P181.ttf in Resources */,
 				1865F22C26383760005552FC /* KSF_P569.ttf in Resources */,
+				18A8DD232684A2650008EC2A /* 31.webp in Resources */,
 				1865F35E26383761005552FC /* KSF_P448.ttf in Resources */,
 				1865F3E526383761005552FC /* KSF_P402.ttf in Resources */,
 				1865F2F126383761005552FC /* KSF_P084.ttf in Resources */,
@@ -2833,9 +2863,11 @@
 				1865F45126383761005552FC /* KSF_P188.ttf in Resources */,
 				1865F3D526383761005552FC /* KSF_P211.ttf in Resources */,
 				1865F45826383761005552FC /* KSF_P229.ttf in Resources */,
+				18A8DD242684A2650008EC2A /* 46.webp in Resources */,
 				1865F27D26383760005552FC /* KSF_P592.ttf in Resources */,
 				1865F3AC26383761005552FC /* KSF_P507.ttf in Resources */,
 				1865F34526383761005552FC /* KSF_P096.ttf in Resources */,
+				18A8DD212684A2650008EC2A /* 42.webp in Resources */,
 				18454B15265D434C0049F661 /* 1.webp in Resources */,
 				1865F35B26383761005552FC /* KSF_P474.ttf in Resources */,
 				1865F3B326383761005552FC /* KSF_P263.ttf in Resources */,
