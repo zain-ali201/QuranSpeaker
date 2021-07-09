@@ -17,6 +17,8 @@ public class ColorPicker: UIControl {
             return hsvColor.uiColor
         }
     }
+    
+    public var contrast:CGFloat = 0.0
 
     private let brightnessCursor = BrightnessCursor()
     private let brightnessSlider = BrightnessSlider()
@@ -151,6 +153,7 @@ extension ColorPicker: UIGestureRecognizerDelegate {
 extension ColorPicker: BrightnessSliderDelegate {
     func handleBrightnessChanged(slider: BrightnessSlider) {
         hsvColor = hsvColor.hueAndSaturation.with(brightness: slider.brightness)
+        self.contrast = slider.brightness
         mapColorToView()
         feedbackIfNeeds()
         sendActionIfNeeds()

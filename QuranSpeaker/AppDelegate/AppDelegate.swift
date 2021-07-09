@@ -17,6 +17,7 @@ var manager : CBCentralManager!
 
 var prayersVC : PrayerViewController!
 var homeVC : HomeViewController!
+var fontSize:CGFloat = 60.0
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate, CBPeripheralDelegate
@@ -27,6 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CBCentralManagerDelegate,
         // Override point for customization after application launch.
         Thread.sleep(forTimeInterval: 3)
         manager = CBCentralManager(delegate: self, queue: nil)
+        
+        let juristic = defaults.value(forKey: "juristic") as? Int ?? 0
+        
+        if juristic == 0
+        {
+            defaults.set(1, forKey: "juristic")
+        }
+        
+        let daylight = defaults.value(forKey: "daylight") as? Int ?? 0
+        if daylight == 0
+        {
+            defaults.set(1, forKey: "daylight")
+        }
+        
+        let method = defaults.value(forKey: "method") as? Int ?? 0
+        if method == 0
+        {
+            defaults.set(1, forKey: "method")
+        }
         
         UIApplication.shared.windows.forEach { window in
             if #available(iOS 13.0, *) {

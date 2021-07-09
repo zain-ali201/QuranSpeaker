@@ -9,14 +9,13 @@ import UIKit
 import CoreLocation
 import CoreBluetooth
 
-class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource//, CBCentralManagerDelegate, CBPeripheralDelegate
+class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource
 {
     @IBOutlet weak var fajrBtn: UIButton!
     @IBOutlet weak var dhuhrBtn: UIButton!
     @IBOutlet weak var asrBtn: UIButton!
     @IBOutlet weak var maghribBtn: UIButton!
     @IBOutlet weak var ishaBtn: UIButton!
-    
     
     @IBOutlet weak var alarmMainView: UIView!
     @IBOutlet weak var alarmView: UIView!
@@ -38,6 +37,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     @IBOutlet weak var lblMaghrib: UILabel!
     @IBOutlet weak var lblIsha: UILabel!
     @IBOutlet weak var leading: NSLayoutConstraint!
+    
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var menuFlag = false
     var lat = 0.0
@@ -64,12 +65,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     var ishaInterval = 0
     
     var selectedInterval = 0
-    //BLE
-//    var bleManager : CBCentralManager!
-//    var myBluetoothPeripheral : CBPeripheral!
-//    var myCharacteristic : CBCharacteristic!
-//    var quranUUID: CBUUID = CBUUID(string: "00002a00-0000-1000-8000-00805f9b34fb")
-//    var isMyPeripheralConected = false
     
     override func viewDidLoad()
     {
@@ -84,15 +79,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         ishaFlag = defaults.value(forKey: "ishaFlag") as? Int ?? 0
         
         prayersVC = self
-        let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm a"
-        lblTime.text = formatter.string(from: Date())
         
-        formatter.dateFormat = "dd MMMM yyyy"
-        lblDate.text = formatter.string(from: Date())
-        
-        formatter.dateFormat = "yyyy"
-        currentYear = Int(formatter.string(from: Date()))!
         
         lblAddress.text = defaults.value(forKey: "address") as? String
         lblCity.text = defaults.value(forKey: "city") as? String
@@ -113,6 +100,9 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         changePrayerButtons()
         
         AppUtility.lockOrientation(.portrait)
+        
+        changeTime()
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.changeTime), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -132,6 +122,19 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
 //        isMyPeripheralConected = false
 //        myBluetoothPeripheral = nil
 //    }
+    
+    @objc func changeTime()
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        lblTime.text = formatter.string(from: Date())
+        
+        formatter.dateFormat = "dd MMMM yyyy"
+        lblDate.text = formatter.string(from: Date())
+        
+        formatter.dateFormat = "yyyy"
+        currentYear = Int(formatter.string(from: Date()))!
+    }
     
     func changePrayerButtons()
     {
@@ -197,6 +200,10 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 {
                     month = Int(byteArray[1])
                     getYearPrayersTime()
+                }
+                else
+                {
+                    loader.stopAnimating()
                 }
             }
         }
@@ -553,6 +560,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         }
     }
     
+    //MARK:- Button Actions
+    
     @IBAction func updateBtnAction(_ sender: Any)
     {
 //        bleManager = CBCentralManager(delegate: self, queue: nil)
@@ -564,32 +573,19 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     {
         if button.tag == 1001
         {
-            if (CLLocationManager.locationServicesEnabled())
-            {
-                locationManager.delegate = self
-                locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                locationManager.requestAlwaysAuthorization()
-                locationManager.startUpdatingLocation()
-            }
-            else
-            {
-                leading.constant = -200
-                menuFlag = false
-                
-                UIView.animate(withDuration: 0.3) { [weak self] in
-                  self?.view.layoutIfNeeded()
-                }
-            }
+            let locVC = self.storyboard?.instantiateViewController(withIdentifier: "LocationViewController") as! LocationViewController
+            self.navigationController?.pushViewController(locVC, animated: true)
         }
         else
         {
-            leading.constant = -200
-            menuFlag = false
-            UIView.animate(withDuration: 0.3) { [weak self] in
-              self?.view.layoutIfNeeded()
-            }
             let setVC = self.storyboard?.instantiateViewController(withIdentifier: "SetViewController") as! SetViewController
             self.navigationController?.pushViewController(setVC, animated: true)
+        }
+        
+        leading.constant = -200
+        menuFlag = false
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
         }
     }
     
@@ -603,11 +599,30 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         }
     }
     
+    @IBAction func menuBtnAction(_ button: UIButton)
+    {
+        if button.tag == 1001
+        {
+            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeVC, animated: false)
+        }
+        else if button.tag == 1002
+        {
+            let lightVC = self.storyboard?.instantiateViewController(withIdentifier: "LightViewController") as! LightViewController
+            self.navigationController?.pushViewController(lightVC, animated: false)
+        }
+    }
+    
+    //MARK:- locationManager Delegates
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLoc = locations.last
         {
             lat = currentLoc.coordinate.latitude
             lng = currentLoc.coordinate.longitude
+            
+            defaults.set(lat, forKey: "lat")
+            defaults.set(lng, forKey: "lng")
 //            print(lat)
 //            print(lng)
             getCurrentPrayersTime()
@@ -649,10 +664,14 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         }
     }
     
+    //MARK:- Functions
+    
     func getYearPrayersTime()
     {
         if isMyPeripheralConected && quranCharacteristic != nil
         {
+            loader.alpha = 1
+            loader.startAnimating()
             homeVC.setDeviceTime()
             
             let prayerKit:AKPrayerTime = AKPrayerTime(lat: lat, lng: lng)
@@ -862,19 +881,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         lblIsha.text = isha
     }
     
-    @IBAction func menuBtnAction(_ button: UIButton)
-    {
-        if button.tag == 1001
-        {
-            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-            self.navigationController?.pushViewController(homeVC, animated: false)
-        }
-        else if button.tag == 1002
-        {
-            let lightVC = self.storyboard?.instantiateViewController(withIdentifier: "LightViewController") as! LightViewController
-            self.navigationController?.pushViewController(lightVC, animated: false)
-        }
-    }
+    //MARK:- UIPickerView Delegates
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

@@ -70,6 +70,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var tag = 0
     
+    //MARK:- UIView Delegates
+    
     override func viewDidLoad()
     {
         homeVC = self
@@ -117,16 +119,342 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         txtMainView.addGestureRecognizer(swipeGestureRecognizerRight)
         txtMainView.addGestureRecognizer(swipeGestureRecognizerLeft)
         
-//        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
-//        txtMainView.addGestureRecognizer(pinchGesture)
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
+        txtMainView.addGestureRecognizer(pinchGesture)
         
         AppUtility.lockOrientation(.all)
         
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
+        changeAyat()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    //MARK:- UIInterfaceOrientation Delegates
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
+    {
+        if toInterfaceOrientation == .landscapeLeft || toInterfaceOrientation == .landscapeRight
+        {
+            menuView.isHidden = true
+            buttonsView.isHidden = true
+            bottom.constant = -285
+        }
+        else
+        {
+            menuView.isHidden = false
+            buttonsView.isHidden = false
+            bottom.constant = 0
+        }
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        changeAyat()
+    }
+    
+    //MARK:- UIScrollView Delegates
+    
+//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+//        return txtMainView
+//    }
+//
+//    func scrollViewDidZoom (_ scrollView: UIScrollView)
+//    {
+//        /// If paging is not switched depending on the scale, it will shift when it is enlarged.
+//        if scrollView.zoomScale == 1.0 {
+//            self.scrollView.isPagingEnabled = true
+//        } else {
+//            self.scrollView.isPagingEnabled = false
+//        }
+//    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+
+    //MARK:- XMLParser Delegates
+
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+
+        if elementName == "sura"
+        {
+            sura = String()
+            
+            for string in attributeDict
+            {
+                if string.key == "name"
+                {
+                    sura = string.value
+                }
+            }
+        }
+        else if elementName == "aya"
+        {
+            aya = String()
+            let ayatObj = AyatObj()
+            
+            for string in attributeDict
+            {
+                if string.key == "index"
+                {
+                    ayatObj.ayat = Int(string.value)
+                }
+                else if string.key == "text"
+                {
+                    ayatObj.text = string.value
+                }
+                else if string.key == "page"
+                {
+                    ayatObj.page = Int(string.value)
+                }
+                else if string.key == "start"
+                {
+                    ayatObj.start = Int(string.value)
+                }
+                else if string.key == "end"
+                {
+                    ayatObj.end = Int(string.value)
+                }
+            }
+            suraTitle.append(ayatObj)
+        }
+    }
+
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        
+        if elementName == "sura"
+        {
+            indexArray.append(sura)
+            suraDict[sura] = suraTitle
+            suraTitle = []
+        }
+    }
+
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+    }
+    
+    //MARK:- Button Actions
+    
+    @IBAction func clickBtnAction(_ button: UIButton)
+    {
+        var key = 0
+        var flag = false
+        
+        if button.tag == 1
+        {
+            key = 18
+            flag = true
+        }
+        else if button.tag == 2
+        {
+            key = 22
+            flag = true
+        }
+        else if button.tag == 3
+        {
+            key = 5
+            flag = true
+        }
+        else if button.tag == 4
+        {
+            manager = CBCentralManager(delegate: self, queue: nil)
+        }
+        else if button.tag == 5
+        {
+            key = 19
+            flag = true
+        }
+        else if button.tag == 6
+        {
+            key = 13
+            flag = true
+        }
+        else if button.tag == 7
+        {
+            collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
+            tag = 1002
+            loadBooks()
+        }
+        else if button.tag == 8
+        {
+//            if transArray.count > 0
+//            {
+                collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
+                loader.startAnimating()
+                tag = 1003
+                collectionView.reloadData()
+                qarisView.alpha = 1
+//            }
+//            else
+//            {
+                if transArray.count == 0
+                {
+                    if isMyPeripheralConected && quranCharacteristic != nil
+                    {
+                        let dataToSend = Data([UInt8(Character("T").asciiValue!)])
+                        myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                        print("value written: \(key)")
+                    }
+                    else
+                    {
+                        self.view.makeToast("Bluetooth device disconnected")
+                    }
+                }
+                
+//            }
+        }
+        else if button.tag == 9
+        {
+            key = 60
+            flag = true
+        }
+        else if button.tag == 10
+        {
+            key = 15
+            flag = true
+        }
+        else if button.tag == 11
+        {
+            key = 62
+            flag = true
+        }
+        else if button.tag == 12
+        {
+            key = 2
+            flag = true
+        }
+        else if button.tag == 13
+        {
+//            if qarisArray.count > 0
+//            {
+                collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
+                loader.startAnimating()
+                tag = 1001
+                collectionView.reloadData()
+                qarisView.alpha = 1
+//            }
+//            else
+//            {
+                if qarisArray.count == 0
+                {
+                    if isMyPeripheralConected && quranCharacteristic != nil
+                    {
+                        let dataToSend = Data([UInt8(Character("R").asciiValue!)])
+                        myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                        print("value written: \(key)")
+                    }
+                    else
+                    {
+                        self.view.makeToast("Bluetooth device disconnected")
+                    }
+                }
+//            }
+        }
+        else if button.tag == 14
+        {
+            key = 17
+            flag = true
+        }
+        else if button.tag == 15
+        {
+            key = 4
+            flag = true
+        }
+        else if button.tag == 16
+        {
+            key = 1
+            flag = true
+        }
+        
+        if flag
+        {
+            if isMyPeripheralConected && quranCharacteristic != nil
+            {
+                let dataToSend = NSMutableData()
+                dataToSend.append("1".data(using: String.Encoding.ascii)!)
+                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                print("value written: \(key)")
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
+        }
+    }
+
+    @IBAction func quranBtnAction(_ sender: Any) {
+        
+        if quranFlag
+        {
+            leading.constant = -160
+            quranFlag = false
+        }
+        else
+        {
+            chaptersTblView.alpha = 1
+            leading.constant = 3
+            quranFlag = true
+        }
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func volumeBtnAction(_ sender: Any)
+    {
+        if volFlag
+        {
+            volView.alpha = 0
+            volFlag = false
+        }
+        else
+        {
+            volView.alpha = 1
+            volFlag = true
+        }
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider)
+    {
+        let currentValue = Int(sender.value)
+        lblVolCount.text = "\(currentValue)"
+        let value = UInt8(currentValue)
+        print(value)
+        if isMyPeripheralConected
+        {
+            let dataToSend = Data([2,value])
+            myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
+        else
+        {
+            self.view.makeToast("Bluetooth device disconnected")
+        }
+    }
+    
+    
+    //MARK:- Custom Functions
+    
+    @objc private func didPinch(_ sender: UIPinchGestureRecognizer) {
+    
+        print(sender.scale)
+        if fontSize < 100 && sender.scale > 1
+        {
+            fontSize = fontSize + sender.scale
+            changeAyat()
+        }
+        else if fontSize > 30 && sender.scale < 1
+        {
+            fontSize = fontSize - sender.scale
+            changeAyat()
+        }
     }
     
     @objc func readDeviceValues()
@@ -135,6 +463,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             myBluetoothPeripheral.readValue(for: quranCharacteristic)
         }
+    }
+    
+    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer)
+    {
+        changeAyat(sender: sender.direction)
     }
     
     func setDeviceTime()
@@ -156,26 +489,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let dataToSend = Data([UInt8(Character("C").asciiValue!), hour, min, sec, day, month, UInt8(year)])
         myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
         print("time updated")
-    }
-    
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
-    {
-        if toInterfaceOrientation == .landscapeLeft || toInterfaceOrientation == .landscapeRight
-        {
-            menuView.isHidden = true
-            buttonsView.isHidden = true
-            bottom.constant = -285
-        }
-        else
-        {
-            menuView.isHidden = false
-            buttonsView.isHidden = false
-            bottom.constant = 0
-        }
-    }
-    
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        changeAyat()
     }
     
     func changeAyat()
@@ -214,14 +527,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             prefix.append("P")
         }
 
-        if lblMain != nil
-        {
-            lblMain.alpha = 0
-        }
+//        if lblMain != nil
+//        {
+//            lblMain.alpha = 0
+//        }
         
         let fontName = String(format:"%@%d", prefix, ayatObj.page)
         print(fontName)
-        let font = UIFont(name: fontName, size: 50)!
+        let font = UIFont(name: fontName, size: fontSize)!
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
@@ -259,12 +572,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if (xAxis - width) < 0
                 {
                     xAxis = txtMainView.frame.width
-                    yAxis += 70.0
+                    yAxis += fontSize + 20
                 }
 
-                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: fontSize + 20))
                 lbl.font = font
                 lbl.text = string
+                if (i%2 == 0)
+                {
+                    lbl.textColor = UIColor(red: 52.0/255.0, green: 150.0/255.0, blue: 89.0/255.0, alpha: 1.0)
+                }
+                else
+                {
+                    lbl.textColor = .black
+                }
                 txtMainView.addSubview(lbl)
                 xAxis -= width + 5
             }
@@ -275,7 +596,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            print(printResult)
 //            print("//////////////////////////////////////////////")
         
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + fontSize + 20)
     }
     
     func loadNames()
@@ -337,7 +658,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         transNames = [
             "0" :"Other",
             "52" :"Farsi",
-            "54" :"Uzbeck",
+            "54" :"Shayx Muhammad Sodiq",
             "55" :"English",
             "56" :"Urdu",
             "57" :"French",
@@ -363,6 +684,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             "78" :"Indonesian",
             "80" :"Swahili",
             "81" :"Italian",
+            "82" :"Hindi",
+            "83" :"Tatar",
+            "84" :"Abdul Aziz",
+            "85" :"Abdul Aziz Full Surah",
             "86" :"Jalalain"
         ]
     }
@@ -373,15 +698,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 "Tarixi Muhammadiy",
                 "Asma ul Husna",
                 "Ruqya Sharya",
-                "Qaida Nooranya",
+                "Muallim Sani",
                 "Sahih Bukhari",
                 "Sahih Muslim",
                 "Hisnul Muslim",
-                "40 Ahdith",
-                "MP3"
+                "40 Ahdith"
         ]
         
-        let bookKeys:[Int] = [5,27,10,6,7,8,9,26,27]
+        let bookKeys:[Int] = [5,28,10,6,7,8,9,27]
         
         for i in 1...bookNames.count
         {
@@ -401,62 +725,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         collectionView.reloadData()
         qarisView.alpha = 1
-    }
-    
-//    @objc private func didPinch(_ sender: UIPinchGestureRecognizer) {
-//        guard let targetView = sender.view else {return}
-//
-//        targetView.transform = targetView.transform.scaledBy(x: sender.scale, y: sender.scale)
-//        sender.scale = 1
-//    }
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return txtMainView
-    }
-    
-    func scrollViewDidZoom (_ scrollView: UIScrollView)
-    {
-        /// If paging is not switched depending on the scale, it will shift when it is enlarged.
-        if scrollView.zoomScale == 1.0 {
-            self.scrollView.isPagingEnabled = true
-        } else {
-            self.scrollView.isPagingEnabled = false
-        }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    }
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        // horizontal
-//        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
-//        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
-//
-//        // vertical
-//        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
-//        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
-//
-//        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-//        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
-//
-//        print(percentageHorizontalOffset)
-//
-//        if percentageHorizontalOffset <= 0
-//        {
-//            changeAyat(sender: UISwipeGestureRecognizer.Direction.right)
-//        }
-//        else if percentageHorizontalOffset >= 1
-//        {
-//            changeAyat(sender: UISwipeGestureRecognizer.Direction.left)
-//        }
-    }
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-    }
-    
-    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer)
-    {
-        changeAyat(sender: sender.direction)
     }
     
     func changeAyat(sender: UISwipeGestureRecognizer.Direction)
@@ -542,14 +810,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             prefix.append("P")
         }
 
-        if lblMain != nil
-        {
-            lblMain.alpha = 0
-        }
+//        if lblMain != nil
+//        {
+//            lblMain.alpha = 0
+//        }
         
         let fontName = String(format:"%@%d", prefix, ayatObj.page)
         print(fontName)
-        let font = UIFont(name: fontName, size: 50)!
+        let font = UIFont(name: fontName, size: fontSize)!
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
@@ -587,12 +855,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if (xAxis - width) < 0
                 {
                     xAxis = txtMainView.frame.width
-                    yAxis += 70.0
+                    yAxis += fontSize + 20
                 }
 
-                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: 70))
+                let lbl = UILabel(frame: CGRect(x: xAxis - width, y: yAxis, width: width, height: fontSize + 20))
                 lbl.font = font
                 lbl.text = string
+                if (i%2 == 0)
+                {
+                    lbl.textColor = UIColor(red: 52.0/255.0, green: 150.0/255.0, blue: 89.0/255.0, alpha: 1.0)
+                }
+                else
+                {
+                    lbl.textColor = .black
+                }
                 txtMainView.addSubview(lbl)
                 xAxis -= width + 5
             }
@@ -603,7 +879,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            print(printResult)
 //            print("//////////////////////////////////////////////")
         
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + 70)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + fontSize + 20)
 
         leading.constant = -160
         quranFlag = false
@@ -626,267 +902,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         else
         {
             self.view.makeToast("Bluetooth device disconnected")
-        }
-    }
-
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-
-        if elementName == "sura"
-        {
-            sura = String()
-            
-            for string in attributeDict
-            {
-                if string.key == "name"
-                {
-                    sura = string.value
-                }
-            }
-        }
-        else if elementName == "aya"
-        {
-            aya = String()
-            let ayatObj = AyatObj()
-            
-            for string in attributeDict
-            {
-                if string.key == "index"
-                {
-                    ayatObj.ayat = Int(string.value)
-                }
-                else if string.key == "text"
-                {
-                    ayatObj.text = string.value
-                }
-                else if string.key == "page"
-                {
-                    ayatObj.page = Int(string.value)
-                }
-                else if string.key == "start"
-                {
-                    ayatObj.start = Int(string.value)
-                }
-                else if string.key == "end"
-                {
-                    ayatObj.end = Int(string.value)
-                }
-            }
-            suraTitle.append(ayatObj)
-        }
-    }
-
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
-        if elementName == "sura"
-        {
-            indexArray.append(sura)
-            suraDict[sura] = suraTitle
-            suraTitle = []
-        }
-    }
-
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-    }
-
-    @IBAction func quranBtnAction(_ sender: Any) {
-        
-        if quranFlag
-        {
-            leading.constant = -160
-            quranFlag = false
-        }
-        else
-        {
-            chaptersTblView.alpha = 1
-            leading.constant = 3
-            quranFlag = true
-        }
-        
-        UIView.animate(withDuration: 0.3) { [weak self] in
-          self?.view.layoutIfNeeded()
-        }
-    }
-    
-    @IBAction func volumeBtnAction(_ sender: Any)
-    {
-        if volFlag
-        {
-            volView.alpha = 0
-            volFlag = false
-        }
-        else
-        {
-            volView.alpha = 1
-            volFlag = true
-        }
-        
-        UIView.animate(withDuration: 0.3) { [weak self] in
-          self?.view.layoutIfNeeded()
-        }
-    }
-    
-    @IBAction func sliderValueChanged(_ sender: UISlider)
-    {
-        let currentValue = Int(sender.value)
-        lblVolCount.text = "\(currentValue)"
-        let value = UInt8(currentValue)
-        print(value)
-        if isMyPeripheralConected
-        {
-            let dataToSend = Data([2,value])
-            myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        }
-        else
-        {
-            self.view.makeToast("Bluetooth device disconnected")
-        }
-    }
-    
-    @IBAction func clickBtnAction(_ button: UIButton)
-    {
-        var key = 0
-        var flag = false
-        
-        if button.tag == 1
-        {
-            key = 18
-            flag = true
-        }
-        else if button.tag == 2
-        {
-            key = 22
-            flag = true
-        }
-        else if button.tag == 3
-        {
-            key = 5
-            flag = true
-        }
-        else if button.tag == 4
-        {
-            manager = CBCentralManager(delegate: self, queue: nil)
-        }
-        else if button.tag == 5
-        {
-            key = 19
-            flag = true
-        }
-        else if button.tag == 6
-        {
-            key = 13
-            flag = true
-        }
-        else if button.tag == 7
-        {
-            collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
-            tag = 1002
-            loadBooks()
-        }
-        else if button.tag == 8
-        {
-//            if transArray.count > 0
-//            {
-                collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
-                loader.startAnimating()
-                tag = 1003
-                collectionView.reloadData()
-                qarisView.alpha = 1
-//            }
-//            else
-//            {
-                if transArray.count == 0
-                {
-                    if isMyPeripheralConected && quranCharacteristic != nil
-                    {
-                        let dataToSend = Data([UInt8(Character("T").asciiValue!)])
-                        myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                        print("value written: \(key)")
-                    }
-                    else
-                    {
-                        self.view.makeToast("Bluetooth device disconnected")
-                    }
-                }
-                
-//            }
-        }
-        else if button.tag == 9
-        {
-            key = 14
-            flag = true
-        }
-        else if button.tag == 10
-        {
-            key = 15
-            flag = true
-        }
-        else if button.tag == 11
-        {
-            key = 16
-            flag = true
-        }
-        else if button.tag == 12
-        {
-            key = 23
-            flag = true
-        }
-        else if button.tag == 13
-        {
-//            if qarisArray.count > 0
-//            {
-                collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
-                loader.startAnimating()
-                tag = 1001
-                collectionView.reloadData()
-                qarisView.alpha = 1
-//            }
-//            else
-//            {
-                if qarisArray.count == 0
-                {
-                    if isMyPeripheralConected && quranCharacteristic != nil
-                    {
-                        let dataToSend = Data([UInt8(Character("R").asciiValue!)])
-                        myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                        print("value written: \(key)")
-                    }
-                    else
-                    {
-                        self.view.makeToast("Bluetooth device disconnected")
-                    }
-                }
-//            }
-        }
-        else if button.tag == 14
-        {
-            key = 17
-            flag = true
-        }
-        else if button.tag == 15
-        {
-            key = 4
-            flag = true
-        }
-        else if button.tag == 16
-        {
-            key = 1
-            flag = true
-        }
-        
-        if flag
-        {
-            if isMyPeripheralConected && quranCharacteristic != nil
-            {
-                let dataToSend = NSMutableData()
-                dataToSend.append("1".data(using: String.Encoding.ascii)!)
-                dataToSend.append(Data(bytes: &key, count: MemoryLayout.size(ofValue: key)))
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-                print("value written: \(key)")
-            }
-            else
-            {
-                self.view.makeToast("Bluetooth device disconnected")
-            }
         }
     }
     
@@ -1018,6 +1033,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func asciiToString(start: Int, end: Int) -> String
+    {
+        var resultStr = ""
+        var code = start
+        
+        for _ in start...end
+        {
+            resultStr.append(Character(UnicodeScalar(code)!))
+            resultStr.append("  ")
+            code += 1
+        }
+        print(resultStr)
+        return resultStr
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         leading.constant = -160
@@ -1044,6 +1074,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.navigationController?.pushViewController(prayerVC, animated: false)
         }
     }
+
+    //MARK:- UICollectionView Delegates
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if tag == 1001
@@ -1132,6 +1164,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    //MARK:- UITableView Delegates
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if tableView.tag == 1001
@@ -1182,20 +1216,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func asciiToString(start: Int, end: Int) -> String
-    {
-        var resultStr = ""
-        var code = start
-        
-        for _ in start...end
-        {
-            resultStr.append(Character(UnicodeScalar(code)!))
-            resultStr.append("  ")
-            code += 1
-        }
-        print(resultStr)
-        return resultStr
-    }
+    //MARK:- CBCentralManager Delegates
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         

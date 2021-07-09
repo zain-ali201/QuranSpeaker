@@ -14,18 +14,12 @@ class LightViewController: UIViewController
     @IBOutlet weak var quranBtn: UIButton!
     @IBOutlet weak var colorView: ColorPicker!
     
-//    var manager : CBCentralManager!
-//    var myBluetoothPeripheral : CBPeripheral!
-//    var myCharacteristic : CBCharacteristic!
-//    var quranUUID: CBUUID = CBUUID(string: "0000ae10-0000-1000-8000-00805f9b34fb")
-//    var isMyPeripheralConected = false
+    var contrast = 0
     
     override func viewDidLoad() {
         
         colorView.addTarget(self, action: #selector(selectColor), for: .touchUpInside)
         colorView.set(color: .red, colorSpace: .extendedSRGB)
-        
-//        manager = CBCentralManager(delegate: self, queue: nil)
         
         AppUtility.lockOrientation(.portrait)
     }
@@ -34,26 +28,20 @@ class LightViewController: UIViewController
         return .lightContent
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        manager = nil
-//        isMyPeripheralConected = false
-//        myBluetoothPeripheral = nil
-//    }
-    
     @objc func selectColor()
     {
         let red = colorView.color.components.red * 255 > 0 ? colorView.color.components.red * 255 : 0
         let green = colorView.color.components.green * 255 > 0 ? colorView.color.components.green * 255 : 0
         let blue = colorView.color.components.blue * 255 > 0 ? colorView.color.components.blue * 255 : 0
-        
-//        print(red)
-//        print(green)
-//        print(blue)
+        print(colorView.contrast)
         
         if isMyPeripheralConected && myBluetoothPeripheral != nil
         {
             let dataToSend = Data([UInt8(Character("L").asciiValue!), UInt8(red/2), UInt8(green/2), UInt8(blue/2)])
             myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            
+            let sendContrast = Data([UInt8(Character("c").asciiValue!), UInt8(colorView.contrast)])
+            myBluetoothPeripheral.writeValue(sendContrast as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
         else
         {
@@ -75,9 +63,9 @@ class LightViewController: UIViewController
         }
         else if button.tag == 1002
         {
-            red = 190
-            green = 10
-            blue = 187
+            red = 237
+            green = 13
+            blue = 234
         }
         else if button.tag == 1003
         {
@@ -97,8 +85,8 @@ class LightViewController: UIViewController
         }
         else if button.tag == 1006
         {
-            red = 122
-            green = 203
+            red = 78
+            green = 210
         }
         else if button.tag == 1007
         {
@@ -137,89 +125,6 @@ class LightViewController: UIViewController
             self.navigationController?.pushViewController(prayerVC, animated: false)
         }
     }
-    
-//    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-//
-//        var msg = ""
-//
-//        switch central.state {
-//
-//            case .poweredOff:
-//                msg = "Bluetooth is Off"
-//            case .poweredOn:
-//                msg = "Bluetooth is On"
-//                manager.scanForPeripherals(withServices: nil, options: nil)
-//            case .unsupported:
-//                msg = "Not Supported"
-//            default:
-//                msg = "😔"
-//        }
-//
-////        self.view.makeToast(msg)
-//        print("STATE: " + msg)
-//    }
-//
-//    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-//
-//        print("Name: \(peripheral.name)")
-//
-//        if peripheral.name != nil
-//        {
-//            self.myBluetoothPeripheral = peripheral
-//            self.myBluetoothPeripheral.delegate = self
-//
-//            manager.stopScan()
-//            manager.connect(myBluetoothPeripheral, options: nil)
-//        }
-//    }
-//
-//    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-//
-//        isMyPeripheralConected = true
-//        peripheral.delegate = self
-//        peripheral.discoverServices(nil)
-////        self.view.makeToast("Bluetooth device connected")
-//    }
-//
-//    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-//        isMyPeripheralConected = false
-//    }
-//
-//
-//    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-//
-//        if let servicePeripheral = peripheral.services as [CBService]? {
-//
-//            for service in servicePeripheral {
-//
-//                peripheral.discoverCharacteristics(nil, for: service)
-//            }
-//        }
-//    }
-//
-//    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-//
-//        if let characterArray = service.characteristics as [CBCharacteristic]? {
-//
-//            for cc in characterArray
-//            {
-//                if(cc.uuid == quranUUID) {
-//                    print("UUID: \(cc.uuid.uuidString)")
-//                    myCharacteristic = cc
-//                }
-//            }
-//        }
-//    }
-//
-//    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-//
-//        if (characteristic.uuid == quranUUID) {
-//
-//            let readValue = characteristic.value
-//            let value = (readValue! as NSData).bytes.bindMemory(to: Int.self, capacity: readValue!.count).pointee //used to read an Int value
-//            print ("Value: \(value)")
-//        }
-//    }
 }
 
 extension String {

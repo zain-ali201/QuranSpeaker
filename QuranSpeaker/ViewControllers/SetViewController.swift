@@ -22,7 +22,7 @@ class SetViewController: CollapsibleTableSectionViewController, CollapsibleTable
             Item(name: "ON", detail: "")
         ]),
         Section(name: "Calculation Method", items: [
-            Item(name: "MWL", detail: ""),
+            Item(name: "Muslim World League", detail: ""),
             Item(name: "ISNA", detail: ""),
             Item(name: "Egypt", detail: ""),
             Item(name: "Makkah", detail: ""),

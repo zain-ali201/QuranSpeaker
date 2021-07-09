@@ -671,6 +671,7 @@
 		186DA40325C7FEE000D4F154 /* JuristicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40025C7FEE000D4F154 /* JuristicViewController.swift */; };
 		186DA40425C7FEE000D4F154 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186DA40125C7FEE000D4F154 /* CityViewController.swift */; };
 		1879A86325C3E2D200FC0219 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879A86225C3E2D100FC0219 /* SetViewController.swift */; };
+		189470A42696F7600022C26C /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189470A32696F7600022C26C /* LocationViewController.swift */; };
 		18A8DD1E2684A2650008EC2A /* defaultReader.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD172684A2640008EC2A /* defaultReader.webp */; };
 		18A8DD1F2684A2650008EC2A /* 44.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD182684A2650008EC2A /* 44.webp */; };
 		18A8DD202684A2650008EC2A /* 45.webp in Resources */ = {isa = PBXBuildFile; fileRef = 18A8DD192684A2650008EC2A /* 45.webp */; };
@@ -1365,6 +1366,7 @@
 		186DA40025C7FEE000D4F154 /* JuristicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuristicViewController.swift; sourceTree = "<group>"; };
 		186DA40125C7FEE000D4F154 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		1879A86225C3E2D100FC0219 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		189470A32696F7600022C26C /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		18A8DD172684A2640008EC2A /* defaultReader.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = defaultReader.webp; sourceTree = "<group>"; };
 		18A8DD182684A2650008EC2A /* 44.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 44.webp; sourceTree = "<group>"; };
 		18A8DD192684A2650008EC2A /* 45.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 45.webp; sourceTree = "<group>"; };
@@ -2166,6 +2168,7 @@
 				18B8544425B6BD3100667E67 /* HomeViewController.swift */,
 				18B4BE1925C183DC008AC27B /* LightViewController.swift */,
 				18B4BE1A25C183DD008AC27B /* PrayerViewController.swift */,
+				189470A32696F7600022C26C /* LocationViewController.swift */,
 				1879A86225C3E2D100FC0219 /* SetViewController.swift */,
 				185332A425DD44C20045A745 /* CountryViewController.swift */,
 				186DA40125C7FEE000D4F154 /* CityViewController.swift */,
@@ -3005,6 +3008,7 @@
 				18B8544525B6BD3100667E67 /* HomeViewController.swift in Sources */,
 				18B4BE1C25C183DD008AC27B /* PrayerViewController.swift in Sources */,
 				185332A525DD44C20045A745 /* CountryViewController.swift in Sources */,
+				189470A42696F7600022C26C /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
