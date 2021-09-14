@@ -23,11 +23,11 @@ class SetViewController: CollapsibleTableSectionViewController, CollapsibleTable
         ]),
         Section(name: "Calculation Method", items: [
             Item(name: "Muslim World League", detail: ""),
-            Item(name: "ISNA", detail: ""),
-            Item(name: "Egypt", detail: ""),
-            Item(name: "Makkah", detail: ""),
-            Item(name: "Karachi", detail: ""),
-            Item(name: "Tehran", detail: ""),
+            Item(name: "Islamic Society of North America (ISNA)", detail: ""),
+            Item(name: "Egyptian General Authority of Survey", detail: ""),
+            Item(name: "Umm al-Qura, Makkah", detail: ""),
+            Item(name: "University of Islamic Sciences, Karachi", detail: ""),
+            Item(name: "Institute of Geophysics, University of Tehran", detail: ""),
             Item(name: "Jafari", detail: "")//,
 //            Item(name: "Custom", detail: "")
         ])]

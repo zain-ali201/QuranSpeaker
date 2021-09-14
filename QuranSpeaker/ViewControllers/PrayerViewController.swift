@@ -33,7 +33,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
     @IBOutlet weak var lblSunrise: UILabel!
     @IBOutlet weak var lblDhuhr: UILabel!
     @IBOutlet weak var lblAsr: UILabel!
-    @IBOutlet weak var lblSunset: UILabel!
+//    @IBOutlet weak var lblSunset: UILabel!
     @IBOutlet weak var lblMaghrib: UILabel!
     @IBOutlet weak var lblIsha: UILabel!
     @IBOutlet weak var leading: NSLayoutConstraint!
@@ -829,6 +829,11 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
                 print(dataToSend)
 //                print("//////////////////////////////////////////")
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            
+            if month == 12
+            {
+                self.view.makeToast("Prayer data has been updated successfully.")
+            }
 //            }
         }
         else
@@ -853,7 +858,6 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
             prayerKit.asrJuristic = .Hanafi
         }
         
-        
         prayerKit.outputFormat = .Time12
         let times = prayerKit.getPrayerTimes()
         
@@ -865,8 +869,8 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         dhuhr = dhuhr.replacingOccurrences(of: "60", with: "59")
         var asr = (times?[.Asr] as? String) ?? ""
         asr = asr.replacingOccurrences(of: "60", with: "59")
-        var sunset = (times?[.Sunset] as? String) ?? ""
-        sunset = sunset.replacingOccurrences(of: "60", with: "59")
+//        var sunset = (times?[.Sunset] as? String) ?? ""
+//        sunset = sunset.replacingOccurrences(of: "60", with: "59")
         var maghrib = (times?[.Maghrib] as? String) ?? ""
         maghrib = maghrib.replacingOccurrences(of: "60", with: "59")
         var isha = (times?[.Isha] as? String) ?? ""
@@ -876,7 +880,7 @@ class PrayerViewController: UIViewController, CLLocationManagerDelegate, UIPicke
         lblSunrise.text = sunrise
         lblDhuhr.text = dhuhr
         lblAsr.text = asr
-        lblSunset.text = sunset
+//        lblSunset.text = sunset
         lblMaghrib.text = maghrib
         lblIsha.text = isha
     }

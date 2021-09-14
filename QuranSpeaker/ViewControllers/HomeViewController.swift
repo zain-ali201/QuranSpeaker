@@ -48,10 +48,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var qariNames:[String] = []
     var transNames:[String: String] = [:]
-    
-    var qarisArray:[HomeObject] = []
+
     var booksArray:[HomeObject] = []
-    var transArray:[HomeObject] = []
+    
+    var qarisArray:[Any] = [Any]()
+    var transArray:[Any] = [Any]()
     
     var quranFlag = false
     var volFlag = false
@@ -82,14 +83,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if qArray != nil
         {
-            qarisArray = qArray as? [HomeObject] ?? []
+            qarisArray = qArray as? [Any] ?? []
         }
         
         let tArray = UserDefaults.standard.value(forKey: "transArray")
         
         if tArray != nil
         {
-            qarisArray = tArray as? [HomeObject] ?? []
+            transArray = tArray as? [Any] ?? []
         }
         
         sliderView.layer.cornerRadius = 10.0
@@ -126,10 +127,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
         changeAyat()
+        
+        let tap = UITapGestureRecognizer()
+        tap.addTarget(self, action: #selector(hideMenu))
+        self.view.addGestureRecognizer(tap)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    @objc func hideMenu()
+    {
+        leading.constant = -160
+        quranFlag = false
+        volView.alpha = 0
+        volFlag = false
+        qarisView.alpha = 0
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
     }
     
     //MARK:- UIInterfaceOrientation Delegates
@@ -586,6 +604,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 {
                     lbl.textColor = .black
                 }
+                
+                if i == ayatObj.end
+                {
+                    lbl.textColor = UIColor(red: 1, green: 215.0/255.0, blue: 0, alpha: 1.0)
+                }
                 txtMainView.addSubview(lbl)
                 xAxis -= width + 5
             }
@@ -972,29 +995,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     if qari <= 50
                     {
-                        let filePath = Bundle.main.path(forResource: String(format: "%d", qari), ofType: "webp")!
-                        var fileData:NSData? = nil
-                        do {
-                            fileData = try NSData(contentsOfFile: filePath, options: NSData.ReadingOptions.uncached)
-                        }
-                        catch {
-                            print("Error loading Webp file")
-                        }
-                        
-                        let image:UIImage = UIImage(webpWithData: fileData!)
-                        let homeObj = HomeObject(name: qariNames[qari], img: image, key: "\(i)")
-                        qarisArray.append(homeObj)
+                        let dict:[String : Any] = ["Name" : qariNames[qari], "imageName": "\(qari)", "key" : "\(i)"]
+                        qarisArray.append(dict)
                     }
                 }
-                
-//                if qarisArray.count > 0
-//                {
-//                    tag = 1001
-                    collectionView.reloadData()
-//                    qarisView.alpha = 1
-//                }
-                
-//                UserDefaults.standard.setValue(qarisArray, forKey: "qarisArray")
+
+                collectionView.reloadData()
+                UserDefaults.standard.setValue(qarisArray, forKey: "qarisArray")
             }
         }
     }
@@ -1016,19 +1023,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 {
                     let trans = Int(byteArray[i + 1])
                     print("Trans: \(trans)")
-                    
-                    let image:UIImage = UIImage(named: "\(trans)") ?? UIImage(named: "0")!
-                    let homeObj = HomeObject(name: transNames["\(trans)"] ?? "Other", img: image, key: "\(i)")
-                    transArray.append(homeObj)
+                    let dict:[String : Any] = ["Name" : transNames["\(trans)"] ?? "", "imageName": "\(trans)", "key" : "\(i)"]
+                    transArray.append(dict)
                 }
                 
-//                if transArray.count > 0
-//                {
-//                    tag = 1003
-                    collectionView.reloadData()
-//                    qarisView.alpha = 1
-//                }
-//                UserDefaults.standard.setValue(transArray, forKey: "transArray")
+                collectionView.reloadData()
+                UserDefaults.standard.setValue(transArray, forKey: "transArray")
             }
         }
     }
@@ -1050,15 +1050,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        leading.constant = -160
-        quranFlag = false
-        volView.alpha = 0
-        volFlag = false
-        qarisView.alpha = 0
-        
-        UIView.animate(withDuration: 0.3) { [weak self] in
-          self?.view.layoutIfNeeded()
-        }
+        hideMenu()
     }
     
     @IBAction func menuBtnAction(_ button: UIButton)
@@ -1111,8 +1103,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if tag == 1001
         {
-            cell.lblName.text = qarisArray[indexPath.row].name
-            cell.imgView.image = qarisArray[indexPath.row].img
+            let dict:[String: Any] = qarisArray[indexPath.row] as! [String: Any]
+            cell.lblName.text = dict["Name"] as? String
+            
+            let filePath = Bundle.main.path(forResource: dict["imageName"] as? String, ofType: "webp")!
+            var fileData:NSData? = nil
+            do {
+                fileData = try NSData(contentsOfFile: filePath, options: NSData.ReadingOptions.uncached)
+            }
+            catch {
+                print("Error loading Webp file")
+            }
+
+            let image:UIImage = UIImage(webpWithData: fileData!)
+            
+            cell.imgView.image = image
         }
         else if tag == 1002
         {
@@ -1121,8 +1126,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if tag == 1003
         {
-            cell.lblName.text = transArray[indexPath.row].name
-            cell.imgView.image = transArray[indexPath.row].img
+            let dict:[String: Any] = transArray[indexPath.row] as! [String: Any]
+            cell.lblName.text = dict["Name"] as? String
+            
+            let image:UIImage = UIImage(named: "\(dict["imageName"] as? String ?? "0")")!
+            cell.imgView.image = image
         }
         
         return cell
@@ -1134,7 +1142,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             if tag == 1001
             {
-                let qari = UInt8(qarisArray[indexPath.row].key)!
+                let dict:[String: Any] = qarisArray[indexPath.row] as! [String: Any]
+                let qari = UInt8(dict["key"] as! String)!
                 print(qari)
                 let dataToSend = Data([3,qari])
                 
@@ -1150,7 +1159,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             else if tag == 1003
             {
-                let trans =  UInt8(transArray[indexPath.row].key)!
+                let dict:[String: Any] = transArray[indexPath.row] as! [String: Any]
+                let trans =  UInt8(dict["key"] as! String)!
                 print(trans)
                 let dataToSend = Data([4,trans])
                 
