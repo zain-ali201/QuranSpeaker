@@ -12,20 +12,15 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
 {
     @IBOutlet weak var autoView: UIView!
     @IBOutlet weak var manualView: UIView!
-    
     @IBOutlet weak var autoBtn: UIButton!
     @IBOutlet weak var manualBtn: UIButton!
-    
     @IBOutlet weak var lblCountry: UILabel!
     @IBOutlet weak var lblCity: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
-    
     @IBOutlet weak var countriesView: UIView!
     @IBOutlet weak var tblView: UITableView!
-    
     @IBOutlet weak var countryBtn: UIButton!
     @IBOutlet weak var cityBtn: UIButton!
-    
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var menuFlag = false
@@ -39,7 +34,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     
     var countriesArray:[String]  = []
     var citiesArray:[String] = []
-    
+    let countries = ["Afghanistan", "Azerbaijan", "Bangladesh", "Bosnia", "England", "France", "Germany", "India", "Indonesia", "Iran", "kazakistan", "Malaysia", "Pakistan", "Russia", "Somalia", "Spain", "Srilanka", "Swahili", "Turki", "Uzbekistan"]
     var countriesFilterArray:[String]  = []
     var citiesFilterArray:[String] = []
     
@@ -65,6 +60,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
         {
             lblCountry.text = country
         }
+        
+        countriesFilterArray = countries
     }
     
     override open var shouldAutorotate: Bool {
@@ -126,7 +123,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     
     //MARK:- locationManager Delegates
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
         if let currentLoc = locations.last
         {
             lat = currentLoc.coordinate.latitude
@@ -242,6 +240,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text  = ""
+        countriesFilterArray = countries
+        tblView.reloadData()
         self.view.endEditing(true)
     }
 }

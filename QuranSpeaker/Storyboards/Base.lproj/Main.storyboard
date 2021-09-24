@@ -125,6 +125,57 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="50P-qu-Gen"/>
                                         </connections>
                                     </scrollView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bac-fr-U5Y">
+                                        <rect key="frame" x="8" y="73" width="359" height="301"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1002" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="maD-ah-5dg">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="301"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zLB-S2-AnL">
+                                                    <size key="itemSize" width="359" height="317"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="vdJ-yU-5ox" customClass="CollectionCell" customModule="QuranSpeaker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="-8" width="359" height="317"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yQ8-21-tQc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="317"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s5Z-pn-yZf">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="317"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="s5Z-pn-yZf" secondAttribute="bottom" id="JCg-8l-PUI"/>
+                                                                <constraint firstItem="s5Z-pn-yZf" firstAttribute="leading" secondItem="yQ8-21-tQc" secondAttribute="leading" id="MJD-lv-ES5"/>
+                                                                <constraint firstAttribute="trailing" secondItem="s5Z-pn-yZf" secondAttribute="trailing" id="R84-LT-Pot"/>
+                                                                <constraint firstItem="s5Z-pn-yZf" firstAttribute="top" secondItem="yQ8-21-tQc" secondAttribute="top" id="Sw2-VZ-44u"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="359" height="317"/>
+                                                        <connections>
+                                                            <outlet property="imgView" destination="s5Z-pn-yZf" id="kTH-pf-D64"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="P4r-Sk-Lsi"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Lc5-OP-JIj"/>
+                                                </connections>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="maD-ah-5dg" secondAttribute="trailing" id="TEe-3D-tjA"/>
+                                            <constraint firstItem="maD-ah-5dg" firstAttribute="top" secondItem="bac-fr-U5Y" secondAttribute="top" id="UaQ-x9-5Di"/>
+                                            <constraint firstItem="maD-ah-5dg" firstAttribute="leading" secondItem="bac-fr-U5Y" secondAttribute="leading" id="XLZ-Lr-Pdt"/>
+                                            <constraint firstAttribute="bottom" secondItem="maD-ah-5dg" secondAttribute="bottom" id="sa4-Dm-F6k"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0q-xD-ByA">
                                         <rect key="frame" x="0.0" y="382" width="375" height="214.5"/>
                                         <subviews>
@@ -773,15 +824,19 @@
                                     <constraint firstItem="bZn-ZK-J2a" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" id="Nub-Fh-i6P"/>
                                     <constraint firstItem="bZn-ZK-J2a" firstAttribute="top" secondItem="y0q-xD-ByA" secondAttribute="bottom" id="O5X-La-r6I"/>
                                     <constraint firstItem="A3V-IK-AWj" firstAttribute="top" secondItem="bZn-ZK-J2a" secondAttribute="bottom" id="PFd-0K-IRk"/>
+                                    <constraint firstItem="y0q-xD-ByA" firstAttribute="top" secondItem="bac-fr-U5Y" secondAttribute="bottom" constant="8" id="Q8d-pF-lUc"/>
                                     <constraint firstItem="t78-w4-Kvz" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" constant="8" id="Rhc-2U-jks"/>
                                     <constraint firstAttribute="trailing" secondItem="l6K-tZ-JYu" secondAttribute="trailing" constant="8" id="TsZ-44-p65"/>
+                                    <constraint firstAttribute="trailing" secondItem="bac-fr-U5Y" secondAttribute="trailing" constant="8" id="WaO-B5-se1"/>
                                     <constraint firstAttribute="trailing" secondItem="A3V-IK-AWj" secondAttribute="trailing" id="XCA-Uc-S2o"/>
                                     <constraint firstItem="i9I-TN-DIo" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" constant="-170" id="Xtc-Lc-5ae"/>
                                     <constraint firstItem="A3V-IK-AWj" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" id="b5s-aD-s6V"/>
                                     <constraint firstAttribute="trailing" secondItem="bZn-ZK-J2a" secondAttribute="trailing" id="dcV-L1-dVw"/>
                                     <constraint firstAttribute="trailing" secondItem="t78-w4-Kvz" secondAttribute="trailing" constant="8" id="e69-Js-FIE"/>
                                     <constraint firstItem="5X0-Be-PTg" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" id="eNM-P0-bo9"/>
+                                    <constraint firstItem="bac-fr-U5Y" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" constant="8" id="eeW-aQ-2VC"/>
                                     <constraint firstItem="b9C-9x-ah7" firstAttribute="top" secondItem="Gee-oW-ery" secondAttribute="top" id="goJ-Mf-kL2"/>
+                                    <constraint firstItem="bac-fr-U5Y" firstAttribute="top" secondItem="5X0-Be-PTg" secondAttribute="bottom" constant="8" id="i5Z-rW-aaw"/>
                                     <constraint firstAttribute="trailing" secondItem="Rvu-Zb-bcO" secondAttribute="trailing" id="ihG-Qg-q0q"/>
                                     <constraint firstAttribute="trailing" secondItem="5X0-Be-PTg" secondAttribute="trailing" id="jPx-FO-Xou"/>
                                     <constraint firstItem="l6K-tZ-JYu" firstAttribute="leading" secondItem="Gee-oW-ery" secondAttribute="leading" constant="8" id="lTA-0v-aFP"/>
@@ -803,6 +858,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="7ny-7m-YKt"/>
                     <connections>
+                        <outlet property="booksCollectionView" destination="maD-ah-5dg" id="e5v-T3-Cmp"/>
+                        <outlet property="booksView" destination="bac-fr-U5Y" id="N7d-hL-EcI"/>
                         <outlet property="bottom" destination="4pz-lT-Myp" id="uS9-nA-a3t"/>
                         <outlet property="buttonsView" destination="y0q-xD-ByA" id="CoT-Su-u2N"/>
                         <outlet property="chaptersTblView" destination="xIe-OK-s5W" id="H8g-Ph-K6c"/>
@@ -2095,7 +2152,7 @@
                                                                             <outlet property="delegate" destination="2cp-GR-bgf" id="jAX-H5-vBO"/>
                                                                         </connections>
                                                                     </searchBar>
-                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="szY-fr-j7I">
+                                                                    <tableView clipsSubviews="YES" tag="1001" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="szY-fr-j7I">
                                                                         <rect key="frame" x="8" y="41" width="309" height="425"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <prototypes>

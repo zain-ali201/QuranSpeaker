@@ -11,9 +11,10 @@ import CoreBluetooth
 var defaults = UserDefaults.standard
 var currentVolume = 20
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout
 {
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var booksView: UIView!
     @IBOutlet weak var buttonsView: UIView!
     @IBOutlet weak var bottom: NSLayoutConstraint!
     @IBOutlet weak var lblTitle: UILabel!
@@ -23,20 +24,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var chaptersTblView: UITableView!
     @IBOutlet weak var lblVerse: UILabel!
     @IBOutlet weak var verseTblView: UITableView!
-    
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     @IBOutlet weak var volView: UIView!
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var volSlider: UISlider!
     @IBOutlet weak var lblVolCount: UILabel!
-    
     @IBOutlet weak var qarisView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var booksCollectionView: UICollectionView!
     
     @IBOutlet weak var txtMainView: UIView!
     @IBOutlet weak var leading: NSLayoutConstraint!
-    
     @IBOutlet weak var txtView: UITextView!
     
     var sura = String()
@@ -128,9 +127,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
         changeAyat()
         
-        let tap = UITapGestureRecognizer()
-        tap.addTarget(self, action: #selector(hideMenu))
-        self.view.addGestureRecognizer(tap)
+//        let tap = UITapGestureRecognizer()
+//        tap.addTarget(self, action: #selector(hideMenu))
+//        self.view.addGestureRecognizer(tap)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -291,12 +290,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 7
         {
+            booksView.isHidden = true
             collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
             tag = 1002
             loadBooks()
         }
         else if button.tag == 8
         {
+            booksView.isHidden = true
 //            if transArray.count > 0
 //            {
                 collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
@@ -345,6 +346,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 13
         {
+            booksView.isHidden = true
 //            if qarisArray.count > 0
 //            {
                 collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
@@ -734,10 +736,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             let filePath = Bundle.main.path(forResource: String(format: "Book%d", i), ofType: "webp")!
             var fileData:NSData? = nil
-            do {
+            do
+            {
                 fileData = try NSData(contentsOfFile: filePath, options: NSData.ReadingOptions.uncached)
             }
-            catch {
+            catch
+            {
                 print("Error loading WebP file")
             }
             
@@ -747,6 +751,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         collectionView.reloadData()
+        booksCollectionView.reloadData()
         qarisView.alpha = 1
     }
     
@@ -1069,7 +1074,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     //MARK:- UICollectionView Delegates
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        if collectionView.tag == 1002
+        {
+            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        }
+        else
+        {
+            return CGSize(width: 128, height: 150)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
         if tag == 1001
         {
             if qarisArray.count > 0
@@ -1086,6 +1104,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             return booksArray.count
         }
+        else if collectionView.tag == 1002
+        {
+            return booksArray.count
+        }
         else if tag == 1003
         {
             if transArray.count > 0
@@ -1098,6 +1120,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView.tag == 1002
+        {
+            let cell:CollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
+            
+            cell.imgView.image = booksArray[indexPath.row].img
+            
+            return cell
+        }
         
         let cell:CollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
         
@@ -1136,42 +1167,80 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        if collectionView.tag == 1002
+        {
+            let key =  UInt8(booksArray[indexPath.row].key ?? "0")!
+            print(key)
+            let dataToSend = Data([1,key])
+            
+            if isMyPeripheralConected
+            {
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
+            
+            return
+        }
         
-        if isMyPeripheralConected
+        if tag == 1001
         {
-            if tag == 1001
+            let dict:[String: Any] = qarisArray[indexPath.row] as! [String: Any]
+            let qari = UInt8(dict["key"] as! String)!
+            print(qari)
+            let dataToSend = Data([3,qari])
+            
+            if isMyPeripheralConected
             {
-                let dict:[String: Any] = qarisArray[indexPath.row] as! [String: Any]
-                let qari = UInt8(dict["key"] as! String)!
-                print(qari)
-                let dataToSend = Data([3,qari])
-                
                 myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
             }
-            else if tag == 1002
+            else
             {
-                let key =  UInt8(booksArray[indexPath.row].key ?? "0")!
-                print(key)
-                let dataToSend = Data([1,key])
-                
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                self.view.makeToast("Bluetooth device disconnected")
             }
-            else if tag == 1003
-            {
-                let dict:[String: Any] = transArray[indexPath.row] as! [String: Any]
-                let trans =  UInt8(dict["key"] as! String)!
-                print(trans)
-                let dataToSend = Data([4,trans])
-                
-                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            }
-            qarisView.alpha = 0
+            
+            booksView.isHidden = true
+            booksCollectionView.reloadData()
         }
-        else
+        else if tag == 1002
         {
-            self.view.makeToast("Bluetooth device disconnected")
+            let key =  UInt8(booksArray[indexPath.row].key ?? "0")!
+            print(key)
+            let dataToSend = Data([1,key])
+            
+            if isMyPeripheralConected
+            {
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
+            booksView.isHidden = false
         }
+        else if tag == 1003
+        {
+            let dict:[String: Any] = transArray[indexPath.row] as! [String: Any]
+            let trans =  UInt8(dict["key"] as! String)!
+            print(trans)
+            let dataToSend = Data([4,trans])
+            
+            if isMyPeripheralConected
+            {
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
+    
+            booksView.isHidden = true
+        }
+        qarisView.alpha = 0
     }
     
     //MARK:- UITableView Delegates
@@ -1224,6 +1293,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let ayatObj = ayaTitle[indexPath.row]
             getSurahAyat(ayatObj: ayatObj)
         }
+        
+        booksView.isHidden = true
     }
     
     //MARK:- CBCentralManager Delegates
