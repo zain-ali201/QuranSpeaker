@@ -10,6 +10,8 @@ import CoreBluetooth
 
 var defaults = UserDefaults.standard
 var currentVolume = 20
+var chapterNo = 1
+var verseNo = 1
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout
 {
@@ -55,8 +57,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var quranFlag = false
     var volFlag = false
-    var chapterNo = 1
-    var verseNo = 1
     var verseCount = 0
     var test = false
     var timer:Timer!
@@ -69,6 +69,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //    var isMyPeripheralConected = false
     
     var tag = 0
+    var booksFlag = false
     
     //MARK:- UIView Delegates
     
@@ -126,10 +127,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.readDeviceValues), userInfo: nil, repeats: true)
         changeAyat()
-        
-//        let tap = UITapGestureRecognizer()
-//        tap.addTarget(self, action: #selector(hideMenu))
-//        self.view.addGestureRecognizer(tap)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -138,7 +135,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc func hideMenu()
     {
-        leading.constant = -160
+        lblVerse.text = ""
+        leading.constant = -170
         quranFlag = false
         volView.alpha = 0
         volFlag = false
@@ -173,22 +171,29 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //MARK:- UIScrollView Delegates
     
-//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-//        return txtMainView
-//    }
-//
-//    func scrollViewDidZoom (_ scrollView: UIScrollView)
-//    {
-//        /// If paging is not switched depending on the scale, it will shift when it is enlarged.
-//        if scrollView.zoomScale == 1.0 {
-//            self.scrollView.isPagingEnabled = true
-//        } else {
-//            self.scrollView.isPagingEnabled = false
-//        }
-//    }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = Int(round(scrollView.contentOffset.x/self.view.frame.width))
+        print(pageIndex)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageIndex = Int(round(scrollView.contentOffset.x/self.view.frame.width))
         
+        if booksArray.count > pageIndex
+        {
+            let key =  UInt8(booksArray[pageIndex].key ?? "0")!
+            print(key)
+            let dataToSend = Data([1,key])
+            
+            if isMyPeripheralConected
+            {
+                myBluetoothPeripheral.writeValue(dataToSend as Data, for: quranCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+            else
+            {
+                self.view.makeToast("Bluetooth device disconnected")
+            }
+        }
     }
 
     //MARK:- XMLParser Delegates
@@ -285,19 +290,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 6
         {
+            booksView.isHidden = true
             key = 13
             flag = true
         }
         else if button.tag == 7
         {
-            booksView.isHidden = true
+//            booksView.isHidden = true
             collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
             tag = 1002
             loadBooks()
         }
         else if button.tag == 8
         {
-            booksView.isHidden = true
+//            booksView.isHidden = true
 //            if transArray.count > 0
 //            {
                 collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
@@ -326,6 +332,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 9
         {
+            booksView.isHidden = true
             key = 60
             flag = true
         }
@@ -336,6 +343,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 11
         {
+            booksView.isHidden = true
             key = 62
             flag = true
         }
@@ -374,6 +382,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if button.tag == 14
         {
+            booksView.isHidden = true
             key = 17
             flag = true
         }
@@ -404,12 +413,29 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+    
+    @IBAction func backBtnAction(_ sender: Any) {
+        lblVerse.text = ""
+        if chaptersTblView.alpha == 1
+        {
+            leading.constant = -170
+            quranFlag = false
+        }
+        else
+        {
+            chaptersTblView.alpha = 1
+        }
+        UIView.animate(withDuration: 0.3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
+    }
 
     @IBAction func quranBtnAction(_ sender: Any) {
         
         if quranFlag
         {
-            leading.constant = -160
+            lblVerse.text = ""
+            leading.constant = -170
             quranFlag = false
         }
         else
@@ -526,6 +552,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         lblTitle.text = String(format: "سورة %@",indexArray[chapterNo - 1])
         
         let ayatsArray = suraDict[indexArray[chapterNo - 1]] ?? []
+        
         let ayatObj = ayatsArray[verseNo - 1]
         
         var prefix = "KSF"
@@ -587,8 +614,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let size:CGSize = string.sizeOfString(usingFont: attrs)
             width = size.width
 
-            if width > 8
-            {
+//            if width == 0.3 || width > 8
+//            {
                 if (xAxis - width) < 0
                 {
                     xAxis = txtMainView.frame.width
@@ -609,11 +636,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 if i == ayatObj.end
                 {
-                    lbl.textColor = UIColor(red: 1, green: 215.0/255.0, blue: 0, alpha: 1.0)
+                    lbl.textColor = UIColor.systemYellow
                 }
                 txtMainView.addSubview(lbl)
                 xAxis -= width + 5
-            }
+//            }
         }
 //            print("//////////////////////////////////////////////")
 //            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
@@ -837,14 +864,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             prefix.append("P")
         }
-
-//        if lblMain != nil
-//        {
-//            lblMain.alpha = 0
-//        }
         
         let fontName = String(format:"%@%d", prefix, ayatObj.page)
-        print(fontName)
+        
         let font = UIFont(name: fontName, size: fontSize)!
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
@@ -859,7 +881,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         var xAxis:CGFloat =  txtMainView.frame.width
         var yAxis:CGFloat = 10.0
 
-//            var printResult = ""
+        var printResult = ""
+        var count = 0
 
         for i in ayatObj.start...ayatObj.end
         {
@@ -872,12 +895,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             resultStr = String(Character(UnicodeScalar(code)!))
             var width:CGFloat = 0.0
 
-//                printResult += "{\(1), \(resultStr)}, "
-
             let string = resultStr
             let size:CGSize = string.sizeOfString(usingFont: attrs)
             width = size.width
-
+            
             if width > 8
             {
                 if (xAxis - width) < 0
@@ -897,19 +918,33 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 {
                     lbl.textColor = .black
                 }
+                
+                printResult += "[\(resultStr), \(code), \(width), \(lbl.text ?? "")]"
+                
+                if i == ayatObj.end
+                {
+                    lbl.textColor = UIColor.systemYellow
+                }
                 txtMainView.addSubview(lbl)
                 xAxis -= width + 5
+                count += 1
+            }
+            else
+            {
+                print("Width: \(width)")
+                print("Missing word: \(resultStr)")
             }
         }
-//            print("//////////////////////////////////////////////")
-//            print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
-//            print("Font: \(fontName)")
-//            print(printResult)
-//            print("//////////////////////////////////////////////")
+        print("//////////////////////////////////////////////")
+        print("\(lblTitle.text!), Ayat no: \(verseNo - 1)")
+        print("Font: \(fontName)")
+        print(printResult)
+        print("count: \(count)")
+        print("//////////////////////////////////////////////")
         
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: yAxis + fontSize + 20)
-
-        leading.constant = -160
+        lblVerse.text = ""
+        leading.constant = -170
         quranFlag = false
         
         if isMyPeripheralConected
@@ -1074,11 +1109,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     //MARK:- UICollectionView Delegates
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         if collectionView.tag == 1002
         {
-            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+            return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
         else
         {
@@ -1203,8 +1246,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.view.makeToast("Bluetooth device disconnected")
             }
             
-            booksView.isHidden = true
-            booksCollectionView.reloadData()
+//            booksView.isHidden = true
         }
         else if tag == 1002
         {
@@ -1220,6 +1262,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 self.view.makeToast("Bluetooth device disconnected")
             }
+            booksCollectionView.reloadData()
+            let contentOffset = collectionView.contentOffset;
+            booksCollectionView.scrollRectToVisible(CGRect(x:UIScreen.main.bounds.width * CGFloat(indexPath.row), y: contentOffset.y, width: collectionView.frame.width, height: collectionView.frame.height), animated: false)
             booksView.isHidden = false
         }
         else if tag == 1003
@@ -1238,7 +1283,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.view.makeToast("Bluetooth device disconnected")
             }
     
-            booksView.isHidden = true
+//            booksView.isHidden = true
         }
         qarisView.alpha = 0
     }
@@ -1277,6 +1322,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        booksView.isHidden = true
         if tableView.tag == 1001
         {
             chaptersTblView.alpha = 0
@@ -1432,3 +1478,5 @@ extension String {
 extension StringProtocol {
     var asciiValues: [UInt8] { compactMap(\.asciiValue) }
 }
+
+//% $ # " !
